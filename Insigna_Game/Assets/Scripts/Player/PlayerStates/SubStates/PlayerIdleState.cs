@@ -8,9 +8,15 @@ public class PlayerIdleState : PlayerGroundedState
     {
     }
 
+    public override void DoChecks()
+    {
+        base.DoChecks();
+    }
+
     public override void Enter()
     {
         base.Enter();
+        player.SetVelocityX(0f);
     }
 
     public override void Exit()
@@ -20,18 +26,24 @@ public class PlayerIdleState : PlayerGroundedState
 
     public override void LogicUpdate()
     {
-        base.LogicUpdate()
-            
-            
+        base.LogicUpdate();
+
+        if (!isExitingState)
+        {
+            if (xInput != 0)
+            {
+                stateMachine.ChangeState(player.MoveState);
+            }
+            else if (yInput == -1)
+            {
+                stateMachine.ChangeState(player.CrouchIdleState);
+            }
+        }       
+        
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-    }
-
-    public override void DoChecks()
-    {
-        base.DoChecks();
     }
 }

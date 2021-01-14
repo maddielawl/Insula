@@ -2,20 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoveState : PlayerGroundedState
+public class PlayerAbilityState : PlayerState
 {
-    public PlayerMoveState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    protected bool isAbilityDone;
+
+    private bool isGrounded;
+
+    public PlayerAbilityState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
 
     public override void DoChecks()
     {
         base.DoChecks();
+
+        isGrounded = player.CheckIfGrounded();
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        isAbilityDone = false;
     }
 
     public override void Exit()
@@ -27,21 +35,17 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-        player.CheckIfShouldFlip(xInput);
-
-        player.SetVelocityX(playerData.movementVelocity * xInput);
-
-        if (!isExitingState)
+        if (isAbilityDone)
         {
-            if (xInput == 0)
+            if (isGrounded && player.CurrentVelocity.y < 0.01f)
             {
                 stateMachine.ChangeState(player.IdleState);
             }
-            else if (yInput == -1)
+            else
             {
-                stateMachine.ChangeState(player.CrouchMoveState);
+                stateMachine.ChangeState(player.InAirState);
             }
-        }        
+        }
     }
 
     public override void PhysicsUpdate()

@@ -83,7 +83,7 @@
                     "id": "064796d2-3005-4af1-830c-c6941e34d95f",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": "Controller",
                     "action": "Movement",
                     "isComposite": false,
@@ -121,6 +121,11 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }
