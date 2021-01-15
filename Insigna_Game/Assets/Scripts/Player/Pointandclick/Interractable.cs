@@ -10,8 +10,8 @@ public class Interractable : MonoBehaviour
     private GameObject nearInt0;
     private GameObject farInt1;
     private bool security = false;
-
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("RangeNear"))
         {
@@ -19,13 +19,14 @@ public class Interractable : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("RangeNear"))
         {
             isNear = false;
         }
     }
+
 
     private void Start()
     {
