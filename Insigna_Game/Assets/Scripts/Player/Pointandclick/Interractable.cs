@@ -10,6 +10,7 @@ public class Interractable : MonoBehaviour
     private GameObject nearInt0;
     private GameObject farInt1;
     private bool security = false;
+    private bool isInterractableOn = false;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,6 +37,18 @@ public class Interractable : MonoBehaviour
         farInt1.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (isNear == true && isInterractableOn == true)
+        {
+            UIManager.Instance.SetNearCursor();
+        }
+        if (isNear == false && isInterractableOn == true)
+        {
+            UIManager.Instance.SetFarCursor();
+        }
+    }
+
     private void OnMouseDown()
     {
         if (security == false)
@@ -59,11 +72,13 @@ public class Interractable : MonoBehaviour
         if (isNear == true)
         {
             UIManager.Instance.SetNearCursor();
+            isInterractableOn = true;
             return;
         }
         if (isNear == false)
         {
             UIManager.Instance.SetFarCursor();
+            isInterractableOn = true;
             return;
         }
     }
@@ -71,6 +86,7 @@ public class Interractable : MonoBehaviour
     private void OnMouseExit()
     {
         UIManager.Instance.ResetCursor();
+        isInterractableOn = false;
     }
 
     private IEnumerator NearInterraction()

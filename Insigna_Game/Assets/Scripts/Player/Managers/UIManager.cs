@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
     {
         Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
     }
+    
 
     public void ResetCursor()
     {
