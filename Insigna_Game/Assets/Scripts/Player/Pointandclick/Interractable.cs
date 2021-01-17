@@ -54,6 +54,25 @@ public class Interractable : MonoBehaviour
         }
     }
 
+    private void OnMouseEnter()
+    {
+        if (isNear == true)
+        {
+            UIManager.Instance.SetNearCursor();
+            return;
+        }
+        if (isNear == false)
+        {
+            UIManager.Instance.SetFarCursor();
+            return;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        UIManager.Instance.ResetCursor();
+    }
+
     private IEnumerator NearInterraction()
     {
         nearInt0.SetActive(true);
