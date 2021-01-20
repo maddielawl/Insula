@@ -45,12 +45,12 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (GameManager.Instance.isHelmetEquipped == true)
             {
-                
+                GameManager.Instance.isHelmetEquipped = false;
             }
 
             if (GameManager.Instance.isHelmetEquipped == false)
             {
-                
+                GameManager.Instance.isHelmetEquipped = true;
             }
         }
     }
