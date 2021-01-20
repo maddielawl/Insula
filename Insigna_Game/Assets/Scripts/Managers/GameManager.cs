@@ -24,4 +24,8 @@ public class GameManager : MonoBehaviour
     public int playerMadness;
     public int playerPillsCount;
 
+    [Space(5)]
+    [Header("Helmet")]
+    public bool isHelmetEquipped = false;
+    public bool canEquipHelmet = false;
 }

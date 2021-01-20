@@ -36,7 +36,12 @@ public class PlayerInputHandler : MonoBehaviour
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
         
-        if(playerInput.)
+        
+    }
+
+    public void OnHelmetEquipped(InputAction.CallbackContext context)
+    {
+        
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
