@@ -41,7 +41,18 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnHelmetEquipped(InputAction.CallbackContext context)
     {
-        
+        if (GameManager.Instance.canEquipHelmet == true)
+        {
+            if (GameManager.Instance.isHelmetEquipped == true)
+            {
+                
+            }
+
+            if (GameManager.Instance.isHelmetEquipped == false)
+            {
+                
+            }
+        }
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
