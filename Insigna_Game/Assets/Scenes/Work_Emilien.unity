@@ -1474,6 +1474,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3010721840698451105, guid: a6fc09a7ef3b0e044a264493a1169b72, type: 3}
+      propertyPath: playerPillsCount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3010721840698451107, guid: a6fc09a7ef3b0e044a264493a1169b72, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1536,28 +1540,56 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 769832860}
+    - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 769832860}
     - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TakePills
       objectReference: {fileID: 0}
     - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnHelmetEquipped
       objectReference: {fileID: 0}
     - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerInputHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerInputHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6023233030195055479, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

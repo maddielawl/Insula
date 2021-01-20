@@ -55,6 +55,14 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void TakePills(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.canEquipHelmet == false && GameManager.Instance.isScared == false && GameManager.Instance.playerPillsCount != 0)
+        {
+            GameManager.Instance.GetHPBack();
+        }
+    }
+
     public void OnMoveInput(InputAction.CallbackContext context)
     {
         RawMovementInput = context.ReadValue<Vector2>();

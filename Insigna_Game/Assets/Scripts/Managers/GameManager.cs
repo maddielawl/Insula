@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public int playerSanity;
     public int playerMadness;
     public int playerPillsCount;
+    public int healAmmount = 30 ;
 
     [Space(5)]
     [Header("Helmet")]
@@ -66,5 +68,12 @@ public class GameManager : MonoBehaviour
         Debug.Log(("playerMadness" + playerMadness));
 
         yield return 0;
+    }
+
+    public void GetHPBack()
+    {
+        playerMadness = Mathf.Clamp(playerMadness, 0, 100);
+        playerMadness = playerMadness - healAmmount;
+        playerMadness = Mathf.Clamp(playerMadness, 0, 100);
     }
 }
