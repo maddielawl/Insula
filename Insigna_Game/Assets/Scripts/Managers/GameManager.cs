@@ -22,5 +22,6 @@ public class GameManager : MonoBehaviour
     public int playerHealth;
     public int playerSanity;
     public int playerMadness;
-    
+    public int playerPillsCount;
+
 }
