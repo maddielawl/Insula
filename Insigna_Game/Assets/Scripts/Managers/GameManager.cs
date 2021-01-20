@@ -75,5 +75,6 @@ public class GameManager : MonoBehaviour
         playerMadness = Mathf.Clamp(playerMadness, 0, 100);
         playerMadness = playerMadness - healAmmount;
         playerMadness = Mathf.Clamp(playerMadness, 0, 100);
+        playerPillsCount--;
     }
 }
