@@ -36,10 +36,10 @@ public class PlayerInAirState : PlayerState
         oldIsTouchingWall = isTouchingWall;
         oldIsTouchingWallBack = isTouchingWallBack;
 
-        isGrounded = player.CheckIfGrounded();
+        /*isGrounded = player.CheckIfGrounded();
         isTouchingWall = player.CheckIfTouchingWall();
         isTouchingWallBack = player.CheckIfTouchingWallBack();
-        isTouchingLedge = player.CheckIfTouchingLedge();
+        isTouchingLedge = player.CheckIfTouchingLedge();*/
 
         if(isTouchingWall && !isTouchingLedge)
         {
@@ -93,7 +93,7 @@ public class PlayerInAirState : PlayerState
         else if(jumpInput && (isTouchingWall || isTouchingWallBack || wallJumpCoyoteTime))
         {
             StopWallJumpCoyoteTime();
-            isTouchingWall = player.CheckIfTouchingWall();
+            //isTouchingWall = player.CheckIfTouchingWall();
             player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
             stateMachine.ChangeState(player.WallJumpState);
         }

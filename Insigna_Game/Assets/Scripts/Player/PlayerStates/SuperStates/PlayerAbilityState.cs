@@ -16,7 +16,7 @@ public class PlayerAbilityState : PlayerState
     {
         base.DoChecks();
 
-        isGrounded = player.CheckIfGrounded();
+        /*isGrounded = player.CheckIfGrounded();*/
     }
 
     public override void Enter()

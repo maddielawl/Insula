@@ -30,9 +30,9 @@ public class PlayerTouchingWallState : PlayerState
     {
         base.DoChecks();
 
-        isGrounded = player.CheckIfGrounded();
+        /*isGrounded = player.CheckIfGrounded();
         isTouchingWall = player.CheckIfTouchingWall();
-        isTouchingLedge = player.CheckIfTouchingLedge();
+        isTouchingLedge = player.CheckIfTouchingLedge();*/
 
         if(isTouchingWall && !isTouchingLedge)
         {
