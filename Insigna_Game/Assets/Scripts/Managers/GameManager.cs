@@ -32,12 +32,7 @@ public class GameManager : MonoBehaviour
     [Space(5)] 
     [Header("Status Check")] 
     public bool isScared;
-
-    private void Start()
-    {
-        Mathf.Clamp(playerMadness, 0, 100);
-        Mathf.Clamp(playerSanity, 0, 100);
-    }
+    
 
     public IEnumerator InsideMadnessZone()
     {
@@ -45,19 +40,19 @@ public class GameManager : MonoBehaviour
         {
             if (isHelmetEquipped == true)
             {
-                Mathf.Clamp(playerMadness, 0, 100);
+                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
                 playerMadness++;
-                Mathf.Clamp(playerMadness, 0, 100);
+                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
             }
 
             if (isHelmetEquipped == false)
             {
-                Mathf.Clamp(playerMadness, 0, 100);
+                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
                 playerMadness = playerMadness + 3;
-                Mathf.Clamp(playerMadness, 0, 100);
-                Mathf.Clamp(playerSanity, 0, 100);
+                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
+                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerSanity = playerSanity + 7;
-                Mathf.Clamp(playerSanity, 0, 100);
+                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
 
             }
             yield return new WaitForSeconds(0.5f);
