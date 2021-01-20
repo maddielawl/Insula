@@ -35,6 +35,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
+        
+        if(playerInput.)
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
