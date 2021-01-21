@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     [Space(5)] 
     [Header("Status Check")] 
     public bool isScared;
-    
+
 
     public IEnumerator InsideMadnessZone()
     {
@@ -77,4 +77,5 @@ public class GameManager : MonoBehaviour
         playerMadness = Mathf.Clamp(playerMadness, 0, 100);
         playerPillsCount--;
     }
+    
 }
