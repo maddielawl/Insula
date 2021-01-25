@@ -37,7 +37,12 @@ public class GameManager : MonoBehaviour
 
 
     #region Madness Functions
-    
+
+    private void Start()
+    {
+        StartCoroutine("SanityDecrement");
+    }
+
     public IEnumerator InsideMadnessZone()
     {
         if (isScared == true)
@@ -65,12 +70,35 @@ public class GameManager : MonoBehaviour
                 StartCoroutine("InsideMadnessZone");
             }
         }
-        
-        Debug.Log("PlayerSanity" + playerSanity);
-        Debug.Log(("playerMadness" + playerMadness));
 
         yield return 0;
     }
+
+    public IEnumerator SanityDecrement()
+    {
+        if (isScared == false)
+        {
+            if (isHelmetEquipped == false)
+            {
+                
+                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                playerSanity = playerSanity - 3;
+                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+
+            }
+            yield return new WaitForSeconds(0.5f);
+            if (isScared == false)
+            {
+                StartCoroutine("SanityDecrement");
+            }
+        }
+        
+        Debug.Log("PlayerSanity" + playerSanity);
+
+        yield return 0;
+    }
+    
+    
     
     #endregion
 

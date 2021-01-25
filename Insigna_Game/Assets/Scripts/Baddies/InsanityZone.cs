@@ -11,6 +11,7 @@ public class InsanityZone : MonoBehaviour
         {
             GameManager.Instance.isScared = true;
             StartCoroutine(GameManager.Instance.InsideMadnessZone());
+            StopCoroutine(GameManager.Instance.SanityDecrement());
         }
     }
 
@@ -20,6 +21,7 @@ public class InsanityZone : MonoBehaviour
         {
             GameManager.Instance.isScared = false;
             StopCoroutine(GameManager.Instance.InsideMadnessZone());
+            StartCoroutine(GameManager.Instance.SanityDecrement());
         }
     }
 }
