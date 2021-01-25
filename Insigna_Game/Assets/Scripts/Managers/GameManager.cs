@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     public bool isScared;
 
 
+    #region Madness Functions
+    
     public IEnumerator InsideMadnessZone()
     {
         if (isScared == true)
@@ -69,6 +71,11 @@ public class GameManager : MonoBehaviour
 
         yield return 0;
     }
+    
+    #endregion
+
+    #region HP Fuctions
+    
 
     public void GetHPBack()
     {
@@ -77,5 +84,7 @@ public class GameManager : MonoBehaviour
         playerMadness = Mathf.Clamp(playerMadness, 0, 100);
         playerPillsCount--;
     }
+    
+    #endregion
     
 }

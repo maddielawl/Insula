@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public CinemachineVirtualCamera sideScrollerCam;
-    
     #region Singlton:Profile
 
     public static CameraManager Instance;
@@ -19,15 +17,7 @@ public class CameraManager : MonoBehaviour
             Destroy (gameObject);
     }
     #endregion
-
-    public void SideCamPrioLow()
-    {
-        sideScrollerCam.Priority = 1;
-    }
-    public void SideCamPrioHigh()
-    {
-        sideScrollerCam.Priority = 10;
-    }
+    
 
     public void setCameraPrioLow(CinemachineVirtualCamera cam)
     {
