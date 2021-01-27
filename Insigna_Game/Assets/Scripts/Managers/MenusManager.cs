@@ -76,7 +76,7 @@ public class MenusManager : MonoBehaviour
     private void OnEnable()
     {
         menusActions.Enable();
-        menusActions.MainMenuActions.ValidateSplashscreen.started += OnValidateSplashscreen;
+        menusActions.MainMenuActions.ValidateSplashScreen.started += OnValidateSplashscreen;
         
     }
 
@@ -94,7 +94,7 @@ public class MenusManager : MonoBehaviour
     {
         splashScreen.SetActive(false);
         mainMenuScreen.SetActive(true);
-        menusActions.MainMenuActions.ValidateSplashscreen.started -= OnValidateSplashscreen;
+        menusActions.MainMenuActions.ValidateSplashScreen.started -= OnValidateSplashscreen;
     }
 
     public void OnValidatePlay()
