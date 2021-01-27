@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     public int playerMadness;
     public int playerPillsCount;
     public int healAmmount = 30 ;
+    public PlayerInput playerInput;
 
     [Space(5)]
     [Header("Helmet")]
@@ -114,5 +116,14 @@ public class GameManager : MonoBehaviour
     }
     
     #endregion
+
+    public void ActivateInGameActions()
+    {
+        playerInput.ActivateInput();
+    }
+    public void DeactivateInGameActions()
+    {
+        playerInput.DeactivateInput();
+    }
     
 }

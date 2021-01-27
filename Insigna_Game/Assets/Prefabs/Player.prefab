@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 6023233030195055476}
   - component: {fileID: 6023233030195055479}
   - component: {fileID: 6023233030195055478}
+  - component: {fileID: 2576025831111345520}
   - component: {fileID: 6023233030195055432}
   - component: {fileID: 6023233030195055435}
   - component: {fileID: 6023233030195055434}
@@ -178,6 +179,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputHoldTime: 0.2
+--- !u!114 &2576025831111345520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023233030195055473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dca026e262a2f41bdd900afcf5ce61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6023233030195055432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 8286d1c579017a04db33b1b1593a8c04, type: 2}
-  groundCheck: {fileID: 0}
   wallCheck: {fileID: 0}
   ledgeCheck: {fileID: 0}
   ceilingCheck: {fileID: 0}
