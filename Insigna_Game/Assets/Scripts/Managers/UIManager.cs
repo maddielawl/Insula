@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class UIManager : MonoBehaviour
     public Texture2D nearCursor;
     public Texture2D farCursor;
 
+    [Header("UIMenus")]
+    public GameObject MainMenu;
+    public GameObject OptionMenu;
+    public GameObject CreditMenu;
+
     private void Start()
     {
         Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
@@ -43,5 +49,27 @@ public class UIManager : MonoBehaviour
     public void SetFarCursor()
     {
         Cursor.SetCursor(farCursor, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void PlayButton()
+    {
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+    }
+
+    public void OptionButton()
+    {
+        MainMenu.SetActive(false);
+        OptionMenu.SetActive(true);
+    }
+
+    public void CreditsButton()
+    {
+        MainMenu.SetActive(false);
+        CreditMenu.SetActive(true);
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
     }
 }
