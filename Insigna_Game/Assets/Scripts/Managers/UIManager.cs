@@ -24,12 +24,7 @@ public class UIManager : MonoBehaviour
     public Texture2D basicCursor;
     public Texture2D nearCursor;
     public Texture2D farCursor;
-
-    [Header("UIMenus")]
-    public GameObject MainMenu;
-    public GameObject OptionMenu;
-    public GameObject CreditMenu;
-
+    
     private void Start()
     {
         Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
