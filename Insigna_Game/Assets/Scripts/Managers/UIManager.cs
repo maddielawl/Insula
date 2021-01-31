@@ -50,26 +50,5 @@ public class UIManager : MonoBehaviour
     {
         Cursor.SetCursor(farCursor, Vector2.zero, CursorMode.Auto);
     }
-
-    public void PlayButton()
-    {
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
-    }
-
-    public void OptionButton()
-    {
-        MainMenu.SetActive(false);
-        OptionMenu.SetActive(true);
-    }
-
-    public void CreditsButton()
-    {
-        MainMenu.SetActive(false);
-        CreditMenu.SetActive(true);
-    }
-
-    public void QuitButton()
-    {
-        Application.Quit();
-    }
+    
 }
