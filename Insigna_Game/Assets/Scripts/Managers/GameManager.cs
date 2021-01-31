@@ -94,8 +94,6 @@ public class GameManager : MonoBehaviour
                 StartCoroutine("SanityDecrement");
             }
         }
-        
-        Debug.Log("PlayerSanity" + playerSanity);
 
         yield return 0;
     }

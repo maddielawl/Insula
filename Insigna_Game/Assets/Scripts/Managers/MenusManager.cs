@@ -39,6 +39,11 @@ public class MenusManager : MonoBehaviour
     [Header("OPTIONS")]
     private AudioSource mainMenuAudioSource;
 
+    [Header("Pause Menu")] 
+    public bool isPaused;
+
+    public bool inGame;
+
     public static MenusManager s_Singleton;
 
     private void Awake()
@@ -54,14 +59,8 @@ public class MenusManager : MonoBehaviour
         menusActions = new GameInputs();
         mainMenuAudioSource = GetComponent<AudioSource>();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
+    
     void Update()
     {
         if (asyncOp != null && !validateLoadingText.activeSelf)
@@ -105,11 +104,13 @@ public class MenusManager : MonoBehaviour
         loadingScreen.SetActive(true);
         asyncOp = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
         asyncOp.allowSceneActivation = false;
+        inGame = true;
+        menusActions.MainMenuActions.Pause.started += PauseGame;
     }
 
     public void OnValidateOptions()
     {
-        midOptionsScreen.SetActive(false);
+        // midOptionsScreen.SetActive(false);
         optionsScreen.SetActive(true);
         OnPressEscape = OnBackFromSettings;
     }
@@ -138,8 +139,9 @@ public class MenusManager : MonoBehaviour
     public void OnBackFromSettings ()
     {
         optionsScreen.SetActive(false);
-        midOptionsScreen.SetActive(true);
-        OnPressEscape = OnBackFromMidOptions;
+        // midOptionsScreen.SetActive(true);
+        mainMenuScreen.SetActive(true);
+        // OnPressEscape = OnBackFromMidOptions;
     }
 
     public void OnBackFromCredits()
@@ -161,6 +163,59 @@ public class MenusManager : MonoBehaviour
         loadingText.SetActive(false);
         validateLoadingText.SetActive(true);
         menusActions.MainMenuActions.ValidateLoadScene.started += HideLoadingScreen;
+    }
+
+    public void PauseMenu()
+    {
+        if (inGame == true)
+        {
+            if (isPaused == true)
+            {
+                Time.timeScale = 1;
+                ingamePauseMenu.SetActive(false);
+                isPaused = false;
+                return;
+            }
+            else
+            {
+                ingamePauseMenu.SetActive(true);
+                Time.timeScale = 0;
+                isPaused = true;
+                return;
+            }
+        }
+    }
+
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        if (inGame == true)
+        {
+            if (isPaused == true)
+            {
+                Time.timeScale = 1;
+                ingamePauseMenu.SetActive(false);
+                isPaused = false;
+                return;
+            }
+            else
+            {
+                ingamePauseMenu.SetActive(true);
+                Time.timeScale = 0;
+                isPaused = true;
+                return;
+            }
+        }
+    }
+
+    public void ReturnGame()
+    {
+        if (inGame == true)
+        {
+            Time.timeScale = 1;
+            ingamePauseMenu.SetActive(false);
+            isPaused = false;
+            return;
+        }
     }
 
     public void HideLoadingScreen (InputAction.CallbackContext context)

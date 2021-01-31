@@ -57,6 +57,30 @@ public class @GameInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MouseClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""845cf4d7-6d80-486e-a77f-5bc5383c7014"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Point"",
+                    ""type"": ""Value"",
+                    ""id"": ""1c61c0fa-a704-409a-b4c9-f9e610e9311f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ccd5659-0adb-47ab-9a50-706930cda781"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -202,6 +226,39 @@ public class @GameInputs : IInputActionCollection, IDisposable
                     ""action"": ""ValidateLoadScene"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b53de4f1-896e-4dd1-ba62-dd56b5a30981"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MouseClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f667b2fa-36e7-4383-8da4-aef37aff5d29"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""852ff3b6-9881-4083-9395-079d3be45647"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -243,6 +300,9 @@ public class @GameInputs : IInputActionCollection, IDisposable
         m_MainMenuActions_Submit = m_MainMenuActions.FindAction("Submit", throwIfNotFound: true);
         m_MainMenuActions_Cancel = m_MainMenuActions.FindAction("Cancel", throwIfNotFound: true);
         m_MainMenuActions_ValidateLoadScene = m_MainMenuActions.FindAction("ValidateLoadScene", throwIfNotFound: true);
+        m_MainMenuActions_MouseClick = m_MainMenuActions.FindAction("MouseClick", throwIfNotFound: true);
+        m_MainMenuActions_Point = m_MainMenuActions.FindAction("Point", throwIfNotFound: true);
+        m_MainMenuActions_Pause = m_MainMenuActions.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -297,6 +357,9 @@ public class @GameInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_MainMenuActions_Submit;
     private readonly InputAction m_MainMenuActions_Cancel;
     private readonly InputAction m_MainMenuActions_ValidateLoadScene;
+    private readonly InputAction m_MainMenuActions_MouseClick;
+    private readonly InputAction m_MainMenuActions_Point;
+    private readonly InputAction m_MainMenuActions_Pause;
     public struct MainMenuActionsActions
     {
         private @GameInputs m_Wrapper;
@@ -306,6 +369,9 @@ public class @GameInputs : IInputActionCollection, IDisposable
         public InputAction @Submit => m_Wrapper.m_MainMenuActions_Submit;
         public InputAction @Cancel => m_Wrapper.m_MainMenuActions_Cancel;
         public InputAction @ValidateLoadScene => m_Wrapper.m_MainMenuActions_ValidateLoadScene;
+        public InputAction @MouseClick => m_Wrapper.m_MainMenuActions_MouseClick;
+        public InputAction @Point => m_Wrapper.m_MainMenuActions_Point;
+        public InputAction @Pause => m_Wrapper.m_MainMenuActions_Pause;
         public InputActionMap Get() { return m_Wrapper.m_MainMenuActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -330,6 +396,15 @@ public class @GameInputs : IInputActionCollection, IDisposable
                 @ValidateLoadScene.started -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnValidateLoadScene;
                 @ValidateLoadScene.performed -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnValidateLoadScene;
                 @ValidateLoadScene.canceled -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnValidateLoadScene;
+                @MouseClick.started -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnMouseClick;
+                @MouseClick.performed -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnMouseClick;
+                @MouseClick.canceled -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnMouseClick;
+                @Point.started -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnPoint;
+                @Point.performed -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnPoint;
+                @Point.canceled -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnPoint;
+                @Pause.started -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_MainMenuActionsActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_MainMenuActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -349,6 +424,15 @@ public class @GameInputs : IInputActionCollection, IDisposable
                 @ValidateLoadScene.started += instance.OnValidateLoadScene;
                 @ValidateLoadScene.performed += instance.OnValidateLoadScene;
                 @ValidateLoadScene.canceled += instance.OnValidateLoadScene;
+                @MouseClick.started += instance.OnMouseClick;
+                @MouseClick.performed += instance.OnMouseClick;
+                @MouseClick.canceled += instance.OnMouseClick;
+                @Point.started += instance.OnPoint;
+                @Point.performed += instance.OnPoint;
+                @Point.canceled += instance.OnPoint;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -378,5 +462,8 @@ public class @GameInputs : IInputActionCollection, IDisposable
         void OnSubmit(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
         void OnValidateLoadScene(InputAction.CallbackContext context);
+        void OnMouseClick(InputAction.CallbackContext context);
+        void OnPoint(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
