@@ -85,7 +85,7 @@ public class MenusManager : MonoBehaviour
 
     private void DeactivateMainMenuActions ()
     {
-        menusActions.Disable();
+        // menusActions.Disable();
     }
 
     public void OnPressCancel (InputAction.CallbackContext context)
