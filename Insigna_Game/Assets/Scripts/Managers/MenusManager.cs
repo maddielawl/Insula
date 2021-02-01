@@ -74,9 +74,12 @@ public class MenusManager : MonoBehaviour
 
     private void OnEnable()
     {
-        menusActions.Enable();
-        menusActions.MainMenuActions.ValidateSplashScreen.started += OnValidateSplashscreen;
-        
+        if (inGame == false)
+        {
+            menusActions.Enable();
+            menusActions.MainMenuActions.ValidateSplashScreen.started += OnValidateSplashscreen;
+        }
+
     }
 
     private void DeactivateMainMenuActions ()
@@ -90,44 +93,60 @@ public class MenusManager : MonoBehaviour
     }
 
     public void OnValidateSplashscreen (InputAction.CallbackContext context)
+    
     {
-        splashScreen.SetActive(false);
-        mainMenuScreen.SetActive(true);
-        menusActions.MainMenuActions.ValidateSplashScreen.started -= OnValidateSplashscreen;
+        if (inGame == false)
+        {
+            splashScreen.SetActive(false);
+            mainMenuScreen.SetActive(true);
+            menusActions.MainMenuActions.ValidateSplashScreen.started -= OnValidateSplashscreen;
+        }
     }
 
     public void OnValidatePlay()
     {
-        mainMenuScreen.SetActive(false);
-        menuBackground.SetActive(false);
-        gameLogoImage.SetActive(false);
-        loadingScreen.SetActive(true);
-        asyncOp = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-        asyncOp.allowSceneActivation = false;
-        inGame = true;
-        menusActions.MainMenuActions.Pause.started += PauseGame;
+        if (inGame == false)
+        {
+            mainMenuScreen.SetActive(false);
+            menuBackground.SetActive(false);
+            gameLogoImage.SetActive(false);
+            loadingScreen.SetActive(true);
+            asyncOp = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            asyncOp.allowSceneActivation = false;
+            inGame = true;
+            menusActions.MainMenuActions.Pause.started += PauseGame;
+        }
     }
 
     public void OnValidateOptions()
     {
-        // midOptionsScreen.SetActive(false);
-        optionsScreen.SetActive(true);
-        OnPressEscape = OnBackFromSettings;
+        if (inGame == false)
+        {
+            // midOptionsScreen.SetActive(false);
+            optionsScreen.SetActive(true);
+            OnPressEscape = OnBackFromSettings;
+        }
     }
 
     public void OnValidateMidOptions ()
     {
-        menusActions.MainMenuActions.Cancel.started += OnPressCancel;
-        mainMenuScreen.SetActive(false);
-        midOptionsScreen.SetActive(true);
-        OnPressEscape = OnBackFromMidOptions;
+        if (inGame == false)
+        {
+            menusActions.MainMenuActions.Cancel.started += OnPressCancel;
+            mainMenuScreen.SetActive(false);
+            midOptionsScreen.SetActive(true);
+            OnPressEscape = OnBackFromMidOptions;
+        }
     }
 
     public void OnValidateCredits()
     {
-        midOptionsScreen.SetActive(false);
-        creditsScreen.SetActive(true);
-        OnPressEscape = OnBackFromCredits;
+        if (inGame == false)
+        {
+            midOptionsScreen.SetActive(false);
+            creditsScreen.SetActive(true);
+            OnPressEscape = OnBackFromCredits;
+        }
     }
 
     public void OnValidateExitYes ()
@@ -138,24 +157,33 @@ public class MenusManager : MonoBehaviour
 
     public void OnBackFromSettings ()
     {
-        optionsScreen.SetActive(false);
-        // midOptionsScreen.SetActive(true);
-        mainMenuScreen.SetActive(true);
-        // OnPressEscape = OnBackFromMidOptions;
+        if (inGame == false)
+        {
+            optionsScreen.SetActive(false);
+            // midOptionsScreen.SetActive(true);
+            mainMenuScreen.SetActive(true);
+            // OnPressEscape = OnBackFromMidOptions;
+        }
     }
 
     public void OnBackFromCredits()
     {
-        creditsScreen.SetActive(false);
-        midOptionsScreen.SetActive(true);
-        OnPressEscape = OnBackFromMidOptions;
+        if (inGame == false)
+        {
+            creditsScreen.SetActive(false);
+            midOptionsScreen.SetActive(true);
+            OnPressEscape = OnBackFromMidOptions;
+        }
     }
 
     public void OnBackFromMidOptions()
     {
-        midOptionsScreen.SetActive(false);
-        mainMenuScreen.SetActive(true);
-        menusActions.MainMenuActions.Cancel.started -= OnPressCancel;
+        if (inGame == false)
+        {
+            midOptionsScreen.SetActive(false);
+            mainMenuScreen.SetActive(true);
+            menusActions.MainMenuActions.Cancel.started -= OnPressCancel;
+        }
     }
 
     public void DisplayValidateLoadingText()
