@@ -28,6 +28,7 @@ public class MenusManager : MonoBehaviour
     public GameObject ingamePauseMenu;
     public GameObject ingameGameOverUI;
     public GameObject endgameThanksScreen;
+    
 
     [Header("UI ELEMENTS")]
     public Slider musicVolumeSlider;
@@ -246,6 +247,24 @@ public class MenusManager : MonoBehaviour
         }
     }
 
+    public void QuitToMenu()
+    {
+        inGame = false;
+        menuBackground.SetActive(true);
+        loadingScreen.SetActive(false);
+        gameLogoImage.SetActive(false);
+        splashScreen.SetActive(false);
+        mainMenuScreen.SetActive(true);
+        midOptionsScreen.SetActive(false);
+        optionsScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        ingameMainUI.SetActive(false);
+        ingamePauseMenu.SetActive(false);
+        ingameGameOverUI.SetActive(false);
+        endgameThanksScreen.SetActive(false);
+        SceneManager.UnloadSceneAsync("MainScene");
+    }
+
     public void HideLoadingScreen (InputAction.CallbackContext context)
     {
         asyncOp.allowSceneActivation = true;
@@ -253,6 +272,7 @@ public class MenusManager : MonoBehaviour
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
+        inGame = true;
     }
 
     #region OPTIONS
