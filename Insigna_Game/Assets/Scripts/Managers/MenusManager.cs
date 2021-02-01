@@ -175,7 +175,7 @@ public class MenusManager : MonoBehaviour
         if (inGame == false)
         {
             creditsScreen.SetActive(false);
-            midOptionsScreen.SetActive(true);
+            mainMenuScreen.SetActive(true);
             OnPressEscape = OnBackFromMidOptions;
         }
     }
@@ -291,6 +291,7 @@ public class MenusManager : MonoBehaviour
     {
         asyncOp.allowSceneActivation = true;
         loadingScreen.SetActive(false);
+        ingameMainUI.SetActive(true);
         // menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
