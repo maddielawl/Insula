@@ -28,6 +28,7 @@ public class MenusManager : MonoBehaviour
     public GameObject ingamePauseMenu;
     public GameObject ingameGameOverUI;
     public GameObject endgameThanksScreen;
+    public GameObject inGameOptions;
     
 
     [Header("UI ELEMENTS")]
@@ -44,6 +45,8 @@ public class MenusManager : MonoBehaviour
     public bool isPaused;
 
     public bool inGame;
+
+    public bool isFullScreen = true;
 
     public static MenusManager s_Singleton;
 
@@ -202,12 +205,14 @@ public class MenusManager : MonoBehaviour
             {
                 Time.timeScale = 1;
                 ingamePauseMenu.SetActive(false);
+                inGameOptions.SetActive(false);
                 isPaused = false;
                 return;
             }
             else
             {
                 ingamePauseMenu.SetActive(true);
+                inGameOptions.SetActive(false);
                 Time.timeScale = 0;
                 isPaused = true;
                 return;
@@ -223,12 +228,14 @@ public class MenusManager : MonoBehaviour
             {
                 Time.timeScale = 1;
                 ingamePauseMenu.SetActive(false);
+                inGameOptions.SetActive(false);
                 isPaused = false;
                 return;
             }
             else
             {
                 ingamePauseMenu.SetActive(true);
+                inGameOptions.SetActive(false);
                 Time.timeScale = 0;
                 isPaused = true;
                 return;
@@ -250,6 +257,7 @@ public class MenusManager : MonoBehaviour
     public void QuitToMenu()
     {
         inGame = false;
+        Time.timeScale = 1;
         menuBackground.SetActive(true);
         loadingScreen.SetActive(false);
         gameLogoImage.SetActive(false);
@@ -262,14 +270,28 @@ public class MenusManager : MonoBehaviour
         ingamePauseMenu.SetActive(false);
         ingameGameOverUI.SetActive(false);
         endgameThanksScreen.SetActive(false);
+        inGameOptions.SetActive(false);
+        menusActions = new GameInputs();
         SceneManager.UnloadSceneAsync("MainScene");
+    }
+
+    public void OptionScreenInGame()
+    {
+        inGameOptions.SetActive(true);
+        ingamePauseMenu.SetActive(false);
+    }
+
+    public void QuitOptionsScreenInGame()
+    {
+        inGameOptions.SetActive(true);
+        ingamePauseMenu.SetActive(false);
     }
 
     public void HideLoadingScreen (InputAction.CallbackContext context)
     {
         asyncOp.allowSceneActivation = true;
         loadingScreen.SetActive(false);
-        menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
+        // menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
         inGame = true;
@@ -296,16 +318,35 @@ public class MenusManager : MonoBehaviour
         switch (dropIdx)
         {
             case 0:
-                Screen.SetResolution(1920, 1080, true);
+                Screen.SetResolution(1920, 1080, isFullScreen);
                 break;
             case 1:
-                Screen.SetResolution(1600, 900, true);
+                Screen.SetResolution(1600, 900, isFullScreen);
                 break;
             case 2:
-                Screen.SetResolution(1280, 800, true);
+                Screen.SetResolution(1280, 800, isFullScreen);
                 break;
         }
     }
 
+    public void SetFullScreen(bool fullScreen)
+    {
+        if (fullScreen == false)
+        {
+            
+            
+            isFullScreen = false;
+            Screen.fullScreen = false;
+        }
+
+        if (fullScreen == true)
+        {
+            
+            
+            isFullScreen = true;
+            Screen.fullScreen = true;
+        }
+    }
+    
     #endregion
 }
