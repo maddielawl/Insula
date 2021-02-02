@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public Transform DashDirectionIndicator { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
+
+    public GameObject playerSprite;
     #endregion
 
     #region Check Transforms
@@ -145,26 +147,7 @@ public class Player : MonoBehaviour
     {
         return Physics2D.OverlapCircle(ceilingCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
     }
-
-    /*public bool CheckIfGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
-    }
-
-    public bool CheckIfTouchingWall()
-    {
-        return Physics2D.Raycast(wallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
-    }
-
-    public bool CheckIfTouchingLedge()
-    {
-        return Physics2D.Raycast(ledgeCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
-    }
-
-    public bool CheckIfTouchingWallBack()
-    {
-        return Physics2D.Raycast(wallCheck.position, Vector2.right * -FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
-    }*/
+    
 
     public void CheckIfShouldFlip(int xInput)
     {
@@ -208,7 +191,7 @@ public class Player : MonoBehaviour
     private void Flip()
     {
         FacingDirection *= -1;
-        //transform.Rotate(0.0f, 180.0f, 0.0f);
+        playerSprite.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
     #endregion
 }
