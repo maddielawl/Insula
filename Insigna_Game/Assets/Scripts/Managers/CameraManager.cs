@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public GameObject StaticCamera;
+    public GameObject FollowCamera;
+
     #region Singlton:Profile
 
     public static CameraManager Instance;
@@ -15,6 +18,18 @@ public class CameraManager : MonoBehaviour
             Instance = this;
         else
             Destroy (gameObject);
+
+        StaticCamera = GameObject.FindGameObjectWithTag("StaticCamera");
+        if(StaticCamera == null)
+        {
+            return;
+        }
+
+        FollowCamera = GameObject.FindGameObjectWithTag("FollowCamera");
+        if(FollowCamera == null)
+        {
+            return;
+        }
     }
     #endregion
     
