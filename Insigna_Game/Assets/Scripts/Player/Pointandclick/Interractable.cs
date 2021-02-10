@@ -9,6 +9,11 @@ public class Interractable : MonoBehaviour
 
     private GameObject nearInt0;
     private GameObject farInt1;
+
+    private GameObject nearIndic;
+
+    private GameObject farIndic;
+
     private bool security = false;
     private bool isInterractableOn = false;
     
@@ -35,6 +40,10 @@ public class Interractable : MonoBehaviour
         nearInt0.SetActive(false);
         farInt1 = transform.GetChild(1).gameObject;
         farInt1.SetActive(false);
+        nearIndic = transform.GetChild(2).gameObject;
+        nearIndic.SetActive(false);
+        farIndic = transform.GetChild(3).gameObject;
+        farIndic.SetActive(false);
     }
 
     private void Update()
@@ -72,12 +81,14 @@ public class Interractable : MonoBehaviour
         if (isNear == true)
         {
             UIManager.Instance.SetNearCursor();
+            nearIndic.SetActive(true);
             isInterractableOn = true;
             return;
         }
         if (isNear == false)
         {
             UIManager.Instance.SetFarCursor();
+            farIndic.SetActive(true);
             isInterractableOn = true;
             return;
         }
@@ -86,6 +97,8 @@ public class Interractable : MonoBehaviour
     private void OnMouseExit()
     {
         UIManager.Instance.ResetCursor();
+        nearIndic.SetActive(false);
+        farIndic.SetActive(false);
         isInterractableOn = false;
     }
 
