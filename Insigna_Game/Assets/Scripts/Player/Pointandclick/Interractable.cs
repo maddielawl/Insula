@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Interractable : MonoBehaviour
 {
+    public PlayerInput playerInputs;
+
     public bool isNear = false;
 
     private GameObject nearInt0;
@@ -39,6 +42,7 @@ public class Interractable : MonoBehaviour
 
     private void Start()
     {
+        
         nearInt0 = transform.GetChild(0).gameObject;
         nearInt0.SetActive(false);
         farInt1 = transform.GetChild(1).gameObject;
@@ -62,7 +66,11 @@ public class Interractable : MonoBehaviour
             UIManager.Instance.SetFarCursor();
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        if (context.started)
         {
             if (security == false)
             {
@@ -73,7 +81,11 @@ public class Interractable : MonoBehaviour
             }
             }
         }
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+    }
+
+    public void OnUse(InputAction.CallbackContext context)
+    {
+            if(context.started)
         {
             if (security == false){
             if(cursorOn == true)
@@ -88,57 +100,13 @@ public class Interractable : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
-    {
-       /* if (security == false)
-        {
-            if (isNear == true)
-            {
-                StartCoroutine(NearInterraction());
-            }
-
-            if (isNear == false)
-            {
-                StartCoroutine(FarInterraction());
-            }
-
-            security = true;
-        } */
-    }
-
-    private void OnMouseOver() 
-    {
-        /* if(security == false)
-        {
-
-        if(isNear == true)
-        {
-            if(Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                StartCoroutine(NearInterraction());
-            }
-        }
-
-        if(isNear == false)
-        {
-            if(Input.GetKeyDown(KeyCode.Mouse1)){
-            StartCoroutine(FarInterraction());
-            }
-        }
-        }
-
-        security = true;
-        */
-
-    }
-
     private void OnMouseEnter()
     {
         if (isNear == true)
         {
             UIManager.Instance.SetNearCursor();
             farNearIndic.SetActive(true);
-            farIndic.SetActive(true);
+            nearIndic.SetActive(true);
             isInterractableOn = true;
             cursorOn = true;
             return;
