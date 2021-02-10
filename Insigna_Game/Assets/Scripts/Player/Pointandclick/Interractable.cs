@@ -16,6 +16,8 @@ public class Interractable : MonoBehaviour
 
     private bool security = false;
     private bool isInterractableOn = false;
+
+    private bool cursorOn = false;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -32,7 +34,6 @@ public class Interractable : MonoBehaviour
             isNear = false;
         }
     }
-
 
     private void Start()
     {
@@ -56,11 +57,36 @@ public class Interractable : MonoBehaviour
         {
             UIManager.Instance.SetFarCursor();
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (security == false)
+            {
+            if(cursorOn == true)
+            {
+                StartCoroutine(FarInterraction());
+                security = true;
+            }
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (security == false){
+            if(cursorOn == true)
+            {
+                if(isNear == true)
+                {
+                    StartCoroutine(NearInterraction());
+                    security = true;
+                }
+            }
+            }
+        }
     }
 
     private void OnMouseDown()
     {
-        if (security == false)
+       /* if (security == false)
         {
             if (isNear == true)
             {
@@ -73,7 +99,33 @@ public class Interractable : MonoBehaviour
             }
 
             security = true;
+        } */
+    }
+
+    private void OnMouseOver() 
+    {
+        /* if(security == false)
+        {
+
+        if(isNear == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                StartCoroutine(NearInterraction());
+            }
         }
+
+        if(isNear == false)
+        {
+            if(Input.GetKeyDown(KeyCode.Mouse1)){
+            StartCoroutine(FarInterraction());
+            }
+        }
+        }
+
+        security = true;
+        */
+
     }
 
     private void OnMouseEnter()
@@ -82,7 +134,9 @@ public class Interractable : MonoBehaviour
         {
             UIManager.Instance.SetNearCursor();
             nearIndic.SetActive(true);
+            farIndic.SetActive(true);
             isInterractableOn = true;
+            cursorOn = true;
             return;
         }
         if (isNear == false)
@@ -90,6 +144,7 @@ public class Interractable : MonoBehaviour
             UIManager.Instance.SetFarCursor();
             farIndic.SetActive(true);
             isInterractableOn = true;
+            cursorOn = true;
             return;
         }
     }
@@ -100,6 +155,7 @@ public class Interractable : MonoBehaviour
         nearIndic.SetActive(false);
         farIndic.SetActive(false);
         isInterractableOn = false;
+        cursorOn = false;
     }
 
     private IEnumerator NearInterraction()
