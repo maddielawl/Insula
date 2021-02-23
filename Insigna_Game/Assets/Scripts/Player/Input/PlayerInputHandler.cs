@@ -25,10 +25,13 @@ public class PlayerInputHandler : MonoBehaviour
     private float jumpInputStartTime;
     private float dashInputStartTime;
 
+    private GameObject helmet;
+
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         cam = Camera.main;
+        helmet = transform.GetChild(1).gameObject;
     }
 
     private void Update()
@@ -46,11 +49,13 @@ public class PlayerInputHandler : MonoBehaviour
             if (GameManager.Instance.isHelmetEquipped == true)
             {
                 GameManager.Instance.isHelmetEquipped = false;
+                helmet.SetActive(false);
             }
 
             if (GameManager.Instance.isHelmetEquipped == false)
             {
                 GameManager.Instance.isHelmetEquipped = true;
+                helmet.SetActive(true);
             }
         }
     }
