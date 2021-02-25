@@ -39,6 +39,8 @@ public class UIManager : MonoBehaviour
     public GameObject objectInSlot2;
     public GameObject objectInSlot3;
 
+    // public GameObject usable;
+
     
     private void Start()
     {

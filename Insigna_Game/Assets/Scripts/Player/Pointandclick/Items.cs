@@ -33,7 +33,6 @@ public class Items : MonoBehaviour
     private bool interractionSecurity = true;
 
     // Store L'object que l'on as besoin et le bool de sécurité pour celui ci
-    private GameObject itemToStore;
     private bool itemSecurity = false;
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -116,17 +115,10 @@ public class Items : MonoBehaviour
         }
     }
 
-public void OnPointerEnter(PointerEventData eventData)
-      {
-        itemToStore = eventData.pointerEnter.gameObject;
-      }
 
       private IEnumerator StoreItem()
     {
-        itemToStore = this.gameObject;
-        Debug.Log("Fils de pute");
         UIManager.Instance.GetObjectInInventory(this.gameObject);
-        Debug.Log("Marche la con de ta race");
         this.gameObject.SetActive(false);
 
         yield return 0;
