@@ -9,12 +9,7 @@ public class PlayerGroundedState : PlayerState
 
     protected bool isTouchingCeiling;
 
-    private bool JumpInput;
-    private bool grabInput;
     private bool isGrounded;
-    private bool isTouchingWall;
-    private bool isTouchingLedge;
-    private bool dashInput;
 
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {

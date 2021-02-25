@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
     public PlayerClimbingIdleState ClimbingIdleState { get; private set; }
+    public PlayerClimbingState ClimbingState { get; private set; }
 
     [SerializeField]
     private PlayerData playerData;
@@ -47,6 +48,8 @@ public class Player : MonoBehaviour
         IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
         ClimbingIdleState = new PlayerClimbingIdleState(this, StateMachine, playerData, "climb idle");
+        ClimbingState = new PlayerClimbingState(this, StateMachine, playerData, "climb");
+
     }
 
     private void Start()
@@ -125,6 +128,16 @@ public class Player : MonoBehaviour
         if(xInput != 0 && xInput != FacingDirection)
         {
             Flip();
+        }
+    }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Ladder" && playerData.takeLadder == true)
+        {
+            playerData.ladderGO = collision.gameObject;
+            playerData.ladderTaken = true;
         }
     }
 

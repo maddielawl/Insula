@@ -34,10 +34,11 @@ public class PlayerIdleState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.MoveState);
             }
-            /*else if (yInput == -1)
+            //prise d'échelle
+            if (yInput == 1 && playerData.ladderTaken == true)
             {
-                stateMachine.ChangeState(player.CrouchIdleState);
-            }*/
+                stateMachine.ChangeState(player.ClimbingIdleState);
+            }
         }       
         
     }

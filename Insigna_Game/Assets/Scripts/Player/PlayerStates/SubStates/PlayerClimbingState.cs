@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerClimbingIdleState : PlayerGroundedState
+public class PlayerClimbingState : PlayerGroundedState
 {
-    public PlayerClimbingIdleState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerClimbingState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -16,9 +16,6 @@ public class PlayerClimbingIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.SetVelocityX(0f);
-        playerData.ladderTaken = false;
-        player.transform.position = new Vector2(playerData.ladderGO.transform.position.x, player.transform.position.y);
     }
 
     public override void Exit()
