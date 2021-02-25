@@ -109,7 +109,6 @@ public class Items : MonoBehaviour
                 {
                     
                     StartCoroutine(StoreItem());
-                    
                     security = true;
                 }
             }
@@ -124,9 +123,8 @@ public void OnPointerEnter(PointerEventData eventData)
 
       private IEnumerator StoreItem()
     {
-        Debug.Log("Store Item Launch");
+        itemToStore = this.gameObject;
         UIManager.Instance.GetObjectInInventory(itemToStore);
-        Debug.Log("Coroutine lancée");
         Destroy(this.gameObject);
 
         yield return 0;
