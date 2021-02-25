@@ -124,8 +124,10 @@ public void OnPointerEnter(PointerEventData eventData)
       private IEnumerator StoreItem()
     {
         itemToStore = this.gameObject;
-        UIManager.Instance.GetObjectInInventory(itemToStore);
-        Destroy(this.gameObject);
+        Debug.Log("Fils de pute");
+        UIManager.Instance.GetObjectInInventory(this.gameObject);
+        Debug.Log("Marche la con de ta race");
+        this.gameObject.SetActive(false);
 
         yield return 0;
     }
