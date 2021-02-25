@@ -24,18 +24,13 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
 
-        /*isGrounded = player.CheckIfGrounded();
-        isTouchingWall = player.CheckIfTouchingWall();
-        isTouchingLedge = player.CheckIfTouchingLedge();*/
-        isTouchingCeiling = player.CheckForCeiling();
+        isGrounded = player.CheckIfGrounded();
     }
 
     public override void Enter()
     {
         base.Enter();
 
-        player.JumpState.ResetAmountOfJumpsLeft();
-        player.DashState.ResetCanDash();
     }
 
     public override void Exit()
@@ -49,11 +44,8 @@ public class PlayerGroundedState : PlayerState
 
         xInput = player.InputHandler.NormInputX;
         yInput = player.InputHandler.NormInputY;
-        JumpInput = player.InputHandler.JumpInput;
-        grabInput = player.InputHandler.GrabInput;
-        dashInput = player.InputHandler.DashInput;
 
-        if (JumpInput && player.JumpState.CanJump())
+        /*if (JumpInput && player.JumpState.CanJump())
         {
             stateMachine.ChangeState(player.JumpState);
         }else if (!isGrounded)
@@ -67,7 +59,7 @@ public class PlayerGroundedState : PlayerState
         else if (dashInput && player.DashState.CheckIfCanDash() && !isTouchingCeiling)
         {
             stateMachine.ChangeState(player.DashState);
-        }
+        }*/
     }
 
     public override void PhysicsUpdate()
