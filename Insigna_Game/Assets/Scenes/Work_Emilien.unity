@@ -683,6 +683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 793640807}
+  - component: {fileID: 793640808}
   m_Layer: 0
   m_Name: Near
   m_TagString: Untagged
@@ -705,6 +706,20 @@ Transform:
   m_Father: {fileID: 1125714552}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793640808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793640806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab4db92d5b88f3489e5b3603b276971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSlotSprite: {fileID: 0}
+  emptySlot: {fileID: 0}
 --- !u!114 &830538609 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2751976627153591757, guid: 30f5672e9d388b74388123991d390e13, type: 3}
@@ -861,7 +876,7 @@ GameObject:
   - component: {fileID: 1125714549}
   - component: {fileID: 1125714553}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Interractable
   m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -880,6 +895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isNear: 0
+  interractionSecurity: 1
 --- !u!61 &1125714550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3732,7 +3748,7 @@ GameObject:
   - component: {fileID: 7228091891059530512}
   - component: {fileID: 7228091891059530496}
   m_Layer: 0
-  m_Name: Spirte
+  m_Name: Key
   m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
