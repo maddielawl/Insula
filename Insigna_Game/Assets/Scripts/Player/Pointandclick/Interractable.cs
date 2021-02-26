@@ -34,7 +34,7 @@ public class Interractable : MonoBehaviour
     private bool cursorOn = false;
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
-    private bool interractionSecurity = true;
+    public bool interractionSecurity = true;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
