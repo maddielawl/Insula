@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         ClimbingState = new PlayerClimbingState(this, StateMachine, playerData, "climb");
 
     }
-
+    
     private void Start()
     {
         Anim = GetComponent<Animator>();
@@ -62,6 +62,9 @@ public class Player : MonoBehaviour
         FacingDirection = 1;
 
         StateMachine.Initialize(IdleState);
+
+        playerData.ladderTaken = false;
+        playerData.takeLadder = true;
     }
 
     private void Update()
@@ -69,6 +72,14 @@ public class Player : MonoBehaviour
         CurrentVelocity = RB.velocity;
         StateMachine.CurrentState.LogicUpdate();
 
+
+        if(playerData.BottomLadderTrigger == true && StateMachine.CurrentState == ClimbingState)
+        {
+            Debug.Log("bruh");
+            StartCoroutine(TimerLadder(0.1f));
+        }
+
+        Debug.Log("take ladder = " +  playerData.takeLadder);
     }
 
     private void FixedUpdate()
@@ -132,14 +143,19 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ladder" && playerData.takeLadder == true)
+        if (collision.tag == "BottomLadderTrigger")
         {
-            playerData.ladderGO = collision.gameObject;
-            playerData.ladderTaken = true;
+            playerData.BottomLadderTrigger = true;
+        }
+        if (collision.tag == "TopLadderTrigger")
+        {
+            playerData.TopLadderTrigger = true;
         }
     }
+
 
     #endregion
 
@@ -167,4 +183,12 @@ public class Player : MonoBehaviour
         playerSprite.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
     #endregion
+
+
+    IEnumerator TimerLadder(float time)
+    {
+        yield return new WaitForSeconds(time);
+        playerData.takeLadder = true;
+    }
+
 }

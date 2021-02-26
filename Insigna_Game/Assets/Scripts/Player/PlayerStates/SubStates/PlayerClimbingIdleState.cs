@@ -17,13 +17,17 @@ public class PlayerClimbingIdleState : PlayerGroundedState
     {
         base.Enter();
         player.SetVelocityX(0f);
-        playerData.ladderTaken = false;
         player.transform.position = new Vector2(playerData.ladderGO.transform.position.x, player.transform.position.y);
+        player.MovementCollider.isTrigger = true;
+        player.RB.gravityScale = 0;
+        playerData.takeLadder = false;
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.MovementCollider.isTrigger = false;
+        player.RB.gravityScale = 1;
     }
 
     public override void LogicUpdate()
@@ -32,10 +36,10 @@ public class PlayerClimbingIdleState : PlayerGroundedState
 
         if (!isExitingState)
         {
-            /*if (yInput == -1)
+            if (yInput == -1 || yInput == 1)
             {
-                stateMachine.ChangeState(player.CrouchIdleState);
-            }*/
+                stateMachine.ChangeState(player.ClimbingState);
+            }
         }
 
     }

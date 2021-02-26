@@ -16,23 +16,37 @@ public class PlayerClimbingState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        player.MovementCollider.isTrigger = true;
+        player.RB.gravityScale = 0;
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.MovementCollider.isTrigger = false;
+        player.RB.gravityScale = 1;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
+        player.SetVelocityY(playerData.movementVelocity * yInput);
+        
         if (!isExitingState)
         {
-            /*if (yInput == -1)
+            if(yInput == 0)
             {
-                stateMachine.ChangeState(player.CrouchIdleState);
-            }*/
+                stateMachine.ChangeState(player.ClimbingIdleState);
+            }
+            if (yInput == -1 && playerData.BottomLadderTrigger == true && playerData.takeLadder == false)
+            {
+                stateMachine.ChangeState(player.IdleState);
+            }
+            if (yInput == 1 && playerData.TopLadderTrigger == true && playerData.takeLadder == false)
+            {
+                stateMachine.ChangeState(player.IdleState);
+            }
         }
 
     }
@@ -41,4 +55,5 @@ public class PlayerClimbingState : PlayerGroundedState
     {
         base.PhysicsUpdate();
     }
+
 }
