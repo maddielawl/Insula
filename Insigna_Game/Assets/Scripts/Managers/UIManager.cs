@@ -35,11 +35,17 @@ public class UIManager : MonoBehaviour
     private bool isSlot2Full = false;
     private bool isSlot3Full = false;
 
+[Header("Objects Stored in slots")]
     public GameObject objectInSlot1;
     public GameObject objectInSlot2;
     public GameObject objectInSlot3;
 
-    // public GameObject usable;
+[Header("Inventory Slots Active State")]
+    public bool isSlot1Active = false;
+    public bool isSlot2Active = false;
+    public bool isSlot3Active = false;
+
+    public bool oneSlotAtTheTimeSecurity = false;
 
     
     private void Start()
@@ -88,6 +94,61 @@ public class UIManager : MonoBehaviour
             isSlot3Full = true;
             return;
         }
+    }
+
+    public void ActivateSlot1()
+    {
+        if(oneSlotAtTheTimeSecurity == false){
+        if(isSlot1Active == false)
+        {
+            oneSlotAtTheTimeSecurity = true;
+            isSlot1Active = true;
+            return;
+        }
+        }
+        if(isSlot1Active == true){
+
+            oneSlotAtTheTimeSecurity = false;
+            isSlot1Active = false;
+            return;
+        }
+        
+    }
+    public void ActivateSlot2()
+    {
+        if(oneSlotAtTheTimeSecurity == false){
+        if(isSlot2Active == false)
+        {
+            oneSlotAtTheTimeSecurity = true;
+            isSlot2Active = true;
+            return;
+        }
+        }
+        if(isSlot2Active == true){
+
+            oneSlotAtTheTimeSecurity = false;
+            isSlot2Active = false;
+            return;
+        }
+        
+    }
+    public void ActivateSlot3()
+    {
+        if(oneSlotAtTheTimeSecurity == false){
+        if(isSlot3Active == false)
+        {
+            oneSlotAtTheTimeSecurity = true;
+            isSlot3Active = true;
+            return;
+        }
+        }
+        if(isSlot3Active == true){
+
+            oneSlotAtTheTimeSecurity = false;
+            isSlot3Active = false;
+            return;
+        }
+        
     }
     
 }
