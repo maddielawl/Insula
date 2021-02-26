@@ -23,7 +23,10 @@ public class Door : MonoBehaviour
             {
                 if(UIManager.Instance.objectInSlot1.name.Contains("Key"))
                 {
-                Destroy(transform.parent.gameObject);
+                    UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
+                    UIManager.Instance.objectInSlot1 = emptySlot;
+                    UIManager.Instance.isSlot1Active = false;
+                     Destroy(transform.parent.gameObject);
                 }
             }
 
@@ -31,7 +34,10 @@ public class Door : MonoBehaviour
             {
                 if(UIManager.Instance.objectInSlot2.name.Contains("Key"))
                 {
-                Destroy(transform.parent.gameObject);
+                    UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
+                    UIManager.Instance.objectInSlot2 = emptySlot;
+                    UIManager.Instance.isSlot2Active = false;
+                    Destroy(transform.parent.gameObject);
                 }
             }
 
@@ -39,7 +45,10 @@ public class Door : MonoBehaviour
             {
                 if(UIManager.Instance.objectInSlot3.name.Contains("Key"))
                 {
-                Destroy(transform.parent.gameObject);
+                    UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
+                    UIManager.Instance.objectInSlot3 = emptySlot;
+                    UIManager.Instance.isSlot3Active = false;
+                    Destroy(transform.parent.gameObject);
                 }
             }
             
