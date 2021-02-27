@@ -33,8 +33,6 @@ public class PlayerState
         isAnimationFinished = false;
         isExitingState = false;
 
-        playerData.BottomLadderTrigger = false;
-        playerData.TopLadderTrigger = false;
     }
 
     public virtual void Exit()
@@ -42,8 +40,6 @@ public class PlayerState
         player.Anim.SetBool(animBoolName, false);
         isExitingState = true;
 
-        playerData.BottomLadderTrigger = false;
-        playerData.TopLadderTrigger = false;
     }
 
     public virtual void LogicUpdate()

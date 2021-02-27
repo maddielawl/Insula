@@ -17,8 +17,6 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Enter();
         player.SetVelocityX(0f);
-        player.MovementCollider.isTrigger = false;
-        player.RB.gravityScale = 1;
     }
 
     public override void Exit()
@@ -37,7 +35,7 @@ public class PlayerIdleState : PlayerGroundedState
                 stateMachine.ChangeState(player.MoveState);
             }
             //prise d'échelle
-            if ((yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadder == true)
+            if ((yInput == 1 || yInput == -1) && playerData.ladderTaken == true)
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
             }

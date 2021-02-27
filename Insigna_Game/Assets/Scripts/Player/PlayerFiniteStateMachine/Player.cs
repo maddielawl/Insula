@@ -64,7 +64,6 @@ public class Player : MonoBehaviour
         StateMachine.Initialize(IdleState);
 
         playerData.ladderTaken = false;
-        playerData.takeLadder = true;
     }
 
     private void Update()
@@ -73,13 +72,9 @@ public class Player : MonoBehaviour
         StateMachine.CurrentState.LogicUpdate();
 
 
-        if(playerData.BottomLadderTrigger == true && StateMachine.CurrentState == ClimbingState)
-        {
-            Debug.Log("bruh");
-            StartCoroutine(TimerLadder(0.1f));
-        }
-
-        Debug.Log("take ladder = " +  playerData.takeLadder);
+        //Debug.Log("bottomtrigger = " + playerData.BottomLadderTrigger);
+        Debug.Log("laddertaken = " + playerData.ladderTaken);
+        //Debug.Log("current state = " + StateMachine.CurrentState);
     }
 
     private void FixedUpdate()
@@ -183,12 +178,5 @@ public class Player : MonoBehaviour
         playerSprite.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
     #endregion
-
-
-    IEnumerator TimerLadder(float time)
-    {
-        yield return new WaitForSeconds(time);
-        playerData.takeLadder = true;
-    }
 
 }

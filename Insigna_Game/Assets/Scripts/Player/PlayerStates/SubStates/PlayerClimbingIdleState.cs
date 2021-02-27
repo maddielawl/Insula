@@ -20,14 +20,11 @@ public class PlayerClimbingIdleState : PlayerGroundedState
         player.transform.position = new Vector2(playerData.ladderGO.transform.position.x, player.transform.position.y);
         player.MovementCollider.isTrigger = true;
         player.RB.gravityScale = 0;
-        playerData.takeLadder = false;
     }
 
     public override void Exit()
     {
         base.Exit();
-        player.MovementCollider.isTrigger = false;
-        player.RB.gravityScale = 1;
     }
 
     public override void LogicUpdate()
@@ -38,6 +35,7 @@ public class PlayerClimbingIdleState : PlayerGroundedState
         {
             if (yInput == -1 || yInput == 1)
             {
+                Debug.Log("climb");
                 stateMachine.ChangeState(player.ClimbingState);
             }
         }

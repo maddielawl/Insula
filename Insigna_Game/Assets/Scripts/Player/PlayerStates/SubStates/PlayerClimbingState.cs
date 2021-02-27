@@ -16,8 +16,6 @@ public class PlayerClimbingState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.MovementCollider.isTrigger = true;
-        player.RB.gravityScale = 0;
     }
 
     public override void Exit()
@@ -39,11 +37,11 @@ public class PlayerClimbingState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
             }
-            if (yInput == -1 && playerData.BottomLadderTrigger == true && playerData.takeLadder == false)
+            if (yInput == -1 && playerData.BottomLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.IdleState);
             }
-            if (yInput == 1 && playerData.TopLadderTrigger == true && playerData.takeLadder == false)
+            if (yInput == 1 && playerData.TopLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.IdleState);
             }

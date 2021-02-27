@@ -13,7 +13,7 @@ public class PlayerData : ScriptableObject
     public LayerMask whatIsGround;
     //échelle
     public GameObject ladderGO;
-    public bool takeLadder = true;
+    //public bool takeLadder = true;
     public bool ladderTaken = false;
     public bool BottomLadderTrigger = false;
     public bool TopLadderTrigger = false;

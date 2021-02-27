@@ -38,7 +38,7 @@ public class PlayerMoveState : PlayerGroundedState
                 stateMachine.ChangeState(player.IdleState);
             }
             //prise d'échelle
-            if (xInput != 0 && (yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadder == true)
+            if (xInput != 0 && (yInput == 1 || yInput == -1) && playerData.ladderTaken == true)
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
             }
