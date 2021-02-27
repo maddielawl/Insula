@@ -35,14 +35,19 @@ public class PlayerClimbingState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
             }
-            /*if (yInput == -1 && playerData.BottomLadderTrigger == true)
+            if (yInput == -1 && playerData.BottomLadderTrigger == true && playerData.takeLadderCooldown == true)
             {
+                playerData.BottomLadderTrigger = false;
                 stateMachine.ChangeState(player.IdleState);
+                player.TakeLadderCooldown();
             }
-            if (yInput == 1 && playerData.TopLadderTrigger == true)
+            if (yInput == 1 && playerData.TopLadderTrigger == true && playerData.takeLadderCooldown == true)
             {
+                playerData.TopLadderTrigger = false;
                 stateMachine.ChangeState(player.IdleState);
-            }*/
+                player.TakeLadderCooldown();
+            }
+
         }
 
     }

@@ -37,10 +37,19 @@ public class PlayerMoveState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.IdleState);
             }
-            //prise d'échelle
-            if (xInput != 0 && (yInput == 1 || yInput == -1) && playerData.ladderTaken == true)
+            //prise d'échelle bas
+            if (xInput != 0 && (yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true 
+                && playerData.BottomLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
+                player.TakeLadderCooldownOnIdleOrMove();
+            }
+            //prise d'échelle haut
+            if (xInput != 0 && (yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true
+                && playerData.TopLadderTrigger == true)
+            {
+                stateMachine.ChangeState(player.ClimbingIdleState);
+                player.TakeLadderCooldownOnIdleOrMove();
             }
         }        
     }

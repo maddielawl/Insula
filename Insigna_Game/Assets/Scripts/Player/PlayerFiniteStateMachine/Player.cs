@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         StateMachine.Initialize(IdleState);
 
         playerData.ladderTaken = false;
+        playerData.takeLadderCooldown = true;
     }
 
     private void Update()
@@ -71,10 +72,6 @@ public class Player : MonoBehaviour
         CurrentVelocity = RB.velocity;
         StateMachine.CurrentState.LogicUpdate();
 
-
-        //Debug.Log("bottomtrigger = " + playerData.BottomLadderTrigger);
-        //Debug.Log("laddertaken = " + playerData.ladderTaken);
-        Debug.Log("current state = " + StateMachine.CurrentState);
     }
 
     private void FixedUpdate()
@@ -136,22 +133,6 @@ public class Player : MonoBehaviour
             Flip();
         }
     }
-
-
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "BottomLadderTrigger")
-        {
-            playerData.BottomLadderTrigger = true;
-        }
-        if (collision.tag == "TopLadderTrigger")
-        {
-            playerData.TopLadderTrigger = true;
-        }
-    }*/
-
-
     #endregion
 
     #region Other Functions
@@ -176,6 +157,48 @@ public class Player : MonoBehaviour
     {
         FacingDirection *= -1;
         playerSprite.transform.Rotate(0.0f, 180.0f, 0.0f);
+    }
+
+    public void TakeLadderCooldown()
+    {
+        StartCoroutine(LadderCooldown(1f));
+    }
+
+    public void TakeLadderCooldownOnIdleOrMove()
+    {
+        StartCoroutine(LadderCooldown(0.01f));
+    }
+
+    IEnumerator LadderCooldown(float time)
+    {
+        playerData.takeLadderCooldown = false;
+        yield return new WaitForSeconds(time);
+        playerData.takeLadderCooldown = true;
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "BottomLadderTrigger")
+        {
+            playerData.BottomLadderTrigger = true;
+        }
+        if (collision.tag == "TopLadderTrigger")
+        {
+            playerData.TopLadderTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "BottomLadderTrigger")
+        {
+            playerData.BottomLadderTrigger = false;
+        }
+        if (collision.tag == "TopLadderTrigger")
+        {
+            playerData.TopLadderTrigger = false;
+        }
     }
     #endregion
 

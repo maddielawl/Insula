@@ -17,6 +17,7 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Enter();
         player.SetVelocityX(0f);
+        player.SetVelocityY(0f);
         player.MovementCollider.isTrigger = false;
         player.RB.gravityScale = 1;
     }
@@ -36,10 +37,19 @@ public class PlayerIdleState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.MoveState);
             }
-            //prise d'échelle
-            if ((yInput == 1 || yInput == -1) && playerData.ladderTaken == true)
+            //prise d'échelle bas
+            if ((yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true 
+                && playerData.BottomLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
+                player.TakeLadderCooldownOnIdleOrMove();
+            }
+            //prise d'échelle haut
+            if ((yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true
+                && playerData.TopLadderTrigger == true)
+            {
+                stateMachine.ChangeState(player.ClimbingIdleState);
+                player.TakeLadderCooldownOnIdleOrMove();
             }
         }       
         
