@@ -17,6 +17,7 @@ public class PlayerClimbingIdleState : PlayerGroundedState
     {
         base.Enter();
         player.SetVelocityX(0f);
+        player.SetVelocityY(0f);
         player.transform.position = new Vector2(playerData.ladderGO.transform.position.x, player.transform.position.y);
         player.MovementCollider.isTrigger = true;
         player.RB.gravityScale = 0;
@@ -33,9 +34,8 @@ public class PlayerClimbingIdleState : PlayerGroundedState
 
         if (!isExitingState)
         {
-            if (yInput == -1 || yInput == 1)
+            if (yInput == -1 || yInput == 1 && playerData.ladderTaken == true)
             {
-                Debug.Log("climb");
                 stateMachine.ChangeState(player.ClimbingState);
             }
         }

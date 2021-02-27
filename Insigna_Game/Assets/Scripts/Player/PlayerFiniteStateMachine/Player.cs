@@ -73,8 +73,8 @@ public class Player : MonoBehaviour
 
 
         //Debug.Log("bottomtrigger = " + playerData.BottomLadderTrigger);
-        Debug.Log("laddertaken = " + playerData.ladderTaken);
-        //Debug.Log("current state = " + StateMachine.CurrentState);
+        //Debug.Log("laddertaken = " + playerData.ladderTaken);
+        Debug.Log("current state = " + StateMachine.CurrentState);
     }
 
     private void FixedUpdate()
@@ -139,7 +139,7 @@ public class Player : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "BottomLadderTrigger")
         {
@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
         {
             playerData.TopLadderTrigger = true;
         }
-    }
+    }*/
 
 
     #endregion

@@ -17,6 +17,8 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Enter();
         player.SetVelocityX(0f);
+        player.MovementCollider.isTrigger = false;
+        player.RB.gravityScale = 1;
     }
 
     public override void Exit()

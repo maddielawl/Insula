@@ -21,8 +21,6 @@ public class PlayerClimbingState : PlayerGroundedState
     public override void Exit()
     {
         base.Exit();
-        player.MovementCollider.isTrigger = false;
-        player.RB.gravityScale = 1;
     }
 
     public override void LogicUpdate()
@@ -37,14 +35,14 @@ public class PlayerClimbingState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
             }
-            if (yInput == -1 && playerData.BottomLadderTrigger == true)
+            /*if (yInput == -1 && playerData.BottomLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.IdleState);
             }
             if (yInput == 1 && playerData.TopLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.IdleState);
-            }
+            }*/
         }
 
     }
