@@ -21,12 +21,15 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
+    [Header("Managers")]
+    public GameManager gameManager;
+
     [Header("Cursors")]
     public Texture2D basicCursor;
     public Texture2D nearCursor;
     public Texture2D farCursor;
 
-[Header("Inventory Buttons")]
+    [Header("Inventory Buttons")]
     public Image inventoryButton1;
     public Image inventoryButton2;
     public Image inventoryButton3;
@@ -35,24 +38,36 @@ public class UIManager : MonoBehaviour
     private bool isSlot2Full = false;
     private bool isSlot3Full = false;
 
-[Header("Objects Stored in slots")]
+    [Header("Objects Stored in slots")]
     public GameObject objectInSlot1;
     public GameObject objectInSlot2;
     public GameObject objectInSlot3;
 
-[Header("Inventory Slots Active State")]
+    [Header("Inventory Slots Active State")]
     public bool isSlot1Active = false;
     public bool isSlot2Active = false;
     public bool isSlot3Active = false;
 
     public bool oneSlotAtTheTimeSecurity = false;
 
-    
+    [Header("UI")]
+    public Slider sanitySlider;
+    public Slider madnessSlider;
+
+
     private void Start()
     {
         Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
     }
-    
+
+    private void Update()
+    {
+        //slider Sanity lié à la value dans le GameManager
+        sanitySlider.value = gameManager.playerSanity;
+        //slider Madness lié à la value dans le GameManager
+        madnessSlider.value = gameManager.playerMadness;
+    }
+
 
     public void ResetCursor()
     {
