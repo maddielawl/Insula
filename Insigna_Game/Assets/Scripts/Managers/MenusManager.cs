@@ -292,7 +292,7 @@ public class MenusManager : MonoBehaviour
         asyncOp.allowSceneActivation = true;
         loadingScreen.SetActive(false);
         ingameMainUI.SetActive(true);
-        // menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
+        menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
         inGame = true;

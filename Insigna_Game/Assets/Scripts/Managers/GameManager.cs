@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy (gameObject);
+        playerInput = new PlayerInput();
     }
     #endregion
 
