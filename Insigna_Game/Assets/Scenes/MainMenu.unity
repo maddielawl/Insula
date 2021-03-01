@@ -179,6 +179,10 @@ PrefabInstance:
       value: ---Managers
       objectReference: {fileID: 0}
     - target: {fileID: 4939770168466613383, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: pillCount
+      value: 
+      objectReference: {fileID: 1565522306}
+    - target: {fileID: 4939770168466613383, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: panicSlider
       value: 
       objectReference: {fileID: 2751976625633158270}
@@ -1372,6 +1376,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1565522306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3091345837972438163, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+  m_PrefabInstance: {fileID: 2751976625633158269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631838427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,6 +1663,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2210459690450558370, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2751976625701561664, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1696,10 +1715,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 2751976625795219100, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2751976625983252043, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 492802060}
+    - target: {fileID: 2751976627200514689, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820807685129157832, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f5672e9d388b74388123991d390e13, type: 3}
 --- !u!114 &2751976625633158270 stripped

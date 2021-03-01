@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class UIManager : MonoBehaviour
     [Header("UI")]
     public Slider sanitySlider;
     public Slider madnessSlider;
+    public TMP_Text pillCount;
 
 
     private void Start()
@@ -66,6 +68,8 @@ public class UIManager : MonoBehaviour
         sanitySlider.value = gameManager.playerSanity;
         //slider Madness lié à la value dans le GameManager
         madnessSlider.value = gameManager.playerMadness;
+        //nombre de pills lié à la value dans le GameManager
+        pillCount.text = gameManager.playerPillsCount.ToString();
     }
 
 
