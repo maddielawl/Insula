@@ -1,5 +1,5 @@
 {
-    "name": "Player",
+    "name": "PlayerInputs",
     "maps": [
         {
             "name": "Gameplay",
@@ -10,14 +10,6 @@
                     "type": "Value",
                     "id": "bb864eda-81a6-43a8-a094-6432faef2307",
                     "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "3acb93e8-08b3-4d5d-a753-42f9dce6191f",
-                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -123,33 +115,11 @@
                 },
                 {
                     "name": "",
-                    "id": "f8143406-40cc-46f6-906e-b16534168bd8",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "68c70da2-77c2-4a92-a90c-1dc08555180f",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "7d82f5f6-05d5-4913-be86-cefbf82b6066",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
-                    "groups": "Keyboard;Controller",
+                    "groups": "Keyboard",
                     "action": "Heal",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -160,7 +130,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Controller",
                     "action": "Heal",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -169,9 +139,9 @@
                     "name": "",
                     "id": "0c5d38cd-a4ce-4d17-bca5-925da5df51ed",
                     "path": "<Keyboard>/c",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "EquipHelmet",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -191,7 +161,7 @@
                     "name": "",
                     "id": "b9136eee-d520-4f36-a45a-3f1313208fad",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Look",
@@ -213,7 +183,7 @@
                     "name": "",
                     "id": "6620f5ae-b727-48a0-b37d-6cd6df4027b3",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Use",

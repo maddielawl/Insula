@@ -27,14 +27,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""3acb93e8-08b3-4d5d-a753-42f9dce6191f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Heal"",
                     ""type"": ""Button"",
                     ""id"": ""b9b4374f-00a0-481f-818c-19b8a2f91549"",
@@ -136,33 +128,11 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f8143406-40cc-46f6-906e-b16534168bd8"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""68c70da2-77c2-4a92-a90c-1dc08555180f"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""7d82f5f6-05d5-4913-be86-cefbf82b6066"",
                     ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;Controller"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Heal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -173,7 +143,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Heal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -182,9 +152,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""0c5d38cd-a4ce-4d17-bca5-925da5df51ed"",
                     ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""EquipHelmet"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -204,7 +174,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""b9136eee-d520-4f36-a45a-3f1313208fad"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Look"",
@@ -226,7 +196,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""6620f5ae-b727-48a0-b37d-6cd6df4027b3"",
                     ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Use"",
@@ -280,7 +250,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Heal = m_Gameplay.FindAction("Heal", throwIfNotFound: true);
         m_Gameplay_EquipHelmet = m_Gameplay.FindAction("EquipHelmet", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
@@ -335,7 +304,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Heal;
     private readonly InputAction m_Gameplay_EquipHelmet;
     private readonly InputAction m_Gameplay_Look;
@@ -345,7 +313,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         private @PlayerInputs m_Wrapper;
         public GameplayActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Heal => m_Wrapper.m_Gameplay_Heal;
         public InputAction @EquipHelmet => m_Wrapper.m_Gameplay_EquipHelmet;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
@@ -362,9 +329,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
-                @Jump.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Heal.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeal;
                 @Heal.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeal;
                 @Heal.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeal;
@@ -384,9 +348,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @Jump.started += instance.OnJump;
-                @Jump.performed += instance.OnJump;
-                @Jump.canceled += instance.OnJump;
                 @Heal.started += instance.OnHeal;
                 @Heal.performed += instance.OnHeal;
                 @Heal.canceled += instance.OnHeal;
@@ -424,7 +385,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
         void OnHeal(InputAction.CallbackContext context);
         void OnEquipHelmet(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);

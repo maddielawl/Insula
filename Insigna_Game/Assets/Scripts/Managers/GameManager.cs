@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     #endregion
 
     [Header("Player Stats")]
-    public int playerSanity;
     public int playerMadness;
+    public int playerSanity;
     public int playerPillsCount;
     public int healAmmount = 30 ;
     public PlayerInput playerInput;
@@ -52,19 +52,19 @@ public class GameManager : MonoBehaviour
         {
             if (isHelmetEquipped == true)
             {
-                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
-                playerMadness++;
-                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
+                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                playerSanity++;
+                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
             }
 
             if (isHelmetEquipped == false)
             {
-                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
-                playerMadness = playerMadness + 3;
-                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                playerSanity = playerSanity + 7;
+                playerSanity = playerSanity + 3;
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
+                playerMadness = playerMadness + 7;
+                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
 
             }
             yield return new WaitForSeconds(0.5f);
@@ -84,9 +84,9 @@ public class GameManager : MonoBehaviour
             if (isHelmetEquipped == false)
             {
                 
-                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                playerSanity = playerSanity - 3;
-                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
+                playerMadness = playerMadness - 3;
+                playerMadness = Mathf.Clamp(playerMadness, 0, 100);
 
             }
             yield return new WaitForSeconds(0.5f);
@@ -108,9 +108,9 @@ public class GameManager : MonoBehaviour
 
     public void GetHPBack()
     {
-        playerMadness = Mathf.Clamp(playerMadness, 0, 100);
-        playerMadness = playerMadness - healAmmount;
-        playerMadness = Mathf.Clamp(playerMadness, 0, 100);
+        playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+        playerSanity = playerSanity - healAmmount;
+        playerSanity = Mathf.Clamp(playerSanity, 0, 100);
         playerPillsCount--;
     }
     

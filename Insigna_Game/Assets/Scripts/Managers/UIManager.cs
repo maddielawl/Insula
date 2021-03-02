@@ -64,10 +64,10 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        //slider Sanity lié à la value dans le GameManager
-        sanitySlider.value = gameManager.playerSanity;
         //slider Madness lié à la value dans le GameManager
         madnessSlider.value = gameManager.playerMadness;
+        //slider Sanity lié à la value dans le GameManager
+        sanitySlider.value = gameManager.playerSanity;
         //nombre de pills lié à la value dans le GameManager
         pillCount.text = gameManager.playerPillsCount.ToString();
     }

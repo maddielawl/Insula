@@ -50,7 +50,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void TakePills(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance.canEquipHelmet == false && GameManager.Instance.isScared == false && GameManager.Instance.playerPillsCount != 0)
+        if (GameManager.Instance.isHelmetEquipped == false && GameManager.Instance.isScared == false && GameManager.Instance.playerPillsCount != 0)
         {
             GameManager.Instance.GetHPBack();
         }
