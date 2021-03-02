@@ -22,7 +22,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         cam = Camera.main;
-        helmet = transform.GetChild(1).gameObject;
+        helmet = transform.GetChild(2).gameObject;
+        helmet.SetActive(false);
     }
 
     private void Update()
@@ -38,12 +39,14 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 GameManager.Instance.isHelmetEquipped = false;
                 helmet.SetActive(false);
+                return;
             }
 
             if (GameManager.Instance.isHelmetEquipped == false)
             {
                 GameManager.Instance.isHelmetEquipped = true;
                 helmet.SetActive(true);
+                return;
             }
         }
     }
@@ -53,6 +56,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (GameManager.Instance.isHelmetEquipped == false && GameManager.Instance.isScared == false && GameManager.Instance.playerPillsCount != 0)
         {
             GameManager.Instance.GetHPBack();
+            return;
         }
     }
 
