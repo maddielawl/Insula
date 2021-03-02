@@ -10,6 +10,7 @@ public class InsanityZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.Instance.isScared = true;
+            FindObjectOfType<AudioManager>().Play("InsideMadness");
             StartCoroutine(GameManager.Instance.InsideMadnessZone());
             StopCoroutine(GameManager.Instance.SanityDecrement());
         }
@@ -20,6 +21,7 @@ public class InsanityZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.Instance.isScared = false;
+            FindObjectOfType<AudioManager>().Stop("InsideMadness");
             StopCoroutine(GameManager.Instance.InsideMadnessZone());
             StartCoroutine(GameManager.Instance.SanityDecrement());
         }

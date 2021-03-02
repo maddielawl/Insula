@@ -102,7 +102,8 @@ public class HealthPack : MonoBehaviour
                 if(isNear == true)
                 {
                     StartCoroutine(AddPackInInventory());
-                    security = true;
+                        FindObjectOfType<AudioManager>().Play("TakeObject");
+                        security = true;
                 }
             }
             }

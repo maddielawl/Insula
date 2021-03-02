@@ -26,7 +26,8 @@ public class Door : MonoBehaviour
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot1 = emptySlot;
                     UIManager.Instance.isSlot1Active = false;
-                     Destroy(transform.parent.gameObject);
+                    FindObjectOfType<AudioManager>().Play("UseKey");
+                    Destroy(transform.parent.gameObject);
                 }
             }
 
@@ -37,6 +38,7 @@ public class Door : MonoBehaviour
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot2 = emptySlot;
                     UIManager.Instance.isSlot2Active = false;
+                    FindObjectOfType<AudioManager>().Play("UseKey");
                     Destroy(transform.parent.gameObject);
                 }
             }
@@ -48,6 +50,7 @@ public class Door : MonoBehaviour
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot3 = emptySlot;
                     UIManager.Instance.isSlot3Active = false;
+                    FindObjectOfType<AudioManager>().Play("UseKey");
                     Destroy(transform.parent.gameObject);
                 }
             }

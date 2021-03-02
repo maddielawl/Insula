@@ -108,7 +108,8 @@ public class Items : MonoBehaviour
                 {
                     
                     StartCoroutine(StoreItem());
-                    security = true;
+                        FindObjectOfType<AudioManager>().Play("TakeObject");
+                        security = true;
                 }
             }
             }

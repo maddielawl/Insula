@@ -122,13 +122,15 @@ public class UIManager : MonoBehaviour
         {
             oneSlotAtTheTimeSecurity = true;
             isSlot1Active = true;
-            return;
+                FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                return;
         }
         }
         if(isSlot1Active == true){
 
             oneSlotAtTheTimeSecurity = false;
             isSlot1Active = false;
+            FindObjectOfType<AudioManager>().Play("OnClickInventory");
             return;
         }
         
@@ -140,13 +142,15 @@ public class UIManager : MonoBehaviour
         {
             oneSlotAtTheTimeSecurity = true;
             isSlot2Active = true;
-            return;
+                FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                return;
         }
         }
         if(isSlot2Active == true){
 
             oneSlotAtTheTimeSecurity = false;
             isSlot2Active = false;
+            FindObjectOfType<AudioManager>().Play("OnClickInventory");
             return;
         }
         
@@ -158,13 +162,15 @@ public class UIManager : MonoBehaviour
         {
             oneSlotAtTheTimeSecurity = true;
             isSlot3Active = true;
-            return;
+                FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                return;
         }
         }
         if(isSlot3Active == true){
 
             oneSlotAtTheTimeSecurity = false;
             isSlot3Active = false;
+            FindObjectOfType<AudioManager>().Play("OnClickInventory");
             return;
         }
         

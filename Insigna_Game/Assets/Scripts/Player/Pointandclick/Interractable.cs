@@ -107,7 +107,8 @@ public class Interractable : MonoBehaviour
                 if(isNear == true)
                 {
                     StartCoroutine(NearInterraction());
-                    security = true;
+                        FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                        security = true;
                 }
             }
             }

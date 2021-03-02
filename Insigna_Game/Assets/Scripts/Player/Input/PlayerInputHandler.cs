@@ -39,6 +39,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 GameManager.Instance.isHelmetEquipped = false;
                 helmet.SetActive(false);
+                FindObjectOfType<AudioManager>().Play("HelmetOff");
                 return;
             }
 
@@ -46,6 +47,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 GameManager.Instance.isHelmetEquipped = true;
                 helmet.SetActive(true);
+                FindObjectOfType<AudioManager>().Play("HelmetOn");
                 return;
             }
         }
@@ -56,6 +58,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (GameManager.Instance.isHelmetEquipped == false && GameManager.Instance.isScared == false && GameManager.Instance.playerPillsCount != 0)
         {
             GameManager.Instance.GetHPBack();
+            FindObjectOfType<AudioManager>().Play("Pills");
             return;
         }
     }
