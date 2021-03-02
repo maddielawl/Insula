@@ -11,13 +11,19 @@ public class ZoomCam : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        CameraManager.Instance.setCameraPrioHigh(newCam);
-        CameraManager.Instance.setCameraPrioLow(oldCam);
+        if (other.tag == "Player")
+        {
+            CameraManager.Instance.setCameraPrioHigh(newCam);
+            CameraManager.Instance.setCameraPrioLow(oldCam);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        CameraManager.Instance.setCameraPrioHigh(oldCam);
-        CameraManager.Instance.setCameraPrioLow(newCam);
+        if (other.tag == "Player")
+        {
+            CameraManager.Instance.setCameraPrioHigh(oldCam);
+            CameraManager.Instance.setCameraPrioLow(newCam);
+        }
     }
 }

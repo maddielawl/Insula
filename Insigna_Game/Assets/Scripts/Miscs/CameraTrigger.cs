@@ -11,7 +11,10 @@ public class CameraTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        CameraManager.Instance.setCameraPrioHigh(newCam);
-        CameraManager.Instance.setCameraPrioLow(oldCam);
+        if(other.tag == "Player")
+        {
+            CameraManager.Instance.setCameraPrioHigh(newCam);
+            CameraManager.Instance.setCameraPrioLow(oldCam);
+        }
     }
 }
