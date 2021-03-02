@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
     [Header("Status Check")] 
     public bool isScared;
 
+    [Space(5)]
+    [Header("MadnessZone")]
+    public GameObject madnessZone;
+
 
     #region Madness Functions
 
@@ -45,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine("SanityDecrement");
     }
+
 
     public IEnumerator InsideMadnessZone()
     {
@@ -61,9 +66,17 @@ public class GameManager : MonoBehaviour
             {
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerSanity = playerSanity + 3;
+                if(playerSanity >= 100)
+                {
+                    Destroy(GameObject.FindGameObjectWithTag("Player"));
+                }
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
                 playerMadness = playerMadness + 7;
+                if (playerMadness >= 80)
+                {
+                    madnessZone.SetActive(true);
+                }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
 
             }
@@ -86,6 +99,10 @@ public class GameManager : MonoBehaviour
                 
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
                 playerMadness = playerMadness - 3;
+                if(playerMadness <= 50)
+                {
+                    madnessZone.SetActive(false);
+                }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
 
             }
