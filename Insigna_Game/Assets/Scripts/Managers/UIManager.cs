@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
     public Texture2D basicCursor;
     public Texture2D nearCursor;
     public Texture2D farCursor;
+    public Texture2D interractionCursor;
 
     [Header("Inventory Buttons")]
     public Image inventoryButton1;
@@ -43,6 +44,11 @@ public class UIManager : MonoBehaviour
     public GameObject objectInSlot1;
     public GameObject objectInSlot2;
     public GameObject objectInSlot3;
+
+    [Header("IsEquippedIndicator")]
+    public GameObject object1Equipped;
+    public GameObject object2Equipped;
+    public GameObject object3Equipped;
 
     [Header("Inventory Slots Active State")]
     public bool isSlot1Active = false;
@@ -87,6 +93,10 @@ public class UIManager : MonoBehaviour
     {
         Cursor.SetCursor(farCursor, Vector2.zero, CursorMode.Auto);
     }
+    public void SetInterractionCursor()
+    {
+        Cursor.SetCursor(interractionCursor, Vector2.zero, CursorMode.Auto);
+    }
 
     public void GetObjectInInventory(GameObject usable)
     {
@@ -123,6 +133,7 @@ public class UIManager : MonoBehaviour
             oneSlotAtTheTimeSecurity = true;
             isSlot1Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                object1Equipped.SetActive(true);
                 return;
         }
         }
@@ -131,6 +142,7 @@ public class UIManager : MonoBehaviour
             oneSlotAtTheTimeSecurity = false;
             isSlot1Active = false;
             FindObjectOfType<AudioManager>().Play("OnClickInventory");
+            object1Equipped.SetActive(false);
             return;
         }
         
@@ -143,6 +155,7 @@ public class UIManager : MonoBehaviour
             oneSlotAtTheTimeSecurity = true;
             isSlot2Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                object2Equipped.SetActive(true);
                 return;
         }
         }
@@ -151,6 +164,7 @@ public class UIManager : MonoBehaviour
             oneSlotAtTheTimeSecurity = false;
             isSlot2Active = false;
             FindObjectOfType<AudioManager>().Play("OnClickInventory");
+            object2Equipped.SetActive(false);
             return;
         }
         
@@ -163,6 +177,7 @@ public class UIManager : MonoBehaviour
             oneSlotAtTheTimeSecurity = true;
             isSlot3Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                object3Equipped.SetActive(true);
                 return;
         }
         }
@@ -171,6 +186,7 @@ public class UIManager : MonoBehaviour
             oneSlotAtTheTimeSecurity = false;
             isSlot3Active = false;
             FindObjectOfType<AudioManager>().Play("OnClickInventory");
+            object3Equipped.SetActive(false);
             return;
         }
         
