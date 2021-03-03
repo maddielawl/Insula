@@ -18,6 +18,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     private GameObject helmet;
 
+    public GameObject vfx;
+
+
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -59,6 +62,9 @@ public class PlayerInputHandler : MonoBehaviour
         {
             GameManager.Instance.GetHPBack();
             FindObjectOfType<AudioManager>().Play("Pills");
+            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+            currentVfx.transform.parent = null;
+            Destroy(currentVfx, 3f);
             return;
         }
     }

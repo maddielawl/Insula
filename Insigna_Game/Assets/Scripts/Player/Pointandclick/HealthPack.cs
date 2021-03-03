@@ -32,7 +32,10 @@ public class HealthPack : MonoBehaviour
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     private bool interractionSecurity = true;
-    
+
+    public GameObject vfx;
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("RangeNear"))
@@ -103,6 +106,9 @@ public class HealthPack : MonoBehaviour
                 {
                     StartCoroutine(AddPackInInventory());
                         FindObjectOfType<AudioManager>().Play("TakeObject");
+                        GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                        currentVfx.transform.parent = null;
+                        Destroy(currentVfx, 3f);
                         security = true;
                 }
             }

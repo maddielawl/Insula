@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     public Image baseSlotSprite;
     public GameObject emptySlot;
 
+
     private Interractable parent;
 
     void Start()

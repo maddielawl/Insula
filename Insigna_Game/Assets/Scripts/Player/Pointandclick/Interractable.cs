@@ -35,7 +35,10 @@ public class Interractable : MonoBehaviour
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
-    
+
+    public GameObject vfx;
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("RangeNear"))
@@ -108,6 +111,9 @@ public class Interractable : MonoBehaviour
                 {
                     StartCoroutine(NearInterraction());
                         FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                        GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                        currentVfx.transform.parent = null;
+                        Destroy(currentVfx, 3f);
                         security = true;
                 }
             }

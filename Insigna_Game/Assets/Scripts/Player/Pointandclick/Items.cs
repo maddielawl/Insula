@@ -34,6 +34,9 @@ public class Items : MonoBehaviour
 
     // Store L'object que l'on as besoin et le bool de sécurité pour celui ci
     private bool itemSecurity = false;
+
+    public GameObject vfx;
+
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -109,6 +112,9 @@ public class Items : MonoBehaviour
                     
                     StartCoroutine(StoreItem());
                         FindObjectOfType<AudioManager>().Play("TakeObject");
+                        GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                        currentVfx.transform.parent = null;
+                        Destroy(currentVfx, 3f);
                         security = true;
                 }
             }
