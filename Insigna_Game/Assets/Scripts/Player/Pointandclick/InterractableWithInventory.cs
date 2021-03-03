@@ -134,27 +134,19 @@ public class InterractableWithInventory : MonoBehaviour
 
             UIManager.Instance.SetNearCursor();
             farNearIndic.SetActive(true);
-            if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith))
+            if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot1Active == true)
             {
                 nearCanIndic.SetActive(true);
             }
-            if(!UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith))
-            {
-                nearIndic.SetActive(true);
-            }
-            if (UIManager.Instance.objectInSlot2.name.Contains(objectToInterractWith))
+            if (UIManager.Instance.objectInSlot2.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot2Active == true)
             {
                 nearCanIndic.SetActive(true);
             }
-            if (!UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith))
-            {
-                nearIndic.SetActive(true);
-            }
-            if (UIManager.Instance.objectInSlot3.name.Contains(objectToInterractWith))
+            if (UIManager.Instance.objectInSlot3.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot3Active == true)
             {
                 nearCanIndic.SetActive(true);
             }
-            if (!UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith))
+            if (UIManager.Instance.isSlot3Active == false && UIManager.Instance.isSlot2Active == false && UIManager.Instance.isSlot1Active == false)
             {
                 nearIndic.SetActive(true);
             }
