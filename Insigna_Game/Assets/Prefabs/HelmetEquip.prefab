@@ -597,7 +597,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 41.6, y: 45}
+    oldSize: {x: 2.7733333, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -620,6 +620,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  farPhrase: "Cette t\xE9l\xE9 as l'air bizzare."
+  nearPhrase: "La t\xE9l\xE9 est vide."
 --- !u!61 &7228091890522457340
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -637,7 +639,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 41.6, y: 45}
+    oldSize: {x: 2.7733333, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

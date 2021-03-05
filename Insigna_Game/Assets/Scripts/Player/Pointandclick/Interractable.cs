@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class Interractable : MonoBehaviour
 {
@@ -38,6 +39,12 @@ public class Interractable : MonoBehaviour
 
     public GameObject vfx;
 
+    [Header("Phrase a dire")]
+    public string farPhrase;
+    public string nearPhrase;
+
+    private TextMeshProUGUI observationText;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -62,6 +69,7 @@ public class Interractable : MonoBehaviour
         nearInt0 = transform.GetChild(0).gameObject;
         nearInt0.SetActive(false);
         farInt1 = transform.GetChild(1).gameObject;
+        observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
         nearIndic = transform.GetChild(2).gameObject;
         nearIndic.SetActive(false);
@@ -93,8 +101,18 @@ public class Interractable : MonoBehaviour
             {
             if(cursorOn == true)
             {
-                StartCoroutine(FarInterraction());
-                security = true;
+                    if (isNear == false)
+                    {
+                        StartCoroutine(FarInterraction());
+                        security = true;
+                        return;
+                    }
+                    if(isNear == true)
+                    {
+                        StartCoroutine(FarNearInterraction());
+                        security = true;
+                        return;
+                    }
             }
             }
         }
@@ -166,12 +184,26 @@ public class Interractable : MonoBehaviour
     private IEnumerator FarInterraction()
     {
         farInt1.SetActive(true);
+        observationText.text = farPhrase;
 
         yield return new WaitForSeconds(5f);
         
         farInt1.SetActive(false);
         security = false;
         
+        yield return 0;
+
+    }
+    private IEnumerator FarNearInterraction()
+    {
+        farInt1.SetActive(true);
+        observationText.text = nearPhrase;
+
+        yield return new WaitForSeconds(5f);
+
+        farInt1.SetActive(false);
+        security = false;
+
         yield return 0;
 
     }

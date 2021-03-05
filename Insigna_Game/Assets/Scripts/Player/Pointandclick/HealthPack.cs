@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class HealthPack : MonoBehaviour
 {
@@ -35,6 +36,12 @@ public class HealthPack : MonoBehaviour
 
     public GameObject vfx;
 
+    [Header("Phrase a dire")]
+    public string farPhrase;
+    public string nearPhrase;
+
+    private TextMeshProUGUI observationText;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -57,6 +64,7 @@ public class HealthPack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerInputs = player.GetComponent<PlayerInput>();
         farInt0 = transform.GetChild(0).gameObject;
+        observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
         nearIndic1 = transform.GetChild(1).gameObject;
         nearIndic1.SetActive(false);
@@ -88,9 +96,19 @@ public class HealthPack : MonoBehaviour
             {
             if(cursorOn == true)
             {
-                StartCoroutine(FarInterraction());
-                security = true;
-            }
+                    if (isNear == false)
+                    {
+                        StartCoroutine(FarInterraction());
+                        security = true;
+                        return;
+                    }
+                    if (isNear == true)
+                    {
+                        StartCoroutine(FarNearInterraction());
+                        security = true;
+                        return;
+                    }
+                }
             }
         }
     }
@@ -158,12 +176,27 @@ public class HealthPack : MonoBehaviour
     private IEnumerator FarInterraction()
     {
         farInt0.SetActive(true);
+        observationText.text = farPhrase;
 
         yield return new WaitForSeconds(5f);
         
         farInt0.SetActive(false);
         security = false;
         
+        yield return 0;
+
+    }
+    private IEnumerator FarNearInterraction()
+    {
+        farInt0.SetActive(true);
+        observationText.text = nearPhrase;
+
+        yield return new WaitForSeconds(5f);
+
+        farInt0.SetActive(false);
+        security = false;
+
+        StopCoroutine(FarNearInterraction());
         yield return 0;
 
     }

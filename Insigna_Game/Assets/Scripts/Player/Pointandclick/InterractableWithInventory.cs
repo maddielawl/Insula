@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class InterractableWithInventory : MonoBehaviour
 {
@@ -42,6 +43,12 @@ public class InterractableWithInventory : MonoBehaviour
 
     public string objectToInterractWith;
 
+    [Header("Phrase a dire")]
+    public string farPhrase;
+    public string nearPhrase;
+
+    private TextMeshProUGUI observationText;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -66,6 +73,7 @@ public class InterractableWithInventory : MonoBehaviour
         nearInt0 = transform.GetChild(0).gameObject;
         nearInt0.SetActive(false);
         farInt1 = transform.GetChild(1).gameObject;
+        observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
         nearIndic = transform.GetChild(2).gameObject;
         nearIndic.SetActive(false);
@@ -99,9 +107,19 @@ public class InterractableWithInventory : MonoBehaviour
             {
             if(cursorOn == true)
             {
-                StartCoroutine(FarInterraction());
-                security = true;
-            }
+                    if (isNear == false)
+                    {
+                        StartCoroutine(FarInterraction());
+                        security = true;
+                        return;
+                    }
+                    if (isNear == true)
+                    {
+                        StartCoroutine(FarNearInterraction());
+                        security = true;
+                        return;
+                    }
+                }
             }
         }
     }
@@ -117,9 +135,9 @@ public class InterractableWithInventory : MonoBehaviour
                 {
                     StartCoroutine(NearInterraction());
                         FindObjectOfType<AudioManager>().Play("OnClickInventory");
-                        GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                        currentVfx.transform.parent = null;
-                        Destroy(currentVfx, 3f);
+                        // GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                        // currentVfx.transform.parent = null;
+                        // Destroy(currentVfx, 3f);
                         security = true;
                 }
             }
@@ -189,12 +207,26 @@ public class InterractableWithInventory : MonoBehaviour
     private IEnumerator FarInterraction()
     {
         farInt1.SetActive(true);
+        observationText.text = farPhrase;
 
         yield return new WaitForSeconds(5f);
         
         farInt1.SetActive(false);
         security = false;
         
+        yield return 0;
+
+    }
+    private IEnumerator FarNearInterraction()
+    {
+        farInt1.SetActive(true);
+        observationText.text = nearPhrase;
+
+        yield return new WaitForSeconds(5f);
+
+        farInt1.SetActive(false);
+        security = false;
+
         yield return 0;
 
     }
