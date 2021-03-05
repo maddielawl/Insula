@@ -61,6 +61,8 @@ public class UIManager : MonoBehaviour
     public Slider sanitySlider;
     public Slider madnessSlider;
     public TMP_Text pillCount;
+    public GameObject helmetOffIndicator;
+    public GameObject helmetOnIndicator;
 
 
     private void Start()
@@ -190,6 +192,21 @@ public class UIManager : MonoBehaviour
             return;
         }
         
+    }
+
+    public void GotHelmet()
+    {
+        helmetOffIndicator.SetActive(true);
+    }
+    public void HelmetIsOn()
+    {
+        helmetOffIndicator.SetActive(false);
+        helmetOnIndicator.SetActive(true);
+    }
+    public void HelmetIsOff()
+    {
+        helmetOffIndicator.SetActive(true);
+        helmetOnIndicator.SetActive(false);
     }
     
 }

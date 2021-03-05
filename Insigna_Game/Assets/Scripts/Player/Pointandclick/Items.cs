@@ -51,6 +51,14 @@ public class Items : MonoBehaviour
         {
             isNear = true;
         }
+        if (cursorOn == true)
+        {
+            UIManager.Instance.SetNearCursor();
+            farNearIndic3.SetActive(true);
+            nearIndic1.SetActive(true);
+            farIndic2.SetActive(false);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -58,6 +66,13 @@ public class Items : MonoBehaviour
         if (other.CompareTag("RangeNear"))
         {
             isNear = false;
+        }
+        if (cursorOn == true)
+        {
+            UIManager.Instance.SetFarCursor();
+            farIndic2.SetActive(true);
+            nearIndic1.SetActive(false);
+            farNearIndic3.SetActive(false);
         }
     }
 

@@ -56,6 +56,13 @@ public class InterractableWithInventory : MonoBehaviour
         {
             isNear = true;
         }
+        if (cursorOn == true)
+        {
+            UIManager.Instance.SetNearCursor();
+            farNearIndic.SetActive(true);
+            nearIndic.SetActive(true);
+            farIndic.SetActive(false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -63,6 +70,13 @@ public class InterractableWithInventory : MonoBehaviour
         if (other.CompareTag("RangeNear"))
         {
             isNear = false;
+        }
+        if (cursorOn == true)
+        {
+            UIManager.Instance.SetFarCursor();
+            farIndic.SetActive(true);
+            nearIndic.SetActive(false);
+            farNearIndic.SetActive(false);
         }
     }
 

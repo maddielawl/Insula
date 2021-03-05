@@ -42,6 +42,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 GameManager.Instance.isHelmetEquipped = false;
                 helmet.SetActive(false);
+                UIManager.Instance.HelmetIsOff();
                 FindObjectOfType<AudioManager>().Play("HelmetOff");
                 return;
             }
@@ -50,6 +51,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 GameManager.Instance.isHelmetEquipped = true;
                 helmet.SetActive(true);
+                UIManager.Instance.HelmetIsOn();
                 FindObjectOfType<AudioManager>().Play("HelmetOn");
                 return;
             }
