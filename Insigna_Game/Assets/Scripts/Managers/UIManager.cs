@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
     public bool oneSlotAtTheTimeSecurity = false;
 
     [Header("UI")]
-    public Slider sanitySlider;
+    public GameObject[] sanityBars;
     public Slider madnessSlider;
     public TMP_Text pillCount;
     public GameObject helmetOffIndicator;
@@ -68,6 +68,10 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
+        foreach (GameObject sanityBars in sanityBars)
+        {
+            sanityBars.SetActive(false);
+        }
     }
 
     private void Update()
@@ -75,7 +79,95 @@ public class UIManager : MonoBehaviour
         //slider Madness lié à la value dans le GameManager
         madnessSlider.value = gameManager.playerMadness;
         //slider Sanity lié à la value dans le GameManager
-        sanitySlider.value = gameManager.playerSanity;
+        #region Sanity healthbar
+        if (gameManager.playerSanity >= 100)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(true);
+            }
+        }
+        if (gameManager.playerSanity < 100 && gameManager.playerSanity > 86.8)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(true);
+            }
+            sanityBars[7].SetActive(false);
+        }
+        if (gameManager.playerSanity <= 86.8 && gameManager.playerSanity > 74.4)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(true);
+            }
+            sanityBars[7].SetActive(false);
+        }
+        if (gameManager.playerSanity <= 74.4 && gameManager.playerSanity > 62)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(true);
+            }
+            sanityBars[7].SetActive(false);
+            sanityBars[6].SetActive(false);
+        }
+        if (gameManager.playerSanity <= 62 && gameManager.playerSanity > 49.6)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(true);
+            }
+            sanityBars[7].SetActive(false);
+            sanityBars[6].SetActive(false);
+            sanityBars[5].SetActive(false);
+        }
+        if (gameManager.playerSanity <= 49.6 && gameManager.playerSanity > 37.2)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(false);
+            }
+            sanityBars[0].SetActive(true);
+            sanityBars[1].SetActive(true);
+            sanityBars[2].SetActive(true);
+            sanityBars[3].SetActive(true);
+        }
+        if (gameManager.playerSanity <= 37.2 && gameManager.playerSanity > 24.8)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(false);
+            }
+            sanityBars[0].SetActive(true);
+            sanityBars[1].SetActive(true);
+            sanityBars[2].SetActive(true);
+        }
+        if (gameManager.playerSanity <= 24.8 && gameManager.playerSanity > 12.4)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(false);
+            }
+            sanityBars[0].SetActive(true);
+            sanityBars[1].SetActive(true);
+        }
+        if (gameManager.playerSanity <= 12.4 && gameManager.playerSanity > 0)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(false);
+            }
+            sanityBars[0].SetActive(true);
+        }
+        if (gameManager.playerSanity <= 0)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(false);
+            }
+        }
+        #endregion
         //nombre de pills lié à la value dans le GameManager
         pillCount.text = gameManager.playerPillsCount.ToString();
     }
