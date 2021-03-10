@@ -283,6 +283,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6757340273188462659, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
+      propertyPath: sanityDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757340273188462659, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
       propertyPath: insanityShake
       value: 
       objectReference: {fileID: 619598068}
@@ -446,7 +450,7 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1969003413}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &562991908
 SpriteRenderer:
@@ -618,6 +622,10 @@ PrefabInstance:
     - target: {fileID: 6757340273188462658, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757340273188462659, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
+      propertyPath: sanityDamage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6757340273188462659, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
       propertyPath: insanityShake
@@ -1161,6 +1169,10 @@ PrefabInstance:
     - target: {fileID: 6757340273188462658, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757340273188462659, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
+      propertyPath: sanityDamage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6757340273188462659, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
       propertyPath: insanityShake

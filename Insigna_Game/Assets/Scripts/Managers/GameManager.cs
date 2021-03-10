@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public IEnumerator InsideMadnessZone()
+    public IEnumerator InsideMadnessZone(int sanityDmg)
     {
         if (isScared == true)
         {
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             if (isHelmetEquipped == false)
             {
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                playerSanity = playerSanity + 3;
+                playerSanity = playerSanity + sanityDmg;
                 if(playerSanity >= 100)
                 {
                     Destroy(GameObject.FindGameObjectWithTag("Player"));
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             if (isScared == true)
             {
-                StartCoroutine("InsideMadnessZone");
+                StartCoroutine(InsideMadnessZone(sanityDmg));
             }
         }
 

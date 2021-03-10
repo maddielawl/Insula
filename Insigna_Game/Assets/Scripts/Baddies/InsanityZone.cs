@@ -6,6 +6,7 @@ using UnityEngine;
 public class InsanityZone : MonoBehaviour
 {
     public GameObject insanityShake;
+    public int sanityDamage = 3;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,7 +15,7 @@ public class InsanityZone : MonoBehaviour
             GameManager.Instance.isScared = true;
             insanityShake.SetActive(true);
             FindObjectOfType<AudioManager>().Play("InsideMadness");
-            StartCoroutine(GameManager.Instance.InsideMadnessZone());
+            StartCoroutine(GameManager.Instance.InsideMadnessZone(sanityDamage));
             StopCoroutine(GameManager.Instance.SanityDecrement());
         }
     }
@@ -26,7 +27,7 @@ public class InsanityZone : MonoBehaviour
             GameManager.Instance.isScared = false;
             insanityShake.SetActive(false);
             FindObjectOfType<AudioManager>().Stop("InsideMadness");
-            StopCoroutine(GameManager.Instance.InsideMadnessZone());
+            StopCoroutine(GameManager.Instance.InsideMadnessZone(sanityDamage));
             StartCoroutine(GameManager.Instance.SanityDecrement());
         }
     }
