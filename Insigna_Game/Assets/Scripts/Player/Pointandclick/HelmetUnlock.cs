@@ -17,12 +17,6 @@ public class HelmetUnlock : MonoBehaviour
     public bool isNear = false;
     private GameObject farInt0;
 
-    // Les interractions si on est proche ou loin etc, elles sont déclarées dans un ordre précis
-    private GameObject nearIndic1;
-
-    private GameObject farIndic2;
-
-    private GameObject farNearIndic3;
 
     // Bool si l'intéraction est possible et une sécurité pour ne pas afficher deux fois l'interraction.
     private bool security = false;
@@ -52,9 +46,6 @@ public class HelmetUnlock : MonoBehaviour
         if (cursorOn == true)
         {
             UIManager.Instance.SetNearCursor();
-            farNearIndic3.SetActive(true);
-            nearIndic1.SetActive(true);
-            farIndic2.SetActive(false);
         }
     }
 
@@ -67,9 +58,7 @@ public class HelmetUnlock : MonoBehaviour
         if (cursorOn == true)
         {
             UIManager.Instance.SetFarCursor();
-            farIndic2.SetActive(true);
-            nearIndic1.SetActive(false);
-            farNearIndic3.SetActive(false);
+
         }
     }
 
@@ -80,12 +69,7 @@ public class HelmetUnlock : MonoBehaviour
         farInt0 = transform.GetChild(0).gameObject;
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
-        nearIndic1 = transform.GetChild(1).gameObject;
-        nearIndic1.SetActive(false);
-        farIndic2 = transform.GetChild(2).gameObject;
-        farIndic2.SetActive(false);
-        farNearIndic3 = transform.GetChild(3).gameObject;
-        farNearIndic3.SetActive(false);
+
         interractionSecurity = false;
     }
 
@@ -153,8 +137,6 @@ public class HelmetUnlock : MonoBehaviour
         if (isNear == true)
         {
             UIManager.Instance.SetNearCursor();
-            farNearIndic3.SetActive(true);
-            nearIndic1.SetActive(true);
             isInterractableOn = true;
             cursorOn = true;
             return;
@@ -162,7 +144,6 @@ public class HelmetUnlock : MonoBehaviour
         if (isNear == false)
         {
             UIManager.Instance.SetFarCursor();
-            farIndic2.SetActive(true);
             isInterractableOn = true;
             cursorOn = true;
             return;
@@ -172,9 +153,6 @@ public class HelmetUnlock : MonoBehaviour
     private void OnMouseExit()
     {
         UIManager.Instance.ResetCursor();
-        nearIndic1.SetActive(false);
-        farIndic2.SetActive(false);
-        farNearIndic3.SetActive(false);
         isInterractableOn = false;
         cursorOn = false;
     }

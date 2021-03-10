@@ -20,15 +20,6 @@ public class InterractableWithInventory : MonoBehaviour
     private GameObject nearInt0;
     private GameObject farInt1;
 
-    // Les interractions si on est proche ou loin etc, elles sont déclarées dans un ordre précis
-    private GameObject nearIndic;
-
-    private GameObject farIndic;
-
-    private GameObject farNearIndic;
-
-    private GameObject nearCanIndic;
-
     // Bool si l'intéraction est possible et une sécurité pour ne pas afficher deux fois l'interraction.
     private bool security = false;
     private bool isInterractableOn = false;
@@ -59,9 +50,6 @@ public class InterractableWithInventory : MonoBehaviour
         if (cursorOn == true)
         {
             UIManager.Instance.SetNearCursor();
-            farNearIndic.SetActive(true);
-            nearIndic.SetActive(true);
-            farIndic.SetActive(false);
         }
     }
 
@@ -74,9 +62,6 @@ public class InterractableWithInventory : MonoBehaviour
         if (cursorOn == true)
         {
             UIManager.Instance.SetFarCursor();
-            farIndic.SetActive(true);
-            nearIndic.SetActive(false);
-            farNearIndic.SetActive(false);
         }
     }
 
@@ -89,29 +74,9 @@ public class InterractableWithInventory : MonoBehaviour
         farInt1 = transform.GetChild(1).gameObject;
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
-        nearIndic = transform.GetChild(2).gameObject;
-        nearIndic.SetActive(false);
-        farIndic = transform.GetChild(3).gameObject;
-        farIndic.SetActive(false);
-        farNearIndic = transform.GetChild(4).gameObject;
-        farNearIndic.SetActive(false);
-        nearCanIndic = transform.GetChild(5).gameObject;
-        nearCanIndic.SetActive(false);
         interractionSecurity = false;
     }
 
-    private void Update()
-    {
-        if (isNear == true && isInterractableOn == true)
-        {
-            UIManager.Instance.SetNearCursor();
-        }
-        if (isNear == false && isInterractableOn == true)
-        {
-            UIManager.Instance.SetFarCursor();
-        }
-
-    }
 
     public void OnLook(InputAction.CallbackContext context)
     {
@@ -164,23 +129,22 @@ public class InterractableWithInventory : MonoBehaviour
         if (isNear == true)
         {
 
-            UIManager.Instance.SetNearCursor();
-            farNearIndic.SetActive(true);
+            
             if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot1Active == true)
             {
-                nearCanIndic.SetActive(true);
+                UIManager.Instance.SetInterractionCursor();
             }
             if (UIManager.Instance.objectInSlot2.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot2Active == true)
             {
-                nearCanIndic.SetActive(true);
+                UIManager.Instance.SetInterractionCursor();
             }
             if (UIManager.Instance.objectInSlot3.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot3Active == true)
             {
-                nearCanIndic.SetActive(true);
+                UIManager.Instance.SetInterractionCursor();
             }
             if (UIManager.Instance.isSlot3Active == false && UIManager.Instance.isSlot2Active == false && UIManager.Instance.isSlot1Active == false)
             {
-                nearIndic.SetActive(true);
+                UIManager.Instance.SetNearCursor();
             }
             isInterractableOn = true;
             cursorOn = true;
@@ -189,7 +153,6 @@ public class InterractableWithInventory : MonoBehaviour
         if (isNear == false)
         {
             UIManager.Instance.SetFarCursor();
-            farIndic.SetActive(true);
             isInterractableOn = true;
             cursorOn = true;
             return;
@@ -199,10 +162,6 @@ public class InterractableWithInventory : MonoBehaviour
     private void OnMouseExit()
     {
         UIManager.Instance.ResetCursor();
-        nearIndic.SetActive(false);
-        farIndic.SetActive(false);
-        farNearIndic.SetActive(false);
-        nearCanIndic.SetActive(false);
         isInterractableOn = false;
         cursorOn = false;
     }

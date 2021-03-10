@@ -100,6 +100,9 @@ public class UIManager : MonoBehaviour
         Cursor.SetCursor(interractionCursor, Vector2.zero, CursorMode.Auto);
     }
 
+
+
+
     public void GetObjectInInventory(GameObject usable)
     {
         if(isSlot1Full == false)
