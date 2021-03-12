@@ -8,8 +8,11 @@ public class N01T01Door : MonoBehaviour
     public Transform tpPoint;
     public bool isLeverOn = false;
 
+    private GameObject player;
+
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         parent = transform.parent.GetComponent<InterractableWithInventory>();
     }
 
@@ -19,6 +22,10 @@ public class N01T01Door : MonoBehaviour
         if (parent.interractionSecurity == false)
         {
             parent.interractionSecurity = true;
+            if(isLeverOn == true)
+            {
+                player.transform.position = tpPoint.position;
+            }
 
         }
 
