@@ -20,9 +20,10 @@ public class Door : MonoBehaviour
     {
         if(parent.interractionSecurity == false)
         {
+            parent.interractionSecurity = true;
             if(UIManager.Instance.isSlot1Active == true)
             {
-                if(UIManager.Instance.objectInSlot1.name.Contains("Key"))
+                if(UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot1 = emptySlot;
@@ -35,7 +36,7 @@ public class Door : MonoBehaviour
 
             if(UIManager.Instance.isSlot2Active == true)
             {
-                if(UIManager.Instance.objectInSlot2.name.Contains("Key"))
+                if(UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot2 = emptySlot;
@@ -48,7 +49,7 @@ public class Door : MonoBehaviour
 
             if(UIManager.Instance.isSlot3Active == true)
             {
-                if(UIManager.Instance.objectInSlot3.name.Contains("Key"))
+                if(UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot3 = emptySlot;
