@@ -15,6 +15,7 @@ public class MenusManager : MonoBehaviour
     public delegate void OnPressBack();
     private OnPressBack OnPressEscape;
 
+
     [Header("MAIN UI SECTIONS")]
     public GameObject menuBackground;
     public GameObject loadingScreen;
@@ -292,6 +293,7 @@ public class MenusManager : MonoBehaviour
         asyncOp.allowSceneActivation = true;
         loadingScreen.SetActive(false);
         ingameMainUI.SetActive(true);
+        transform.GetChild(0).GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
