@@ -120,6 +120,7 @@ public class InterractableWithInventory : MonoBehaviour
                         // currentVfx.transform.parent = null;
                         // Destroy(currentVfx, 3f);
                         security = true;
+
                 }
             }
             }
@@ -176,6 +177,7 @@ public class InterractableWithInventory : MonoBehaviour
         
         nearInt0.SetActive(false);
         security = false;
+        interractionSecurity = false;
 
         yield return 0;
     }

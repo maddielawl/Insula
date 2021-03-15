@@ -120,6 +120,7 @@ public class Interractable : MonoBehaviour
                         currentVfx.transform.parent = null;
                         Destroy(currentVfx, 3f);
                         security = true;
+                        
                 }
             }
             }
@@ -158,6 +159,7 @@ public class Interractable : MonoBehaviour
         
         nearInt0.SetActive(false);
         security = false;
+        interractionSecurity = false;
 
         yield return 0;
     }
