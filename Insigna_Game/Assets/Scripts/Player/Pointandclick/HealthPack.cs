@@ -78,21 +78,26 @@ public class HealthPack : MonoBehaviour
     {
         if (context.started)
         {
-            if (security == false)
+            if (!GameManager.Instance.globalInterractionSecurity)
             {
-            if(cursorOn == true)
-            {
-                    if (isNear == false)
+                if (security == false)
+                {
+                    if (cursorOn == true)
                     {
-                        StartCoroutine(FarInterraction());
-                        security = true;
-                        return;
-                    }
-                    if (isNear == true)
-                    {
-                        StartCoroutine(FarNearInterraction());
-                        security = true;
-                        return;
+                        if (isNear == false)
+                        {
+                            StartCoroutine(FarInterraction());
+                            security = true;
+                            GameManager.Instance.globalInterractionSecurity = true;
+                            return;
+                        }
+                        if (isNear == true)
+                        {
+                            StartCoroutine(FarNearInterraction());
+                            security = true;
+                            GameManager.Instance.globalInterractionSecurity = true;
+                            return;
+                        }
                     }
                 }
             }
@@ -101,21 +106,26 @@ public class HealthPack : MonoBehaviour
 
     public void OnUse(InputAction.CallbackContext context)
     {
-            if(context.started)
+        if (context.started)
         {
-            if (security == false){
-            if(cursorOn == true)
+            if (!GameManager.Instance.globalInterractionSecurity)
             {
-                if(isNear == true)
+                if (security == false)
                 {
-                    StartCoroutine(AddPackInInventory());
-                        FindObjectOfType<AudioManager>().Play("TakeObject");
-                        GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                        currentVfx.transform.parent = null;
-                        Destroy(currentVfx, 3f);
-                        security = true;
+                    if (cursorOn == true)
+                    {
+                        if (isNear == true)
+                        {
+                            StartCoroutine(AddPackInInventory());
+                            FindObjectOfType<AudioManager>().Play("TakeObject");
+                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                            currentVfx.transform.parent = null;
+                            Destroy(currentVfx, 3f);
+                            security = true;
+                            GameManager.Instance.globalInterractionSecurity = true;
+                        }
+                    }
                 }
-            }
             }
         }
     }
@@ -148,6 +158,7 @@ public class HealthPack : MonoBehaviour
     private IEnumerator AddPackInInventory()
     {
         GameManager.Instance.playerPillsCount++;
+        GameManager.Instance.globalInterractionSecurity = false;
         Destroy(this.gameObject);
         Debug.Log("HP Count" + GameManager.Instance.playerPillsCount);
 
@@ -162,7 +173,8 @@ public class HealthPack : MonoBehaviour
         
         farInt0.SetActive(false);
         security = false;
-        
+        GameManager.Instance.globalInterractionSecurity = false;
+
         yield return 0;
 
     }
@@ -175,6 +187,7 @@ public class HealthPack : MonoBehaviour
 
         farInt0.SetActive(false);
         security = false;
+        GameManager.Instance.globalInterractionSecurity = false;
 
         StopCoroutine(FarNearInterraction());
         yield return 0;

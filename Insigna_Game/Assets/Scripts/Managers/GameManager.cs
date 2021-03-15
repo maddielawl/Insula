@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     [Header("MadnessZone")]
     public GameObject madnessZone;
 
+    public bool globalInterractionSecurity = false;
+
 
     #region Madness Functions
 

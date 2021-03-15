@@ -84,45 +84,55 @@ public class Interractable : MonoBehaviour
     {
         if (context.started)
         {
-            if (security == false)
+            if (!GameManager.Instance.globalInterractionSecurity)
             {
-            if(cursorOn == true)
-            {
-                    if (isNear == false)
+                if (security == false)
+                {
+                    if (cursorOn == true)
                     {
-                        StartCoroutine(FarInterraction());
-                        security = true;
-                        return;
+                        if (isNear == false)
+                        {
+                            StartCoroutine(FarInterraction());
+                            security = true;
+                            GameManager.Instance.globalInterractionSecurity = true;
+                            return;
+                        }
+                        if (isNear == true)
+                        {
+                            StartCoroutine(FarNearInterraction());
+                            security = true;
+                            GameManager.Instance.globalInterractionSecurity = true;
+                            return;
+                        }
                     }
-                    if(isNear == true)
-                    {
-                        StartCoroutine(FarNearInterraction());
-                        security = true;
-                        return;
-                    }
-            }
+                }
             }
         }
     }
 
     public void OnUse(InputAction.CallbackContext context)
     {
-            if(context.started)
+        if (context.started)
         {
-            if (security == false){
-            if(cursorOn == true)
+            if (!GameManager.Instance.globalInterractionSecurity)
             {
-                if(isNear == true)
+                if (security == false)
                 {
-                    StartCoroutine(NearInterraction());
-                        FindObjectOfType<AudioManager>().Play("OnClickInventory");
-                        GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                        currentVfx.transform.parent = null;
-                        Destroy(currentVfx, 3f);
-                        security = true;
-                        
+                    if (cursorOn == true)
+                    {
+                        if (isNear == true)
+                        {
+                            StartCoroutine(NearInterraction());
+                            FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                            currentVfx.transform.parent = null;
+                            Destroy(currentVfx, 3f);
+                            security = true;
+                            GameManager.Instance.globalInterractionSecurity = true;
+
+                        }
+                    }
                 }
-            }
             }
         }
     }
@@ -160,6 +170,7 @@ public class Interractable : MonoBehaviour
         nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
+        GameManager.Instance.globalInterractionSecurity = false;
 
         yield return 0;
     }
@@ -172,7 +183,8 @@ public class Interractable : MonoBehaviour
         
         farInt1.SetActive(false);
         security = false;
-        
+        GameManager.Instance.globalInterractionSecurity = false;
+
         yield return 0;
 
     }
@@ -185,6 +197,7 @@ public class Interractable : MonoBehaviour
 
         farInt1.SetActive(false);
         security = false;
+        GameManager.Instance.globalInterractionSecurity = false;
 
         yield return 0;
 
