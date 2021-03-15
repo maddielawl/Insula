@@ -9,10 +9,11 @@ public class CameraTrigger : MonoBehaviour
     public CinemachineVirtualCamera oldCam;
     public CinemachineVirtualCamera newCam;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
+            Debug.Log("Ta grosse mère");
             CameraManager.Instance.setCameraPrioHigh(newCam);
             CameraManager.Instance.setCameraPrioLow(oldCam);
         }
