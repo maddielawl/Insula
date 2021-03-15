@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class N01T01Door : MonoBehaviour
 {
-    private InterractableWithInventory parent;
+    private Interractable parent;
     public Transform tpPoint;
     public bool isLeverOn = false;
 
@@ -13,7 +13,7 @@ public class N01T01Door : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        parent = transform.parent.GetComponent<InterractableWithInventory>();
+        parent = transform.parent.GetComponent<Interractable>();
     }
 
     // Update is called once per frame

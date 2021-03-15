@@ -107,10 +107,10 @@ public class InterractableWithInventory : MonoBehaviour
     {
             if(context.started)
         {
-            if (security == false){
-            if(cursorOn == true)
+            if (!security){
+            if(cursorOn)
             {
-                if(isNear == true)
+                if(isNear)
                 {
                     StartCoroutine(NearInterraction());
                         FindObjectOfType<AudioManager>().Play("OnClickInventory");
