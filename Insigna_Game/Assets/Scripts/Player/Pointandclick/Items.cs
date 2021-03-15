@@ -69,6 +69,8 @@ public class Items : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerInputs = player.GetComponent<PlayerInput>();
+        playerInputs.actions.FindAction("Look").started += OnLook;
+        playerInputs.actions.FindAction("Use").started += OnUse;
         farInt0 = transform.GetChild(0).gameObject;
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
