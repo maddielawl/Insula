@@ -69,6 +69,8 @@ public class Interractable : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerInputs = player.GetComponent<PlayerInput>();
+        playerInputs.actions.FindAction("Look").started+=OnLook;
+        playerInputs.actions.FindAction("Use").started+=OnUse;
         nearInt0 = transform.GetChild(0).gameObject;
         nearInt0.SetActive(false);
         farInt1 = transform.GetChild(1).gameObject;
