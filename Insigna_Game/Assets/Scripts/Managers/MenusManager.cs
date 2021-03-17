@@ -299,7 +299,7 @@ public class MenusManager : MonoBehaviour
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
-        Destroy(cursorManger);
+        cursorManger.SetActive(false);
         inGame = true;
     }
 
