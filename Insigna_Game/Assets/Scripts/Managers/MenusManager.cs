@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class MenusManager : MonoBehaviour
 {
+    public GameObject cursorManger;
+
     private GameInputs menusActions;
     private AsyncOperation asyncOp;
     
@@ -297,6 +299,7 @@ public class MenusManager : MonoBehaviour
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
+        Destroy(cursorManger);
         inGame = true;
     }
 

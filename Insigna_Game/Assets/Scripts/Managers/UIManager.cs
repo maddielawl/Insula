@@ -26,10 +26,10 @@ public class UIManager : MonoBehaviour
     public GameManager gameManager;
 
     [Header("Cursors")]
-    public Texture2D basicCursor;
-    public Texture2D nearCursor;
-    public Texture2D farCursor;
-    public Texture2D interractionCursor;
+    public Sprite basicCursor;
+    public Sprite nearCursor;
+    public Sprite farCursor;
+    public Sprite interractionCursor;
 
     [Header("Inventory Buttons")]
     public Image inventoryButton1;
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
+        // Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
         foreach (GameObject sanityBars in sanityBars)
         {
             sanityBars.SetActive(false);
@@ -175,21 +175,25 @@ public class UIManager : MonoBehaviour
 
     public void ResetCursor()
     {
-        Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
+        // Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
+        CursorManager.Instance.rend.sprite = basicCursor;
     }
 
     public void SetNearCursor()
     {
-        Cursor.SetCursor(nearCursor, Vector2.zero, CursorMode.Auto);
+        // Cursor.SetCursor(nearCursor, Vector2.zero, CursorMode.Auto);
+        CursorManager.Instance.rend.sprite = nearCursor;
     }
 
     public void SetFarCursor()
     {
-        Cursor.SetCursor(farCursor, Vector2.zero, CursorMode.Auto);
+        // Cursor.SetCursor(farCursor, Vector2.zero, CursorMode.Auto);
+        CursorManager.Instance.rend.sprite = farCursor;
     }
     public void SetInterractionCursor()
     {
-        Cursor.SetCursor(interractionCursor, Vector2.zero, CursorMode.Auto);
+        // Cursor.SetCursor(interractionCursor, Vector2.zero, CursorMode.Auto);
+        CursorManager.Instance.rend.sprite = interractionCursor;
     }
 
 
