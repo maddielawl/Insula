@@ -213,6 +213,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 196696801}
     - target: {fileID: 4939770168466613383, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: farCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: 96a51bfc35b711a43b77ee161a9277fe, type: 3}
+    - target: {fileID: 4939770168466613383, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: pillCount
       value: 
       objectReference: {fileID: 925021881884498158}
@@ -224,6 +228,10 @@ PrefabInstance:
       propertyPath: OptionMenu
       value: 
       objectReference: {fileID: 90005753}
+    - target: {fileID: 4939770168466613383, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: nearCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: 3e21f7fc567af1f4b827d7b2e0bdb7ca, type: 3}
     - target: {fileID: 4939770168466613383, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: basicCursor
       value: 
@@ -283,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 4939770168466613383, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: interractionCursor
       value: 
-      objectReference: {fileID: 2800000, guid: b017dfab3916c1342b99c499d7ab500b, type: 3}
+      objectReference: {fileID: 2800000, guid: 8acde7a60e154484eba933e5b9d01466, type: 3}
     - target: {fileID: 4939770168466613383, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: sanityBars.Array.size
       value: 8
@@ -467,7 +475,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 55
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 1
   m_Antialiasing: 0
