@@ -35,6 +35,7 @@ public class Lever : MonoBehaviour
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot1 = emptySlot;
                     UIManager.Instance.isSlot1Active = false;
+                    UIManager.Instance.isSlot1Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     UIManager.Instance.object1Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseLever");
@@ -54,12 +55,11 @@ public class Lever : MonoBehaviour
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot2 = emptySlot;
                     UIManager.Instance.isSlot2Active = false;
+                    UIManager.Instance.isSlot2Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
-
                     UIManager.Instance.object2Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseLever");
                     door.GetComponent<N01T01Door>().isLeverOn = true;
-
                     leverStickSprite.SetActive(true);
                     leverAnimator.SetTrigger("LeverActivated");
                     parent.GetComponent<BoxCollider2D>().enabled = false;
@@ -74,6 +74,7 @@ public class Lever : MonoBehaviour
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot3 = emptySlot;
                     UIManager.Instance.isSlot3Active = false;
+                    UIManager.Instance.isSlot3Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     UIManager.Instance.object3Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseLever");

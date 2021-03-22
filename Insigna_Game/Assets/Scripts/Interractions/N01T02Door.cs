@@ -37,7 +37,7 @@ public class N01T02Door : MonoBehaviour
                 }
             }
 
-            if (UIManager.Instance.isSlot2Active == true)
+            else if (UIManager.Instance.isSlot2Active == true)
             {
                 if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
                 {
@@ -51,7 +51,7 @@ public class N01T02Door : MonoBehaviour
                 }
             }
 
-            if (UIManager.Instance.isSlot3Active == true)
+            else if (UIManager.Instance.isSlot3Active == true)
             {
                 if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
                 {

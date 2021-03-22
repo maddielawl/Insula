@@ -36,9 +36,9 @@ public class UIManager : MonoBehaviour
     public Image inventoryButton2;
     public Image inventoryButton3;
 
-    private bool isSlot1Full = false;
-    private bool isSlot2Full = false;
-    private bool isSlot3Full = false;
+    public bool isSlot1Full = false;
+    public bool isSlot2Full = false;
+    public bool isSlot3Full = false;
 
     [Header("Objects Stored in slots")]
     public GameObject objectInSlot1;
