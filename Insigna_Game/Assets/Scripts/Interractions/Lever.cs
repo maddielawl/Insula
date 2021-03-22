@@ -9,17 +9,23 @@ public class Lever : MonoBehaviour
     public GameObject emptySlot;
     public GameObject door;
 
+    public GameObject leverStickSprite;
+    public Animator leverAnimator;
+
+    private bool InteractionOff;
+
 
     private InterractableWithInventory parent;
 
     void Start()
     {
         parent = transform.parent.GetComponent<InterractableWithInventory>();
+        leverStickSprite.SetActive(false);
     }
 
     void Update()
     {
-        if (parent.interractionSecurity == false)
+        if (parent.interractionSecurity == false && InteractionOff == false)
         {
             parent.interractionSecurity = true;
             if (UIManager.Instance.isSlot1Active == true)
@@ -33,7 +39,11 @@ public class Lever : MonoBehaviour
                     UIManager.Instance.object1Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseLever");
                     door.GetComponent<N01T01Door>().isLeverOn = true;
-                    
+
+                    leverStickSprite.SetActive(true);
+                    leverAnimator.SetTrigger("LeverActivated");
+                    parent.GetComponent<BoxCollider2D>().enabled = false;
+                    InteractionOff = true;
                 }
             }
 
@@ -49,6 +59,11 @@ public class Lever : MonoBehaviour
                     UIManager.Instance.object2Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseLever");
                     door.GetComponent<N01T01Door>().isLeverOn = true;
+
+                    leverStickSprite.SetActive(true);
+                    leverAnimator.SetTrigger("LeverActivated");
+                    parent.GetComponent<BoxCollider2D>().enabled = false;
+                    InteractionOff = true;
                 }
             }
 
@@ -63,6 +78,11 @@ public class Lever : MonoBehaviour
                     UIManager.Instance.object3Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseLever");
                     door.GetComponent<N01T01Door>().isLeverOn = true;
+
+                    leverStickSprite.SetActive(true);
+                    leverAnimator.SetTrigger("LeverActivated");
+                    parent.GetComponent<BoxCollider2D>().enabled = false;
+                    InteractionOff = true;
                 }
             }
 
