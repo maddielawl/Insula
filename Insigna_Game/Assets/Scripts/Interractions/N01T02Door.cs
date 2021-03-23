@@ -32,7 +32,7 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.object1Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     door.SetActive(true);
-                    Destroy(this.gameObject);
+                    Destroy(this.transform.parent.gameObject);
 
                 }
             }
@@ -47,7 +47,7 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.object2Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     door.SetActive(true);
-                    Destroy(this.gameObject);
+                    Destroy(this.transform.parent.gameObject);
                 }
             }
 
@@ -61,7 +61,7 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.object3Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     door.SetActive(true);
-                    Destroy(this.gameObject);
+                    Destroy(this.transform.parent.gameObject);
                 }
             }
 
