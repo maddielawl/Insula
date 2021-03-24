@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine("SanityDecrement");
+        playerPillsCount = 0;
     }
 
 

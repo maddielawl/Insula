@@ -156,13 +156,14 @@ GameObject:
   - component: {fileID: 492802060}
   - component: {fileID: 492802059}
   - component: {fileID: 492802062}
+  - component: {fileID: 492802063}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &492802059
 AudioListener:
   m_ObjectHideFlags: 0
@@ -260,6 +261,40 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &492802063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492802058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &626966124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1937048646, guid: 30f5672e9d388b74388123991d390e13, type: 3}
@@ -268,6 +303,11 @@ GameObject:
 --- !u!1 &648313589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 876708270, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+  m_PrefabInstance: {fileID: 5227888189135226083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &690182741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4484689920891503846, guid: 30f5672e9d388b74388123991d390e13, type: 3}
   m_PrefabInstance: {fileID: 5227888189135226083}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &805879315 stripped
@@ -310,7 +350,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 953912006937524429, guid: e0a594b8dc03e444f8abf5806a09748c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 953912006937524429, guid: e0a594b8dc03e444f8abf5806a09748c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,17 +452,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4106947038626562680, guid: de19db21a5b43b14dbc6b058d11db7d2, type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 4106947038626562683, guid: de19db21a5b43b14dbc6b058d11db7d2, type: 3}
       propertyPath: m_Name
-      value: Camera
+      value: CameraUI
       objectReference: {fileID: 0}
     - target: {fileID: 4106947038626562687, guid: de19db21a5b43b14dbc6b058d11db7d2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4106947038626562687, guid: de19db21a5b43b14dbc6b058d11db7d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -501,7 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 1930543720}
     - target: {fileID: 4503525153015169754, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4503525153015169759, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: m_SortingOrder
@@ -511,6 +547,10 @@ PrefabInstance:
       propertyPath: pillCount
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: pillCountGO
+      value: 
+      objectReference: {fileID: 690182741}
     - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: madnessSlider
       value: 
@@ -560,6 +600,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: pillCountSpr.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: sanityBars.Array.data[0]
       value: 
       objectReference: {fileID: 366605950}
@@ -591,9 +635,29 @@ PrefabInstance:
       propertyPath: sanityBars.Array.data[7]
       value: 
       objectReference: {fileID: 1060547534}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: pillCountSpr.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: cdd51ce0daaef154db2b08103a8f74d7, type: 3}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: pillCountSpr.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 99d423fcebea9134e84fa275be9267f6, type: 3}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: pillCountSpr.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5588e46f109c4da4fb9e4ab235bdae4f, type: 3}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: pillCountSpr.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 39f6217aae4a1e94d927c735bc426446, type: 3}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: pillCountSpr.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 39f6217aae4a1e94d927c735bc426446, type: 3}
     - target: {fileID: 4503525153562023936, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4503525153562023936, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -656,9 +720,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1084288715, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084288716, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084288716, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084288716, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196218425782295638, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484689920891503846, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_Name
+      value: PillCount
       objectReference: {fileID: 0}
     - target: {fileID: 5227888189066823133, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: cursorManger
@@ -666,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 492802058}
     - target: {fileID: 5227888189066823134, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5227888189066823134, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -720,6 +804,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 920832049}
+    - target: {fileID: 5227888189863069397, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5227888189939989233, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

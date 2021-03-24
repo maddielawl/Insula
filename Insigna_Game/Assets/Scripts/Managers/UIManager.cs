@@ -60,7 +60,8 @@ public class UIManager : MonoBehaviour
     [Header("UI")]
     public GameObject[] sanityBars;
     public Slider madnessSlider;
-    public TMP_Text pillCount;
+    public GameObject pillCountGO;
+    public Sprite[] pillCountSpr = new Sprite[4];
     public GameObject helmetOffIndicator;
     public GameObject helmetOnIndicator;
 
@@ -169,7 +170,21 @@ public class UIManager : MonoBehaviour
         }
         #endregion
         //nombre de pills lié à la value dans le GameManager
-        pillCount.text = gameManager.playerPillsCount.ToString();
+        switch (gameManager.playerPillsCount)
+        {
+            case 0:
+                pillCountGO.GetComponent<Image>().sprite = pillCountSpr[0];
+                break;
+            case 1:
+                pillCountGO.GetComponent<Image>().sprite = pillCountSpr[1];
+                break;
+            case 2:
+                pillCountGO.GetComponent<Image>().sprite = pillCountSpr[2];
+                break;
+            case 3:
+                pillCountGO.GetComponent<Image>().sprite = pillCountSpr[3];
+                break;
+        }
     }
 
 

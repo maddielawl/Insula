@@ -13,7 +13,6 @@ public class CameraTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("Ta grosse mère");
             CameraManager.Instance.setCameraPrioHigh(newCam);
             CameraManager.Instance.setCameraPrioLow(oldCam);
         }
