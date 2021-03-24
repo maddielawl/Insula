@@ -419,6 +419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1401113489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4106947038626562683, guid: de19db21a5b43b14dbc6b058d11db7d2, type: 3}
+  m_PrefabInstance: {fileID: 1974394177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1690342556 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5227888190666117247, guid: 30f5672e9d388b74388123991d390e13, type: 3}
@@ -453,12 +458,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4106947038626562680, guid: de19db21a5b43b14dbc6b058d11db7d2, type: 3}
-      propertyPath: orthographic size
-      value: 5.004822
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4106947038626562683, guid: de19db21a5b43b14dbc6b058d11db7d2, type: 3}
       propertyPath: m_Name
-      value: CameraUI
+      value: Camera
       objectReference: {fileID: 0}
     - target: {fileID: 4106947038626562687, guid: de19db21a5b43b14dbc6b058d11db7d2, type: 3}
       propertyPath: m_RootOrder
@@ -541,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 1930543720}
     - target: {fileID: 4503525153015169754, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4503525153015169759, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: m_SortingOrder
@@ -752,6 +757,10 @@ PrefabInstance:
       propertyPath: cursorManger
       value: 
       objectReference: {fileID: 492802058}
+    - target: {fileID: 5227888189066823133, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: MainMenuCamera
+      value: 
+      objectReference: {fileID: 1401113489}
     - target: {fileID: 5227888189066823134, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -808,6 +817,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 920832049}
+    - target: {fileID: 5227888189863069397, guid: 30f5672e9d388b74388123991d390e13, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5227888189863069397, guid: 30f5672e9d388b74388123991d390e13, type: 3}
       propertyPath: m_SortingOrder
       value: 0

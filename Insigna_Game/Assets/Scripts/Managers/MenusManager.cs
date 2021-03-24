@@ -11,6 +11,8 @@ public class MenusManager : MonoBehaviour
 {
     public GameObject cursorManger;
 
+    public GameObject MainMenuCamera;
+
     private GameInputs menusActions;
     private AsyncOperation asyncOp;
     
@@ -295,7 +297,8 @@ public class MenusManager : MonoBehaviour
         asyncOp.allowSceneActivation = true;
         loadingScreen.SetActive(false);
         ingameMainUI.SetActive(true);
-        // transform.GetChild(0).GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+        transform.GetChild(0).GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+        MainMenuCamera.SetActive(false);
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
