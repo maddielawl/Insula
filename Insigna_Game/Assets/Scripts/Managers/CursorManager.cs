@@ -18,18 +18,21 @@ public class CursorManager : MonoBehaviour
     }
     #endregion
 
-    public SpriteRenderer rend;
+    public Image rend;
     public Sprite Cursor;
+    public float horizontalOffset;
+    public float verticalOffset;
+    private Vector2 cursorPos;
     void Start()
     {
         UnityEngine.Cursor.visible = false;
-        rend = GetComponent<SpriteRenderer>();
+        rend = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        cursorPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x - horizontalOffset, Input.mousePosition.y - verticalOffset));
         transform.position = cursorPos;
     }
 }

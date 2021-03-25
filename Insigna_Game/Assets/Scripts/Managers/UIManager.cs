@@ -192,23 +192,27 @@ public class UIManager : MonoBehaviour
     {
         // Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
         CursorManager.Instance.rend.sprite = basicCursor;
+        CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
     }
 
     public void SetNearCursor()
     {
         // Cursor.SetCursor(nearCursor, Vector2.zero, CursorMode.Auto);
         CursorManager.Instance.rend.sprite = nearCursor;
+        CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
     }
 
     public void SetFarCursor()
     {
         // Cursor.SetCursor(farCursor, Vector2.zero, CursorMode.Auto);
         CursorManager.Instance.rend.sprite = farCursor;
+        CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
     }
     public void SetInterractionCursor()
     {
         // Cursor.SetCursor(interractionCursor, Vector2.zero, CursorMode.Auto);
         CursorManager.Instance.rend.sprite = interractionCursor;
+        CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
     }
 
 

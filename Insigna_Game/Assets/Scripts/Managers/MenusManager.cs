@@ -53,17 +53,17 @@ public class MenusManager : MonoBehaviour
 
     public bool isFullScreen = true;
 
-    public static MenusManager s_Singleton;
+    public static MenusManager instance;
 
     private void Awake()
     {
-        if (s_Singleton != null)
+        if (instance != null)
         {
             Destroy(gameObject);
         }
         else
         {
-            s_Singleton = this;
+            instance = this;
         }
         menusActions = new GameInputs();
         mainMenuAudioSource = GetComponent<AudioSource>();
@@ -297,7 +297,6 @@ public class MenusManager : MonoBehaviour
         asyncOp.allowSceneActivation = true;
         loadingScreen.SetActive(false);
         ingameMainUI.SetActive(true);
-        transform.GetChild(0).GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
         MainMenuCamera.SetActive(false);
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
