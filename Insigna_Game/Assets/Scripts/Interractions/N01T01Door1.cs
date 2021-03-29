@@ -24,7 +24,7 @@ public class N01T01Door1 : MonoBehaviour
             parent.interractionSecurity = true;
             if (isLeverOn == true)
             {
-                player.transform.position = tpPoint.position;
+                StartCoroutine(UIManager.Instance.FadeToBlackTP(player, tpPoint));
             }
 
         }

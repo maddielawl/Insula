@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -330,5 +331,33 @@ public class UIManager : MonoBehaviour
         helmetOffIndicator.SetActive(true);
         helmetOnIndicator.SetActive(false);
     }
+    public IEnumerator FadeToBlackTP(GameObject player,Transform spawnPoint, float fadeSpeed = 1f)
+    {
+        Color objectColor = UIManager.Instance.blackScreen.GetComponent<Image>().color;
+        float fadeAmount;
 
+        player.GetComponent<PlayerInput>().currentActionMap.Disable();
+
+        while (UIManager.Instance.blackScreen.GetComponent<Image>().color.a < 1)
+        {
+            fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            UIManager.Instance.blackScreen.GetComponent<Image>().color = objectColor;
+            yield return null;
+        }
+
+        player.transform.position = spawnPoint.position;
+        yield return new WaitForSeconds(2.5f);
+            
+        while (UIManager.Instance.blackScreen.GetComponent<Image>().color.a > 0)
+        {
+            fadeAmount = UIManager.Instance.blackScreen.GetComponent<Image>().color.a - (fadeSpeed * Time.deltaTime);
+                
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            UIManager.Instance.blackScreen.GetComponent<Image>().color = objectColor;
+            yield return null;
+        }
+        player.GetComponent<PlayerInput>().currentActionMap.Enable();
+    }
 }
