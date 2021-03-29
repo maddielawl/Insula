@@ -26,6 +26,7 @@ public class Door : MonoBehaviour
                 if(UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
+                    UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot1 = emptySlot;
                     UIManager.Instance.isSlot1Active = false;
                     UIManager.Instance.object1Equipped.SetActive(false);

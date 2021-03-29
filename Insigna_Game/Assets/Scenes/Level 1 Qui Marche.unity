@@ -1091,13 +1091,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417353230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45, y: -0.58, z: -3.6172938}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.215923, y: -1.8813679, z: 0.11256266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1571506259}
   - {fileID: 1119568757}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2089853515}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &451805638
@@ -6542,7 +6542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3570676693507586282, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3570676693507586282, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7322,8 +7322,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1260984163}
   - component: {fileID: 1260984164}
+  - component: {fileID: 1260984165}
   m_Layer: 0
-  m_Name: L01_T01_Props_Grid
+  m_Name: Grille Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7337,7 +7338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260984162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.184355, y: 1.4467334, z: -0.83}
+  m_LocalPosition: {x: 4.184355, y: 6.4, z: -0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 142506244}
@@ -7394,6 +7395,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1260984165
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260984162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4bbad954c9c3f24d903bac3ce1f48d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1311535154
 GameObject:
   m_ObjectHideFlags: 0
@@ -7827,14 +7847,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478754529}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59, y: 0.99999994, z: -3.6172938}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 33.015926, y: -1.0013678, z: 0.11256266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 550398988}
   - {fileID: 507686258}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 2089853515}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1479615715
 GameObject:
@@ -13819,7 +13839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
       propertyPath: m_LocalScale.x
@@ -14334,7 +14354,7 @@ Transform:
   - {fileID: 325332105}
   - {fileID: 8148875}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1882683269
 GameObject:
@@ -19584,7 +19604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393716127655927633, guid: 625aab3e16e455047a0969d1968fd985, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5393716127655927633, guid: 625aab3e16e455047a0969d1968fd985, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19683,6 +19703,8 @@ Transform:
   - {fileID: 1825066716}
   - {fileID: 1078032026}
   - {fileID: 1813501616}
+  - {fileID: 417353233}
+  - {fileID: 1478754533}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20349,6 +20371,7 @@ MonoBehaviour:
   door: {fileID: 1479615715}
   leverStickSprite: {fileID: 2136878226}
   leverAnimator: {fileID: 1607636383}
+  GrilleAnimator: {fileID: 1260984165}
 --- !u!4 &8770921156085438702
 Transform:
   m_ObjectHideFlags: 0

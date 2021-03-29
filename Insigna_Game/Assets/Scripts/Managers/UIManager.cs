@@ -77,9 +77,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        //slider Madness lié à la value dans le GameManager
+        //slider Madness liï¿½ ï¿½ la value dans le GameManager
         madnessSlider.value = gameManager.playerMadness;
-        //slider Sanity lié à la value dans le GameManager
+        //slider Sanity liï¿½ ï¿½ la value dans le GameManager
         #region Sanity healthbar
         if (gameManager.playerSanity >= 100)
         {
@@ -169,7 +169,7 @@ public class UIManager : MonoBehaviour
             }
         }
         #endregion
-        //nombre de pills lié à la value dans le GameManager
+        //nombre de pills liï¿½ ï¿½ la value dans le GameManager
         switch (gameManager.playerPillsCount)
         {
             case 0:
@@ -223,6 +223,7 @@ public class UIManager : MonoBehaviour
         if(isSlot1Full == false)
         {
             inventoryButton1.sprite = usable.GetComponent<SpriteRenderer>().sprite;
+            inventoryButton1.GetComponent<Image>().enabled = true;
             objectInSlot1 = usable;
             isSlot1Full = true;
             return;
@@ -230,7 +231,8 @@ public class UIManager : MonoBehaviour
 
         if(isSlot2Full == false)
         {
-            inventoryButton1.sprite = usable.GetComponent<SpriteRenderer>().sprite;
+            inventoryButton2.sprite = usable.GetComponent<SpriteRenderer>().sprite;
+            inventoryButton2.GetComponent<Image>().enabled = true;
             objectInSlot2 = usable;
             isSlot2Full = true;
             return;
@@ -238,7 +240,8 @@ public class UIManager : MonoBehaviour
 
         if(isSlot3Full == false)
         {
-            inventoryButton1.sprite = usable.GetComponent<SpriteRenderer>().sprite;
+            inventoryButton3.sprite = usable.GetComponent<SpriteRenderer>().sprite;
+            inventoryButton3.GetComponent<Image>().enabled = true;
             objectInSlot3 = usable;
             isSlot3Full = true;
             return;

@@ -11,6 +11,7 @@ public class Lever : MonoBehaviour
 
     public GameObject leverStickSprite;
     public Animator leverAnimator;
+    public Animator GrilleAnimator;
 
     private bool InteractionOff;
 
@@ -33,6 +34,7 @@ public class Lever : MonoBehaviour
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
+                    UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot1 = emptySlot;
                     UIManager.Instance.isSlot1Active = false;
                     UIManager.Instance.isSlot1Full = false;
@@ -43,6 +45,7 @@ public class Lever : MonoBehaviour
 
                     leverStickSprite.SetActive(true);
                     leverAnimator.SetTrigger("LeverActivated");
+                    GrilleAnimator.SetTrigger("Open");
                     parent.GetComponent<BoxCollider2D>().enabled = false;
                     InteractionOff = true;
                 }
@@ -62,6 +65,7 @@ public class Lever : MonoBehaviour
                     door.GetComponent<N01T01Door>().isLeverOn = true;
                     leverStickSprite.SetActive(true);
                     leverAnimator.SetTrigger("LeverActivated");
+                    GrilleAnimator.SetTrigger("Open");
                     parent.GetComponent<BoxCollider2D>().enabled = false;
                     InteractionOff = true;
                 }
@@ -82,6 +86,7 @@ public class Lever : MonoBehaviour
 
                     leverStickSprite.SetActive(true);
                     leverAnimator.SetTrigger("LeverActivated");
+                    GrilleAnimator.SetTrigger("Open");
                     parent.GetComponent<BoxCollider2D>().enabled = false;
                     InteractionOff = true;
                 }
