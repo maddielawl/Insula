@@ -64,6 +64,7 @@ public class UIManager : MonoBehaviour
     public Sprite[] pillCountSpr = new Sprite[4];
     public GameObject helmetOffIndicator;
     public GameObject helmetOnIndicator;
+    public GameObject blackScreen;
 
 
     private void Start()
@@ -329,5 +330,5 @@ public class UIManager : MonoBehaviour
         helmetOffIndicator.SetActive(true);
         helmetOnIndicator.SetActive(false);
     }
-    
+
 }
