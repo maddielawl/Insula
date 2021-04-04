@@ -15,7 +15,7 @@ public class MenusManager : MonoBehaviour
 
     private GameInputs menusActions;
     private AsyncOperation asyncOp;
-    
+
     public delegate void OnPressBack();
     private OnPressBack OnPressEscape;
 
@@ -34,7 +34,7 @@ public class MenusManager : MonoBehaviour
     public GameObject ingameGameOverUI;
     public GameObject endgameThanksScreen;
     public GameObject inGameOptions;
-    
+
 
     [Header("UI ELEMENTS")]
     public Slider musicVolumeSlider;
@@ -46,7 +46,7 @@ public class MenusManager : MonoBehaviour
     [Header("OPTIONS")]
     private AudioSource mainMenuAudioSource;
 
-    [Header("Pause Menu")] 
+    [Header("Pause Menu")]
     public bool isPaused;
 
     public bool inGame;
@@ -68,14 +68,17 @@ public class MenusManager : MonoBehaviour
         menusActions = new GameInputs();
         mainMenuAudioSource = GetComponent<AudioSource>();
     }
-    
-    
+
+
     void Update()
     {
         if (asyncOp != null && !validateLoadingText.activeSelf)
         {
             if (asyncOp.progress >= 0.9f)
             {
+                Animator loadingScreenAnimator = loadingScreen.GetComponentInChildren<Animator>();
+                loadingScreenAnimator.SetTrigger("LoadingStop");
+                Debug.Log("bruh");
                 DisplayValidateLoadingText();
             }
         }
@@ -91,18 +94,18 @@ public class MenusManager : MonoBehaviour
 
     }
 
-    private void DeactivateMainMenuActions ()
+    private void DeactivateMainMenuActions()
     {
         menusActions.Disable();
     }
 
-    public void OnPressCancel (InputAction.CallbackContext context)
+    public void OnPressCancel(InputAction.CallbackContext context)
     {
         OnPressEscape();
     }
 
-    public void OnValidateSplashscreen (InputAction.CallbackContext context)
-    
+    public void OnValidateSplashscreen(InputAction.CallbackContext context)
+
     {
         if (inGame == false)
         {
@@ -137,7 +140,7 @@ public class MenusManager : MonoBehaviour
         }
     }
 
-    public void OnValidateMidOptions ()
+    public void OnValidateMidOptions()
     {
         if (inGame == false)
         {
@@ -158,13 +161,13 @@ public class MenusManager : MonoBehaviour
         }
     }
 
-    public void OnValidateExitYes ()
+    public void OnValidateExitYes()
     {
         Debug.Log("Exit !");
         Application.Quit();
     }
 
-    public void OnBackFromSettings ()
+    public void OnBackFromSettings()
     {
         if (inGame == false)
         {
@@ -292,7 +295,7 @@ public class MenusManager : MonoBehaviour
         ingamePauseMenu.SetActive(false);
     }
 
-    public void HideLoadingScreen (InputAction.CallbackContext context)
+    public void HideLoadingScreen(InputAction.CallbackContext context)
     {
         asyncOp.allowSceneActivation = true;
         loadingScreen.SetActive(false);
@@ -307,21 +310,21 @@ public class MenusManager : MonoBehaviour
 
     #region OPTIONS
 
-    public void UpdateMenuSettings ()
+    public void UpdateMenuSettings()
     {
         // musicVolumeSlider.value = SaveManager.Instance.myGameSettings.musicVolume;
         mainMenuAudioSource.volume = musicVolumeSlider.value;
     }
 
     //Called by Music slider
-    public void UpdateAudioVolume (float sliderValue)
+    public void UpdateAudioVolume(float sliderValue)
     {
         mainMenuAudioSource.volume = sliderValue;
         // SaveManager.Instance.myGameSettings.musicVolume = mainMenuAudioSource.volume;
         // SaveManager.Instance.SaveMenuSettings();
     }
 
-    public void SetResolution (int dropIdx)
+    public void SetResolution(int dropIdx)
     {
         switch (dropIdx)
         {
@@ -341,20 +344,20 @@ public class MenusManager : MonoBehaviour
     {
         if (fullScreen == false)
         {
-            
-            
+
+
             isFullScreen = false;
             Screen.fullScreen = false;
         }
 
         if (fullScreen == true)
         {
-            
-            
+
+
             isFullScreen = true;
             Screen.fullScreen = true;
         }
     }
-    
+
     #endregion
 }
