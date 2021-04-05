@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     [Space(5)]
     [Header("MadnessZone")]
     public GameObject madnessZone;
+    public GameObject sanityZone;
 
     public bool globalInterractionSecurity = false;
 
@@ -79,6 +80,8 @@ public class GameManager : MonoBehaviour
                 if (playerMadness >= 80)
                 {
                     madnessZone.SetActive(true);
+                    sanityZone.SetActive(false);
+
                 }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
 
@@ -105,6 +108,8 @@ public class GameManager : MonoBehaviour
                 if(playerMadness <= 50)
                 {
                     madnessZone.SetActive(false);
+                    sanityZone.SetActive(true);
+
                 }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
 

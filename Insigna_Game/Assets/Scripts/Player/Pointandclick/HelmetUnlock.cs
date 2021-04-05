@@ -183,7 +183,7 @@ public class HelmetUnlock : MonoBehaviour
         farInt0.SetActive(true);
         observationText.text = farPhrase;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
         
         farInt0.SetActive(false);
         security = false;
@@ -197,7 +197,7 @@ public class HelmetUnlock : MonoBehaviour
         farInt0.SetActive(true);
         observationText.text = nearPhrase;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
 
         farInt0.SetActive(false);
         security = false;
