@@ -37,7 +37,7 @@ public class N01T02Door : MonoBehaviour
                     door.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
 
-                    Destroy(this.transform.parent.gameObject);
+                    transform.parent.GetComponent<BoxCollider2D>().enabled = false;
 
                 }
             }
@@ -51,10 +51,11 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.isSlot2Active = false;
                     UIManager.Instance.object2Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    doorAnimator.SetTrigger("Opened");
                     door.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
 
-                    Destroy(this.transform.parent.gameObject);
+                    transform.parent.GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
 
@@ -67,9 +68,10 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.isSlot3Active = false;
                     UIManager.Instance.object3Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    doorAnimator.SetTrigger("Opened");
                     door.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
-                    Destroy(this.transform.parent.gameObject);
+                    transform.parent.GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
 
