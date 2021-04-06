@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         //slider Madness li� � la value dans le GameManager
-        madnessFill.fillAmount = gameManager.playerMadness/100;
+        madnessFill.fillAmount = gameManager.playerMadness / 100;
         //slider Sanity li� � la value dans le GameManager
         #region Sanity healthbar
         if (gameManager.playerSanity >= 100)
@@ -354,20 +354,23 @@ public class UIManager : MonoBehaviour
 
         Debug.Log("teleport");
         player.transform.position = spawnPoint.position;
-        fadeToBlack = true;
+        StartCoroutine(FadeToTransparent(player, fadeSpeed));
+    }
 
-        if (fadeToBlack)
-        {
-            while (UIManager.Instance.blackScreen.GetComponent<Image>().color.a > 0)
+    public IEnumerator FadeToTransparent(GameObject player, float fadeSpeedB)
+    {
+        Color objectColor = UIManager.Instance.blackScreen.GetComponent<Image>().color;
+        float fadeAmountB;
+        yield return new WaitForSeconds(2.5f);
+        while (UIManager.Instance.blackScreen.GetComponent<Image>().color.a > 0)
             {
-                fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
+                fadeAmountB = objectColor.a - (fadeSpeedB * Time.deltaTime);
 
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmountB);
                 UIManager.Instance.blackScreen.GetComponent<Image>().color = objectColor;
                 yield return null;
             }
             Debug.Log("movementEnabled");
             player.GetComponent<PlayerInput>().currentActionMap.Enable();
-        }
     }
 }

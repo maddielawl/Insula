@@ -13,25 +13,25 @@ public class PopupInterraction : MonoBehaviour
 {
 
 
-    // Déclaration du joueur et du playerinput pour gérer l'interraction depuis les inputs du joueur.
+    // Dï¿½claration du joueur et du playerinput pour gï¿½rer l'interraction depuis les inputs du joueur.
     private PlayerInput playerInputs;
     private GameObject player;
 
     // Bool qui indique si le joueur est proche de l'objet ou non
     public bool isNear = false;
 
-    // Les gameobjects qui défissent l'interraction elles sont délcarrées dans un ordre précis
+    // Les gameobjects qui dï¿½fissent l'interraction elles sont dï¿½lcarrï¿½es dans un ordre prï¿½cis
     private GameObject nearInt0;
     private GameObject farInt1;
 
-    // Bool si l'intéraction est possible et une sécurité pour ne pas afficher deux fois l'interraction.
+    // Bool si l'intï¿½raction est possible et une sï¿½curitï¿½ pour ne pas afficher deux fois l'interraction.
     private bool security = false;
     private bool isInterractableOn = false;
 
     // Un bool qui indique si le curseur est devant l'objet.
     private bool cursorOn = false;
 
-    // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
+    // Sï¿½curise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
 
     public GameObject vfx;
