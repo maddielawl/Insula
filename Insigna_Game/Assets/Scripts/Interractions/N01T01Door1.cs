@@ -9,6 +9,7 @@ public class N01T01Door1 : MonoBehaviour
     public bool isLeverOn = false;
 
     private GameObject player;
+    private bool fadeDone;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class N01T01Door1 : MonoBehaviour
             parent.interractionSecurity = true;
             if (isLeverOn == true)
             {
-                StartCoroutine(UIManager.Instance.FadeToBlackTP(player, tpPoint));
+                StartCoroutine(UIManager.Instance.FadeToBlackTP(player, tpPoint, false));
             }
 
         }

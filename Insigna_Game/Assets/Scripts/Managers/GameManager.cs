@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     [Header("Player Stats")]
-    public int playerMadness;
+    public float playerMadness;
     public int playerSanity;
     public int playerPillsCount;
     public int healAmmount = 30 ;

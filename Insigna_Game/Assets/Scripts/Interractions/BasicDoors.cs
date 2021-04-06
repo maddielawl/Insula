@@ -21,7 +21,7 @@ public class BasicDoors : MonoBehaviour
         if (parent.interractionSecurity == false)
         {
             parent.interractionSecurity = true;
-            StartCoroutine(UIManager.Instance.FadeToBlackTP(player, tpPoint));
+            StartCoroutine(UIManager.Instance.FadeToBlackTP(player, tpPoint, false));
 
         }
 

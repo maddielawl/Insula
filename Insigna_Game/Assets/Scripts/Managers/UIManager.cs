@@ -9,17 +9,17 @@ using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
-    
+
     #region Singlton:Profile
 
     public static UIManager Instance;
 
-    void Awake ()
+    void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
-            Destroy (gameObject);
+            Destroy(gameObject);
     }
     #endregion
 
@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject[] sanityBars;
-    public Slider madnessSlider;
+    public Image madnessFill;
     public GameObject pillCountGO;
     public Sprite[] pillCountSpr = new Sprite[4];
     public GameObject helmetOffIndicator;
@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         //slider Madness li� � la value dans le GameManager
-        madnessSlider.value = gameManager.playerMadness;
+        madnessFill.fillAmount = gameManager.playerMadness/100;
         //slider Sanity li� � la value dans le GameManager
         #region Sanity healthbar
         if (gameManager.playerSanity >= 100)
@@ -222,7 +222,7 @@ public class UIManager : MonoBehaviour
 
     public void GetObjectInInventory(GameObject usable)
     {
-        if(isSlot1Full == false)
+        if (isSlot1Full == false)
         {
             inventoryButton1.sprite = usable.GetComponent<SpriteRenderer>().sprite;
             inventoryButton1.GetComponent<Image>().enabled = true;
@@ -231,7 +231,7 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        if(isSlot2Full == false)
+        if (isSlot2Full == false)
         {
             inventoryButton2.sprite = usable.GetComponent<SpriteRenderer>().sprite;
             inventoryButton2.GetComponent<Image>().enabled = true;
@@ -240,7 +240,7 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        if(isSlot3Full == false)
+        if (isSlot3Full == false)
         {
             inventoryButton3.sprite = usable.GetComponent<SpriteRenderer>().sprite;
             inventoryButton3.GetComponent<Image>().enabled = true;
@@ -252,17 +252,19 @@ public class UIManager : MonoBehaviour
 
     public void ActivateSlot1()
     {
-        if(oneSlotAtTheTimeSecurity == false){
-        if(isSlot1Active == false)
+        if (oneSlotAtTheTimeSecurity == false)
         {
-            oneSlotAtTheTimeSecurity = true;
-            isSlot1Active = true;
+            if (isSlot1Active == false)
+            {
+                oneSlotAtTheTimeSecurity = true;
+                isSlot1Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
                 object1Equipped.SetActive(true);
                 return;
+            }
         }
-        }
-        if(isSlot1Active == true){
+        if (isSlot1Active == true)
+        {
 
             oneSlotAtTheTimeSecurity = false;
             isSlot1Active = false;
@@ -270,21 +272,23 @@ public class UIManager : MonoBehaviour
             object1Equipped.SetActive(false);
             return;
         }
-        
+
     }
     public void ActivateSlot2()
     {
-        if(oneSlotAtTheTimeSecurity == false){
-        if(isSlot2Active == false)
+        if (oneSlotAtTheTimeSecurity == false)
         {
-            oneSlotAtTheTimeSecurity = true;
-            isSlot2Active = true;
+            if (isSlot2Active == false)
+            {
+                oneSlotAtTheTimeSecurity = true;
+                isSlot2Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
                 object2Equipped.SetActive(true);
                 return;
+            }
         }
-        }
-        if(isSlot2Active == true){
+        if (isSlot2Active == true)
+        {
 
             oneSlotAtTheTimeSecurity = false;
             isSlot2Active = false;
@@ -292,21 +296,23 @@ public class UIManager : MonoBehaviour
             object2Equipped.SetActive(false);
             return;
         }
-        
+
     }
     public void ActivateSlot3()
     {
-        if(oneSlotAtTheTimeSecurity == false){
-        if(isSlot3Active == false)
+        if (oneSlotAtTheTimeSecurity == false)
         {
-            oneSlotAtTheTimeSecurity = true;
-            isSlot3Active = true;
+            if (isSlot3Active == false)
+            {
+                oneSlotAtTheTimeSecurity = true;
+                isSlot3Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
                 object3Equipped.SetActive(true);
                 return;
+            }
         }
-        }
-        if(isSlot3Active == true){
+        if (isSlot3Active == true)
+        {
 
             oneSlotAtTheTimeSecurity = false;
             isSlot3Active = false;
@@ -314,7 +320,7 @@ public class UIManager : MonoBehaviour
             object3Equipped.SetActive(false);
             return;
         }
-        
+
     }
 
     public void GotHelmet()
@@ -331,13 +337,12 @@ public class UIManager : MonoBehaviour
         helmetOffIndicator.SetActive(true);
         helmetOnIndicator.SetActive(false);
     }
-    public IEnumerator FadeToBlackTP(GameObject player,Transform spawnPoint, float fadeSpeed = 1f)
+    public IEnumerator FadeToBlackTP(GameObject player, Transform spawnPoint, bool fadeToBlack, float fadeSpeed = 1f)
     {
         Color objectColor = UIManager.Instance.blackScreen.GetComponent<Image>().color;
         float fadeAmount;
 
         player.GetComponent<PlayerInput>().currentActionMap.Disable();
-
         while (UIManager.Instance.blackScreen.GetComponent<Image>().color.a < 1)
         {
             fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
@@ -347,17 +352,22 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
 
+        Debug.Log("teleport");
         player.transform.position = spawnPoint.position;
-        yield return new WaitForSeconds(2.5f);
-            
-        while (UIManager.Instance.blackScreen.GetComponent<Image>().color.a > 0)
+        fadeToBlack = true;
+
+        if (fadeToBlack)
         {
-            fadeAmount = UIManager.Instance.blackScreen.GetComponent<Image>().color.a - (fadeSpeed * Time.deltaTime);
-                
-            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-            UIManager.Instance.blackScreen.GetComponent<Image>().color = objectColor;
-            yield return null;
+            while (UIManager.Instance.blackScreen.GetComponent<Image>().color.a > 0)
+            {
+                fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
+
+                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+                UIManager.Instance.blackScreen.GetComponent<Image>().color = objectColor;
+                yield return null;
+            }
+            Debug.Log("movementEnabled");
+            player.GetComponent<PlayerInput>().currentActionMap.Enable();
         }
-        player.GetComponent<PlayerInput>().currentActionMap.Enable();
     }
 }

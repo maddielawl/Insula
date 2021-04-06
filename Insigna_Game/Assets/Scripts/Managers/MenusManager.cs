@@ -78,7 +78,6 @@ public class MenusManager : MonoBehaviour
             {
                 Animator loadingScreenAnimator = loadingScreen.GetComponentInChildren<Animator>();
                 loadingScreenAnimator.SetTrigger("LoadingStop");
-                Debug.Log("bruh");
                 DisplayValidateLoadingText();
             }
         }
