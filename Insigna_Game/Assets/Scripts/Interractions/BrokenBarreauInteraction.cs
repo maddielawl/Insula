@@ -173,7 +173,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
         barreauInteraction.SetActive(true);
         transform.GetComponent<BoxCollider2D>().enabled = false;
         
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
         
         nearInt0.SetActive(false);
         security = false;

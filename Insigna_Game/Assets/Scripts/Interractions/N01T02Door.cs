@@ -8,6 +8,7 @@ public class N01T02Door : MonoBehaviour
     public Image baseSlotSprite;
     public GameObject emptySlot;
     public GameObject door;
+    public Animator doorAnimator;
 
 
     private InterractableWithInventory parent;
@@ -32,6 +33,7 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.isSlot1Active = false;
                     UIManager.Instance.object1Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    doorAnimator.SetTrigger("Opened");
                     door.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
 
