@@ -7,7 +7,7 @@ public class DeclareMadness : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.sanityZone = this.gameObject;
-        GameManager.Instance.sanityZone.SetActive(false);
+        GameManager.Instance.madnessZone = this.gameObject;
+        GameManager.Instance.madnessZone.SetActive(false);
     }
 }
