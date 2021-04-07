@@ -34,6 +34,7 @@ public class MenusManager : MonoBehaviour
     public GameObject ingameGameOverUI;
     public GameObject endgameThanksScreen;
     public GameObject inGameOptions;
+    public GameObject PopUp;
 
 
     [Header("UI ELEMENTS")]
@@ -67,6 +68,7 @@ public class MenusManager : MonoBehaviour
         }
         menusActions = new GameInputs();
         mainMenuAudioSource = GetComponent<AudioSource>();
+        PopUp.SetActive(false);
     }
 
 
@@ -304,6 +306,7 @@ public class MenusManager : MonoBehaviour
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
         //cursorManger.SetActive(false);
+        PopUp.SetActive(true);
         inGame = true;
     }
 
