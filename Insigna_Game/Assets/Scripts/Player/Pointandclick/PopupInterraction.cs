@@ -83,7 +83,7 @@ public class PopupInterraction : MonoBehaviour
         popUpList = GameObject.Find("PopUps");
         nearInt0 = popUpList.transform.GetChild(interractionIdx).gameObject;
         nearInt0.SetActive(false);
-        farInt1 = transform.GetChild(1).gameObject;
+        farInt1 = transform.GetChild(0).gameObject;
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
         interractionSecurity = false;
