@@ -11,20 +11,5 @@ public class ButtonL02 : MonoBehaviour
     public int lever3 = 0;
     public int lever4 = 0;
 
-    private void Start()
-    {
-        parent = transform.parent.GetComponent<Interractable>();
-
-    }
-
-    void Update()
-    {
-        if (parent.interractionSecurity == false)
-        {
-            if (lever1 == 2 && lever2 == 1 && lever3 == 2 && lever4 == 0)
-            {
-                Debug.Log("Ta grosse mère vincent");
-            }
-        }
-    }
+    
 }

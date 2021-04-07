@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Button1Activation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Interractable parent;
+    private ButtonL02 button;
+
+    private void Start()
     {
-        
+        button = transform.parent.GetComponent<ButtonL02>();
+        parent = transform.parent.GetComponent<Interractable>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (parent.interractionSecurity == false)
+        {
+            parent.interractionSecurity = true;
+            if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 2 && button.lever4 == 0)
+            {
+                Debug.Log("Ta grosse mère vincent");
+            }
+        }
     }
 }
