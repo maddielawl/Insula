@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever1 : MonoBehaviour
+public class Lever4 : MonoBehaviour
 {
-
     private ButtonL02 button;
     private Interractable parent;
 
@@ -24,51 +23,52 @@ public class Lever1 : MonoBehaviour
         {
             parent.interractionSecurity = true;
 
-            if (button.lever1 == 0) {
+            if (button.lever4 == 0)
+            {
                 if (order == false)
                 {
-                    button.lever1++;
+                    button.lever4++;
                 }
                 if (order == true)
                 {
-                    button.lever1--;
+                    button.lever4--;
                 }
-                Debug.Log(button.lever1);
+                Debug.Log(button.lever4);
                 return;
             }
-             if (button.lever1 == 1) {
+            if (button.lever4 == 1)
+            {
                 if (order == true)
                 {
-                    button.lever1--;
+                    button.lever4--;
                     order = false;
                     return;
                 }
                 if (order == false)
                 {
-                    button.lever1++;
+                    button.lever4++;
                     order = true;
                     return;
-                }                
-                Debug.Log(button.lever1);
+                }
+                Debug.Log(button.lever4);
 
             }
-            if (button.lever1 == 2) {
+            if (button.lever4 == 2)
+            {
                 if (order == false)
                 {
-                    button.lever1++;
+                    button.lever4++;
                 }
                 if (order == true)
                 {
-                    button.lever1--;
+                    button.lever4--;
                 }
-                Debug.Log(button.lever1);
+                Debug.Log(button.lever4);
                 return;
 
             }
-            }
-                
-
         }
 
-        }
 
+    }
+}

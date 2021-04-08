@@ -7,6 +7,9 @@ public class Button1Activation : MonoBehaviour
     private Interractable parent;
     private ButtonL02 button;
 
+    public GameObject ladder;
+    public GameObject bloqueur;
+
     private void Start()
     {
         button = transform.parent.GetComponent<ButtonL02>();
@@ -21,6 +24,8 @@ public class Button1Activation : MonoBehaviour
             parent.interractionSecurity = true;
             if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 2 && button.lever4 == 0)
             {
+                bloqueur.SetActive(false);
+                ladder.SetActive(true);
                 Debug.Log("Ta grosse mère vincent");
             }
         }
