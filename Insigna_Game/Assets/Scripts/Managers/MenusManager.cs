@@ -35,6 +35,22 @@ public class MenusManager : MonoBehaviour
     public GameObject endgameThanksScreen;
     public GameObject inGameOptions;
     public GameObject PopUp;
+    [Header ("Diary Entries")]
+    public GameObject diary;
+    public GameObject selectscreen;
+    public GameObject entries;
+    public GameObject returntoselectbutton;
+    public GameObject entry0;
+    public GameObject entry1;
+    public GameObject entry2;
+    public GameObject entry3;
+    public GameObject entry4;
+    public GameObject entry5;
+    public GameObject entry6;
+    public GameObject entry7;
+    public GameObject entry8;
+    public GameObject entry9;
+
 
 
     [Header("UI ELEMENTS")]
@@ -309,6 +325,42 @@ public class MenusManager : MonoBehaviour
         PopUp.SetActive(true);
         inGame = true;
     }
+    #region Journal
+
+    public void Diary()
+    {
+        diary.SetActive(true);
+    }
+
+    public void HideDiary()
+    {
+        diary.SetActive(false);
+    }
+
+    public void ReturnToSelect()
+    {
+        entry0.SetActive(false);
+        entry1.SetActive(false);
+        entry2.SetActive(false);
+        entry3.SetActive(false);
+        entry4.SetActive(false);
+        entry5.SetActive(false);
+        entry6.SetActive(false);
+        entry7.SetActive(false);
+        entry8.SetActive(false);
+        entry9.SetActive(false);
+        entries.SetActive(false);
+        selectscreen.SetActive(true);
+    }
+
+    public void GetToEntry0()
+    {
+        entries.SetActive(true);
+        entry0.SetActive(true);
+        selectscreen.SetActive(false);
+    }
+
+    #endregion
 
     #region OPTIONS
 
