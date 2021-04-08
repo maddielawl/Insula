@@ -18,6 +18,10 @@ public class Lever : MonoBehaviour
 
     private InterractableWithInventory parent;
 
+    public Interractable doorInteractScript;
+    public string doorOpenedNearText;
+    public string doorOpenedFarText;
+
     void Start()
     {
         parent = transform.parent.GetComponent<InterractableWithInventory>();
@@ -47,6 +51,9 @@ public class Lever : MonoBehaviour
                     leverAnimator.SetTrigger("LeverActivated");
                     GrilleAnimator.SetTrigger("Open");
                     parent.GetComponent<BoxCollider2D>().enabled = false;
+
+                    doorInteractScript.nearPhrase = doorOpenedNearText;
+                    doorInteractScript.farPhrase = doorOpenedFarText;
                     InteractionOff = true;
                 }
             }
@@ -67,6 +74,8 @@ public class Lever : MonoBehaviour
                     leverAnimator.SetTrigger("LeverActivated");
                     GrilleAnimator.SetTrigger("Open");
                     parent.GetComponent<BoxCollider2D>().enabled = false;
+                    doorInteractScript.nearPhrase = doorOpenedNearText;
+                    doorInteractScript.farPhrase = doorOpenedFarText;
                     InteractionOff = true;
                 }
             }
@@ -88,6 +97,8 @@ public class Lever : MonoBehaviour
                     leverAnimator.SetTrigger("LeverActivated");
                     GrilleAnimator.SetTrigger("Open");
                     parent.GetComponent<BoxCollider2D>().enabled = false;
+                    doorInteractScript.nearPhrase = doorOpenedNearText;
+                    doorInteractScript.farPhrase = doorOpenedFarText;
                     InteractionOff = true;
                 }
             }

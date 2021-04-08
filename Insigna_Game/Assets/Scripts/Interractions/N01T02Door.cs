@@ -12,6 +12,8 @@ public class N01T02Door : MonoBehaviour
 
 
     private InterractableWithInventory parent;
+    public string doorOpenedNearText;
+    public string doorOpenedFarText;
 
     void Start()
     {
@@ -36,6 +38,9 @@ public class N01T02Door : MonoBehaviour
                     doorAnimator.SetTrigger("Opened");
                     door.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
+                    
+                    transform.parent.GetComponent<InterractableWithInventory>().nearPhrase = doorOpenedNearText;
+                    transform.parent.GetComponent<InterractableWithInventory>().farPhrase = doorOpenedFarText;
 
                     transform.parent.GetComponent<BoxCollider2D>().enabled = false;
 
