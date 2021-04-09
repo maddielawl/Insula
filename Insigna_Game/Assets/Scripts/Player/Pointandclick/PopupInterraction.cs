@@ -34,7 +34,7 @@ public class PopupInterraction : MonoBehaviour
     // S�curise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
 
-    public GameObject vfx;
+    //public GameObject vfx;
 
     [Header("Phrase a dire")]
     public string farPhrase;
@@ -134,9 +134,10 @@ public class PopupInterraction : MonoBehaviour
                         {
                             StartCoroutine(NearInterraction());
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
-                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                            currentVfx.transform.parent = null;
-                            Destroy(currentVfx, 3f);
+                            playerInputs.currentActionMap.Disable();
+                            //GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                            //currentVfx.transform.parent = null;
+                            //Destroy(currentVfx, 3f);
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
 
@@ -182,6 +183,7 @@ public class PopupInterraction : MonoBehaviour
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        playerInputs.currentActionMap.Enable();
     }
     private IEnumerator FarInterraction()
     {
