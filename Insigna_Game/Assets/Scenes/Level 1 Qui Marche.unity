@@ -3133,7 +3133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410016930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.49, y: 0.9, z: 52.4}
+  m_LocalPosition: {x: 4.49, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1879983025}
@@ -4280,7 +4280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523562800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.12, y: -0.09, z: 0}
+  m_LocalPosition: {x: 35.12, y: 0.6, z: 0}
   m_LocalScale: {x: 65.499374, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 466719924}
@@ -4736,7 +4736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 75458846511059899, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.75
+      value: 9.29
       objectReference: {fileID: 0}
     - target: {fileID: 1721323912290696874, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_Name
@@ -4878,6 +4878,10 @@ PrefabInstance:
     - target: {fileID: 6080448070891402620, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
       propertyPath: m_FollowOffset.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080448070891402620, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
+      propertyPath: m_FollowOffset.z
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6080448072693719588, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
       propertyPath: m_Follow
@@ -11688,7 +11692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 75458846511059899, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.43
+      value: 8.77
       objectReference: {fileID: 0}
     - target: {fileID: 1721323912290696874, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_Name
@@ -28369,6 +28373,10 @@ PrefabInstance:
     - target: {fileID: 6757340273188462668, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
       propertyPath: m_Name
       value: InsanitySphere (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757340273188462668, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6757340273557991672, guid: 2488c8a8b69f71d4cb3951b422a8ac10, type: 3}
       propertyPath: m_IsActive
