@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Lever_N01_T02 : MonoBehaviour
 {
     public Animator leverAnimator;
-    public GameObject Grille;
+    public Animator Grille;
 
     private bool InteractionOff;
 
@@ -26,7 +26,7 @@ public class Lever_N01_T02 : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("UseLever");
 
             leverAnimator.SetTrigger("LeverActivated");
-            Grille.SetActive(false);
+            Grille.SetTrigger("Opened");
             parent.GetComponent<BoxCollider2D>().enabled = false;
             InteractionOff = true;
         }

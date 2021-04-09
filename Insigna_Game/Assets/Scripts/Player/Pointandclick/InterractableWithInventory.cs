@@ -30,7 +30,10 @@ public class InterractableWithInventory : MonoBehaviour
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
 
-    public GameObject vfx;
+    public SpriteRenderer[] objectSprite;
+    private Sprite[] spriteNormal;
+    public Sprite[] spriteHighlight;
+
 
     public string objectToInterractWith;
 
@@ -77,6 +80,11 @@ public class InterractableWithInventory : MonoBehaviour
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
         interractionSecurity = false;
+        spriteNormal = new Sprite[objectSprite.Length];
+        for (int i = 0; i < objectSprite.Length; i++)
+        {
+            spriteNormal[i] = objectSprite[i].sprite;
+        }
     }
 
 
@@ -141,8 +149,12 @@ public class InterractableWithInventory : MonoBehaviour
     {
         if (isNear == true)
         {
+            for (int i = 0; i < objectSprite.Length; i++)
+            {
+                objectSprite[i].sprite = spriteHighlight[i];
+            }
 
-            
+
             if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot1Active == true)
             {
                 UIManager.Instance.SetInterractionCursor();
@@ -165,6 +177,10 @@ public class InterractableWithInventory : MonoBehaviour
         }
         if (isNear == false)
         {
+            for (int i = 0; i < objectSprite.Length; i++)
+            {
+                objectSprite[i].sprite = spriteHighlight[i];
+            }
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -174,6 +190,11 @@ public class InterractableWithInventory : MonoBehaviour
 
     private void OnMouseExit()
     {
+        for (int i = 0; i < objectSprite.Length; i++)
+        {
+            objectSprite[i].sprite = spriteNormal[i];
+        }
+
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
@@ -182,9 +203,9 @@ public class InterractableWithInventory : MonoBehaviour
     private IEnumerator NearInterraction()
     {
         nearInt0.SetActive(true);
-        
+
         yield return new WaitForSeconds(2.5f);
-        
+
         nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
@@ -198,7 +219,7 @@ public class InterractableWithInventory : MonoBehaviour
         observationText.text = farPhrase;
 
         yield return new WaitForSeconds(2.5f);
-        
+
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
