@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropHandler
+public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField]
     private Canvas canvas;
     private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
+    [HideInInspector]
+    public CanvasGroup canvasGroup;
 
     [HideInInspector]
     public Vector2 iniRectTransform;
@@ -28,7 +29,7 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropHandler
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
-    public void OnDrop(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
     }

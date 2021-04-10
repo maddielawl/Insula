@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 887226934}
+  canvasGroup: {fileID: 0}
   iniRectTransform: {x: 0, y: 0}
 --- !u!1 &34534168
 GameObject:
@@ -3698,6 +3699,7 @@ GameObject:
   - component: {fileID: 615700414}
   - component: {fileID: 615700413}
   - component: {fileID: 615700412}
+  - component: {fileID: 615700415}
   m_Layer: 5
   m_Name: TV
   m_TagString: Untagged
@@ -3767,7 +3769,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 615700413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 615700415}
+        m_TargetAssemblyTypeName: HelmetTaken, Assembly-CSharp
+        m_MethodName: HelmetTook
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &615700413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3806,6 +3820,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615700410}
   m_CullTransparentMesh: 1
+--- !u!114 &615700415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615700410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8772314d11a0944ad5af6d397ebc9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ordureWithTV: {fileID: 21300000, guid: 8fd738d3a1a964b4891842a69fcbd0e5, type: 3}
 --- !u!1 &619160160
 GameObject:
   m_ObjectHideFlags: 0
@@ -4204,6 +4231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 887226934}
+  canvasGroup: {fileID: 0}
   iniRectTransform: {x: 0, y: 0}
 --- !u!1 &709839367
 GameObject:
@@ -4867,6 +4895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 887226934}
+  canvasGroup: {fileID: 0}
   iniRectTransform: {x: 0, y: 0}
 --- !u!1 &830645917
 GameObject:
@@ -5831,6 +5860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 887226934}
+  canvasGroup: {fileID: 0}
   iniRectTransform: {x: 0, y: 0}
 --- !u!1 &1036603936
 GameObject:
@@ -7789,6 +7819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 887226934}
+  canvasGroup: {fileID: 0}
   iniRectTransform: {x: 0, y: 0}
 --- !u!1 &1282617821
 GameObject:
@@ -8153,6 +8184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 887226934}
+  canvasGroup: {fileID: 0}
   iniRectTransform: {x: 0, y: 0}
 --- !u!1 &1338185865
 GameObject:
@@ -15057,6 +15089,14 @@ PrefabInstance:
       propertyPath: inventoryButton3
       value: 
       objectReference: {fileID: 2057320880}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: helmetOnIndicator
+      value: 
+      objectReference: {fileID: 2243372781693395513}
+    - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
+      propertyPath: helmetOffIndicator
+      value: 
+      objectReference: {fileID: 8075693817144078176}
     - target: {fileID: 4503525153213861215, guid: 78a2b44d8dc975448bbbf9a0e5c7c15e, type: 3}
       propertyPath: sanityBars.Array.data[0]
       value: 
