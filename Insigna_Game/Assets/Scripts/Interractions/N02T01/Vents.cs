@@ -6,6 +6,7 @@ public class Vents : MonoBehaviour
 {
     public GameObject inside;
     public GameObject outside;
+    public GameObject[] nears;
 
     private Transform player;
 
@@ -14,18 +15,24 @@ public class Vents : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    public void GetInside(Transform insidePos) 
+    public void GetInside() 
     {
+        for (int i = 0; i == 6; i++)
+        {
+            nears[i].SetActive(false);
+        }
         inside.SetActive(true);
         outside.SetActive(false);
-        player = insidePos;
     }
 
-    public void GetOutside(Transform outsidePos)
+    public void GetOutside()
     {
+        for(int i = 0; i == 6; i++)
+        {
+            nears[i].SetActive(false);
+        }
         inside.SetActive(false);
         outside.SetActive(true);
-        player = outsidePos;
     }
 
 }

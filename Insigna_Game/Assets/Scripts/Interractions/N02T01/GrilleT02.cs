@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrilleT01 : MonoBehaviour
+public class GrilleT02 : MonoBehaviour
 {
     private Interractable parent;
 
@@ -13,14 +13,14 @@ public class GrilleT01 : MonoBehaviour
         parent = transform.parent.GetComponent<Interractable>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (parent.interractionSecurity == false)
         {
             parent.interractionSecurity = true;
 
-            vents.GetInside();
+            vents.GetOutside();
 
         }
     }
