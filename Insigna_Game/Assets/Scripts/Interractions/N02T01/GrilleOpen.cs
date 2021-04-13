@@ -8,8 +8,6 @@ public class GrilleOpen : MonoBehaviour
 
     private InterractableWithInventory parent;
 
-    private bool order = false;
-
     public Image baseSlotSprite;
     public GameObject emptySlot;
 
@@ -38,6 +36,7 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.object1Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     grilleOuverte.SetActive(true);
+                    GameManager.Instance.globalInterractionSecurity = false;
                     Destroy(transform.parent.gameObject);
                 }
             }
@@ -52,6 +51,8 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.object2Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     grilleOuverte.SetActive(true);
+                    GameManager.Instance.globalInterractionSecurity = false;
+
                     Destroy(transform.parent.gameObject);
                 }
             }
@@ -66,6 +67,8 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.object3Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     grilleOuverte.SetActive(true);
+                    GameManager.Instance.globalInterractionSecurity = false;
+
                     Destroy(transform.parent.gameObject);
                 }
             }
