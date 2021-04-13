@@ -82,9 +82,40 @@ public class DiaryInteraction : MonoBehaviour
         farInt1.SetActive(false);
         interractionSecurity = false;
 
+        switch (entryNumber)
+        {
+            case "1":
+                entryGO = MenusManager.instance.entrytext1;
+                break;
+            case "2":
+                entryGO = MenusManager.instance.entrytext2;
+                break;
+            case "3":
+                entryGO = MenusManager.instance.entrytext3;
+                break;
+            case "4":
+                entryGO = MenusManager.instance.entrytext4;
+                break;
+            case "5":
+                entryGO = MenusManager.instance.entrytext5;
+                break;
+            case "6":
+                entryGO = MenusManager.instance.entrytext6;
+                break;
+            case "7":
+                entryGO = MenusManager.instance.entrytext7;
+                break;
+            case "8":
+                entryGO = MenusManager.instance.entrytext8;
+                break;
+            case "9":
+                entryGO = MenusManager.instance.entrytext9;
+                break;
+
+        }
         entry = "Entry (" + entryNumber + ")";
-        Debug.Log(entry);
-        entryGO = GameObject.Find(entry);
+        int index = int.Parse(entryNumber) + 2;
+        entryNumber = index.ToString();
     }
 
 
@@ -137,7 +168,9 @@ public class DiaryInteraction : MonoBehaviour
                             Destroy(currentVfx, 3f);
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
-                            //entryGO.SetActive(true);
+                            entryGO.SetActive(true);
+                            transform.GetComponent<BoxCollider2D>().enabled = false;
+                            transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = false;
                         }
                     }
                 }
@@ -179,7 +212,7 @@ public class DiaryInteraction : MonoBehaviour
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
 
         yield return 0;
     }

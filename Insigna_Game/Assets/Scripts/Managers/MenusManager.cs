@@ -35,9 +35,21 @@ public class MenusManager : MonoBehaviour
     public GameObject endgameThanksScreen;
     public GameObject inGameOptions;
     public GameObject PopUp;
-    [Header ("Diary Entries")]
+    [Header("Diary Entries")]
     public GameObject diary;
     public GameObject selectscreen;
+    [Space(10)]
+    public GameObject entrytext0;
+    public GameObject entrytext1;
+    public GameObject entrytext2;
+    public GameObject entrytext3;
+    public GameObject entrytext4;
+    public GameObject entrytext5;
+    public GameObject entrytext6;
+    public GameObject entrytext7;
+    public GameObject entrytext8;
+    public GameObject entrytext9;
+    [Space(10)]
     public GameObject entries;
     public GameObject returntoselectbutton;
     public GameObject entry0;
