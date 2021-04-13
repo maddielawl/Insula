@@ -46,7 +46,7 @@ public class CameraManager : MonoBehaviour
     }
     public void setCameraPrioHigh(CinemachineVirtualCamera cam)
     {
-        cam.Priority = 10;
+        cam.Priority = 20;
     }
 
     public void setFollowCameraOnPlayerPosition(CinemachineVirtualCamera cam)
