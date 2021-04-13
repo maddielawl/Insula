@@ -30,6 +30,9 @@ public class HelmetUnlock : MonoBehaviour
 
     public GameObject vfx;
 
+    public GameObject ordureTV;
+    public Sprite ordureWithoutTVSpr;
+
     [Header("Phrase a dire")]
     public string farPhrase;
     public string nearPhrase;
@@ -137,6 +140,8 @@ public class HelmetUnlock : MonoBehaviour
                             Destroy(currentVfx, 3f);
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
+                            ordureTV.GetComponent<SpriteRenderer>().sprite = ordureWithoutTVSpr;
+                            
                         }
                     }
                 }

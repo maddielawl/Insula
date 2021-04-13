@@ -25,7 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         cam = Camera.main;
-        helmet = transform.GetChild(2).gameObject;
+        helmet = transform.GetChild(1).GetChild(0).gameObject;
         helmet.SetActive(false);
     }
 

@@ -10,10 +10,14 @@ public class HelmetTaken : MonoBehaviour
 
     public void Update()
     {
-        if (MenusManager.instance.inGame == true)
+        if (GameObject.Find("L01_T03_TV").GetComponent<SpriteRenderer>() != null)
         {
-            //ordureSprite = GameObject.FindGameObjectWithTag("OrdureTV").GetComponent<SpriteRenderer>();
-            //helmetInteraction = GameObject.Find("HelmetEquip");
+            ordureSprite = GameObject.Find("L01_T03_TV").GetComponent<SpriteRenderer>();
+        }
+
+        if (GameObject.Find("HelmetEquip") != null)
+        {
+            helmetInteraction = GameObject.Find("HelmetEquip");
         }
     }
     public void HelmetTook()
@@ -21,7 +25,8 @@ public class HelmetTaken : MonoBehaviour
         UIManager.Instance.GotHelmet();
         transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
         transform.parent.GetComponent<QuitPopUp>().Deactivate();
-        //ordureSprite.sprite = ordureWithTV;
-        //helmetInteraction.SetActive(true);
+        ordureSprite.sprite = ordureWithTV;
+        helmetInteraction.SetActive(true);
+        helmetInteraction.GetComponent<BoxCollider2D>().enabled = true;
     }
 }
