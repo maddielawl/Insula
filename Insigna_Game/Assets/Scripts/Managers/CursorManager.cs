@@ -8,6 +8,7 @@ public class CursorManager : MonoBehaviour
     #region Singlton:Profile
 
     public static CursorManager Instance;
+    public bool cursorState;
 
     void Awake()
     {
@@ -15,6 +16,7 @@ public class CursorManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
     }
     #endregion
 
@@ -29,6 +31,7 @@ public class CursorManager : MonoBehaviour
     {
         UnityEngine.Cursor.visible = false;
         rend = GetComponent<Image>();
+        cursorState = true;
     }
 
     // Update is called once per frame

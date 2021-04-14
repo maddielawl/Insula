@@ -21,16 +21,32 @@ public class PlayerClimbingIdleState : PlayerGroundedState
         player.transform.position = new Vector2(playerData.ladderGO.transform.position.x, player.transform.position.y);
         player.MovementCollider.isTrigger = true;
         player.RB.gravityScale = 0;
+
+        if (CursorManager.Instance.cursorState == false)
+        {
+            CursorManager.Instance.rend.enabled = false;
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        if (CursorManager.Instance.cursorState == false)
+        {
+            CursorManager.Instance.rend.enabled = true;
+            GameManager.Instance.globalInterractionSecurity = false;
+        }
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (CursorManager.Instance.cursorState == false)
+        {
+            GameManager.Instance.globalInterractionSecurity = true;
+        }
 
         if (!isExitingState)
         {

@@ -16,16 +16,30 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        if (CursorManager.Instance.cursorState == false)
+        {
+            CursorManager.Instance.rend.enabled = false;
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
+        if (CursorManager.Instance.cursorState == false)
+        {
+            CursorManager.Instance.rend.enabled = true;
+            GameManager.Instance.globalInterractionSecurity = false;
+        }
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (CursorManager.Instance.cursorState == false)
+        {
+            GameManager.Instance.globalInterractionSecurity = true;
+        }
 
         player.CheckIfShouldFlip(xInput);
 
@@ -37,21 +51,21 @@ public class PlayerMoveState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.IdleState);
             }
-            //prise d'échelle bas
-            if (xInput != 0 && (yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true 
+            //prise d'ï¿½chelle bas
+            if (xInput != 0 && (yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true
                 && playerData.BottomLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
                 player.TakeLadderCooldownOnIdleOrMove();
             }
-            //prise d'échelle haut
+            //prise d'ï¿½chelle haut
             if (xInput != 0 && (yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true
                 && playerData.TopLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
                 player.TakeLadderCooldownOnIdleOrMove();
             }
-        }        
+        }
     }
 
     public override void PhysicsUpdate()

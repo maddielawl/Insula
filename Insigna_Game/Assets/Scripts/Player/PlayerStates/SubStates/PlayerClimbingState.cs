@@ -16,16 +16,32 @@ public class PlayerClimbingState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+
+        if (CursorManager.Instance.cursorState == false)
+        {
+            CursorManager.Instance.rend.enabled = false;
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        if (CursorManager.Instance.cursorState == false)
+        {
+            CursorManager.Instance.rend.enabled = true;
+            GameManager.Instance.globalInterractionSecurity = false;
+        }
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (CursorManager.Instance.cursorState == false)
+        {
+            GameManager.Instance.globalInterractionSecurity = true;
+        }
 
         player.SetVelocityY(playerData.movementVelocity * yInput);
         
