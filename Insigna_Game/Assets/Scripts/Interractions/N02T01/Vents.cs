@@ -6,33 +6,24 @@ public class Vents : MonoBehaviour
 {
     public GameObject inside;
     public GameObject outside;
-    public GameObject[] nears;
 
-    private Transform player;
 
-    private void Start()
+
+
+    public void GetInside(GameObject thenear) 
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-    }
-
-    public void GetInside() 
-    {
-        for (int i = 0; i == 6; i++)
-        {
-            nears[i].SetActive(false);
-        }
-        inside.SetActive(true);
+        thenear.SetActive(false);
         outside.SetActive(false);
+        inside.SetActive(true);
+        
     }
 
-    public void GetOutside()
+    public void GetOutside(GameObject thenear)
     {
-        for(int i = 0; i == 6; i++)
-        {
-            nears[i].SetActive(false);
-        }
+        thenear.SetActive(false);
         inside.SetActive(false);
         outside.SetActive(true);
+        
     }
 
 }

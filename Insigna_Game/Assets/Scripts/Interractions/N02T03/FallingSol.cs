@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GrilleOpen : MonoBehaviour
+public class FallingSol : MonoBehaviour
 {
-
     private InterractableWithInventory parent;
+
+    public GameObject floor;
 
     public Image baseSlotSprite;
     public GameObject emptySlot;
-
-    public GameObject grilleOuverte;
-
 
     void Start()
     {
         parent = transform.parent.GetComponent<InterractableWithInventory>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (parent.interractionSecurity == false)
@@ -34,10 +32,10 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.objectInSlot1 = emptySlot;
                     UIManager.Instance.isSlot1Active = false;
                     UIManager.Instance.object1Equipped.SetActive(false);
+                    FindObjectOfType<AudioManager>().Play("UseKey");
                     UIManager.Instance.isSlot1Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
-                    FindObjectOfType<AudioManager>().Play("UseKey");
-                    grilleOuverte.SetActive(true);
+                    floor.AddComponent<Rigidbody2D>();
                     GameManager.Instance.globalInterractionSecurity = false;
                     Destroy(transform.parent.gameObject);
                 }
@@ -51,10 +49,11 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.objectInSlot2 = emptySlot;
                     UIManager.Instance.isSlot2Active = false;
                     UIManager.Instance.object2Equipped.SetActive(false);
+                    FindObjectOfType<AudioManager>().Play("UseKey");
                     UIManager.Instance.isSlot2Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
-                    FindObjectOfType<AudioManager>().Play("UseKey");
-                    grilleOuverte.SetActive(true);
+                    floor.AddComponent<Rigidbody2D>();
+
                     GameManager.Instance.globalInterractionSecurity = false;
 
                     Destroy(transform.parent.gameObject);
@@ -69,10 +68,11 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.objectInSlot3 = emptySlot;
                     UIManager.Instance.isSlot3Active = false;
                     UIManager.Instance.object3Equipped.SetActive(false);
+                    FindObjectOfType<AudioManager>().Play("UseKey");
                     UIManager.Instance.isSlot3Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
-                    FindObjectOfType<AudioManager>().Play("UseKey");
-                    grilleOuverte.SetActive(true);
+                    floor.AddComponent<Rigidbody2D>();
+
                     GameManager.Instance.globalInterractionSecurity = false;
 
                     Destroy(transform.parent.gameObject);

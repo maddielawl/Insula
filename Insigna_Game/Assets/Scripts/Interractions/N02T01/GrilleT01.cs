@@ -18,9 +18,9 @@ public class GrilleT01 : MonoBehaviour
     {
         if (parent.interractionSecurity == false)
         {
-            parent.interractionSecurity = true;
-
-            vents.GetInside();
+            parent.interractionSecurity = false;
+            GameManager.Instance.globalInterractionSecurity = false;
+            vents.GetInside(this.gameObject);
 
         }
     }
