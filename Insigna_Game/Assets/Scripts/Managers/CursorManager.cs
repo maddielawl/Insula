@@ -19,7 +19,8 @@ public class CursorManager : MonoBehaviour
     #endregion
 
     public Image rend;
-    public Sprite Cursor;
+    public Sprite cursor;
+    public Sprite grabCursor;
     public float horizontalOffset;
     public float verticalOffset;
     private Vector2 cursorPos;
