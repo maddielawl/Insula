@@ -74,6 +74,7 @@ public class MenusManager : MonoBehaviour
 
     [Header("OPTIONS")]
     private AudioSource mainMenuAudioSource;
+    public Toggle cursorStateToggle;
 
     [Header("Pause Menu")]
     public bool isPaused;
@@ -422,6 +423,18 @@ public class MenusManager : MonoBehaviour
 
             isFullScreen = true;
             Screen.fullScreen = true;
+        }
+    }
+
+    public void SetCursorState()
+    {
+        if(cursorStateToggle.isOn == true)
+        {
+            CursorManager.Instance.cursorState = true;
+        }
+        if(cursorStateToggle.isOn == false)
+        {
+            CursorManager.Instance.cursorState = false;
         }
     }
 

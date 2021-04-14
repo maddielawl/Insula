@@ -134,6 +134,7 @@ public class HelmetUnlock : MonoBehaviour
                         if (isNear == true)
                         {
                             StartCoroutine(AddPackInInventory());
+                            UIManager.Instance.GotHelmet();
                             FindObjectOfType<AudioManager>().Play("TakeObject");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             currentVfx.transform.parent = null;

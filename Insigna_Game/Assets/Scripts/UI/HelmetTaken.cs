@@ -20,9 +20,10 @@ public class HelmetTaken : MonoBehaviour
             helmetInteraction = GameObject.Find("HelmetEquip");
         }
     }
+
+    //Quand on récupère la télé dans le mini jeu
     public void HelmetTook()
     {
-        UIManager.Instance.GotHelmet();
         transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
         transform.parent.GetComponent<QuitPopUp>().Deactivate();
         ordureSprite.sprite = ordureWithTV;
