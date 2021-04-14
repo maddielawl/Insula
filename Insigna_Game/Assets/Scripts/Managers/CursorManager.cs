@@ -20,6 +20,7 @@ public class CursorManager : MonoBehaviour
 
     public Image rend;
     public Sprite cursor;
+    public Sprite takeCursor;
     public Sprite grabCursor;
     public float horizontalOffset;
     public float verticalOffset;
