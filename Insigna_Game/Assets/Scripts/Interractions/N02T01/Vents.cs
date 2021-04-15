@@ -7,23 +7,19 @@ public class Vents : MonoBehaviour
     public GameObject inside;
     public GameObject outside;
 
-
+    public bool isInside = false;
 
 
     public void GetInside(GameObject thenear) 
     {
-        thenear.SetActive(false);
         outside.SetActive(false);
-        inside.SetActive(true);
-        
+        inside.SetActive(true);  
     }
 
     public void GetOutside(GameObject thenear)
     {
-        thenear.SetActive(false);
         inside.SetActive(false);
-        outside.SetActive(true);
-        
+        outside.SetActive(true);        
     }
 
 }

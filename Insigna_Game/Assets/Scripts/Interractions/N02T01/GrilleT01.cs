@@ -18,10 +18,24 @@ public class GrilleT01 : MonoBehaviour
     {
         if (parent.interractionSecurity == false)
         {
-            parent.interractionSecurity = false;
-            GameManager.Instance.globalInterractionSecurity = false;
-            vents.GetInside(this.gameObject);
-
+            if (vents.isInside == false)
+            {
+                parent.interractionSecurity = false;
+                GameManager.Instance.globalInterractionSecurity = false;
+                vents.GetInside(this.gameObject);
+                vents.isInside = true;
+                this.gameObject.SetActive(false);
+                return;
+            }
+            if(vents.isInside == true)
+            {
+                parent.interractionSecurity = false;
+                GameManager.Instance.globalInterractionSecurity = false;
+                vents.GetOutside(this.gameObject);
+                vents.isInside = false;
+                this.gameObject.SetActive(false);
+                return;
+            }
         }
     }
 }
