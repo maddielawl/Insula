@@ -638,6 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -1080,6 +1081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 1144870772}
   farPhrase: La grille au loin est ouverte
   nearPhrase: Salut Victor
@@ -1173,8 +1175,9 @@ GameObject:
   - component: {fileID: 95293342}
   - component: {fileID: 95293341}
   - component: {fileID: 95293340}
+  - component: {fileID: 95293344}
   m_Layer: 0
-  m_Name: Coffre porc
+  m_Name: CoffreFortPopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1191,7 +1194,7 @@ Transform:
   m_LocalPosition: {x: 3, y: -10.977641, z: 53.03425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 230689606}
+  - {fileID: 1340936871}
   - {fileID: 1837747682}
   - {fileID: 1792726208}
   m_Father: {fileID: 2119934940}
@@ -1211,6 +1214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   farPhrase: OU1IZ
   nearPhrase: adha
   interractionIdx: 1
@@ -1317,6 +1321,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &95293344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95293338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12272ad76df5c44590739ce6cb5ec15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  page: {fileID: 156932078}
 --- !u!1 &100020947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,6 +1904,97 @@ Transform:
   m_Father: {fileID: 92626194}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &156932076
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 220828903}
+    m_Modifications:
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419469, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Name
+      value: Diary
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419469, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8355757278438419474, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+--- !u!4 &156932077 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+  m_PrefabInstance: {fileID: 156932076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &156932078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8355757278438419469, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+  m_PrefabInstance: {fileID: 156932076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &156932079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156932078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a109cae627ae24aae59a6593f98c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNear: 0
+  interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
+  vfx: {fileID: 0}
+  entryNumber: 2
+  farPhrase: Puto
+  nearPhrase: 'Pute en espagnol '
 --- !u!1 &166597795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,38 +2740,9 @@ Transform:
   - {fileID: 493333793}
   - {fileID: 2119934940}
   - {fileID: 1921327321}
+  - {fileID: 156932077}
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &230689605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 230689606}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &230689606
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230689605}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 95293339}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &243705391
 GameObject:
@@ -2997,6 +3076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -3990,6 +4070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edcd827febcc404a82161bed71082c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 0
   maxNumber: 9
   image0: {fileID: 0}
   image1: {fileID: 0}
@@ -6292,6 +6373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -6625,6 +6707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 1144870772}
   farPhrase: La grille au loin est ouverte
   nearPhrase: Salut Victor
@@ -9385,6 +9468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edcd827febcc404a82161bed71082c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 0
   maxNumber: 9
   image0: {fileID: 0}
   image1: {fileID: 0}
@@ -10384,6 +10468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -11769,6 +11854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -12126,7 +12212,7 @@ GameObject:
   - component: {fileID: 1028466797}
   - component: {fileID: 1028466798}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: All Trinkets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12169,14 +12255,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c470639ad135a4992fb26abbe568d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taille: 4
+  taille: 6
   selector: 0
-  code0: {fileID: 763989945}
-  code1: {fileID: 1559263960}
-  code2: {fileID: 380234040}
-  code3: {fileID: 2023252460}
-  code4: {fileID: 1815415129}
+  code0: {fileID: 1815415129}
+  code1: {fileID: 380234040}
+  code2: {fileID: 763989945}
+  code3: {fileID: 1559263960}
+  code4: {fileID: 2023252460}
   code5: {fileID: 1896106649}
+  trinket0: 6
+  trinket1: 4
+  trinket2: 1
+  trinket3: 4
+  trinket4: 2
+  trinket5: 0
 --- !u!1 &1048028497
 GameObject:
   m_ObjectHideFlags: 0
@@ -13393,17 +13485,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237321320}
   m_CullTransparentMesh: 1
---- !u!114 &1244096785 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7226901033563635281, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-  m_PrefabInstance: {fileID: 740222814}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603888ec25b62e047977ca4a201bb31f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1244769365
 GameObject:
   m_ObjectHideFlags: 0
@@ -15170,6 +15251,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328681775}
   m_CullTransparentMesh: 1
+--- !u!1 &1340936870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1340936871}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1340936871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340936870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 95293339}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1372888575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16310,6 +16421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -17009,6 +17121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edcd827febcc404a82161bed71082c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 0
   maxNumber: 9
   image0: {fileID: 0}
   image1: {fileID: 0}
@@ -18610,6 +18723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -18890,6 +19004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 1144870772}
   farPhrase: La grille au loin est ouverte
   nearPhrase: Salut Victor
@@ -18902,13 +19017,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739990683}
+  - component: {fileID: 1739990684}
   m_Layer: 5
   m_Name: Interraction 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1739990683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18931,6 +19047,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1739990684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739990682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603888ec25b62e047977ca4a201bb31f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpName: CoffreFortPopUp
 --- !u!1 &1744837933
 GameObject:
   m_ObjectHideFlags: 0
@@ -19546,6 +19675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -19600,6 +19730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edcd827febcc404a82161bed71082c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 0
   maxNumber: 9
   image0: {fileID: 0}
   image1: {fileID: 0}
@@ -19661,6 +19792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
@@ -20104,6 +20236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edcd827febcc404a82161bed71082c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 0
   maxNumber: 9
   image0: {fileID: 0}
   image1: {fileID: 0}
@@ -20831,7 +20964,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1244096785}
+      - m_Target: {fileID: 1739990684}
         m_TargetAssemblyTypeName: QuitPopUp, Assembly-CSharp
         m_MethodName: QuitInterraction
         m_Mode: 1
@@ -20932,6 +21065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edcd827febcc404a82161bed71082c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 0
   maxNumber: 9
   image0: {fileID: 0}
   image1: {fileID: 0}
@@ -22129,6 +22263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
   vfx: {fileID: 1144870772}
   farPhrase: Yooo ?
   nearPhrase: Yoooooooooooooooooooooo

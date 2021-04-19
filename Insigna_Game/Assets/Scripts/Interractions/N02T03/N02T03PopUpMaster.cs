@@ -18,9 +18,31 @@ public class N02T03PopUpMaster : MonoBehaviour
     public GameObject code4;
     public GameObject code5;
 
+    private N02T03Trinket nombre0;
+    private N02T03Trinket nombre1;
+    private N02T03Trinket nombre2;
+    private N02T03Trinket nombre3;
+    private N02T03Trinket nombre4;
+    private N02T03Trinket nombre5;
+
+    [Header("Code Secret")]
+    public int trinket0;
+    public int trinket1;
+    public int trinket2;
+    public int trinket3;
+    public int trinket4;
+    public int trinket5;
+
     private void Awake()
     {
-        if(taille >= 1)
+        nombre0 = code0.GetComponent<N02T03Trinket>();
+        nombre1 = code1.GetComponent<N02T03Trinket>();
+        nombre2 = code2.GetComponent<N02T03Trinket>();
+        nombre3 = code3.GetComponent<N02T03Trinket>();
+        nombre4 = code4.GetComponent<N02T03Trinket>();
+        nombre5 = code5.GetComponent<N02T03Trinket>();
+
+        if (taille >= 1)
         {
             code0.SetActive(true);
         }
@@ -48,6 +70,12 @@ public class N02T03PopUpMaster : MonoBehaviour
 
     void Update()
     {
-        
+        if(nombre0.number == trinket0 && nombre1.number == trinket1 &&
+            nombre2.number == trinket2 && nombre3.number == trinket3 &&
+            nombre4.number == trinket4 && nombre5.number == trinket5)
+        {
+            transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
+            transform.parent.GetComponent<QuitPopUp>().Deactivate();
+        }
     }
 }

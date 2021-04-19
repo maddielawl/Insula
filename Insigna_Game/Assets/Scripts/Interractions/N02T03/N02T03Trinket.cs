@@ -10,7 +10,7 @@ public class N02T03Trinket : MonoBehaviour
     private Text textButton;
     private Image imageButton;
 
-    private int number;
+    public int number = 0;
 
     [Header("Max Number")]
     public int maxNumber;
