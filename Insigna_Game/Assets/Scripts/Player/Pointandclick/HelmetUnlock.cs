@@ -27,6 +27,7 @@ public class HelmetUnlock : MonoBehaviour
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     private bool interractionSecurity = true;
+    public SpriteRenderer spriteHighlight;
 
     public GameObject vfx;
 
@@ -76,6 +77,10 @@ public class HelmetUnlock : MonoBehaviour
         farInt0.SetActive(false);
 
         interractionSecurity = false;
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = false;
+        }
     }
 
     private void Update()
@@ -134,6 +139,10 @@ public class HelmetUnlock : MonoBehaviour
                         if (isNear == true)
                         {
                             StartCoroutine(AddPackInInventory());
+                            if (spriteHighlight != null)
+                            {
+                                spriteHighlight.enabled = false;
+                            }
                             UIManager.Instance.GotHelmet();
                             FindObjectOfType<AudioManager>().Play("TakeObject");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
@@ -154,6 +163,10 @@ public class HelmetUnlock : MonoBehaviour
     {
         if (isNear == true)
         {
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -161,6 +174,10 @@ public class HelmetUnlock : MonoBehaviour
         }
         if (isNear == false)
         {
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -170,6 +187,10 @@ public class HelmetUnlock : MonoBehaviour
 
     private void OnMouseExit()
     {
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = false;
+        }
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;

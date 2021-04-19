@@ -29,6 +29,7 @@ public class DiaryInteraction : MonoBehaviour
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
+    public SpriteRenderer spriteHighlight;
 
     public GameObject vfx;
 
@@ -81,6 +82,10 @@ public class DiaryInteraction : MonoBehaviour
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
         interractionSecurity = false;
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = false;
+        }
 
         switch (entryNumber)
         {
@@ -162,6 +167,10 @@ public class DiaryInteraction : MonoBehaviour
                         if (isNear == true)
                         {
                             StartCoroutine(NearInterraction());
+                            if (spriteHighlight != null)
+                            {
+                                spriteHighlight.enabled = false;
+                            }
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             currentVfx.transform.parent = null;
@@ -182,6 +191,10 @@ public class DiaryInteraction : MonoBehaviour
     {
         if (isNear == true)
         {
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -189,6 +202,10 @@ public class DiaryInteraction : MonoBehaviour
         }
         if (isNear == false)
         {
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
             UIManager.Instance.SetFarCursor();
             cursorOn = true;
             return;
@@ -197,6 +214,10 @@ public class DiaryInteraction : MonoBehaviour
 
     private void OnMouseExit()
     {
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = false;
+        }
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;

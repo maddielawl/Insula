@@ -29,6 +29,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     private bool interractionSecurity = true;
+    public SpriteRenderer spriteHighlight;
 
     public GameObject vfx;
 
@@ -80,6 +81,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
         interractionSecurity = false;
+        spriteHighlight.enabled = false;
 
         barreauInteraction.SetActive(false);
     }
@@ -128,6 +130,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
                         if (isNear == true)
                         {
                             StartCoroutine(NearInterraction());
+                            spriteHighlight.enabled = false;
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             currentVfx.transform.parent = null;
@@ -146,6 +149,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
     {
         if (isNear == true)
         {
+            spriteHighlight.enabled = true;
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -153,6 +157,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
         }
         if (isNear == false)
         {
+            spriteHighlight.enabled = true;
             UIManager.Instance.SetFarCursor();
             cursorOn = true;
             return;
@@ -161,6 +166,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
 
     private void OnMouseExit()
     {
+        spriteHighlight.enabled = false;
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;

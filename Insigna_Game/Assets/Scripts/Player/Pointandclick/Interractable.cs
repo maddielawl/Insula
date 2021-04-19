@@ -29,6 +29,7 @@ public class Interractable : MonoBehaviour
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
+    public SpriteRenderer spriteHighlight;
 
     public GameObject vfx;
 
@@ -45,10 +46,10 @@ public class Interractable : MonoBehaviour
         {
             isNear = true;
         }
-        if(cursorOn == true)
+        if (cursorOn == true)
         {
             UIManager.Instance.SetNearCursor();
-            
+
         }
     }
 
@@ -57,10 +58,10 @@ public class Interractable : MonoBehaviour
         if (other.CompareTag("RangeNear"))
         {
             isNear = false;
-            if(cursorOn == true)
+            if (cursorOn == true)
             {
                 UIManager.Instance.SetFarCursor();
-                
+
             }
         }
     }
@@ -69,14 +70,18 @@ public class Interractable : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerInputs = player.GetComponent<PlayerInput>();
-        playerInputs.actions.FindAction("Look").started+=OnLook;
-        playerInputs.actions.FindAction("Use").started+=OnUse;
+        playerInputs.actions.FindAction("Look").started += OnLook;
+        playerInputs.actions.FindAction("Use").started += OnUse;
         nearInt0 = transform.GetChild(0).gameObject;
         nearInt0.SetActive(false);
         farInt1 = transform.GetChild(1).gameObject;
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
         interractionSecurity = false;
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = false;
+        }
     }
 
 
@@ -123,13 +128,16 @@ public class Interractable : MonoBehaviour
                         if (isNear == true)
                         {
                             StartCoroutine(NearInterraction());
+                            if (spriteHighlight != null)
+                            {
+                                spriteHighlight.enabled = false;
+                            }
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             currentVfx.transform.parent = null;
                             Destroy(currentVfx, 3f);
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
-
                         }
                     }
                 }
@@ -141,6 +149,10 @@ public class Interractable : MonoBehaviour
     {
         if (isNear == true)
         {
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -148,6 +160,10 @@ public class Interractable : MonoBehaviour
         }
         if (isNear == false)
         {
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
             UIManager.Instance.SetFarCursor();
             cursorOn = true;
             return;
@@ -156,6 +172,10 @@ public class Interractable : MonoBehaviour
 
     private void OnMouseExit()
     {
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = false;
+        }
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
@@ -164,9 +184,9 @@ public class Interractable : MonoBehaviour
     private IEnumerator NearInterraction()
     {
         nearInt0.SetActive(true);
-        
+
         yield return new WaitForSeconds(2.5f);
-        
+
         nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
@@ -180,7 +200,7 @@ public class Interractable : MonoBehaviour
         observationText.text = farPhrase;
 
         yield return new WaitForSeconds(2.5f);
-        
+
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
