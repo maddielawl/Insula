@@ -81,10 +81,10 @@ public class InterractableWithInventory : MonoBehaviour
         farInt1.SetActive(false);
         interractionSecurity = false;
         spriteNormal = new Sprite[objectSprite.Length];
-        /*for (int i = 0; i < objectSprite.Length; i++)
+        for (int i = 0; i < objectSprite.Length; i++)
         {
             spriteNormal[i] = objectSprite[i].sprite;
-        }*/
+        }
     }
 
 
@@ -149,10 +149,10 @@ public class InterractableWithInventory : MonoBehaviour
     {
         if (isNear == true)
         {
-            /*for (int i = 0; i < objectSprite.Length; i++)
+            for (int i = 0; i < objectSprite.Length; i++)
             {
                 objectSprite[i].sprite = spriteHighlight[i];
-            }*/
+            }
 
 
             if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot1Active == true)
@@ -177,10 +177,10 @@ public class InterractableWithInventory : MonoBehaviour
         }
         if (isNear == false)
         {
-            /*for (int i = 0; i < objectSprite.Length; i++)
+            for (int i = 0; i < objectSprite.Length; i++)
             {
                 objectSprite[i].sprite = spriteHighlight[i];
-            }*/
+            }
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -190,10 +190,10 @@ public class InterractableWithInventory : MonoBehaviour
 
     private void OnMouseExit()
     {
-        /*for (int i = 0; i < objectSprite.Length; i++)
+        for (int i = 0; i < objectSprite.Length; i++)
         {
             objectSprite[i].sprite = spriteNormal[i];
-        }*/
+        }
 
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
