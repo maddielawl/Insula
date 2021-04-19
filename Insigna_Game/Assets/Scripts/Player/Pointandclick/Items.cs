@@ -14,6 +14,7 @@ public class Items : MonoBehaviour
 
     // Bool qui indique si le joueur est proche de l'objet ou non
     public bool isNear = false;
+    private GameObject nearInt0;
     private GameObject farInt0;
 
 
@@ -71,6 +72,8 @@ public class Items : MonoBehaviour
         playerInputs = player.GetComponent<PlayerInput>();
         playerInputs.actions.FindAction("Look").started += OnLook;
         playerInputs.actions.FindAction("Use").started += OnUse;
+        nearInt0 = transform.GetChild(0).gameObject;
+        nearInt0.SetActive(false);
         farInt0 = transform.GetChild(0).gameObject;
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
@@ -134,6 +137,7 @@ public class Items : MonoBehaviour
 
                         if (isNear == true)
                         {
+                            StartCoroutine(NearInterraction());
                             GameManager.Instance.globalInterractionSecurity = true;
                             StartCoroutine(StoreItem());
                             FindObjectOfType<AudioManager>().Play("TakeObject");
@@ -183,6 +187,20 @@ public class Items : MonoBehaviour
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
+    }
+
+    private IEnumerator NearInterraction()
+    {
+        nearInt0.SetActive(true);
+
+        yield return new WaitForSeconds(2.5f);
+
+        nearInt0.SetActive(false);
+        security = false;
+        interractionSecurity = false;
+        GameManager.Instance.globalInterractionSecurity = false;
+
+        yield return 0;
     }
 
     private IEnumerator AddPackInInventory()
