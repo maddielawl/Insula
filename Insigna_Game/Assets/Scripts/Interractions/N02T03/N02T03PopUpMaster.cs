@@ -75,7 +75,7 @@ public class N02T03PopUpMaster : MonoBehaviour
             nombre4.number == trinket4 && nombre5.number == trinket5)
         {
             transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
-            transform.parent.GetComponent<QuitPopUp>().Deactivate();
+            Destroy(GameObject.Find(transform.parent.GetComponent<QuitPopUp>().popUpName));
         }
     }
 }
