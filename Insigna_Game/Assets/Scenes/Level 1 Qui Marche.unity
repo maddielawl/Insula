@@ -3298,8 +3298,8 @@ MonoBehaviour:
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   barreauBroken: {fileID: 1661073386}
   barreauInteraction: {fileID: 8355757278278732162}
-  farPhrase: Je ne la voyais pas si fragile d'en haut
-  nearPhrase: Un barreau est sur le point de tomber !
+  farPhrase: "C'est une \xE9chelle rouill\xE9."
+  nearPhrase: Je ne la voyais pas si fragile d'en haut.
 --- !u!61 &352253092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13771,41 +13771,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1894805868}
     m_Modifications:
-    - target: {fileID: 1217844638, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 75458846511059899, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 14.212
-      objectReference: {fileID: 0}
-    - target: {fileID: 75458846511059899, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.336406
-      objectReference: {fileID: 0}
-    - target: {fileID: 75458846511059899, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.77
-      objectReference: {fileID: 0}
     - target: {fileID: 1721323912290696874, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_Name
       value: Ladder
-      objectReference: {fileID: 0}
-    - target: {fileID: 1721323912290696874, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2295029692007634596, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10.675
-      objectReference: {fileID: 0}
-    - target: {fileID: 2295029692007634596, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.0625
-      objectReference: {fileID: 0}
-    - target: {fileID: 2295029692007634596, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.79
       objectReference: {fileID: 0}
     - target: {fileID: 3570676693507586282, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_RootOrder
@@ -13850,22 +13818,6 @@ PrefabInstance:
     - target: {fileID: 3570676693507586282, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435846278339723321, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_Size.y
-      value: 12.600761
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435846278339723321, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.8721037
-      objectReference: {fileID: 0}
-    - target: {fileID: 8024706607950226930, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.7642709
-      objectReference: {fileID: 0}
-    - target: {fileID: 8024706607950226930, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.59540707
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
@@ -36697,6 +36649,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2517969443723062452, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: ladderIcon
+      value: 
+      objectReference: {fileID: 8171585094615420236}
+    - target: {fileID: 7941276818436470544, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941276818436470544, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941276818436470544, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8171585094598819296, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -36720,7 +36688,7 @@ PrefabInstance:
     - target: {fileID: 8171585094948496294, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8844736513689680632, guid: 1610eb4073cec4b478be1851c840f9f8, type: 3}
     - target: {fileID: 8171585094948496294, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -36738,6 +36706,11 @@ PrefabInstance:
 --- !u!4 &8171585094615420235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2517969443723062408, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+  m_PrefabInstance: {fileID: 8171585094615420234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8171585094615420236 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7941276818436470544, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
   m_PrefabInstance: {fileID: 8171585094615420234}
   m_PrefabAsset: {fileID: 0}
 --- !u!222 &8187848146240319784
@@ -37735,7 +37708,7 @@ MonoBehaviour:
   spriteHighlight:
   - {fileID: 21300000, guid: 9f36d2aa37af1c34ab48fd25fe6d1b7d, type: 3}
   objectToInterractWith: Barreau
-  farPhrase: "Il y a un grand objet sph\xE9rique au loin"
+  farPhrase: "Il y a un objet sph\xE9rique au loin avec un socle."
   nearPhrase: "C\u2019est si vieux, on dirait qu\u2019il manque un morceau. "
 --- !u!1 &8770921156303196328
 GameObject:

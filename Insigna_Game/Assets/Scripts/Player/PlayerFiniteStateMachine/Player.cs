@@ -35,7 +35,9 @@ public class Player : MonoBehaviour
 
     #region Other Variables
     public Vector2 CurrentVelocity { get; private set; }
-    public int FacingDirection { get; private set; }    
+    public int FacingDirection { get; private set; }
+
+    public SpriteRenderer ladderIcon;
 
     private Vector2 workspace;
     #endregion
@@ -65,6 +67,8 @@ public class Player : MonoBehaviour
 
         playerData.ladderTaken = false;
         playerData.takeLadderCooldown = true;
+
+        ladderIcon.enabled = false;
     }
 
     private void Update()
@@ -182,10 +186,12 @@ public class Player : MonoBehaviour
         if (collision.tag == "BottomLadderTrigger")
         {
             playerData.BottomLadderTrigger = true;
+            ladderIcon.enabled = true;
         }
         if (collision.tag == "TopLadderTrigger")
         {
             playerData.TopLadderTrigger = true;
+            ladderIcon.enabled = true;
         }
     }
 
@@ -194,10 +200,12 @@ public class Player : MonoBehaviour
         if (collision.tag == "BottomLadderTrigger")
         {
             playerData.BottomLadderTrigger = false;
+            ladderIcon.enabled = false;
         }
         if (collision.tag == "TopLadderTrigger")
         {
             playerData.TopLadderTrigger = false;
+            ladderIcon.enabled = false;
         }
     }
     #endregion
