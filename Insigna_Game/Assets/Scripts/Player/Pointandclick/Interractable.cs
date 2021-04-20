@@ -36,9 +36,6 @@ public class Interractable : MonoBehaviour
     [Header("Phrase a dire")]
     public string farPhrase;
     public string nearPhrase;
-    [Space(10)]
-    public string farPhraseDone;
-    public string nearPhraseDone;
 
     [HideInInspector]
     public TextMeshProUGUI observationText;
@@ -85,14 +82,6 @@ public class Interractable : MonoBehaviour
         if (spriteHighlight != null)
         {
             spriteHighlight.enabled = false;
-        }
-        if (nearPhraseDone != null)
-        {
-            return;
-        }
-        if (farPhraseDone != null)
-        {
-            return;
         }
     }
 
