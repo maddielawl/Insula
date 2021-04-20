@@ -8,6 +8,11 @@ public class InsanityZone : MonoBehaviour
     public GameObject insanityShake;
     public int sanityDamage = 3;
 
+    public void Start()
+    {
+        insanityShake = GameObject.Find("Empty Slot");
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

@@ -35,6 +35,8 @@ public class MenusManager : MonoBehaviour
     public GameObject endgameThanksScreen;
     public GameObject inGameOptions;
     public GameObject PopUp;
+
+    public GameObject interaction1;
     [Header("Diary Entries")]
     public GameObject diary;
     public GameObject selectscreen;
@@ -85,6 +87,9 @@ public class MenusManager : MonoBehaviour
 
     public static MenusManager instance;
 
+    [HideInInspector]
+    public bool level2loaded = false;
+
     private void Awake()
     {
         if (instance != null)
@@ -111,6 +116,12 @@ public class MenusManager : MonoBehaviour
                 loadingScreenAnimator.SetTrigger("LoadingStop");
                 DisplayValidateLoadingText();
             }
+        }
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2) && level2loaded)
+        {
+            interaction1.SetActive(true);
+            level2loaded = false;
         }
     }
 
@@ -428,11 +439,11 @@ public class MenusManager : MonoBehaviour
 
     public void SetCursorState()
     {
-        if(cursorStateToggle.isOn == true)
+        if (cursorStateToggle.isOn == true)
         {
             CursorManager.Instance.cursorState = true;
         }
-        if(cursorStateToggle.isOn == false)
+        if (cursorStateToggle.isOn == false)
         {
             CursorManager.Instance.cursorState = false;
         }

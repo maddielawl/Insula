@@ -21,6 +21,7 @@ public class LevelTransition : MonoBehaviour
         if(collider.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneIndex);
+            MenusManager.instance.level2loaded = true;
         }
     }
 }
