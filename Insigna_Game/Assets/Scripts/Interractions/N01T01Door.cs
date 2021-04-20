@@ -16,7 +16,6 @@ public class N01T01Door : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         parent = transform.parent.GetComponent<Interractable>();
-
     }
 
     // Update is called once per frame

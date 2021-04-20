@@ -53,7 +53,6 @@ public class Interractable : MonoBehaviour
 
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("RangeNear"))
