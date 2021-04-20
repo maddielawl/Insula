@@ -121,6 +121,7 @@ public class MenusManager : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2) && level2loaded)
         {
             interaction1.SetActive(true);
+            interaction1.SetActive(false);
             level2loaded = false;
         }
     }

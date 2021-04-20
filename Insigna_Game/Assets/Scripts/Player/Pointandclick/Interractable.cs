@@ -36,8 +36,12 @@ public class Interractable : MonoBehaviour
     [Header("Phrase a dire")]
     public string farPhrase;
     public string nearPhrase;
+    [Space(10)]
+    public string farPhraseDone;
+    public string nearPhraseDone;
 
-    private TextMeshProUGUI observationText;
+    [HideInInspector]
+    public TextMeshProUGUI observationText;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -81,6 +85,14 @@ public class Interractable : MonoBehaviour
         if (spriteHighlight != null)
         {
             spriteHighlight.enabled = false;
+        }
+        if (nearPhraseDone != null)
+        {
+            return;
+        }
+        if (farPhraseDone != null)
+        {
+            return;
         }
     }
 

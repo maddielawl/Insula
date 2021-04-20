@@ -76,7 +76,7 @@ public class BarreauItem : MonoBehaviour
         playerInputs.actions.FindAction("Use").started += OnUse;
         nearInt0 = transform.GetChild(0).gameObject;
         nearInt0.SetActive(false);
-        farInt0 = transform.GetChild(0).gameObject;
+        farInt0 = transform.GetChild(1).gameObject;
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
         interractionSecurity = false;
