@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Lever_N01_T02 : MonoBehaviour
 {
+    public GameObject grilleGO;
     public Animator leverAnimator;
     public Animator Grille;
 
@@ -29,7 +30,14 @@ public class Lever_N01_T02 : MonoBehaviour
             Grille.SetTrigger("Opened");
             parent.GetComponent<BoxCollider2D>().enabled = false;
             InteractionOff = true;
+            StartCoroutine(DestroyGrille());
         }
 
+    }
+
+    IEnumerator DestroyGrille()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(grilleGO);
     }
 }

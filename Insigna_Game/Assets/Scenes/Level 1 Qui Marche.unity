@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "J'ai activ\xE9 le levier ! la grille s'est lev\xE9e."
+  m_text: "J'ai activ\xE9 le levier ! la grille s'est baiss\xE9e."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 29.7
   m_fontSizeBase: 122.53
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7473,7 +7473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5157673202674649272, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
@@ -26062,6 +26062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b16accd3b3c0a4291c13d4880e3b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grilleGO: {fileID: 1515313802}
   leverAnimator: {fileID: 1124895243}
   Grille: {fileID: 1515313806}
 --- !u!1 &1705129152
