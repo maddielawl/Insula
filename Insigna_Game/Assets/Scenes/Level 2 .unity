@@ -642,6 +642,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!61 &40700492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1088,6 +1089,7 @@ MonoBehaviour:
   vfx: {fileID: 1144870772}
   farPhrase: La grille au loin est ouverte
   nearPhrase: Salut Victor
+  observationText: {fileID: 0}
 --- !u!61 &92626196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1643,6 +1645,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &145180598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8355757278438419469, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+  m_PrefabInstance: {fileID: 1972013642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &145180599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+  m_PrefabInstance: {fileID: 1972013642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &145180600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145180598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a109cae627ae24aae59a6593f98c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNear: 0
+  interractionSecurity: 1
+  spriteHighlight: {fileID: 0}
+  vfx: {fileID: 0}
+  entryNumber: 3
+  farPhrase: Puto
+  nearPhrase: 'Pute en espagnol '
 --- !u!1 &149350972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,17 +1812,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 220828903}
     m_Modifications:
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Size.x
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Size.y
+      value: 10.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a301bb45dd2fd0f4189f3f8af26cc905, type: 3}
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Size.x
+      value: 13.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Size.y
+      value: 13.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 10.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10.72
+      objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2228
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2071
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.78
+      value: 1.92
       objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.17
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2228,6 +2307,7 @@ Transform:
   - {fileID: 1744837934}
   - {fileID: 876308505}
   - {fileID: 941129691}
+  - {fileID: 145180599}
   m_Father: {fileID: 1181802847}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2871,6 +2951,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!1 &281158963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5356,6 +5437,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!61 &572006754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5569,6 +5651,7 @@ MonoBehaviour:
   vfx: {fileID: 1144870772}
   farPhrase: La grille au loin est ouverte
   nearPhrase: Salut Victor
+  observationText: {fileID: 0}
 --- !u!61 &611511989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8388,6 +8471,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!1 &876308504
 GameObject:
   m_ObjectHideFlags: 0
@@ -9656,6 +9740,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!1 &1015337865
 GameObject:
   m_ObjectHideFlags: 0
@@ -12600,7 +12685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1721323912290696874, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2295029692007634596, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
       propertyPath: m_LocalScale.x
@@ -13431,6 +13516,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!61 &1487710113
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15342,6 +15428,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!61 &1727464673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15623,6 +15710,7 @@ MonoBehaviour:
   vfx: {fileID: 1144870772}
   farPhrase: La grille au loin est ouverte
   nearPhrase: Salut Victor
+  observationText: {fileID: 0}
 --- !u!1 &1744837933
 GameObject:
   m_ObjectHideFlags: 0
@@ -16242,6 +16330,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!1 &1816837739
 GameObject:
   m_ObjectHideFlags: 0
@@ -16296,6 +16385,7 @@ MonoBehaviour:
   vfx: {fileID: 0}
   farPhrase: Il y as des symboles phaliques au loin
   nearPhrase: Se sont des leviers.
+  observationText: {fileID: 0}
 --- !u!61 &1816837742
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16904,6 +16994,116 @@ Transform:
   m_Father: {fileID: 611511987}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1972013642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 195170200}
+    m_Modifications:
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Size.x
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Size.y
+      value: 10.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a301bb45dd2fd0f4189f3f8af26cc905, type: 3}
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Size.x
+      value: 13.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Size.y
+      value: 13.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 10.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419458, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2228
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2071
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 42.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -53.03425
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419469, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_Name
+      value: Diary (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419469, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8355757278438419474, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
 --- !u!1 &1976340421
 GameObject:
   m_ObjectHideFlags: 0
@@ -18102,6 +18302,7 @@ MonoBehaviour:
   vfx: {fileID: 1144870772}
   farPhrase: Yooo ?
   nearPhrase: Yoooooooooooooooooooooo
+  observationText: {fileID: 0}
 --- !u!61 &2142085507
 BoxCollider2D:
   m_ObjectHideFlags: 0
