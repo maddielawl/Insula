@@ -83,6 +83,7 @@ public class PopupInterraction : MonoBehaviour
         playerInputs.actions.FindAction("Use").started += OnUse;
         popUpList = GameObject.Find("PopUps");
         nearInt0 = popUpList.transform.GetChild(interractionIdx).gameObject;
+        QuitInterraction();
         nearInt0.SetActive(false);
         farInt1 = transform.GetChild(0).gameObject;
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
@@ -92,6 +93,7 @@ public class PopupInterraction : MonoBehaviour
         {
             spriteHighlight.enabled = false;
         }
+        QuitInterraction();
     }
 
 
