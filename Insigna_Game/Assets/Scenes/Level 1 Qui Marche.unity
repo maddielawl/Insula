@@ -3298,7 +3298,7 @@ MonoBehaviour:
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   barreauBroken: {fileID: 1661073386}
   barreauInteraction: {fileID: 8355757278278732162}
-  farPhrase: "C'est une \xE9chelle rouill\xE9."
+  farPhrase: "Oui c\u2019est par la que je suis arriv\xE9. "
   nearPhrase: Je ne la voyais pas si fragile d'en haut.
 --- !u!61 &352253092
 BoxCollider2D:
@@ -7481,7 +7481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990587224233200, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -816.09015
+      value: -816.0901
       objectReference: {fileID: 0}
     - target: {fileID: 5157673202674649272, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
@@ -23129,6 +23129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tpPoint: {fileID: 1334985209}
   isLeverOn: 0
+  doorInterractionScript: {fileID: 5393716128897589941}
+  doorText: {fileID: 5393716127720005705}
+  doorOpenedTextFar: "\xC7a y est, elle a boug\xE9. "
+  doorOpenedTextNear: "Tu as d\xE9j\xE0 ouvert cette porte Pom\u2019..."
 --- !u!1 &1481195689
 GameObject:
   m_ObjectHideFlags: 0
@@ -24830,7 +24834,7 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1654023880}
   farPhrase: Un autre bouton rouge !
-  nearPhrase: "Celui \xE0 l'air de pouvoir \xEAtre activ\xE9."
+  nearPhrase: "Il est cass\xE9 aussi..."
 --- !u!61 &1616891619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25274,7 +25278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mais... il doit y avoir un moyen d\u2019utiliser \xE7a."
+  m_text: "Mais .. il doit y avoir un moyen d\u2019utiliser \xE7a "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25301,7 +25305,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.8
+  m_fontSize: 29.25
   m_fontSizeBase: 122.53
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -32284,8 +32288,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1654023880}
-  farPhrase: On dirais un gros bouton rouge d'ici.
-  nearPhrase: Je pourrais appuyer dessus...
+  farPhrase: "Ho \xE7a brille !"
+  nearPhrase: "Ho non ! c\u2019est cass\xE9..."
 --- !u!61 &1833758251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35275,7 +35279,7 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1654023880}
   farPhrase: 'Je ne peux pas faire demi-tour, mon ami compte sur moi. '
-  nearPhrase: 'Je ne peux pas faire demi-tour, mon ami compte sur moi. '
+  nearPhrase: "J\u2019esp\xE8re que personne ne va me suivre. "
 --- !u!61 &2146135264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35750,8 +35754,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
-  farPhrase: Il y as un grand grillage au loin.
-  nearPhrase: "Ce grillage est tr\xE8s vieux, il y a forc\xE9ment un moyen de l\u2019ouvrir."
+  farPhrase: "Zut, le passage est bloqu\xE9. "
+  nearPhrase: "Cette porte est tr\xE8s vieille, il y a forc\xE9ment un moyen de l\u2019ouvrir. "
 --- !u!61 &5393716128897589947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37177,8 +37181,9 @@ MonoBehaviour:
   isNear: 0
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   barreau: {fileID: 1661073386}
-  farPhrase: "J'ai cass\xE9 ce levier, mais il pourrait surement me servir."
-  nearPhrase: "Non ! c'est cass\xE9... je dois cacher \xE7a avant de me faire frapper."
+  farPhrase: "Non ! c\u2019est cass\xE9 \u2026 je dois cacher \xE7a avant de me faire
+    frapper. "
+  nearPhrase: "Je dois trouver une cachette pour \xE7a. "
 --- !u!4 &8355757278278732169
 Transform:
   m_ObjectHideFlags: 0
@@ -37611,7 +37616,8 @@ MonoBehaviour:
   leverAnimator: {fileID: 1607636383}
   GrilleAnimator: {fileID: 1260984165}
   doorInteractScript: {fileID: 5393716128897589941}
-  doorOpenedText: lol
+  leverAxtivatedText: "Hm ! \xC7a fera l\u2019affaire. "
+  leverText: {fileID: 8770921156866761132}
 --- !u!4 &8770921156085438702
 Transform:
   m_ObjectHideFlags: 0
@@ -37722,8 +37728,8 @@ MonoBehaviour:
   spriteHighlight:
   - {fileID: 21300000, guid: 9f36d2aa37af1c34ab48fd25fe6d1b7d, type: 3}
   objectToInterractWith: Barreau
-  farPhrase: "Il y a un objet sph\xE9rique au loin avec un socle."
-  nearPhrase: "C\u2019est si vieux, on dirait qu\u2019il manque un morceau. "
+  farPhrase: "Je crois qu\u2019on ouvrait la porte avec \xE7a. "
+  nearPhrase: "C\u2019est si vieux, on dirait qu\u2019il manque un morceau."
 --- !u!1 &8770921156303196328
 GameObject:
   m_ObjectHideFlags: 0

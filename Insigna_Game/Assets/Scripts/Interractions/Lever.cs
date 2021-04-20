@@ -19,7 +19,8 @@ public class Lever : MonoBehaviour
     private InterractableWithInventory parent;
 
     public Interractable doorInteractScript;
-    public string doorOpenedText;
+    public string leverAxtivatedText;
+    public TMPro.TextMeshProUGUI leverText;
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class Lever : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
-                    //transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshPro>().text = doorOpenedText;
+                    leverText.text = leverAxtivatedText;
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot1 = emptySlot;
