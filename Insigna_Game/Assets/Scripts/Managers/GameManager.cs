@@ -42,6 +42,10 @@ public class GameManager : MonoBehaviour
     [Header("MadnessZone")]
     public GameObject madnessZone;
     public GameObject sanityZone;
+    [SerializeField]
+    private bool dimensionSwapNormal;
+    [SerializeField]
+    private bool dimensionSwapMadness;
 
     public bool globalInterractionSecurity = false;
 
@@ -52,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine("SanityDecrement");
         playerPillsCount = 0;
+        dimensionSwapNormal = true;
     }
 
 
@@ -77,10 +82,13 @@ public class GameManager : MonoBehaviour
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
                 playerMadness = playerMadness + 7;
-                if (playerMadness >= 80)
+                if (playerMadness >= 80 && dimensionSwapMadness == true)
                 {
                     madnessZone.SetActive(true);
                     sanityZone.SetActive(false);
+                    globalInterractionSecurity = false;
+                    dimensionSwapMadness = false;
+                    dimensionSwapNormal = true;
 
                 }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
@@ -105,10 +113,13 @@ public class GameManager : MonoBehaviour
                 
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
                 playerMadness = playerMadness - 3;
-                if(playerMadness <= 50)
+                if(playerMadness <= 50 && dimensionSwapNormal == true)
                 {
                     madnessZone.SetActive(false);
                     sanityZone.SetActive(true);
+                    globalInterractionSecurity = false;
+                    dimensionSwapNormal = false;
+                    dimensionSwapMadness = true;
 
                 }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
