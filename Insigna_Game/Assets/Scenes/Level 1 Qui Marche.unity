@@ -7401,26 +7401,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6080448070891402620, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
-      propertyPath: m_FollowOffset.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6080448070891402620, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
-      propertyPath: m_FollowOffset.z
-      value: -10
-      objectReference: {fileID: 0}
     - target: {fileID: 6080448072693719588, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 8171585094615420235}
-    - target: {fileID: 6080448072693719588, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
-      propertyPath: m_Priority
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6080448072693719588, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 6080448072693719589, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
       propertyPath: m_Name
       value: CamFollow
@@ -18343,7 +18327,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25534,7 +25518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352004939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.54, y: 0.71, z: -7.795002}
+  m_LocalPosition: {x: 25.54, y: 0.77, z: -7.795002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 629879769}
@@ -38198,6 +38182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894667723}
   - component: {fileID: 1894667722}
+  - component: {fileID: 1894667724}
   m_Layer: 0
   m_Name: Props_A_Box
   m_TagString: Untagged
@@ -38270,6 +38255,32 @@ Transform:
   m_Father: {fileID: 1260315371}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1894667724
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894667721}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.93, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.71}
+    newSize: {x: 4.8, y: 4.71}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 4.71}
+  m_EdgeRadius: 0
 --- !u!1 &1894805866
 GameObject:
   m_ObjectHideFlags: 0
@@ -42907,7 +42918,7 @@ MonoBehaviour:
   isNear: 0
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: 'Il y a quelque chose qui brille. '
-  nearPhrase: 'La clef ! '
+  nearPhrase: "La cl\xE9 ! "
 --- !u!1 &8355757277226543186
 GameObject:
   m_ObjectHideFlags: 0
@@ -42935,8 +42946,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8355757277226543186}
   m_LocalRotation: {x: -0, y: -0, z: -0.6564964, w: 0.75432914}
-  m_LocalPosition: {x: 85.26, y: -14.67, z: -4.636092}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 85.57, y: -14.77, z: -4.636092}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 8300396502755444146}
   - {fileID: 8355757278372429694}
@@ -42960,14 +42971,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7342857, y: 1.2857143}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 10, y: 10}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 4, y: 9}
   m_EdgeRadius: 0
 --- !u!212 &8355757277226543198
 SpriteRenderer:
@@ -43009,15 +43020,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 12
-  m_Sprite: {fileID: 21300000, guid: 68cf2bf6451b4694784d6559df2342fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 820db05adcbbb4549befa6a9e893cd30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &8355757277278150318
