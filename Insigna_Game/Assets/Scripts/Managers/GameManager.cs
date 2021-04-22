@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     public bool globalInterractionSecurity = false;
 
 
+
     #region Madness Functions
 
     private void Start()
