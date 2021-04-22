@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public IEnumerator InsideMadnessZone(int sanityDmg)
+    public IEnumerator InsideMadnessZone(int sanityDmg, int madnessGain)
     {
         if (isScared == true)
         {
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
                 }
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
-                playerMadness = playerMadness + 7;
+                playerMadness = playerMadness + madnessGain;
                 if (playerMadness >= 80 && dimensionSwapMadness == true)
                 {
                     madnessZone.SetActive(true);
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             if (isScared == true)
             {
-                StartCoroutine(InsideMadnessZone(sanityDmg));
+                StartCoroutine(InsideMadnessZone(sanityDmg, madnessGain));
             }
         }
 
