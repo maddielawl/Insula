@@ -72,6 +72,8 @@ public class UIManager : MonoBehaviour
     public RuntimeAnimatorController playerAnimatorController;
     public AnimatorOverrideController playerTvAnimatorController;
 
+    public PlayerData playerData;
+
 
     private void Start()
     {
@@ -343,15 +345,21 @@ public class UIManager : MonoBehaviour
     }
     public void HelmetIsOn()
     {
-        helmetOffIndicator.SetActive(false);
-        helmetOnIndicator.SetActive(true);
-        player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
+        if (playerData.ladderTaken == false)
+        {
+            helmetOffIndicator.SetActive(false);
+            helmetOnIndicator.SetActive(true);
+            player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
+        }
     }
     public void HelmetIsOff()
     {
-        helmetOffIndicator.SetActive(true);
-        helmetOnIndicator.SetActive(false);
-        player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
+        if (playerData.ladderTaken == false)
+        {
+            helmetOffIndicator.SetActive(true);
+            helmetOnIndicator.SetActive(false);
+            player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
+        }
     }
     public IEnumerator FadeToBlackTP(GameObject player, Transform spawnPoint, bool fadeToBlack, float fadeSpeed = 1f)
     {
