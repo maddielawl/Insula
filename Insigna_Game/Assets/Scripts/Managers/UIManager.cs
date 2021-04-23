@@ -67,6 +67,13 @@ public class UIManager : MonoBehaviour
     public GameObject helmetOnIndicator;
     public GameObject blackScreen;
 
+    [Header("Others")]
+    private GameObject player;
+    public RuntimeAnimatorController playerAnimatorController;
+    public AnimatorOverrideController playerTvAnimatorController;
+
+    public PlayerData playerData;
+
 
     private void Start()
     {
@@ -79,6 +86,15 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+        else
+        {
+            return;
+        }
+
         //slider Madness li� � la value dans le GameManager
         madnessFill.fillAmount = gameManager.playerMadness / 100;
         //slider Sanity li� � la value dans le GameManager
@@ -329,13 +345,21 @@ public class UIManager : MonoBehaviour
     }
     public void HelmetIsOn()
     {
-        helmetOffIndicator.SetActive(false);
-        helmetOnIndicator.SetActive(true);
+        if (playerData.ladderTaken == false)
+        {
+            helmetOffIndicator.SetActive(false);
+            helmetOnIndicator.SetActive(true);
+            player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
+        }
     }
     public void HelmetIsOff()
     {
-        helmetOffIndicator.SetActive(true);
-        helmetOnIndicator.SetActive(false);
+        if (playerData.ladderTaken == false)
+        {
+            helmetOffIndicator.SetActive(true);
+            helmetOnIndicator.SetActive(false);
+            player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
+        }
     }
     public IEnumerator FadeToBlackTP(GameObject player, Transform spawnPoint, bool fadeToBlack, float fadeSpeed = 1f)
     {
@@ -363,14 +387,14 @@ public class UIManager : MonoBehaviour
         float fadeAmountB;
         yield return new WaitForSeconds(2.5f);
         while (UIManager.Instance.blackScreen.GetComponent<Image>().color.a > 0)
-            {
-                fadeAmountB = objectColor.a - (fadeSpeedB * Time.deltaTime);
+        {
+            fadeAmountB = objectColor.a - (fadeSpeedB * Time.deltaTime);
 
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmountB);
-                UIManager.Instance.blackScreen.GetComponent<Image>().color = objectColor;
-                yield return null;
-            }
-            Debug.Log("movementEnabled");
-            player.GetComponent<PlayerInput>().currentActionMap.Enable();
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmountB);
+            UIManager.Instance.blackScreen.GetComponent<Image>().color = objectColor;
+            yield return null;
+        }
+        Debug.Log("movementEnabled");
+        player.GetComponent<PlayerInput>().currentActionMap.Enable();
     }
 }
