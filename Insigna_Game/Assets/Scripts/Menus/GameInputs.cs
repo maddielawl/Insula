@@ -208,7 +208,7 @@ public class @GameInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""20816574-c5f3-4dde-b669-1b6e22239c7e"",
-                    ""path"": ""<Keyboard>/o"",
+                    ""path"": ""<Keyboard>/anyKey"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
