@@ -169,6 +169,7 @@ public class MenusManager : MonoBehaviour
             asyncOp.allowSceneActivation = false;
             inGame = true;
             menusActions.MainMenuActions.Pause.started += PauseGame;
+            
         }
     }
 
@@ -324,7 +325,11 @@ public class MenusManager : MonoBehaviour
         endgameThanksScreen.SetActive(false);
         inGameOptions.SetActive(false);
         menusActions = new GameInputs();
-        SceneManager.UnloadSceneAsync("MainScene");
+        Destroy(this.transform.parent.gameObject);
+    }
+    private void OnDestroy()
+    {
+        asyncOp = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 
     public void OptionScreenInGame()
