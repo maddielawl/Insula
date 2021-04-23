@@ -279,6 +279,7 @@ public class MenusManager : MonoBehaviour
                 Time.timeScale = 1;
                 ingamePauseMenu.SetActive(false);
                 inGameOptions.SetActive(false);
+                GameManager.Instance.ActivateInGameActions();
                 isPaused = false;
                 return;
             }
@@ -287,6 +288,7 @@ public class MenusManager : MonoBehaviour
                 ingamePauseMenu.SetActive(true);
                 inGameOptions.SetActive(false);
                 Time.timeScale = 0;
+                GameManager.Instance.DeactivateInGameActions();
                 isPaused = true;
                 return;
             }

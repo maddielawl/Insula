@@ -173,7 +173,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b9136eee-d520-4f36-a45a-3f1313208fad"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
@@ -195,7 +195,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6620f5ae-b727-48a0-b37d-6cd6df4027b3"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",

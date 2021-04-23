@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
             {
                 
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
-                playerMadness = playerMadness - 3;
+                playerMadness = playerMadness - 1;
                 if(playerMadness <= 50 && dimensionSwapNormal == true)
                 {
                     madnessZone.SetActive(false);
