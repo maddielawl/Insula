@@ -16,7 +16,6 @@ public class PlayerInputHandler : MonoBehaviour
     private float inputHoldTime = 0.2f;
 
 
-    private GameObject helmet;
 
     public GameObject vfx;
 
@@ -25,8 +24,6 @@ public class PlayerInputHandler : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         cam = Camera.main;
-        helmet = transform.GetChild(1).GetChild(0).gameObject;
-        helmet.SetActive(false);
     }
 
     private void Update()
@@ -41,7 +38,6 @@ public class PlayerInputHandler : MonoBehaviour
             if (GameManager.Instance.isHelmetEquipped == true)
             {
                 GameManager.Instance.isHelmetEquipped = false;
-                helmet.SetActive(false);
                 UIManager.Instance.HelmetIsOff();
                 FindObjectOfType<AudioManager>().Play("HelmetOff");
                 return;
@@ -50,7 +46,6 @@ public class PlayerInputHandler : MonoBehaviour
             if (GameManager.Instance.isHelmetEquipped == false)
             {
                 GameManager.Instance.isHelmetEquipped = true;
-                helmet.SetActive(true);
                 UIManager.Instance.HelmetIsOn();
                 FindObjectOfType<AudioManager>().Play("HelmetOn");
                 return;
