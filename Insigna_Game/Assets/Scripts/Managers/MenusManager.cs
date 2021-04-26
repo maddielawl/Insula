@@ -103,6 +103,7 @@ public class MenusManager : MonoBehaviour
         menusActions = new GameInputs();
         mainMenuAudioSource = GetComponent<AudioSource>();
         PopUp.SetActive(false);
+        transform.gameObject.SetActive(true);
     }
 
 
@@ -169,7 +170,6 @@ public class MenusManager : MonoBehaviour
         {
             mainMenuScreen.SetActive(false);
             menuBackground.SetActive(false);
-            gameLogoImage.SetActive(false);
             loadingScreen.SetActive(true);
             asyncOp = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
             asyncOp.allowSceneActivation = false;
@@ -315,12 +315,10 @@ public class MenusManager : MonoBehaviour
 
     public void QuitToMenu()
     {
-        SceneManager.LoadScene(0);
         inGame = false;
         Time.timeScale = 1;
         menuBackground.SetActive(true);
         loadingScreen.SetActive(false);
-        gameLogoImage.SetActive(false);
         splashScreen.SetActive(false);
         mainMenuScreen.SetActive(true);
         midOptionsScreen.SetActive(false);
@@ -334,10 +332,10 @@ public class MenusManager : MonoBehaviour
         menusActions = new GameInputs();
         ReactivateMainMenuActions();
     }
-    /*private void OnDestroy()
+    private void OnDestroy()
     {
         asyncOp = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
-    }*/
+    }
 
     public void OptionScreenInGame()
     {
@@ -371,6 +369,7 @@ public class MenusManager : MonoBehaviour
         ingameGameOverUI.SetActive(true);
         ingameMainUI.SetActive(false);
         GameManager.Instance.playerSanity = 0;
+        GameManager.Instance.playerMadness = 0;
     }
 
     #region Journal

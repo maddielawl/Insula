@@ -7,17 +7,18 @@ using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
-    
+
     #region Singlton:Profile
 
     public static GameManager Instance;
 
-    void Awake ()
+    void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
-            Destroy (gameObject);
+            Destroy(gameObject);
+        playerInput = new PlayerInput();
     }
     #endregion
 
@@ -25,16 +26,16 @@ public class GameManager : MonoBehaviour
     public float playerMadness;
     public int playerSanity;
     public int playerPillsCount;
-    public int healAmmount = 30 ;
-    public PlayerInput playerInput;
+    public int healAmmount = 30;
+    private PlayerInput playerInput;
 
     [Space(5)]
     [Header("Helmet")]
     public bool isHelmetEquipped = false;
     public bool canEquipHelmet = false;
 
-    [Space(5)] 
-    [Header("Status Check")] 
+    [Space(5)]
+    [Header("Status Check")]
     public bool isScared;
 
     [Space(5)]
@@ -78,8 +79,9 @@ public class GameManager : MonoBehaviour
             {
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerSanity = playerSanity + sanityDmg;
-                if(playerSanity >= 100)
+                if (playerSanity >= 100)
                 {
+                    DeactivateInGameActions();
                     MenusManager.instance.GameOver();
                 }
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
@@ -89,7 +91,7 @@ public class GameManager : MonoBehaviour
                 {
                     indicible.SetAppear();
                     madnessZone.SetActive(true);
-                    sanityZone.SetActive(false);                    
+                    sanityZone.SetActive(false);
                     globalInterractionSecurity = false;
                     dimensionSwapMadness = false;
                     dimensionSwapNormal = true;
@@ -114,20 +116,21 @@ public class GameManager : MonoBehaviour
         {
             if (isHelmetEquipped == false)
             {
-                
+
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
                 playerMadness = playerMadness - 1;
-                if(playerMadness <= 50 && dimensionSwapNormal == true)
+                if (playerMadness <= 50 && dimensionSwapNormal == true)
                 {
-                    if(once == true)
+                    if (once == true)
                     {
                         indicible.SetDisAppear();
-                    }if(once == false)
+                    }
+                    if (once == false)
                     {
                         once = true;
-                    }                    
+                    }
                     madnessZone.SetActive(false);
-                    sanityZone.SetActive(true);                                  
+                    sanityZone.SetActive(true);
                     globalInterractionSecurity = false;
                     dimensionSwapNormal = false;
                     dimensionSwapMadness = true;
@@ -145,13 +148,13 @@ public class GameManager : MonoBehaviour
 
         yield return 0;
     }
-    
-    
-    
+
+
+
     #endregion
 
     #region HP Fuctions
-    
+
 
     public void GetHPBack()
     {
@@ -160,17 +163,16 @@ public class GameManager : MonoBehaviour
         playerSanity = Mathf.Clamp(playerSanity, 0, 100);
         playerPillsCount--;
     }
-    
+
     #endregion
 
     public void ActivateInGameActions()
     {
-        playerInput = new PlayerInput();
         playerInput.ActivateInput();
     }
     public void DeactivateInGameActions()
     {
         playerInput.DeactivateInput();
     }
-    
+
 }
