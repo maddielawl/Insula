@@ -141,6 +141,12 @@ public class MenusManager : MonoBehaviour
         menusActions.Disable();
     }
 
+    private void ReactivateMainMenuActions()
+    {
+        menusActions.Enable();
+        menusActions.MainMenuActions.ValidateSplashScreen.started += OnValidateSplashscreen;
+    }
+
     public void OnPressCancel(InputAction.CallbackContext context)
     {
         OnPressEscape();
@@ -169,7 +175,7 @@ public class MenusManager : MonoBehaviour
             asyncOp.allowSceneActivation = false;
             inGame = true;
             menusActions.MainMenuActions.Pause.started += PauseGame;
-            
+
         }
     }
 
@@ -309,6 +315,7 @@ public class MenusManager : MonoBehaviour
 
     public void QuitToMenu()
     {
+        SceneManager.LoadScene(0);
         inGame = false;
         Time.timeScale = 1;
         menuBackground.SetActive(true);
@@ -325,7 +332,7 @@ public class MenusManager : MonoBehaviour
         endgameThanksScreen.SetActive(false);
         inGameOptions.SetActive(false);
         menusActions = new GameInputs();
-        Destroy(this.transform.parent.gameObject);
+        ReactivateMainMenuActions();
     }
     /*private void OnDestroy()
     {
@@ -347,16 +354,25 @@ public class MenusManager : MonoBehaviour
     public void HideLoadingScreen(InputAction.CallbackContext context)
     {
         asyncOp.allowSceneActivation = true;
+        asyncOp = null;
+        validateLoadingText.SetActive(false);
         loadingScreen.SetActive(false);
         ingameMainUI.SetActive(true);
         MainMenuCamera.SetActive(false);
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         GameManager.Instance.ActivateInGameActions();
-        //cursorManger.SetActive(false);
         PopUp.SetActive(true);
         inGame = true;
     }
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        ingameGameOverUI.SetActive(true);
+        ingameMainUI.SetActive(false);
+        GameManager.Instance.playerSanity = 0;
+    }
+
     #region Journal
 
     public void Diary()
@@ -391,6 +407,7 @@ public class MenusManager : MonoBehaviour
         entry0.SetActive(true);
         selectscreen.SetActive(false);
     }
+    
 
     #endregion
 

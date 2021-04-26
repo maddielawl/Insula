@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy (gameObject);
-        playerInput = new PlayerInput();
     }
     #endregion
 
@@ -81,7 +80,7 @@ public class GameManager : MonoBehaviour
                 playerSanity = playerSanity + sanityDmg;
                 if(playerSanity >= 100)
                 {
-                    Destroy(GameObject.FindGameObjectWithTag("Player"));
+                    MenusManager.instance.GameOver();
                 }
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
@@ -166,6 +165,7 @@ public class GameManager : MonoBehaviour
 
     public void ActivateInGameActions()
     {
+        playerInput = new PlayerInput();
         playerInput.ActivateInput();
     }
     public void DeactivateInGameActions()
