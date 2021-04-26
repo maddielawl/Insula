@@ -30,6 +30,7 @@ public class InterractableN1_T1Door : MonoBehaviour
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
     public SpriteRenderer spriteHighlight;
+    public SpriteRenderer spriteHighlight2;
     public N01T01Door DoorScript;
 
     public GameObject vfx;
@@ -86,6 +87,10 @@ public class InterractableN1_T1Door : MonoBehaviour
         {
             spriteHighlight.enabled = false;
         }
+        if (spriteHighlight2 != null)
+        {
+            spriteHighlight2.enabled = false;
+        }
     }
 
 
@@ -136,6 +141,10 @@ public class InterractableN1_T1Door : MonoBehaviour
                             {
                                 spriteHighlight.enabled = false;
                             }
+                            if (spriteHighlight2 != null)
+                            {
+                                spriteHighlight2.enabled = false;
+                            }
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             currentVfx.transform.parent = null;
@@ -157,6 +166,10 @@ public class InterractableN1_T1Door : MonoBehaviour
             {
                 spriteHighlight.enabled = true;
             }
+            if (spriteHighlight2 != null)
+            {
+                spriteHighlight2.enabled = true;
+            }
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -167,6 +180,10 @@ public class InterractableN1_T1Door : MonoBehaviour
             if (spriteHighlight != null)
             {
                 spriteHighlight.enabled = true;
+            }
+            if (spriteHighlight2 != null)
+            {
+                spriteHighlight2.enabled = true;
             }
             UIManager.Instance.SetFarCursor();
             cursorOn = true;
@@ -179,6 +196,10 @@ public class InterractableN1_T1Door : MonoBehaviour
         if (spriteHighlight != null)
         {
             spriteHighlight.enabled = false;
+        }
+        if (spriteHighlight2 != null)
+        {
+            spriteHighlight2.enabled = false;
         }
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
@@ -202,7 +223,7 @@ public class InterractableN1_T1Door : MonoBehaviour
     {
         farInt1.SetActive(true);
         observationText.text = farPhrase;
-        if(DoorScript.isLeverOn)
+        if (DoorScript.isLeverOn)
         {
             observationText.text = farPhraseOpened;
         }
@@ -220,7 +241,7 @@ public class InterractableN1_T1Door : MonoBehaviour
     {
         farInt1.SetActive(true);
         observationText.text = nearPhrase;
-        if(DoorScript.isLeverOn)
+        if (DoorScript.isLeverOn)
         {
             observationText.text = nearPhraseOpened;
         }
