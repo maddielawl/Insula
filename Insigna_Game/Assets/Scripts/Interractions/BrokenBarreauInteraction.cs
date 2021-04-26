@@ -8,6 +8,7 @@ using TMPro;
 public class BrokenBarreauInteraction : MonoBehaviour
 {
 
+    public string barreauSfx = "event:/SFX/Environment Sounds/Metal Bar";
 
     // Déclaration du joueur et du playerinput pour gérer l'interraction depuis les inputs du joueur.
     private PlayerInput playerInputs;
@@ -129,6 +130,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
                     {
                         if (isNear == true)
                         {
+                            FMODUnity.RuntimeManager.PlayOneShot(barreauSfx);
                             StartCoroutine(NearInterraction());
                             spriteHighlight.enabled = false;
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");

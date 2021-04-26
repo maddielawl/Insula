@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Lever : MonoBehaviour
 {
+    public string gridSfx = "event:/SFX/Environment Sounds/Grid Open";
+
     public Image baseSlotSprite;
     public GameObject emptySlot;
     public GameObject door;
@@ -37,6 +39,7 @@ public class Lever : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
+                    FMODUnity.RuntimeManager.PlayOneShot(gridSfx);
                     leverText.text = leverAxtivatedText;
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
