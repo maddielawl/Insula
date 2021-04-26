@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool dimensionSwapMadness;
 
+    public MadnessAppear indicible;
+    public bool once;
+
     public bool globalInterractionSecurity = false;
 
 
@@ -85,8 +88,9 @@ public class GameManager : MonoBehaviour
                 playerMadness = playerMadness + madnessGain;
                 if (playerMadness >= 80 && dimensionSwapMadness == true)
                 {
+                    indicible.SetAppear();
                     madnessZone.SetActive(true);
-                    sanityZone.SetActive(false);
+                    sanityZone.SetActive(false);                    
                     globalInterractionSecurity = false;
                     dimensionSwapMadness = false;
                     dimensionSwapNormal = true;
@@ -116,8 +120,15 @@ public class GameManager : MonoBehaviour
                 playerMadness = playerMadness - 1;
                 if(playerMadness <= 50 && dimensionSwapNormal == true)
                 {
+                    if(once == true)
+                    {
+                        indicible.SetDisAppear();
+                    }if(once == false)
+                    {
+                        once = true;
+                    }                    
                     madnessZone.SetActive(false);
-                    sanityZone.SetActive(true);
+                    sanityZone.SetActive(true);                                  
                     globalInterractionSecurity = false;
                     dimensionSwapNormal = false;
                     dimensionSwapMadness = true;
