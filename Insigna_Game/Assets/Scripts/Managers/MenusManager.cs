@@ -347,8 +347,8 @@ public class MenusManager : MonoBehaviour
 
     public void QuitOptionsScreenInGame()
     {
-        inGameOptions.SetActive(true);
-        ingamePauseMenu.SetActive(false);
+        inGameOptions.SetActive(false);
+        ingamePauseMenu.SetActive(true);
     }
 
     public void HideLoadingScreen(InputAction.CallbackContext context)
