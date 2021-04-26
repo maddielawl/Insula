@@ -176,7 +176,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
     {
         nearInt0.SetActive(true);
         barreauBroken.GetComponent<Animator>().SetTrigger("Fall");
-        barreauInteraction.SetActive(true);
+        Invoke("activateOtherInteraction", 1f);
         transform.GetComponent<BoxCollider2D>().enabled = false;
         
         yield return new WaitForSeconds(2.5f);
@@ -215,5 +215,10 @@ public class BrokenBarreauInteraction : MonoBehaviour
 
         yield return 0;
 
+    }
+
+    public void activateOtherInteraction()
+    {
+        barreauInteraction.SetActive(true);
     }
 }

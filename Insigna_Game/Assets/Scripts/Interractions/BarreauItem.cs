@@ -32,6 +32,7 @@ public class BarreauItem : MonoBehaviour
 
     // Store L'object que l'on as besoin et le bool de sécurité pour celui ci
     private bool itemSecurity = false;
+    public SpriteRenderer spriteHighlight;
 
     public GameObject vfx;
     public GameObject barreau;
@@ -80,6 +81,7 @@ public class BarreauItem : MonoBehaviour
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
         interractionSecurity = false;
+        spriteHighlight.enabled = false;
     }
 
     private void Update()
@@ -141,6 +143,7 @@ public class BarreauItem : MonoBehaviour
                         {
                             StartCoroutine(NearInterraction());
                             StartCoroutine(StoreItem());
+                            spriteHighlight.enabled = false;
                             FindObjectOfType<AudioManager>().Play("TakeObject");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             currentVfx.transform.parent = null;
@@ -168,6 +171,7 @@ public class BarreauItem : MonoBehaviour
     {
         if (isNear == true)
         {
+            spriteHighlight.enabled = true;
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -175,6 +179,7 @@ public class BarreauItem : MonoBehaviour
         }
         if (isNear == false)
         {
+            spriteHighlight.enabled = true;
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -185,6 +190,7 @@ public class BarreauItem : MonoBehaviour
 
     private void OnMouseExit()
     {
+        spriteHighlight.enabled = false;
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
