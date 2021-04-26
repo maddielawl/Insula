@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerMoveState : PlayerGroundedState
 {
+
+    public string concreteWalkSfx = "event:/SFX/Player Sounds/Step Concrete";
+    public string clothSfx = "event:/SFX/Player Sounds/Clothes Movement";
+    FMOD.Studio.EventInstance concreteWalkEvent;
+    FMOD.Studio.EventInstance clothMoveEvent;
+
     public PlayerMoveState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -16,6 +22,11 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        concreteWalkEvent = FMODUnity.RuntimeManager.CreateInstance(concreteWalkSfx);
+        clothMoveEvent = FMODUnity.RuntimeManager.CreateInstance(clothSfx);
+        concreteWalkEvent.start();
+        clothMoveEvent.start();
+
         if (CursorManager.Instance.cursorState == false)
         {
             CursorManager.Instance.rend.enabled = false;
@@ -24,6 +35,8 @@ public class PlayerMoveState : PlayerGroundedState
 
     public override void Exit()
     {
+        concreteWalkEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        clothMoveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         base.Exit();
         if (CursorManager.Instance.cursorState == false)
         {

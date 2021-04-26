@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerClimbingState : PlayerGroundedState
 {
+
+    public string ladderSfx = "event:/SFX/Player Sounds/Step Metal";
+    public string clothSfx = "event:/SFX/Player Sounds/Clothes Ladder";
+    FMOD.Studio.EventInstance climbLadderEvent;
+    FMOD.Studio.EventInstance clothMoveEvent;
+
     public PlayerClimbingState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -15,6 +21,10 @@ public class PlayerClimbingState : PlayerGroundedState
 
     public override void Enter()
     {
+        climbLadderEvent = FMODUnity.RuntimeManager.CreateInstance(ladderSfx);
+        clothMoveEvent = FMODUnity.RuntimeManager.CreateInstance(clothSfx);
+        climbLadderEvent.start();
+        clothMoveEvent.start();
         base.Enter();
 
         if (CursorManager.Instance.cursorState == false)
@@ -25,6 +35,8 @@ public class PlayerClimbingState : PlayerGroundedState
 
     public override void Exit()
     {
+        climbLadderEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        clothMoveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         base.Exit();
 
         if (CursorManager.Instance.cursorState == false)
