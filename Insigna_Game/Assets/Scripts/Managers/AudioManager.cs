@@ -31,4 +31,9 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Stop();
     }
+
+    public void PlayOneShot(string sound)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(sound);
+    }
 }
