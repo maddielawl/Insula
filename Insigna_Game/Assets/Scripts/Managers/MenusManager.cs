@@ -327,10 +327,10 @@ public class MenusManager : MonoBehaviour
         menusActions = new GameInputs();
         Destroy(this.transform.parent.gameObject);
     }
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         asyncOp = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
-    }
+    }*/
 
     public void OptionScreenInGame()
     {
