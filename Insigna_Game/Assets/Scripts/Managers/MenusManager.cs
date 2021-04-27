@@ -369,11 +369,20 @@ public class MenusManager : MonoBehaviour
     }
     public void GameOver()
     {
-        GameManager.Instance.playerSanity = 0;
-        GameManager.Instance.playerMadness = 0;
+        Time.timeScale = 0;
         ingameGameOverUI.SetActive(true);
         ingameMainUI.SetActive(false);
-        Time.timeScale = 0;
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+        ingameMainUI.SetActive(true);
+        ingameGameOverUI.SetActive(false);
+        GameManager.Instance.isScared = false;
+        GameManager.Instance.playerMadness = 0;
+        GameManager.Instance.playerSanity = 0;
     }
 
     #region Journal
