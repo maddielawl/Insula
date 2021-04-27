@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-        playerInput = new PlayerInput();
+        playerInput = new PlayerInputs();
     }
     #endregion
 
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public int playerSanity;
     public int playerPillsCount;
     public int healAmmount = 30;
-    private PlayerInput playerInput;
+    public PlayerInputs playerInput;
 
     [Space(5)]
     [Header("Helmet")]
@@ -63,10 +63,7 @@ public class GameManager : MonoBehaviour
         dimensionSwapNormal = true;
     }
 
-    private void Update()
-    {
 
-    }
 
 
     public IEnumerator InsideMadnessZone(int sanityDmg, int madnessGain)
@@ -173,11 +170,11 @@ public class GameManager : MonoBehaviour
 
     public void ActivateInGameActions()
     {
-        playerInput.ActivateInput();
+        playerInput.Gameplay.Enable();
     }
     public void DeactivateInGameActions()
     {
-        playerInput.DeactivateInput();
+        playerInput.Gameplay.Disable();
     }
 
 }
