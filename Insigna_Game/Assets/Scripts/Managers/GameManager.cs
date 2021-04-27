@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
 
             if (isHelmetEquipped == false)
             {
+                heartbeatEvent.setParameterByID(sanityParameter, playerSanity);
+
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerSanity = playerSanity + sanityDmg;
                 if (playerSanity >= 100)
@@ -149,7 +151,6 @@ public class GameManager : MonoBehaviour
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
             }
 
-            heartbeatEvent.setParameterByID(sanityParameter, playerMadness);
 
             yield return new WaitForSeconds(0.5f);
             if (isScared == false)
