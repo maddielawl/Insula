@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
 
     public bool globalInterractionSecurity = false;
 
+    private GameObject player;
+
 
 
     #region Madness Functions
@@ -61,6 +63,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine("SanityDecrement");
         playerPillsCount = 0;
         dimensionSwapNormal = true;
+    }
+
+    private void Update()
+    {
+
     }
 
 
