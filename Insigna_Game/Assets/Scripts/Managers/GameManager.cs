@@ -52,8 +52,6 @@ public class GameManager : MonoBehaviour
 
     public bool globalInterractionSecurity = false;
 
-    private GameObject player;
-
 
 
     #region Madness Functions
