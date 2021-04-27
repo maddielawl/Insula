@@ -104,6 +104,8 @@ public class MenusManager : MonoBehaviour
         mainMenuAudioSource = GetComponent<AudioSource>();
         PopUp.SetActive(false);
         transform.gameObject.SetActive(true);
+
+        UnloadAllScenesExcept("MainMenu");
     }
 
 
@@ -406,7 +408,7 @@ public class MenusManager : MonoBehaviour
         entry0.SetActive(true);
         selectscreen.SetActive(false);
     }
-    
+
 
     #endregion
 
@@ -474,4 +476,19 @@ public class MenusManager : MonoBehaviour
     }
 
     #endregion
+
+
+    public void UnloadAllScenesExcept(string sceneName)
+    {
+        int c = SceneManager.sceneCount;
+        for (int i = 0; i < c; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            print(scene.name);
+            if (scene.name != sceneName)
+            {
+                SceneManager.UnloadSceneAsync(scene);
+            }
+        }
+    }
 }
