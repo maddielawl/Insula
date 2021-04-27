@@ -12,8 +12,15 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    public string heartSfx = "event:/SFX/UI/Heartbeat";
+    public FMOD.Studio.EventInstance heartbeatEvent;
+    public FMOD.Studio.PARAMETER_ID sanityParameter, Stress;
+
     void Awake()
     {
+        heartbeatEvent = FMODUnity.RuntimeManager.CreateInstance(heartSfx);
+        heartbeatEvent.start();
+
         if (Instance == null)
             Instance = this;
         else
@@ -52,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     public bool globalInterractionSecurity = false;
 
-
+    
 
     #region Madness Functions
 
@@ -102,6 +109,7 @@ public class GameManager : MonoBehaviour
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
 
             }
+
             yield return new WaitForSeconds(0.5f);
             if (isScared == true)
             {
@@ -139,8 +147,10 @@ public class GameManager : MonoBehaviour
 
                 }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
-
             }
+
+            heartbeatEvent.setParameterByID(sanityParameter, playerMadness);
+
             yield return new WaitForSeconds(0.5f);
             if (isScared == false)
             {

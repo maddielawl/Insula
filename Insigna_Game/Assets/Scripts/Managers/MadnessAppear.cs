@@ -38,7 +38,7 @@ public class MadnessAppear : MonoBehaviour
 
     public void SetAppear()
     {
-        
+        //Debug.Log("entrée folie");
         for (int i = 0; i < arrayparent.childCount; i++)
         {
             LeanTween.value(arrayobjects[i], SetSpriteAlpha, 0f, 1f,1f);
@@ -47,7 +47,7 @@ public class MadnessAppear : MonoBehaviour
     }
     public void SetDisAppear()
     {
-
+        //Debug.Log("sortie folie");
         for (int i = 0; i < arrayparent.childCount; i++)
         {
             LeanTween.value(arrayobjects[i], SetSpriteAlpha, 1f, 0f, 1f);
