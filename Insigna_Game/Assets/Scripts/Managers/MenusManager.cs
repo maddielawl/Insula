@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class MenusManager : MonoBehaviour
 {
+    [HideInInspector]
+    public GameObject player;
     public GameObject cursorManger;
 
     public GameObject MainMenuCamera;
@@ -34,6 +36,7 @@ public class MenusManager : MonoBehaviour
     public GameObject ingameGameOverUI;
     public GameObject endgameThanksScreen;
     public GameObject inGameOptions;
+    public GameObject Cinematic;
     public GameObject PopUp;
 
     public GameObject interaction1;
@@ -89,6 +92,7 @@ public class MenusManager : MonoBehaviour
 
     [HideInInspector]
     public bool level2loaded = false;
+    public bool level1loaded = false;
 
     private void Awake()
     {
@@ -121,11 +125,24 @@ public class MenusManager : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2) && level2loaded)
+        if (SceneManager.sceneCount > 1)
         {
-            interaction1.SetActive(true);
-            interaction1.SetActive(false);
-            level2loaded = false;
+            if (SceneManager.GetSceneAt(1).isLoaded)
+            {
+                if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(1) && level1loaded)
+                {
+                    PlayCinematic(true);
+                    level1loaded = false;
+                }
+            }
+
+            if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(2) && level2loaded)
+            {
+                interaction1.SetActive(true);
+                interaction1.SetActive(false);
+                level2loaded = false;
+            }
+
         }
     }
 
@@ -366,6 +383,7 @@ public class MenusManager : MonoBehaviour
         GameManager.Instance.ActivateInGameActions();
         PopUp.SetActive(true);
         inGame = true;
+        level1loaded = true;
     }
     public void GameOver()
     {
@@ -495,11 +513,22 @@ public class MenusManager : MonoBehaviour
         for (int i = 0; i < c; i++)
         {
             Scene scene = SceneManager.GetSceneAt(i);
-            print(scene.name);
             if (scene.name != sceneName)
             {
                 SceneManager.UnloadSceneAsync(scene);
             }
+        }
+    }
+
+    public void PlayCinematic(bool active)
+    {
+        if (active)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            player.SetActive(false);
+            Cinematic.SetActive(true);
+            Cinematic.GetComponent<Animator>().SetTrigger("PlayCinematic");
+            active = !active;
         }
     }
 }

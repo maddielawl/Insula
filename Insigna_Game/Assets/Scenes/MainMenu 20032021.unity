@@ -123,15 +123,21 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &1175987816 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2582990586230604343, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+--- !u!1 &696960132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6725951353859798676, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
   m_PrefabInstance: {fileID: 1430244100}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &696960135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696960132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91faba53bc2c4f74bb5964def4b87a60, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aae4ff689f82f949a1647a4aa1a5447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1430244100
@@ -141,25 +147,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2426572143617019720, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1175987816}
-    - target: {fileID: 2426572143617019720, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
-      objectReference: {fileID: 0}
-    - target: {fileID: 2582990586230604341, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_Name
       value: ObjectsToKeepBetweenScenes
-      objectReference: {fileID: 0}
-    - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531018, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_RootOrder
