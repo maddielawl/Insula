@@ -20,11 +20,15 @@ public class UIManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        // Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
+        foreach (GameObject sanityBars in sanityBars)
+        {
+            sanityBars.SetActive(false);
+        }
     }
     #endregion
 
-    [Header("Managers")]
-    public GameManager gameManager;
 
     [Header("Cursors")]
     public Sprite basicCursor;
@@ -75,46 +79,29 @@ public class UIManager : MonoBehaviour
     public PlayerData playerData;
 
 
-    private void Start()
-    {
-        // Cursor.SetCursor(basicCursor, Vector2.zero, CursorMode.Auto);
-        foreach (GameObject sanityBars in sanityBars)
-        {
-            sanityBars.SetActive(false);
-        }
-    }
-
-    private void Update()
+    public void Update()
     {
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        else
+        /*else
         {
             return;
-        }
+        }*/
 
         //slider Madness li� � la value dans le GameManager
-        madnessFill.fillAmount = gameManager.playerMadness / 100;
+        madnessFill.fillAmount = GameManager.Instance.playerMadness / 100;
         //slider Sanity li� � la value dans le GameManager
         #region Sanity healthbar
-        if (gameManager.playerSanity >= 100)
+        if (GameManager.Instance.playerSanity >= 100)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(true);
             }
         }
-        if (gameManager.playerSanity < 100 && gameManager.playerSanity > 86.8)
-        {
-            foreach (GameObject sanityBars in sanityBars)
-            {
-                sanityBars.SetActive(true);
-            }
-            sanityBars[7].SetActive(false);
-        }
-        if (gameManager.playerSanity <= 86.8 && gameManager.playerSanity > 74.4)
+        if (GameManager.Instance.playerSanity < 100 && GameManager.Instance.playerSanity > 86.8)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -122,7 +109,15 @@ public class UIManager : MonoBehaviour
             }
             sanityBars[7].SetActive(false);
         }
-        if (gameManager.playerSanity <= 74.4 && gameManager.playerSanity > 62)
+        if (GameManager.Instance.playerSanity <= 86.8 && GameManager.Instance.playerSanity > 74.4)
+        {
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.SetActive(true);
+            }
+            sanityBars[7].SetActive(false);
+        }
+        if (GameManager.Instance.playerSanity <= 74.4 && GameManager.Instance.playerSanity > 62)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -131,7 +126,7 @@ public class UIManager : MonoBehaviour
             sanityBars[7].SetActive(false);
             sanityBars[6].SetActive(false);
         }
-        if (gameManager.playerSanity <= 62 && gameManager.playerSanity > 49.6)
+        if (GameManager.Instance.playerSanity <= 62 && GameManager.Instance.playerSanity > 49.6)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -141,7 +136,7 @@ public class UIManager : MonoBehaviour
             sanityBars[6].SetActive(false);
             sanityBars[5].SetActive(false);
         }
-        if (gameManager.playerSanity <= 49.6 && gameManager.playerSanity > 37.2)
+        if (GameManager.Instance.playerSanity <= 49.6 && GameManager.Instance.playerSanity > 37.2)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -152,7 +147,7 @@ public class UIManager : MonoBehaviour
             sanityBars[2].SetActive(true);
             sanityBars[3].SetActive(true);
         }
-        if (gameManager.playerSanity <= 37.2 && gameManager.playerSanity > 24.8)
+        if (GameManager.Instance.playerSanity <= 37.2 && GameManager.Instance.playerSanity > 24.8)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -162,7 +157,7 @@ public class UIManager : MonoBehaviour
             sanityBars[1].SetActive(true);
             sanityBars[2].SetActive(true);
         }
-        if (gameManager.playerSanity <= 24.8 && gameManager.playerSanity > 12.4)
+        if (GameManager.Instance.playerSanity <= 24.8 && GameManager.Instance.playerSanity > 12.4)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -171,7 +166,7 @@ public class UIManager : MonoBehaviour
             sanityBars[0].SetActive(true);
             sanityBars[1].SetActive(true);
         }
-        if (gameManager.playerSanity <= 12.4 && gameManager.playerSanity > 0)
+        if (GameManager.Instance.playerSanity <= 12.4 && GameManager.Instance.playerSanity > 0)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -179,7 +174,7 @@ public class UIManager : MonoBehaviour
             }
             sanityBars[0].SetActive(true);
         }
-        if (gameManager.playerSanity <= 0)
+        if (GameManager.Instance.playerSanity <= 0)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -188,7 +183,7 @@ public class UIManager : MonoBehaviour
         }
         #endregion
         //nombre de pills li� � la value dans le GameManager
-        switch (gameManager.playerPillsCount)
+        switch (GameManager.Instance.playerPillsCount)
         {
             case 0:
                 pillCountGO.GetComponent<Image>().sprite = pillCountSpr[0];
