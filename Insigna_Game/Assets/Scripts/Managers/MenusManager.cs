@@ -333,10 +333,12 @@ public class MenusManager : MonoBehaviour
         inGameOptions.SetActive(false);
         menusActions = new GameInputs();
         ReactivateMainMenuActions();
+        Destroy(this.transform.parent.gameObject);
     }
     private void OnDestroy()
     {
         asyncOp = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        UnloadAllScenesExcept("MainMenuCamera 20032021");
     }
 
     public void OptionScreenInGame()
