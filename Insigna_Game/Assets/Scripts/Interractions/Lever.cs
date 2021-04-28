@@ -43,7 +43,7 @@ public class Lever : MonoBehaviour
                     leverText.text = leverAxtivatedText;
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
-                    UIManager.Instance.objectInSlot1 = emptySlot;
+                    UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot1Active = false;
                     UIManager.Instance.isSlot1Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
@@ -66,7 +66,7 @@ public class Lever : MonoBehaviour
                 {
                     //transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshPro>().text = doorOpenedText;
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
-                    UIManager.Instance.objectInSlot2 = emptySlot;
+                    UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot2Active = false;
                     UIManager.Instance.isSlot2Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
@@ -87,7 +87,7 @@ public class Lever : MonoBehaviour
                 {
                     //transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshPro>().text = doorOpenedText;
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
-                    UIManager.Instance.objectInSlot3 = emptySlot;
+                    UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot3Active = false;
                     UIManager.Instance.isSlot3Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;

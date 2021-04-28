@@ -305,7 +305,7 @@ public class MenusManager : MonoBehaviour
                 Time.timeScale = 1;
                 ingamePauseMenu.SetActive(false);
                 inGameOptions.SetActive(false);
-                GameManager.Instance.ActivateInGameActions();
+                //GameManager.Instance.ActivateInGameActions();
                 isPaused = false;
                 return;
             }
@@ -314,7 +314,7 @@ public class MenusManager : MonoBehaviour
                 ingamePauseMenu.SetActive(true);
                 inGameOptions.SetActive(false);
                 Time.timeScale = 0;
-                GameManager.Instance.DeactivateInGameActions();
+                //GameManager.Instance.DeactivateInGameActions();
                 isPaused = true;
                 return;
             }
@@ -380,7 +380,7 @@ public class MenusManager : MonoBehaviour
         MainMenuCamera.SetActive(false);
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
-        GameManager.Instance.ActivateInGameActions();
+        //GameManager.Instance.ActivateInGameActions();
         PopUp.SetActive(true);
         inGame = true;
         level1loaded = true;
@@ -525,7 +525,7 @@ public class MenusManager : MonoBehaviour
         if (active)
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            player.SetActive(false);
+            player.GetComponent<PlayerInput>().enabled = false;
             Cinematic.SetActive(true);
             Cinematic.GetComponent<Animator>().SetTrigger("PlayCinematic");
             active = !active;
