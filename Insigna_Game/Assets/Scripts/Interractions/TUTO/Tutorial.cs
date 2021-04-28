@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Tutorial : MonoBehaviour
 {
@@ -23,17 +24,14 @@ public class Tutorial : MonoBehaviour
     public IEnumerator TutorialDisplay()
     {
         tutorial.SetActive(true);
-        charatcer.SetActive(false);
+        charatcer.GetComponent<PlayerInput>().enabled = false;
 
         GameManager.Instance.DeactivateInGameActions();
 
         yield return new WaitForSeconds(5f);
 
-        charatcer.SetActive(true);
-        charatcer.SetActive(true);
         anim.SetTrigger("Away");
         fondu.SetTrigger("Away");
-        charatcer.SetActive(true);
 
         yield return new WaitForSeconds(1f);
 
@@ -42,7 +40,7 @@ public class Tutorial : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        charatcer.SetActive(true);
+        charatcer.GetComponent<PlayerInput>().enabled = true;
         Destroy(this.gameObject);
 
         yield return 0;
