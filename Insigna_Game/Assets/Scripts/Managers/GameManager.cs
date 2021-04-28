@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     public string heartSfx = "event:/SFX/UI/Heartbeat";
     public FMOD.Studio.EventInstance heartbeatEvent;
-    public FMOD.Studio.PARAMETER_ID sanityParameter, Stress;
 
     void Awake()
     {
@@ -86,8 +85,8 @@ public class GameManager : MonoBehaviour
     {
         if (isScared == true)
         {
-            heartbeatEvent.setParameterByID(sanityParameter, playerSanity);
-
+            heartbeatEvent.setParameterByName("Stress", playerSanity);
+ 
             if (isHelmetEquipped == true)
             {
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);

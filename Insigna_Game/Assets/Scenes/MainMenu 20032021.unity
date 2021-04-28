@@ -123,6 +123,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &93691846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2582990586019125736, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+  m_PrefabInstance: {fileID: 1430244100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &93691847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93691846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/Level 1/Menu
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &98135411 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8052947378663875896, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
@@ -180,6 +208,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aae4ff689f82f949a1647a4aa1a5447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &696960136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696960132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/Cinematic
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!224 &820571101 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6029515063214017662, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
@@ -450,11 +501,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: a71a6f59036d66346a4b2c0307a98093, type: 3}
     - target: {fileID: 2582990586019125736, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586342309365, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586618176504, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
@@ -510,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990587224233200, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -816.09
+      value: -816.0901
       objectReference: {fileID: 0}
     - target: {fileID: 3005856440359694185, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_AnchoredPosition.x
