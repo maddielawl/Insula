@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     public bool once;
 
     public bool globalInterractionSecurity = false;
+    public GameObject player;
 
     
 
@@ -68,6 +69,14 @@ public class GameManager : MonoBehaviour
         StartCoroutine("SanityDecrement");
         playerPillsCount = 0;
         dimensionSwapNormal = true;
+    }
+
+    public void Update()
+    {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
 
@@ -181,11 +190,13 @@ public class GameManager : MonoBehaviour
 
     public void ActivateInGameActions()
     {
-        playerInput.Gameplay.Enable();
+        player.GetComponent<PlayerInput>().enabled = true;
+        //playerInput.Gameplay.Enable();
     }
     public void DeactivateInGameActions()
     {
-        playerInput.Gameplay.Disable();
+        player.GetComponent<PlayerInput>().enabled = false;
+        //playerInput.Gameplay.Disable();
     }
 
 }

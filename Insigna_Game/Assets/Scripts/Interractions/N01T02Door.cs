@@ -31,7 +31,7 @@ public class N01T02Door : MonoBehaviour
                 {
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
-                    UIManager.Instance.objectInSlot1 = emptySlot;
+                    UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot1Active = false;
                     UIManager.Instance.object1Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
@@ -52,7 +52,7 @@ public class N01T02Door : MonoBehaviour
                 if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
-                    UIManager.Instance.objectInSlot2 = emptySlot;
+                    UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot2Active = false;
                     UIManager.Instance.object2Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
@@ -69,7 +69,7 @@ public class N01T02Door : MonoBehaviour
                 if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
-                    UIManager.Instance.objectInSlot3 = emptySlot;
+                    UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot3Active = false;
                     UIManager.Instance.object3Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
