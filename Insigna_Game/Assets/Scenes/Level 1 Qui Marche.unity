@@ -2419,7 +2419,7 @@ Transform:
   - {fileID: 656855630}
   - {fileID: 2112049821}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &225912043
 GameObject:
@@ -6528,16 +6528,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Text
-      value: Certaines interractions sont sous la forme d'un minijeu, trouvez la
-        solution pour avancer.
+      value: Certaines interractions sont sous la forme d'un mini-jeu. Vous devrez
+        trouver la solution pour avancer.
       objectReference: {fileID: 0}
+    - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 5ebb11990539eff42b1a118b2b41745a, type: 3}
     - target: {fileID: 3213348962602506326, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Name
       value: Tutorial (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3213348962602506327, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3213348962602506327, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9196,6 +9200,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582990586896531018, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582990587224233200, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
@@ -18322,17 +18330,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Text
-      value: "Rentrer dans une zone de folie peut vous faire basculer dans un autre
-        monde, au fil du temps cela peut vous tuer, pour palier a \xE7a, consommez
-        des pillules avec la touche a."
+      value: Rentrer dans une zone de folie peut vous faire basculer dans un autre
+        monde, au fil du temps cela peut vous tuer. Pour palier a cela, vous pouvez
+        consommer des pillules avec la touche a lorsque vous en disposez.
       objectReference: {fileID: 0}
+    - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 5ebb11990539eff42b1a118b2b41745a, type: 3}
     - target: {fileID: 3213348962602506326, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Name
       value: Tutorial (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3213348962602506327, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3213348962602506327, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19284,7 +19296,7 @@ Transform:
   - {fileID: 1901913123}
   - {fileID: 702439818}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1246901883
 MonoBehaviour:
@@ -19301,6 +19313,9 @@ MonoBehaviour:
   arrayobjects: []
   arraysprites: []
   arrayparent: {fileID: 0}
+  enterMadSfx: event:/Music/Level 1/Enter corrupt
+  exitMadSfx: event:/Music/Level 1/Exit corrupt
+  level1Music: event:/Music/Level 1/Level 1
 --- !u!111 &1246901884
 Animation:
   m_ObjectHideFlags: 0
@@ -39172,9 +39187,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Text
-      value: "Le clique droit sert a observer, le clique gauche permet d'interragir
-        avec le d\xE9cors et l'inventaire."
+      value: "Le clic droit sert a observer, tandis que le clic gauche permet d'interagir
+        avec le d\xE9cor et l'inventaire."
       objectReference: {fileID: 0}
+    - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 5ebb11990539eff42b1a118b2b41745a, type: 3}
     - target: {fileID: 3213348962602506325, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -39189,7 +39208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3213348962602506327, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3213348962602506327, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_LocalPosition.x
