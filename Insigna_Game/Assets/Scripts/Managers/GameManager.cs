@@ -134,6 +134,8 @@ public class GameManager : MonoBehaviour
     {
         if (isScared == false)
         {
+            heartbeatEvent.setParameterByName("Stress", playerSanity);
+
             if (isHelmetEquipped == false)
             {
 
