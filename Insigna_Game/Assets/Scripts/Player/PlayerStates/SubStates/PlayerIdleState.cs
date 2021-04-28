@@ -37,14 +37,14 @@ public class PlayerIdleState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.MoveState);
             }
-            //prise d'échelle bas
+            //prise d'ï¿½chelle bas
             if ((yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true 
                 && playerData.BottomLadderTrigger == true)
             {
                 stateMachine.ChangeState(player.ClimbingIdleState);
                 player.TakeLadderCooldownOnIdleOrMove();
             }
-            //prise d'échelle haut
+            //prise d'ï¿½chelle haut
             if ((yInput == 1 || yInput == -1) && playerData.ladderTaken == true && playerData.takeLadderCooldown == true
                 && playerData.TopLadderTrigger == true)
             {

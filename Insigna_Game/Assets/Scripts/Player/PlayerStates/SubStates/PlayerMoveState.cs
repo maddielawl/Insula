@@ -35,9 +35,9 @@ public class PlayerMoveState : PlayerGroundedState
 
     public override void Exit()
     {
+        base.Exit();
         concreteWalkEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         clothMoveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        base.Exit();
         if (CursorManager.Instance.cursorState == false)
         {
             CursorManager.Instance.rend.enabled = true;
