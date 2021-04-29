@@ -137,14 +137,6 @@ public class InterractableN1_T1Door : MonoBehaviour
                         if (isNear == true)
                         {
                             StartCoroutine(NearInterraction());
-                            if (spriteHighlight != null)
-                            {
-                                spriteHighlight.enabled = false;
-                            }
-                            if (spriteHighlight2 != null)
-                            {
-                                spriteHighlight2.enabled = false;
-                            }
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             currentVfx.transform.parent = null;

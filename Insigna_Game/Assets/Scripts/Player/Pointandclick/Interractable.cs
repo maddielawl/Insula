@@ -128,10 +128,6 @@ public class Interractable : MonoBehaviour
                         if (isNear == true)
                         {
                             StartCoroutine(NearInterraction());
-                            if (spriteHighlight != null)
-                            {
-                                spriteHighlight.enabled = false;
-                            }
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
                             GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             currentVfx.transform.parent = null;

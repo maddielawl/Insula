@@ -48,10 +48,8 @@ public class GameManager : MonoBehaviour
     [Header("MadnessZone")]
     public GameObject madnessZone;
     public GameObject sanityZone;
-    [SerializeField]
-    private bool dimensionSwapNormal;
-    [SerializeField]
-    private bool dimensionSwapMadness;
+    public bool dimensionSwapNormal;
+    public bool dimensionSwapMadness;
 
     public MadnessAppear indicible;
     public bool once;

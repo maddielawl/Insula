@@ -31,6 +31,9 @@ public class Items : MonoBehaviour
 
     // Store L'object que l'on as besoin et le bool de sécurité pour celui ci
     private bool itemSecurity = false;
+    private Sprite spriteNormal;
+    public Sprite spriteHighlight;
+    private SpriteRenderer objectSpriteRenderer;
 
     public GameObject vfx;
 
@@ -78,6 +81,8 @@ public class Items : MonoBehaviour
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
         interractionSecurity = false;
+        objectSpriteRenderer = transform.GetComponent<SpriteRenderer>();
+        spriteNormal = objectSpriteRenderer.sprite;
     }
 
     private void Update()
@@ -167,6 +172,7 @@ public class Items : MonoBehaviour
     {
         if (isNear == true)
         {
+            objectSpriteRenderer.sprite = spriteHighlight;
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -174,6 +180,7 @@ public class Items : MonoBehaviour
         }
         if (isNear == false)
         {
+            objectSpriteRenderer.sprite = spriteHighlight;
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -184,6 +191,7 @@ public class Items : MonoBehaviour
 
     private void OnMouseExit()
     {
+        objectSpriteRenderer.sprite = spriteNormal;
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
