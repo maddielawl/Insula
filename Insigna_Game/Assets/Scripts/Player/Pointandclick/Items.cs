@@ -31,9 +31,7 @@ public class Items : MonoBehaviour
 
     // Store L'object que l'on as besoin et le bool de sécurité pour celui ci
     private bool itemSecurity = false;
-    private Sprite spriteNormal;
-    public Sprite spriteHighlight;
-    private SpriteRenderer objectSpriteRenderer;
+    public SpriteRenderer spriteHighlight;
 
     public GameObject vfx;
 
@@ -81,8 +79,10 @@ public class Items : MonoBehaviour
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
         interractionSecurity = false;
-        objectSpriteRenderer = transform.GetComponent<SpriteRenderer>();
-        spriteNormal = objectSpriteRenderer.sprite;
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = false;
+        }
     }
 
     private void Update()
@@ -103,10 +103,10 @@ public class Items : MonoBehaviour
         if (context.started)
         {
 
-                    if (cursorOn == true)
-                    {
-                        if (isNear == false)
-                        {
+            if (cursorOn == true)
+            {
+                if (isNear == false)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -123,12 +123,12 @@ public class Items : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                        if (isNear == true)
-                        {
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
+                }
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -145,26 +145,26 @@ public class Items : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarNearInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                    }
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
                 }
             }
-        
-    
+        }
+    }
+
+
 
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
 
-                    if (cursorOn == true)
-                    {
+            if (cursorOn == true)
+            {
 
-                        if (isNear == true)
-                        {
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -180,24 +180,28 @@ public class Items : MonoBehaviour
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
-                    StartCoroutine(NearInterraction());
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            StartCoroutine(StoreItem());
-                            FindObjectOfType<AudioManager>().Play("TakeObject");
-                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                            currentVfx.transform.parent = null;
-                            Destroy(currentVfx, 3f);
-                            security = true;
-                            
-                        }
+                    if (spriteHighlight != null)
+                    {
+                        spriteHighlight.enabled = false;
                     }
+                    StartCoroutine(NearInterraction());
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    StartCoroutine(StoreItem());
+                    FindObjectOfType<AudioManager>().Play("TakeObject");
+                    GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                    currentVfx.transform.parent = null;
+                    Destroy(currentVfx, 3f);
+                    security = true;
+
                 }
             }
-        
-    
+        }
+    }
 
 
-      private IEnumerator StoreItem()
+
+
+    private IEnumerator StoreItem()
     {
         GameManager.Instance.globalInterractionSecurity = false;
         UIManager.Instance.GetObjectInInventory(this.gameObject);
@@ -210,7 +214,10 @@ public class Items : MonoBehaviour
     {
         if (isNear == true)
         {
-            objectSpriteRenderer.sprite = spriteHighlight;
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -218,18 +225,24 @@ public class Items : MonoBehaviour
         }
         if (isNear == false)
         {
-            objectSpriteRenderer.sprite = spriteHighlight;
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
             return;
         }
-        
+
     }
 
     private void OnMouseExit()
     {
-        objectSpriteRenderer.sprite = spriteNormal;
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = false;
+        }
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
@@ -265,7 +278,7 @@ public class Items : MonoBehaviour
         GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(5f);
-        
+
         farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
