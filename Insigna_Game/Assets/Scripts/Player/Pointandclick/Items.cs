@@ -102,22 +102,49 @@ public class Items : MonoBehaviour
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
-            {
-                if (security == false)
-                {
+
                     if (cursorOn == true)
                     {
                         if (isNear == false)
                         {
-                            StartCoroutine(FarInterraction());
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(FarInterraction());
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
                             return;
                         }
                         if (isNear == true)
                         {
-                            StartCoroutine(FarNearInterraction());
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(FarNearInterraction());
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
                             return;
@@ -125,24 +152,35 @@ public class Items : MonoBehaviour
                     }
                 }
             }
-        }
-    }
+        
+    
 
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
-            {
-                if (security == false)
-                {
 
                     if (cursorOn == true)
                     {
 
                         if (isNear == true)
                         {
-                            StartCoroutine(NearInterraction());
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(NearInterraction());
                             GameManager.Instance.globalInterractionSecurity = true;
                             StartCoroutine(StoreItem());
                             FindObjectOfType<AudioManager>().Play("TakeObject");
@@ -155,8 +193,8 @@ public class Items : MonoBehaviour
                     }
                 }
             }
-        }
-    }
+        
+    
 
 
       private IEnumerator StoreItem()
@@ -200,8 +238,9 @@ public class Items : MonoBehaviour
     private IEnumerator NearInterraction()
     {
         nearInt0.SetActive(true);
+        GameManager.Instance.isNear = true;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         nearInt0.SetActive(false);
         security = false;
@@ -223,8 +262,9 @@ public class Items : MonoBehaviour
     {
         farInt0.SetActive(true);
         observationText.text = farPhrase;
+        GameManager.Instance.isNear = false;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
         
         farInt0.SetActive(false);
         security = false;
@@ -237,8 +277,9 @@ public class Items : MonoBehaviour
     {
         farInt0.SetActive(true);
         observationText.text = nearPhrase;
+        GameManager.Instance.isNear = false;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         farInt0.SetActive(false);
         security = false;

@@ -101,22 +101,48 @@ public class PopupInterraction : MonoBehaviour
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
-            {
-                if (security == false)
-                {
                     if (cursorOn == true)
                     {
                         if (isNear == false)
                         {
-                            StartCoroutine(FarInterraction());
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(FarInterraction());
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
                             return;
                         }
                         if (isNear == true)
                         {
-                            StartCoroutine(FarNearInterraction());
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(FarNearInterraction());
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
                             return;
@@ -124,22 +150,33 @@ public class PopupInterraction : MonoBehaviour
                     }
                 }
             }
-        }
-    }
+        
+    
 
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
-            {
-                if (security == false)
-                {
                     if (cursorOn == true)
                     {
                         if (isNear == true)
                         {
-                            StartCoroutine(NearInterraction());
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(NearInterraction());
                             if (spriteHighlight != null)
                             {
                                 spriteHighlight.enabled = false;
@@ -156,8 +193,8 @@ public class PopupInterraction : MonoBehaviour
                     }
                 }
             }
-        }
-    }
+        
+    
 
     private void OnMouseEnter()
     {
@@ -213,7 +250,7 @@ public class PopupInterraction : MonoBehaviour
         farInt1.SetActive(true);
         observationText.text = farPhrase;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         farInt1.SetActive(false);
         security = false;
@@ -227,7 +264,7 @@ public class PopupInterraction : MonoBehaviour
         farInt1.SetActive(true);
         observationText.text = nearPhrase;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         farInt1.SetActive(false);
         security = false;

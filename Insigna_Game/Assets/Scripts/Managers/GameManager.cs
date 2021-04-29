@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public bool once;
 
     public bool globalInterractionSecurity = false;
+    public bool isNear = false;
     public GameObject player;
 
     

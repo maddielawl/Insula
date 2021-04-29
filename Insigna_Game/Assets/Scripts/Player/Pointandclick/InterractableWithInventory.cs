@@ -92,22 +92,48 @@ public class InterractableWithInventory : MonoBehaviour
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
-            {
-                if (security == false)
-                {
                     if (cursorOn == true)
                     {
                         if (isNear == false)
                         {
-                            StartCoroutine(FarInterraction());
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(FarInterraction());
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
                             return;
                         }
                         if (isNear == true)
                         {
-                            StartCoroutine(FarNearInterraction());
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(FarNearInterraction());
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
                             return;
@@ -115,22 +141,39 @@ public class InterractableWithInventory : MonoBehaviour
                     }
                 }
             }
-        }
-    }
+        
+    
 
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
-            {
-                if (!security)
-                {
+            Debug.Log("Started");
                     if (cursorOn)
                     {
-                        if (isNear)
+                Debug.Log("Cursor On");
+                if (isNear == true)
                         {
-                            StartCoroutine(NearInterraction());
+                    Debug.Log("Is Near");
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            Debug.Log("A Near Is True");
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            Debug.Log("A Near Is False");
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    Debug.Log("Caroutine Started");
+                    StartCoroutine(NearInterraction());
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
                             // GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                             // currentVfx.transform.parent = null;
@@ -142,8 +185,8 @@ public class InterractableWithInventory : MonoBehaviour
                     }
                 }
             }
-        }
-    }
+        
+    
 
     private void OnMouseEnter()
     {
@@ -202,13 +245,17 @@ public class InterractableWithInventory : MonoBehaviour
 
     private IEnumerator NearInterraction()
     {
+        Debug.Log("Active is Set");
         nearInt0.SetActive(true);
+        GameManager.Instance.isNear = true;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
+        Debug.Log("Active Is No More");
         nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
+        Debug.Log("Securities Off");
         GameManager.Instance.globalInterractionSecurity = false;
 
         yield return 0;
@@ -217,8 +264,9 @@ public class InterractableWithInventory : MonoBehaviour
     {
         farInt1.SetActive(true);
         observationText.text = farPhrase;
+        GameManager.Instance.isNear = false;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         farInt1.SetActive(false);
         security = false;
@@ -231,8 +279,9 @@ public class InterractableWithInventory : MonoBehaviour
     {
         farInt1.SetActive(true);
         observationText.text = nearPhrase;
+        GameManager.Instance.isNear = false;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         farInt1.SetActive(false);
         security = false;
