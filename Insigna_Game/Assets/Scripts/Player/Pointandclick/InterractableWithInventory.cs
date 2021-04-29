@@ -148,31 +148,25 @@ public class InterractableWithInventory : MonoBehaviour
     {
         if (context.started)
         {
-            Debug.Log("Started");
                     if (cursorOn)
                     {
-                Debug.Log("Cursor On");
                 if (isNear == true)
                         {
-                    Debug.Log("Is Near");
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            Debug.Log("A Near Is True");
                             GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                         }
                         else
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            Debug.Log("A Near Is False");
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
-                    Debug.Log("Caroutine Started");
                     StartCoroutine(NearInterraction());
                             FindObjectOfType<AudioManager>().Play("OnClickInventory");
                             // GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
@@ -245,17 +239,14 @@ public class InterractableWithInventory : MonoBehaviour
 
     private IEnumerator NearInterraction()
     {
-        Debug.Log("Active is Set");
         nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
 
         yield return new WaitForSeconds(5f);
 
-        Debug.Log("Active Is No More");
         nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
-        Debug.Log("Securities Off");
         GameManager.Instance.globalInterractionSecurity = false;
 
         yield return 0;
