@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     public bool isNear = false;
     public GameObject player;
 
-    
+
 
     #region Madness Functions
 
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if(player == null)
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         if (isScared == true)
         {
             heartbeatEvent.setParameterByName("Stress", playerSanity);
- 
+
             if (isHelmetEquipped == true)
             {
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
