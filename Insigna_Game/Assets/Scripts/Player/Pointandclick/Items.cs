@@ -100,13 +100,13 @@ public class Items : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && gameObject.activeSelf == true)
         {
 
-                    if (cursorOn == true)
-                    {
-                        if (isNear == false)
-                        {
+            if (cursorOn == true)
+            {
+                if (isNear == false)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -123,12 +123,12 @@ public class Items : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                        if (isNear == true)
-                        {
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
+                }
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -145,26 +145,26 @@ public class Items : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarNearInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                    }
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
                 }
             }
-        
-    
+        }
+    }
+
+
 
     public void OnUse(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && gameObject.activeSelf == true)
         {
 
-                    if (cursorOn == true)
-                    {
+            if (cursorOn == true)
+            {
 
-                        if (isNear == true)
-                        {
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -181,23 +181,23 @@ public class Items : MonoBehaviour
                         }
                     }
                     StartCoroutine(NearInterraction());
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            StartCoroutine(StoreItem());
-                            FindObjectOfType<AudioManager>().Play("TakeObject");
-                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                            currentVfx.transform.parent = null;
-                            Destroy(currentVfx, 3f);
-                            security = true;
-                            
-                        }
-                    }
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    StartCoroutine(StoreItem());
+                    FindObjectOfType<AudioManager>().Play("TakeObject");
+                    GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                    currentVfx.transform.parent = null;
+                    Destroy(currentVfx, 3f);
+                    security = true;
+
                 }
             }
-        
-    
+        }
+    }
 
 
-      private IEnumerator StoreItem()
+
+
+    private IEnumerator StoreItem()
     {
         GameManager.Instance.globalInterractionSecurity = false;
         UIManager.Instance.GetObjectInInventory(this.gameObject);
@@ -224,7 +224,7 @@ public class Items : MonoBehaviour
             cursorOn = true;
             return;
         }
-        
+
     }
 
     private void OnMouseExit()
@@ -265,7 +265,7 @@ public class Items : MonoBehaviour
         GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(5f);
-        
+
         farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;

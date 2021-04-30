@@ -103,10 +103,10 @@ public class HelmetUnlock : MonoBehaviour
     {
         if (context.started)
         {
-                    if (cursorOn == true)
-                    {
-                        if (isNear == false)
-                        {
+            if (cursorOn == true)
+            {
+                if (isNear == false)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -123,12 +123,12 @@ public class HelmetUnlock : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                        if (isNear == true)
-                        {
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
+                }
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -145,24 +145,24 @@ public class HelmetUnlock : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarNearInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                    }
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
                 }
             }
-        
-    
+        }
+    }
+
+
 
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-                    if (cursorOn == true)
-                    {
-                        if (isNear == true)
-                        {
+            if (cursorOn == true)
+            {
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -179,26 +179,25 @@ public class HelmetUnlock : MonoBehaviour
                         }
                     }
                     StartCoroutine(NearInterraction());
-                            StartCoroutine(AddPackInInventory());
-                            if (spriteHighlight != null)
-                            {
-                                spriteHighlight.enabled = false;
-                            }
-                            UIManager.Instance.GotHelmet();
-                            FindObjectOfType<AudioManager>().Play("TakeObject");
-                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                            currentVfx.transform.parent = null;
-                            Destroy(currentVfx, 3f);
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            ordureTV.GetComponent<SpriteRenderer>().sprite = ordureWithoutTVSpr;
-                            
-                        }
+                    StartCoroutine(AddPackInInventory());
+                    if (spriteHighlight != null)
+                    {
+                        spriteHighlight.enabled = false;
                     }
+                    FindObjectOfType<AudioManager>().Play("TakeObject");
+                    GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                    currentVfx.transform.parent = null;
+                    Destroy(currentVfx, 3f);
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    ordureTV.GetComponent<SpriteRenderer>().sprite = ordureWithoutTVSpr;
+
                 }
             }
-        
-    
+        }
+    }
+
+
 
     private void OnMouseEnter()
     {
@@ -268,7 +267,7 @@ public class HelmetUnlock : MonoBehaviour
         GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(5f);
-        
+
         farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
