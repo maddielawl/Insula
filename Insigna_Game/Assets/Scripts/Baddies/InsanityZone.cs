@@ -6,7 +6,7 @@ using UnityEngine;
 public class InsanityZone : MonoBehaviour
 {
     public GameObject insanityShake;
-    public int sanityDamage = 3;
+    public int sanityDamage = 20;
     public int madnessGain = 7;
 
     public void Start()

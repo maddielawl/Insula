@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public int playerSanity;
     public int playerPillsCount;
     public int healAmmount = 30;
+    public int playerMadnessDecrement = 3;
     public PlayerInputs playerInput;
 
     [Space(5)]
@@ -139,7 +140,7 @@ public class GameManager : MonoBehaviour
             {
 
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
-                playerMadness = playerMadness - 1;
+                playerMadness = playerMadness - playerMadnessDecrement;
                 if (playerMadness <= 50 && dimensionSwapNormal == true)
                 {
                     if (once == true)
