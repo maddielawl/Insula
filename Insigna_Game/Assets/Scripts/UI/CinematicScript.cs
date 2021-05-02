@@ -11,7 +11,10 @@ public class CinematicScript : MonoBehaviour
         MenusManager.instance.player.SetActive(true);
         MenusManager.instance.player.GetComponent<PlayerInput>().enabled = true;
         MenusManager.instance.Cinematic.SetActive(false);
-        Tutorial = GameObject.Find("Tutorial");
-        Tutorial.GetComponent<BoxCollider2D>().enabled = true;
+        if (Tutorial != null)
+        {
+            Tutorial = GameObject.Find("Tutorial");
+            Tutorial.GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
 }

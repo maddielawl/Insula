@@ -180,6 +180,7 @@ public class Items : MonoBehaviour
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    objectSpriteRenderer.sprite = spriteNormal;
                     StartCoroutine(NearInterraction());
                     GameManager.Instance.globalInterractionSecurity = true;
                     StartCoroutine(StoreItem());

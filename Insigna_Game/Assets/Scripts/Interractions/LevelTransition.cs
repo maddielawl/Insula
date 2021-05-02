@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelTransition : MonoBehaviour
 {
     private GameObject player;
+    public int sceneIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +17,11 @@ public class LevelTransition : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
-            player.SetActive(false);
-            StartCoroutine(LoadLevel2(2));
+            player.GetComponent<Player>().StateMachine.CurrentState.Exit();
+            MenusManager.instance.level2loaded = true;
+            SceneManager.LoadScene(sceneIndex);
         }
-    }
-    
-    IEnumerator LoadLevel2(int sceneIndex)
-    {
-        yield return new WaitForSeconds(0.5f);
-        MenusManager.instance.level2loaded = true;
-        SceneManager.LoadScene(sceneIndex);
     }
 }
