@@ -92,10 +92,10 @@ public class InterractableWithInventory : MonoBehaviour
     {
         if (context.started)
         {
-                    if (cursorOn == true)
-                    {
-                        if (isNear == false)
-                        {
+            if (cursorOn == true && gameObject.activeSelf == true)
+            {
+                if (isNear == false)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -112,12 +112,12 @@ public class InterractableWithInventory : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                        if (isNear == true)
-                        {
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
+                }
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -134,24 +134,24 @@ public class InterractableWithInventory : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarNearInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                    }
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
                 }
             }
-        
-    
+        }
+    }
+
+
 
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-                    if (cursorOn)
-                    {
+            if (cursorOn && gameObject.activeSelf == true)
+            {
                 if (isNear == true)
-                        {
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -168,19 +168,19 @@ public class InterractableWithInventory : MonoBehaviour
                         }
                     }
                     StartCoroutine(NearInterraction());
-                            FindObjectOfType<AudioManager>().Play("OnClickInventory");
-                            // GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                            // currentVfx.transform.parent = null;
-                            // Destroy(currentVfx, 3f);
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
+                    FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                    // GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                    // currentVfx.transform.parent = null;
+                    // Destroy(currentVfx, 3f);
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
 
-                        }
-                    }
                 }
             }
-        
-    
+        }
+    }
+
+
 
     private void OnMouseEnter()
     {

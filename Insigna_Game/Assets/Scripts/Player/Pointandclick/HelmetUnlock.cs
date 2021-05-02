@@ -103,7 +103,7 @@ public class HelmetUnlock : MonoBehaviour
     {
         if (context.started)
         {
-            if (cursorOn == true)
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
                 if (isNear == false)
                 {
@@ -159,7 +159,7 @@ public class HelmetUnlock : MonoBehaviour
     {
         if (context.started)
         {
-            if (cursorOn == true)
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
                 if (isNear == true)
                 {

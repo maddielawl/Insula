@@ -101,10 +101,10 @@ public class BarreauItem : MonoBehaviour
     {
         if (context.started)
         {
-                    if (cursorOn == true)
-                    {
-                        if (isNear == false)
-                        {
+            if (cursorOn == true && gameObject.activeSelf == true)
+            {
+                if (isNear == false)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -121,12 +121,12 @@ public class BarreauItem : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                        if (isNear == true)
-                        {
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
+                }
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -143,26 +143,26 @@ public class BarreauItem : MonoBehaviour
                         }
                     }
                     StartCoroutine(FarNearInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
-                        }
-                    }
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
                 }
             }
-        
-    
+        }
+    }
+
+
 
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
 
-                    if (cursorOn == true)
-                    {
+            if (cursorOn == true && gameObject.activeSelf == true)
+            {
 
-                        if (isNear == true)
-                        {
+                if (isNear == true)
+                {
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
@@ -178,25 +178,25 @@ public class BarreauItem : MonoBehaviour
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
-                            StartCoroutine(NearInterraction());
-                            StartCoroutine(StoreItem());
-                            spriteHighlight.enabled = false;
-                            FindObjectOfType<AudioManager>().Play("TakeObject");
-                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                            currentVfx.transform.parent = null;
-                            Destroy(currentVfx, 3f);
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            
-                        }
-                    }
+                    StartCoroutine(NearInterraction());
+                    StartCoroutine(StoreItem());
+                    spriteHighlight.enabled = false;
+                    FindObjectOfType<AudioManager>().Play("TakeObject");
+                    GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                    currentVfx.transform.parent = null;
+                    Destroy(currentVfx, 3f);
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+
                 }
             }
-        
-    
+        }
+    }
 
 
-      private IEnumerator StoreItem()
+
+
+    private IEnumerator StoreItem()
     {
         GameManager.Instance.globalInterractionSecurity = false;
         UIManager.Instance.GetObjectInInventory(this.gameObject);
@@ -222,7 +222,7 @@ public class BarreauItem : MonoBehaviour
             cursorOn = true;
             return;
         }
-        
+
     }
 
     private void OnMouseExit()
@@ -241,7 +241,7 @@ public class BarreauItem : MonoBehaviour
         GameManager.Instance.isNear = true;
 
         yield return new WaitForSeconds(5f);
-        
+
         nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
@@ -265,7 +265,7 @@ public class BarreauItem : MonoBehaviour
         GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(5f);
-        
+
         farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;

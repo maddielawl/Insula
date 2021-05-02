@@ -132,7 +132,7 @@ public class DiaryInteraction : MonoBehaviour
             {
                 if (security == false)
                 {
-                    if (cursorOn == true)
+                    if (cursorOn == true && gameObject.activeSelf == true)
                     {
                         if (isNear == false)
                         {
@@ -162,7 +162,7 @@ public class DiaryInteraction : MonoBehaviour
             {
                 if (security == false)
                 {
-                    if (cursorOn == true)
+                    if (cursorOn == true && gameObject.activeSelf == true)
                     {
                         if (isNear == true)
                         {

@@ -87,9 +87,9 @@ public class Interractable : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (context.started && gameObject.activeSelf == true)
+        if (context.started)
         {
-            if (cursorOn == true)
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
                 if (isNear == false)
                 {
@@ -143,9 +143,9 @@ public class Interractable : MonoBehaviour
 
     public void OnUse(InputAction.CallbackContext context)
     {
-        if (context.started && gameObject.activeSelf == true)
+        if (context.started)
         {
-            if (cursorOn == true)
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
                 if (isNear == true)
                 {
@@ -258,4 +258,13 @@ public class Interractable : MonoBehaviour
         yield return 0;
 
     }
+
+    /*public void OnDisable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started -= OnLook;
+            playerInputs.actions.FindAction("Use").started -= OnUse;
+        }
+    }*/
 }

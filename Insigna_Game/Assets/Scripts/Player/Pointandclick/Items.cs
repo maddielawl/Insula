@@ -103,7 +103,7 @@ public class Items : MonoBehaviour
         if (context.started && gameObject.activeSelf == true)
         {
 
-            if (cursorOn == true)
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
                 if (isNear == false)
                 {
@@ -160,7 +160,7 @@ public class Items : MonoBehaviour
         if (context.started && gameObject.activeSelf == true)
         {
 
-            if (cursorOn == true)
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
 
                 if (isNear == true)
