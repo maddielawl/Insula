@@ -9,6 +9,8 @@ public class Buttons : MonoBehaviour
     public Image baseSlotSprite;
     public GameObject emptySlot;
 
+    public string objectToInterractWith;
+
     public Button button1;
     public Button button2;
 
@@ -17,6 +19,9 @@ public class Buttons : MonoBehaviour
 
     private bool InteractionOff;
 
+    public bool buttonOneDone;
+    public bool buttonTwoDone;
+
     private InterractableWithInventory parent;
 
 
@@ -24,7 +29,7 @@ public class Buttons : MonoBehaviour
     {
         if (UIManager.Instance.isSlot1Active == true)
         {
-            if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
+            if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith))
             {
                 buttonimage1.sprite = UIManager.Instance.inventoryButton1.sprite;
                 UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
@@ -36,36 +41,43 @@ public class Buttons : MonoBehaviour
                 UIManager.Instance.object1Equipped.SetActive(false);
                 InteractionOff = true;
                 Destroy(button1);
+                buttonOneDone = true;
             }
         }
 
         if (UIManager.Instance.isSlot2Active == true)
         {
-            if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
+            if (UIManager.Instance.objectInSlot2.name.Contains(objectToInterractWith))
             {
                 buttonimage1.sprite = UIManager.Instance.inventoryButton2.sprite;
                 UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
+                UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
                 UIManager.Instance.isSlot2Active = false;
                 UIManager.Instance.isSlot2Full = false;
                 UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                 UIManager.Instance.object2Equipped.SetActive(false);
                 InteractionOff = true;
+                Destroy(button1);
+                buttonOneDone = true;
             }
         }
 
         if (UIManager.Instance.isSlot3Active == true)
         {
-            if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
+            if (UIManager.Instance.objectInSlot3.name.Contains(objectToInterractWith))
             {
                 buttonimage1.sprite = UIManager.Instance.inventoryButton3.sprite;
                 UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
+                UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
                 UIManager.Instance.isSlot3Active = false;
                 UIManager.Instance.isSlot3Full = false;
                 UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                 UIManager.Instance.object3Equipped.SetActive(false);
                 InteractionOff = true;
+                Destroy(button1);
+                buttonOneDone = true;
             }
         }
     }
@@ -74,7 +86,7 @@ public class Buttons : MonoBehaviour
     {
         if (UIManager.Instance.isSlot1Active == true)
         {
-            if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
+            if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith))
             {
                 buttonimage2.sprite = UIManager.Instance.inventoryButton1.sprite;
                 UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
@@ -85,37 +97,55 @@ public class Buttons : MonoBehaviour
                 UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                 UIManager.Instance.object1Equipped.SetActive(false);
                 InteractionOff = true;
+                Destroy(button2);
+                buttonTwoDone = true;
             }
         }
 
         if (UIManager.Instance.isSlot2Active == true)
         {
-            if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
+            if (UIManager.Instance.objectInSlot2.name.Contains(objectToInterractWith))
             {
                 buttonimage2.sprite = UIManager.Instance.inventoryButton2.sprite;
                 UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
+                UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
                 UIManager.Instance.isSlot2Active = false;
                 UIManager.Instance.isSlot2Full = false;
                 UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                 UIManager.Instance.object2Equipped.SetActive(false);
                 InteractionOff = true;
+                Destroy(button2);
+                buttonTwoDone = true;
             }
         }
 
         if (UIManager.Instance.isSlot3Active == true)
         {
-            if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
+            if (UIManager.Instance.objectInSlot3.name.Contains(objectToInterractWith))
             {
                 buttonimage2.sprite = UIManager.Instance.inventoryButton3.sprite;
                 UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
+                UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
                 UIManager.Instance.isSlot3Active = false;
                 UIManager.Instance.isSlot3Full = false;
                 UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                 UIManager.Instance.object3Equipped.SetActive(false);
                 InteractionOff = true;
+                Destroy(button2);
+                buttonTwoDone = true;
             }
+        }
+    }
+
+    private void Update()
+    {
+        if(buttonOneDone == true && buttonTwoDone == true)
+        {
+            GameManager.Instance.N03T02energy = true;
+            transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
+            Destroy(GameObject.Find(transform.parent.GetComponent<QuitPopUp>().popUpName));
         }
     }
 
