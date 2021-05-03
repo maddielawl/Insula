@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         ClimbingState = new PlayerClimbingState(this, StateMachine, playerData, "climb");
 
     }
-    
+
     private void Start()
     {
         Anim = GetComponent<Animator>();
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
 
     public void CheckIfShouldFlip(int xInput)
     {
-        if(xInput != 0 && xInput != FacingDirection)
+        if (xInput != 0 && xInput != FacingDirection)
         {
             Flip();
         }
