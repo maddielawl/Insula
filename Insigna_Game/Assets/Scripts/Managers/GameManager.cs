@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
         playerInput = new PlayerInputs();
+
+        madnessZone = GameObject.FindGameObjectWithTag("MadnessZone");
+        sanityZone = GameObject.FindGameObjectWithTag("SanityZone");
     }
     #endregion
 
@@ -151,8 +154,11 @@ public class GameManager : MonoBehaviour
                     {
                         once = true;
                     }
-                    madnessZone.SetActive(false);
-                    sanityZone.SetActive(true);
+                    if (madnessZone != null && sanityZone != null)
+                    {
+                        madnessZone.SetActive(false);
+                        sanityZone.SetActive(true);
+                    }
                     globalInterractionSecurity = false;
                     dimensionSwapNormal = false;
                     dimensionSwapMadness = true;
