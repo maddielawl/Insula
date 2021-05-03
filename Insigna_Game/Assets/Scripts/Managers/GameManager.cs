@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     public bool isNear = false;
     public GameObject player;
 
+    public bool N03T02energy;
+
 
 
     #region Madness Functions
