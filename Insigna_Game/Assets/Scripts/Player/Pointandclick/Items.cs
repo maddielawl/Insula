@@ -289,4 +289,22 @@ public class Items : MonoBehaviour
         yield return 0;
 
     }
+
+    public void OnEnable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started += OnLook;
+            playerInputs.actions.FindAction("Use").started += OnUse;
+        }
+    }
+
+    public void OnDisable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started -= OnLook;
+            playerInputs.actions.FindAction("Use").started -= OnUse;
+        }
+    }
 }
