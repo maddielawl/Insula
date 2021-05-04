@@ -106,7 +106,6 @@ public class MenusManager : MonoBehaviour
         }
         menusActions = new GameInputs();
         mainMenuAudioSource = GetComponent<AudioSource>();
-        PopUp.SetActive(false);
         transform.gameObject.SetActive(true);
 
         UnloadAllScenesExcept("MainMenu 20032021");
