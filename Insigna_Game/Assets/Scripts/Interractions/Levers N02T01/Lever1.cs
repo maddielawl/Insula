@@ -24,7 +24,8 @@ public class Lever1 : MonoBehaviour
         {
             parent.interractionSecurity = true;
 
-            if (button.lever1 == 0) {
+            if (button.lever1 == 0)
+            {
                 if (order == false)
                 {
                     button.lever1++;
@@ -36,7 +37,8 @@ public class Lever1 : MonoBehaviour
                 Debug.Log(button.lever1);
                 return;
             }
-             if (button.lever1 == 1) {
+            if (button.lever1 == 1)
+            {
                 if (order == true)
                 {
                     button.lever1--;
@@ -48,11 +50,12 @@ public class Lever1 : MonoBehaviour
                     button.lever1++;
                     order = true;
                     return;
-                }                
+                }
                 Debug.Log(button.lever1);
 
             }
-            if (button.lever1 == 2) {
+            if (button.lever1 == 2)
+            {
                 if (order == false)
                 {
                     button.lever1++;
@@ -65,10 +68,10 @@ public class Lever1 : MonoBehaviour
                 return;
 
             }
-            }
-                
-
         }
 
-        }
+
+    }
+
+}
 
