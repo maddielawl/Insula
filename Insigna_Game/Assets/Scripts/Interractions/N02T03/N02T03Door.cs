@@ -17,7 +17,7 @@ public class N02T03Door : MonoBehaviour
     {
         if (parent.interractionSecurity == false)
         {
-            tournevils.SetActive(true);
+            //tournevils.SetActive(true);
             GameManager.Instance.globalInterractionSecurity = false;
             Destroy(this.transform.parent.gameObject);
         }
