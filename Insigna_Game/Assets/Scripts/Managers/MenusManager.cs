@@ -393,7 +393,14 @@ public class MenusManager : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+        if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(1))
+        {
+            SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+        }
         ingameMainUI.SetActive(true);
         ingameGameOverUI.SetActive(false);
         GameManager.Instance.isScared = false;
