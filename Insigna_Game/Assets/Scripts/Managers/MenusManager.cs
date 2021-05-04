@@ -380,7 +380,6 @@ public class MenusManager : MonoBehaviour
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         //GameManager.Instance.ActivateInGameActions();
-        PopUp.SetActive(true);
         inGame = true;
         level1loaded = true;
     }
