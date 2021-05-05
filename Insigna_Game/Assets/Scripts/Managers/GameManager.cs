@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     [Header("Helmet")]
     public bool isHelmetEquipped = false;
     public bool canEquipHelmet = false;
+    public bool hasHelmetEquipped = false;
 
     [Space(5)]
     [Header("Status Check")]

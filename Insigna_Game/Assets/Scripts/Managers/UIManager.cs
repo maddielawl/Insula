@@ -72,7 +72,8 @@ public class UIManager : MonoBehaviour
     public GameObject blackScreen;
 
     [Header("Others")]
-    private GameObject player;
+    [HideInInspector]
+    public GameObject player;
     public RuntimeAnimatorController playerAnimatorController;
     public AnimatorOverrideController playerTvAnimatorController;
 
@@ -344,7 +345,8 @@ public class UIManager : MonoBehaviour
         {
             helmetOffIndicator.SetActive(false);
             helmetOnIndicator.SetActive(true);
-            player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
+            GameManager.Instance.hasHelmetEquipped = true;
+            //player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
         }
     }
     public void HelmetIsOff()
@@ -353,7 +355,8 @@ public class UIManager : MonoBehaviour
         {
             helmetOffIndicator.SetActive(true);
             helmetOnIndicator.SetActive(false);
-            player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
+            GameManager.Instance.hasHelmetEquipped = false;
+            //player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
         }
     }
     public IEnumerator FadeToBlackTP(GameObject player, Transform spawnPoint, bool fadeToBlack, float fadeSpeed = 1f)
