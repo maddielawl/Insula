@@ -7,8 +7,9 @@ public class Mechantquimeurt : MonoBehaviour
 
     public GameObject robotDcd;
     public GameObject SanityZone;
+    public GameObject Robot;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Collider 1"))
         {
@@ -16,5 +17,12 @@ public class Mechantquimeurt : MonoBehaviour
             robotDcd.SetActive(true);
             Destroy(this.gameObject);
         }
+    }*/
+
+    public void RobotDead()
+    {
+        SanityZone.SetActive(false);
+        robotDcd.SetActive(true);
+        robotDcd.GetComponent<Animator>().SetTrigger("Broken");
     }
 }
