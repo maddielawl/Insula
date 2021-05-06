@@ -54,7 +54,7 @@ public class InterractableN1_T1Door : MonoBehaviour
         }
         if (cursorOn == true)
         {
-            UIManager.Instance.SetNearCursor();
+            UIManager.Instance.SetDoorCursor();
 
         }
     }

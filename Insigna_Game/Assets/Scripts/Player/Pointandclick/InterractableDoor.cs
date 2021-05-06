@@ -49,7 +49,7 @@ public class InterractableDoor : MonoBehaviour
         }
         if (cursorOn == true)
         {
-            UIManager.Instance.SetNearCursor();
+            UIManager.Instance.SetDoorCursor();
 
         }
     }
