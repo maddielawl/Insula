@@ -22,6 +22,7 @@ public class N02T03Door : MonoBehaviour
             GameManager.Instance.globalInterractionSecurity = false;
             placardHighlight.enabled = false;
             parent.GetComponent<BoxCollider2D>().enabled = false;
+            parent.GetComponent<SpriteRenderer>().enabled = false;
         }
 
     }
