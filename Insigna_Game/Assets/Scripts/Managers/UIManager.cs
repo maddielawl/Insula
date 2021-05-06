@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     public Sprite nearCursor;
     public Sprite farCursor;
     public Sprite interractionCursor;
+    public Sprite DoorCursor;
 
     [Header("Inventory Buttons")]
     public Image inventoryButton1;
@@ -227,6 +228,12 @@ public class UIManager : MonoBehaviour
         // Cursor.SetCursor(interractionCursor, Vector2.zero, CursorMode.Auto);
         CursorManager.Instance.rend.sprite = interractionCursor;
         CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
+    }
+
+    public void SetDoorCursor()
+    {
+        CursorManager.Instance.rend.sprite = DoorCursor;
+        CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
     }
 
 

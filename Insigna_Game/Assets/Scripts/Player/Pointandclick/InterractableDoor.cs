@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class InterractableN1_T1Door : MonoBehaviour
+public class InterractableDoor : MonoBehaviour
 {
 
 
@@ -30,17 +30,12 @@ public class InterractableN1_T1Door : MonoBehaviour
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
     public SpriteRenderer spriteHighlight;
-    public SpriteRenderer spriteHighlight2;
-    public N01T01Door DoorScript;
 
     public GameObject vfx;
 
     [Header("Phrase a dire")]
     public string farPhrase;
     public string nearPhrase;
-    [Space(10)]
-    public string farPhraseOpened;
-    public string nearPhraseOpened;
 
     [HideInInspector]
     public TextMeshProUGUI observationText;
@@ -86,10 +81,6 @@ public class InterractableN1_T1Door : MonoBehaviour
         if (spriteHighlight != null)
         {
             spriteHighlight.enabled = false;
-        }
-        if (spriteHighlight2 != null)
-        {
-            spriteHighlight2.enabled = false;
         }
     }
 
@@ -195,10 +186,6 @@ public class InterractableN1_T1Door : MonoBehaviour
             {
                 spriteHighlight.enabled = true;
             }
-            if (spriteHighlight2 != null)
-            {
-                spriteHighlight2.enabled = true;
-            }
             UIManager.Instance.SetDoorCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -209,10 +196,6 @@ public class InterractableN1_T1Door : MonoBehaviour
             if (spriteHighlight != null)
             {
                 spriteHighlight.enabled = true;
-            }
-            if (spriteHighlight2 != null)
-            {
-                spriteHighlight2.enabled = true;
             }
             UIManager.Instance.SetFarCursor();
             cursorOn = true;
@@ -225,10 +208,6 @@ public class InterractableN1_T1Door : MonoBehaviour
         if (spriteHighlight != null)
         {
             spriteHighlight.enabled = false;
-        }
-        if (spriteHighlight2 != null)
-        {
-            spriteHighlight2.enabled = false;
         }
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
@@ -254,12 +233,8 @@ public class InterractableN1_T1Door : MonoBehaviour
         farInt1.SetActive(true);
         observationText.text = farPhrase;
         GameManager.Instance.isNear = false;
-        if (DoorScript.isLeverOn)
-        {
-            observationText.text = farPhraseOpened;
-        }
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         farInt1.SetActive(false);
         security = false;
@@ -273,10 +248,6 @@ public class InterractableN1_T1Door : MonoBehaviour
         farInt1.SetActive(true);
         observationText.text = nearPhrase;
         GameManager.Instance.isNear = false;
-        if (DoorScript.isLeverOn)
-        {
-            observationText.text = nearPhraseOpened;
-        }
 
         yield return new WaitForSeconds(5f);
 
@@ -288,7 +259,7 @@ public class InterractableN1_T1Door : MonoBehaviour
 
     }
 
-    public void OnEnable()
+    /*public void OnEnable()
     {
         if (playerInputs != null)
         {
@@ -304,5 +275,5 @@ public class InterractableN1_T1Door : MonoBehaviour
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
         }
-    }
+    }*/
 }
