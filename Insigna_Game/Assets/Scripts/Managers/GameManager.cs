@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     public int playerSanity;
     public int playerPillsCount;
     public int healAmmount = 30;
-    public int playerMadnessDecrement = 3;
+    public int playerMadnessDecrement = 2;
     public PlayerInputs playerInput;
 
     [Space(5)]

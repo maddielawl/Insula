@@ -54,7 +54,7 @@ public class InterractableN1_T1Door : MonoBehaviour
         }
         if (cursorOn == true)
         {
-            UIManager.Instance.SetNearCursor();
+            UIManager.Instance.SetDoorCursor();
 
         }
     }
@@ -199,7 +199,7 @@ public class InterractableN1_T1Door : MonoBehaviour
             {
                 spriteHighlight2.enabled = true;
             }
-            UIManager.Instance.SetNearCursor();
+            UIManager.Instance.SetDoorCursor();
             isInterractableOn = true;
             cursorOn = true;
             return;

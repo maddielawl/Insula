@@ -43,10 +43,10 @@ public class HealthPack : MonoBehaviour
         {
             isNear = true;
         }
-        if (cursorOn == true)
+        /*if (cursorOn == true)
         {
             UIManager.Instance.SetNearCursor();
-        }
+        }*/
     }
 
     private void OnTriggerExit2D(Collider2D other)

@@ -52,7 +52,22 @@ public class InterractableWithInventory : MonoBehaviour
         }
         if (cursorOn == true)
         {
-            UIManager.Instance.SetNearCursor();
+            if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot1Active == true)
+            {
+                UIManager.Instance.SetInterractionCursor();
+            }
+            if (UIManager.Instance.objectInSlot2.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot2Active == true)
+            {
+                UIManager.Instance.SetInterractionCursor();
+            }
+            if (UIManager.Instance.objectInSlot3.name.Contains(objectToInterractWith) && UIManager.Instance.isSlot3Active == true)
+            {
+                UIManager.Instance.SetInterractionCursor();
+            }
+            if (UIManager.Instance.isSlot3Active == false && UIManager.Instance.isSlot2Active == false && UIManager.Instance.isSlot1Active == false)
+            {
+                UIManager.Instance.SetNearCursor();
+            }
         }
     }
 
