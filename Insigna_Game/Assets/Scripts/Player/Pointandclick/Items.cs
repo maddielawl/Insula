@@ -33,7 +33,7 @@ public class Items : MonoBehaviour
     private bool itemSecurity = false;
     private Sprite spriteNormal;
     public Sprite spriteHighlight;
-    private SpriteRenderer objectSpriteRenderer;
+    public SpriteRenderer objectSpriteRenderer;
 
     public GameObject vfx;
 
