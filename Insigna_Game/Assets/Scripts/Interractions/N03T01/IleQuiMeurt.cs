@@ -9,9 +9,17 @@ public class IleQuiMeurt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (em.inMadness == true && em.phareonoroff == true && em.dayornight == true)
-        {
+        
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Trigger");
+
+        if (em.inMadness == true && em.phareonoroff == true && em.dayornight == true && collision.CompareTag("Waypoint 1"))
+        {
+            Destroy(this.gameObject);
         }
     }
+
 }
