@@ -9,6 +9,10 @@ public class Lever4 : MonoBehaviour
 
     private bool order = false;
 
+    public Sprite LevelLeft;
+    public Sprite LevelMiddle;
+    public Sprite LevelRight;
+
 
     void Start()
     {
@@ -25,6 +29,7 @@ public class Lever4 : MonoBehaviour
 
             if (button.lever4 == 0)
             {
+                transform.parent.GetComponent<SpriteRenderer>().sprite = LevelLeft;
                 if (order == false)
                 {
                     button.lever4++;
@@ -38,6 +43,7 @@ public class Lever4 : MonoBehaviour
             }
             if (button.lever4 == 1)
             {
+                transform.parent.GetComponent<SpriteRenderer>().sprite = LevelMiddle;
                 if (order == true)
                 {
                     button.lever4--;
@@ -55,6 +61,7 @@ public class Lever4 : MonoBehaviour
             }
             if (button.lever4 == 2)
             {
+                transform.parent.GetComponent<SpriteRenderer>().sprite = LevelRight;
                 if (order == false)
                 {
                     button.lever4++;
