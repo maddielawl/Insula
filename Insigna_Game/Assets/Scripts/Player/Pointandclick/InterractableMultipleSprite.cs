@@ -5,10 +5,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class Interractable : MonoBehaviour
+public class InterractableMultipleSprite : MonoBehaviour
 {
-
-
     // Déclaration du joueur et du playerinput pour gérer l'interraction depuis les inputs du joueur.
     private PlayerInput playerInputs;
     private GameObject player;
@@ -29,7 +27,7 @@ public class Interractable : MonoBehaviour
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
-    public SpriteRenderer spriteHighlight;
+    public SpriteRenderer[] spriteHighlight;
 
     public GameObject vfx;
 
@@ -78,9 +76,9 @@ public class Interractable : MonoBehaviour
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
         interractionSecurity = false;
-        if (spriteHighlight != null)
+        for (int i = 0; i < spriteHighlight.Length; i++)
         {
-            spriteHighlight.enabled = false;
+            spriteHighlight[i].enabled = false;
         }
     }
 
@@ -165,6 +163,10 @@ public class Interractable : MonoBehaviour
                         }
                     }
                     StartCoroutine(NearInterraction());
+                    FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                    GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                    currentVfx.transform.parent = null;
+                    Destroy(currentVfx, 3f);
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
                 }
@@ -178,9 +180,9 @@ public class Interractable : MonoBehaviour
     {
         if (isNear == true)
         {
-            if (spriteHighlight != null)
+            for (int i = 0; i < spriteHighlight.Length; i++)
             {
-                spriteHighlight.enabled = true;
+                spriteHighlight[i].enabled = true;
             }
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
@@ -189,9 +191,9 @@ public class Interractable : MonoBehaviour
         }
         if (isNear == false)
         {
-            if (spriteHighlight != null)
+            for (int i = 0; i < spriteHighlight.Length; i++)
             {
-                spriteHighlight.enabled = true;
+                spriteHighlight[i].enabled = true;
             }
             UIManager.Instance.SetFarCursor();
             cursorOn = true;
@@ -201,9 +203,9 @@ public class Interractable : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (spriteHighlight != null)
+        for (int i = 0; i < spriteHighlight.Length; i++)
         {
-            spriteHighlight.enabled = false;
+            spriteHighlight[i].enabled = false;
         }
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
@@ -214,10 +216,6 @@ public class Interractable : MonoBehaviour
     {
         nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
-        FindObjectOfType<AudioManager>().Play("OnClickInventory");
-        GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-        currentVfx.transform.parent = null;
-        Destroy(currentVfx, 3f);
 
         yield return new WaitForSeconds(5f);
 

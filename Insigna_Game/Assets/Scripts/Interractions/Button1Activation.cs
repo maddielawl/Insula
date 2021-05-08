@@ -9,6 +9,7 @@ public class Button1Activation : MonoBehaviour
 
     public GameObject ladder;
     public GameObject bloqueur;
+    public Animator LadderAnimator;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class Button1Activation : MonoBehaviour
             parent.interractionSecurity = true;
             if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 0 && button.lever4 == 2)
             {
+                LadderAnimator.SetTrigger("Fall");
                 bloqueur.SetActive(false);
                 ladder.SetActive(true);
             }

@@ -971,6 +971,7 @@ GameObject:
   - component: {fileID: 66823120}
   - component: {fileID: 66823121}
   - component: {fileID: 66823122}
+  - component: {fileID: 66823119}
   - component: {fileID: 66823118}
   - component: {fileID: 66823123}
   m_Layer: 6
@@ -1016,6 +1017,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &66823119
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66823116}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.93, y: 4.67}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.93, y: 4.67}
+  m_EdgeRadius: 0
 --- !u!212 &66823120
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2394,7 +2421,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 142506244}
-  - component: {fileID: 142506245}
   m_Layer: 0
   m_Name: L02_T01
   m_TagString: Untagged
@@ -2418,25 +2444,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &142506245
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142506243}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 690003f224d2bcd4d89578d6d09dbc7a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &145180598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8355757278438419469, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
@@ -4923,7 +4930,7 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "\xC7a fait beaucoup de leviers"
-  nearPhrase: Je crois qu'ils ont chacun un sens.
+  nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
 --- !u!1 &281158963
 GameObject:
@@ -5071,7 +5078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
-  spriteHighlight: {fileID: 0}
+  spriteHighlight: {fileID: 1486472631}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "Je me demande \xE0 quoi servait cette bo\xEEte."
   nearPhrase: "C\u2019est aussi un Robot ?"
@@ -5183,8 +5190,8 @@ Transform:
   m_LocalPosition: {x: 9.606573, y: -7.18, z: 0}
   m_LocalScale: {x: 1.207741, y: 1.207741, z: 1.207741}
   m_Children:
-  - {fileID: 1807671131}
   - {fileID: 830541803}
+  - {fileID: 1807671131}
   m_Father: {fileID: 1718614895}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5220,7 +5227,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.663569}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5231,7 +5238,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.85, y: 9.67}
+  m_Size: {x: 1.85, y: 6.342862}
   m_EdgeRadius: 0
 --- !u!1 &290561422
 GameObject:
@@ -7427,7 +7434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &427674636
 Transform:
   m_ObjectHideFlags: 0
@@ -7449,7 +7456,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427674635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -8414,6 +8421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ladder: {fileID: 1102954260}
   bloqueur: {fileID: 286672170}
+  LadderAnimator: {fileID: 1256615091}
 --- !u!4 &493333793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
@@ -9421,7 +9429,7 @@ Transform:
   - {fileID: 1125925384}
   - {fileID: 1105964768}
   m_Father: {fileID: 1011517111}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: -0.375, y: 0, z: 0}
 --- !u!114 &542291707
 MonoBehaviour:
@@ -9437,7 +9445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
-  spriteHighlight: {fileID: 0}
+  spriteHighlight: {fileID: 1295613143}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "Peut-\xEAtre que \xE7a pourrait m\u2019aider."
   nearPhrase: "Non c\u2019est trop lourd."
@@ -9906,8 +9914,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isNear: 0
-  spriteHighlight: {fileID: 0}
-  objectSpriteRenderer: {fileID: 0}
+  spriteHighlight: {fileID: 21300000, guid: 9cce79f60ea02cb4a971889480501b2f, type: 3}
+  objectSpriteRenderer: {fileID: 594218046}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "une cl\xE9 \xE0 molette"
   nearPhrase: "cl\xE9 \xE0 molette"
@@ -14497,7 +14505,7 @@ MonoBehaviour:
   m_text: FAR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5501c03eebc114d43a704ac9ed586127, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1433156439216266046, guid: 5501c03eebc114d43a704ac9ed586127, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14709,7 +14717,7 @@ Transform:
   m_Children:
   - {fileID: 1058289950}
   m_Father: {fileID: 286672172}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &836804364
 GameObject:
@@ -15018,7 +15026,7 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "\xC7a fait beaucoup de leviers"
-  nearPhrase: Je crois qu'ils ont chacun un sens.
+  nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
 --- !u!1 &847272650
 GameObject:
@@ -16319,7 +16327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &910669960
 Transform:
   m_ObjectHideFlags: 0
@@ -16341,7 +16349,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910669959}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -17714,7 +17722,7 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "\xC7a fait beaucoup de leviers"
-  nearPhrase: Je crois qu'ils ont chacun un sens.
+  nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
 --- !u!1 &1011517110
 GameObject:
@@ -17757,8 +17765,8 @@ Transform:
   - {fileID: 1491001870}
   - {fileID: 1286784307}
   - {fileID: 1231643868}
-  - {fileID: 1295613144}
   - {fileID: 542291706}
+  - {fileID: 1295613144}
   m_Father: {fileID: 1102364846}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21082,6 +21090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1256615089}
   - component: {fileID: 1256615090}
+  - component: {fileID: 1256615091}
   m_Layer: 0
   m_Name: Props_Echelle_Coulisse_1
   m_TagString: Untagged
@@ -21154,6 +21163,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1256615091
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256615088}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 690003f224d2bcd4d89578d6d09dbc7a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1258267621
 GameObject:
   m_ObjectHideFlags: 0
@@ -22102,7 +22130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
-  spriteHighlight: {fileID: 0}
+  spriteHighlight: {fileID: 1231643867}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "Qu\u2019est-ce qu\u2019il y a dans cette bo\xEEte ?"
   nearPhrase: "C\u2019est la valise du Docteur."
@@ -22413,7 +22441,7 @@ Transform:
   m_LocalScale: {x: 0.31048423, y: 0.31048417, z: 0.31048417}
   m_Children: []
   m_Father: {fileID: 1011517111}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: -0.375, y: 0, z: 0}
 --- !u!1 &1298054453
 GameObject:
@@ -29641,12 +29669,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1732795004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d8b8b0b96c174a4583e1bf04479b756, type: 3}
+  m_Script: {fileID: 11500000, guid: 45aa2afd07e6b9e4eb2aa2c37dee3fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
-  spriteHighlight: {fileID: 0}
+  spriteHighlight:
+  - {fileID: 427674637}
+  - {fileID: 910669961}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "C\u2019est \xE9trange on dirait des grosses bouteilles."
   nearPhrase: "J\u2019en ai d\xE9j\xE0 vue \xE0 l\u2019usine, mais je ne sais pas
@@ -30986,7 +31016,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: fd7bcbd08f3ab6749a6f62d575cd0a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 875d53859150c7946acb2b5171583e8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -31014,7 +31044,7 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: "\xC7a fait beaucoup de leviers"
-  nearPhrase: Je crois qu'ils ont chacun un sens.
+  nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
 --- !u!1 &1804973108
 GameObject:
@@ -31192,7 +31222,7 @@ Transform:
   m_Children:
   - {fileID: 1710182261}
   m_Father: {fileID: 286672172}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1816837739
 GameObject:
@@ -32231,12 +32261,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1923340354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d8b8b0b96c174a4583e1bf04479b756, type: 3}
+  m_Script: {fileID: 11500000, guid: 45aa2afd07e6b9e4eb2aa2c37dee3fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isNear: 0
   interractionSecurity: 1
-  spriteHighlight: {fileID: 0}
+  spriteHighlight:
+  - {fileID: 637235229}
+  - {fileID: 54320910}
+  - {fileID: 1491001871}
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: Encore des bouteilles ?
   nearPhrase: "Attention je crois que \xE7a va tomber."
@@ -35361,7 +35394,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5501c03eebc114d43a704ac9ed586127, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1433156439216266046, guid: 5501c03eebc114d43a704ac9ed586127, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
