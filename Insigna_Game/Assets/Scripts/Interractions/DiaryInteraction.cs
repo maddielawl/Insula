@@ -132,7 +132,7 @@ public class DiaryInteraction : MonoBehaviour
             {
                 if (security == false)
                 {
-                    if (cursorOn == true)
+                    if (cursorOn == true && gameObject.activeSelf == true)
                     {
                         if (isNear == false)
                         {
@@ -162,7 +162,7 @@ public class DiaryInteraction : MonoBehaviour
             {
                 if (security == false)
                 {
-                    if (cursorOn == true)
+                    if (cursorOn == true && gameObject.activeSelf == true)
                     {
                         if (isNear == true)
                         {
@@ -264,6 +264,24 @@ public class DiaryInteraction : MonoBehaviour
 
         yield return 0;
 
+    }
+
+    public void OnEnable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started += OnLook;
+            playerInputs.actions.FindAction("Use").started += OnUse;
+        }
+    }
+
+    public void OnDisable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started -= OnLook;
+            playerInputs.actions.FindAction("Use").started -= OnUse;
+        }
     }
 }
 

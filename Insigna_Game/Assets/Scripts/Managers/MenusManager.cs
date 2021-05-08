@@ -106,7 +106,6 @@ public class MenusManager : MonoBehaviour
         }
         menusActions = new GameInputs();
         mainMenuAudioSource = GetComponent<AudioSource>();
-        PopUp.SetActive(false);
         transform.gameObject.SetActive(true);
 
         UnloadAllScenesExcept("MainMenu 20032021");
@@ -381,7 +380,6 @@ public class MenusManager : MonoBehaviour
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         //GameManager.Instance.ActivateInGameActions();
-        PopUp.SetActive(true);
         inGame = true;
         level1loaded = true;
     }
@@ -395,7 +393,14 @@ public class MenusManager : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+        if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(1))
+        {
+            SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+        }
         ingameMainUI.SetActive(true);
         ingameGameOverUI.SetActive(false);
         GameManager.Instance.isScared = false;

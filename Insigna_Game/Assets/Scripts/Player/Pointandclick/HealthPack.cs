@@ -43,10 +43,10 @@ public class HealthPack : MonoBehaviour
         {
             isNear = true;
         }
-        if (cursorOn == true)
+        /*if (cursorOn == true)
         {
             UIManager.Instance.SetNearCursor();
-        }
+        }*/
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -78,57 +78,94 @@ public class HealthPack : MonoBehaviour
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
-                if (security == false)
+                if (isNear == false)
                 {
-                    if (cursorOn == true)
+                    if (GameManager.Instance.globalInterractionSecurity == true)
                     {
-                        if (isNear == false)
+                        if (GameManager.Instance.isNear == true)
                         {
-                            StartCoroutine(FarInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                         }
-                        if (isNear == true)
+                        else
                         {
-                            StartCoroutine(FarNearInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    StartCoroutine(FarInterraction());
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
+                }
+                if (isNear == true)
+                {
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(FarNearInterraction());
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
                 }
             }
         }
     }
 
+
+
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
-                if (security == false)
+                if (isNear == true)
                 {
-                    if (cursorOn == true)
+                    if (GameManager.Instance.globalInterractionSecurity == true)
                     {
-                        if (isNear == true)
+                        if (GameManager.Instance.isNear == true)
                         {
-                            StartCoroutine(AddPackInInventory());
-                            FindObjectOfType<AudioManager>().Play("TakeObject");
-                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                            currentVfx.transform.parent = null;
-                            Destroy(currentVfx, 3f);
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    StartCoroutine(AddPackInInventory());
+                    FindObjectOfType<AudioManager>().Play("TakeObject");
+                    GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                    currentVfx.transform.parent = null;
+                    Destroy(currentVfx, 3f);
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
                 }
             }
         }
     }
+
+
 
     private void OnMouseEnter()
     {
@@ -157,6 +194,7 @@ public class HealthPack : MonoBehaviour
 
     private IEnumerator AddPackInInventory()
     {
+        GameManager.Instance.isNear = true;
         GameManager.Instance.playerPillsCount++;
         GameManager.Instance.globalInterractionSecurity = false;
         Destroy(this.gameObject);
@@ -168,9 +206,10 @@ public class HealthPack : MonoBehaviour
     {
         farInt0.SetActive(true);
         observationText.text = farPhrase;
+        GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(2.5f);
-        
+
         farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
@@ -182,6 +221,7 @@ public class HealthPack : MonoBehaviour
     {
         farInt0.SetActive(true);
         observationText.text = nearPhrase;
+        GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(2.5f);
 
@@ -192,5 +232,23 @@ public class HealthPack : MonoBehaviour
         StopCoroutine(FarNearInterraction());
         yield return 0;
 
+    }
+
+    public void OnEnable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started += OnLook;
+            playerInputs.actions.FindAction("Use").started += OnUse;
+        }
+    }
+
+    public void OnDisable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started -= OnLook;
+            playerInputs.actions.FindAction("Use").started -= OnUse;
+        }
     }
 }

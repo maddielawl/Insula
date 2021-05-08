@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
         playerInput = new PlayerInputs();
+
+        madnessZone = GameObject.FindGameObjectWithTag("MadnessZone");
+        sanityZone = GameObject.FindGameObjectWithTag("SanityZone");
     }
     #endregion
 
@@ -33,12 +36,14 @@ public class GameManager : MonoBehaviour
     public int playerSanity;
     public int playerPillsCount;
     public int healAmmount = 30;
+    public int playerMadnessDecrement = 2;
     public PlayerInputs playerInput;
 
     [Space(5)]
     [Header("Helmet")]
     public bool isHelmetEquipped = false;
     public bool canEquipHelmet = false;
+    public bool hasHelmetEquipped = false;
 
     [Space(5)]
     [Header("Status Check")]
@@ -48,18 +53,19 @@ public class GameManager : MonoBehaviour
     [Header("MadnessZone")]
     public GameObject madnessZone;
     public GameObject sanityZone;
-    [SerializeField]
-    private bool dimensionSwapNormal;
-    [SerializeField]
-    private bool dimensionSwapMadness;
+    public bool dimensionSwapNormal;
+    public bool dimensionSwapMadness;
 
     public MadnessAppear indicible;
     public bool once;
 
     public bool globalInterractionSecurity = false;
+    public bool isNear = false;
     public GameObject player;
 
-    
+    public bool N03T02energy;
+
+
 
     #region Madness Functions
 
@@ -72,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if(player == null)
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
@@ -86,7 +92,7 @@ public class GameManager : MonoBehaviour
         if (isScared == true)
         {
             heartbeatEvent.setParameterByName("Stress", playerSanity);
- 
+
             if (isHelmetEquipped == true)
             {
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
@@ -140,7 +146,7 @@ public class GameManager : MonoBehaviour
             {
 
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
-                playerMadness = playerMadness - 1;
+                playerMadness = playerMadness - playerMadnessDecrement;
                 if (playerMadness <= 50 && dimensionSwapNormal == true)
                 {
                     if (once == true)
@@ -151,8 +157,11 @@ public class GameManager : MonoBehaviour
                     {
                         once = true;
                     }
-                    madnessZone.SetActive(false);
-                    sanityZone.SetActive(true);
+                    if (madnessZone != null && sanityZone != null)
+                    {
+                        madnessZone.SetActive(false);
+                        sanityZone.SetActive(true);
+                    }
                     globalInterractionSecurity = false;
                     dimensionSwapNormal = false;
                     dimensionSwapMadness = true;

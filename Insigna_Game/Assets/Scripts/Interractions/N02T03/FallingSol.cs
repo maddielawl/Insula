@@ -35,7 +35,7 @@ public class FallingSol : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     UIManager.Instance.isSlot1Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
-                    floor.AddComponent<Rigidbody2D>();
+                    floor.GetComponent<Animator>().SetTrigger("FallingFloor");
                     GameManager.Instance.globalInterractionSecurity = false;
                     Destroy(transform.parent.gameObject);
                 }
@@ -52,7 +52,7 @@ public class FallingSol : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     UIManager.Instance.isSlot2Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
-                    floor.AddComponent<Rigidbody2D>();
+                    floor.GetComponent<Animator>().SetTrigger("FallingFloor");
 
                     GameManager.Instance.globalInterractionSecurity = false;
 
@@ -71,7 +71,7 @@ public class FallingSol : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     UIManager.Instance.isSlot3Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
-                    floor.AddComponent<Rigidbody2D>();
+                    floor.GetComponent<Animator>().SetTrigger("FallingFloor");
 
                     GameManager.Instance.globalInterractionSecurity = false;
 

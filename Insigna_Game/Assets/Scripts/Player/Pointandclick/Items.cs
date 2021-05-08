@@ -31,6 +31,9 @@ public class Items : MonoBehaviour
 
     // Store L'object que l'on as besoin et le bool de sécurité pour celui ci
     private bool itemSecurity = false;
+    private Sprite spriteNormal;
+    public Sprite spriteHighlight;
+    public SpriteRenderer objectSpriteRenderer;
 
     public GameObject vfx;
 
@@ -78,6 +81,8 @@ public class Items : MonoBehaviour
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
         interractionSecurity = false;
+        objectSpriteRenderer = transform.GetComponent<SpriteRenderer>();
+        spriteNormal = objectSpriteRenderer.sprite;
     }
 
     private void Update()
@@ -97,64 +102,103 @@ public class Items : MonoBehaviour
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
+
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
-                if (security == false)
+                if (isNear == false)
                 {
-                    if (cursorOn == true)
+                    if (GameManager.Instance.globalInterractionSecurity == true)
                     {
-                        if (isNear == false)
+                        if (GameManager.Instance.isNear == true)
                         {
-                            StartCoroutine(FarInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                         }
-                        if (isNear == true)
+                        else
                         {
-                            StartCoroutine(FarNearInterraction());
-                            security = true;
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            return;
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    StartCoroutine(FarInterraction());
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
+                }
+                if (isNear == true)
+                {
+                    if (GameManager.Instance.globalInterractionSecurity == true)
+                    {
+                        if (GameManager.Instance.isNear == true)
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                        }
+                    }
+                    StartCoroutine(FarNearInterraction());
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
                 }
             }
         }
     }
+
+
 
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            if (!GameManager.Instance.globalInterractionSecurity)
+
+            if (cursorOn == true && gameObject.activeSelf == true)
             {
-                if (security == false)
+
+                if (isNear == true)
                 {
-
-                    if (cursorOn == true)
+                    if (GameManager.Instance.globalInterractionSecurity == true)
                     {
-
-                        if (isNear == true)
+                        if (GameManager.Instance.isNear == true)
                         {
-                            StartCoroutine(NearInterraction());
-                            GameManager.Instance.globalInterractionSecurity = true;
-                            StartCoroutine(StoreItem());
-                            FindObjectOfType<AudioManager>().Play("TakeObject");
-                            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-                            currentVfx.transform.parent = null;
-                            Destroy(currentVfx, 3f);
-                            security = true;
-                            
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                        }
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    objectSpriteRenderer.sprite = spriteNormal;
+                    StartCoroutine(NearInterraction());
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    StartCoroutine(StoreItem());
+                    FindObjectOfType<AudioManager>().Play("TakeObject");
+                    GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+                    currentVfx.transform.parent = null;
+                    Destroy(currentVfx, 3f);
+                    security = true;
+
                 }
             }
         }
     }
 
 
-      private IEnumerator StoreItem()
+
+
+    private IEnumerator StoreItem()
     {
         GameManager.Instance.globalInterractionSecurity = false;
         UIManager.Instance.GetObjectInInventory(this.gameObject);
@@ -167,6 +211,7 @@ public class Items : MonoBehaviour
     {
         if (isNear == true)
         {
+            objectSpriteRenderer.sprite = spriteHighlight;
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -174,16 +219,18 @@ public class Items : MonoBehaviour
         }
         if (isNear == false)
         {
+            objectSpriteRenderer.sprite = spriteHighlight;
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
             return;
         }
-        
+
     }
 
     private void OnMouseExit()
     {
+        objectSpriteRenderer.sprite = spriteNormal;
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
@@ -192,8 +239,9 @@ public class Items : MonoBehaviour
     private IEnumerator NearInterraction()
     {
         nearInt0.SetActive(true);
+        GameManager.Instance.isNear = true;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         nearInt0.SetActive(false);
         security = false;
@@ -215,9 +263,10 @@ public class Items : MonoBehaviour
     {
         farInt0.SetActive(true);
         observationText.text = farPhrase;
+        GameManager.Instance.isNear = false;
 
-        yield return new WaitForSeconds(2.5f);
-        
+        yield return new WaitForSeconds(5f);
+
         farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
@@ -229,8 +278,9 @@ public class Items : MonoBehaviour
     {
         farInt0.SetActive(true);
         observationText.text = nearPhrase;
+        GameManager.Instance.isNear = false;
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
 
         farInt0.SetActive(false);
         security = false;
@@ -238,5 +288,23 @@ public class Items : MonoBehaviour
 
         yield return 0;
 
+    }
+
+    public void OnEnable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started += OnLook;
+            playerInputs.actions.FindAction("Use").started += OnUse;
+        }
+    }
+
+    public void OnDisable()
+    {
+        if (playerInputs != null)
+        {
+            playerInputs.actions.FindAction("Look").started -= OnLook;
+            playerInputs.actions.FindAction("Use").started -= OnUse;
+        }
     }
 }

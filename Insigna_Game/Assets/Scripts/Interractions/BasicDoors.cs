@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasicDoors : MonoBehaviour
 {
-    private Interractable parent;
+    private InterractableDoor parent;
     public Transform tpPoint;
 
     private GameObject player;
@@ -12,7 +12,7 @@ public class BasicDoors : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        parent = transform.parent.GetComponent<Interractable>();
+        parent = transform.parent.GetComponent<InterractableDoor>();
     }
 
     // Update is called once per frame

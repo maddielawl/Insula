@@ -17,11 +17,11 @@ public class LevelTransition : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
-            player.GetComponent<Player>().StateMachine.ChangeState(player.GetComponent<Player>().IdleState);
-            SceneManager.LoadScene(sceneIndex);
+            player.GetComponent<Player>().StateMachine.CurrentState.Exit();
             MenusManager.instance.level2loaded = true;
+            SceneManager.LoadScene(sceneIndex);
         }
     }
 }

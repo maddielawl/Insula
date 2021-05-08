@@ -28,7 +28,15 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.hasHelmetEquipped == false)
+        {
+            UIManager.Instance.player.GetComponent<Animator>().runtimeAnimatorController = UIManager.Instance.playerAnimatorController;
+        }
 
+        if (GameManager.Instance.hasHelmetEquipped == true)
+        {
+            UIManager.Instance.player.GetComponent<Animator>().runtimeAnimatorController = UIManager.Instance.playerTvAnimatorController;
+        }
     }
 
     public void OnHelmetEquipped(InputAction.CallbackContext context)
@@ -73,7 +81,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         RawMovementInput = context.ReadValue<Vector2>();
 
-        if(Mathf.Abs(RawMovementInput.x) > 0.5f)
+        if (Mathf.Abs(RawMovementInput.x) > 0.5f)
         {
             NormInputX = (int)(RawMovementInput * Vector2.right).normalized.x;
         }
@@ -81,8 +89,8 @@ public class PlayerInputHandler : MonoBehaviour
         {
             NormInputX = 0;
         }
-        
-        if(Mathf.Abs(RawMovementInput.y) > 0.5f)
+
+        if (Mathf.Abs(RawMovementInput.y) > 0.5f)
         {
             NormInputY = (int)(RawMovementInput * Vector2.up).normalized.y;
         }
@@ -94,5 +102,5 @@ public class PlayerInputHandler : MonoBehaviour
 
 
 
-    
+
 }

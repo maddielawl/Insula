@@ -5,11 +5,14 @@ using UnityEngine;
 public class N02T03Door : MonoBehaviour
 {
     private Interractable parent;
-    public GameObject tournevils;
+    public GameObject cleeMolette;
+    public SpriteRenderer placardHighlight;
+    public SpriteRenderer placardOuvert;
 
     void Start()
     {
         parent = transform.parent.GetComponent<Interractable>();
+        placardOuvert.enabled = false;
     }
 
     // Update is called once per frame
@@ -17,9 +20,12 @@ public class N02T03Door : MonoBehaviour
     {
         if (parent.interractionSecurity == false)
         {
-            tournevils.SetActive(true);
+            cleeMolette.SetActive(true);
             GameManager.Instance.globalInterractionSecurity = false;
-            Destroy(this.transform.parent.gameObject);
+            placardHighlight.enabled = false;
+            placardOuvert.enabled = true;
+            parent.GetComponent<BoxCollider2D>().enabled = false;
+            parent.GetComponent<SpriteRenderer>().enabled = false;
         }
 
     }

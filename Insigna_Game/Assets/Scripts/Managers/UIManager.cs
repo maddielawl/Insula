@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     public Sprite nearCursor;
     public Sprite farCursor;
     public Sprite interractionCursor;
+    public Sprite DoorCursor;
 
     [Header("Inventory Buttons")]
     public Image inventoryButton1;
@@ -72,7 +73,8 @@ public class UIManager : MonoBehaviour
     public GameObject blackScreen;
 
     [Header("Others")]
-    private GameObject player;
+    [HideInInspector]
+    public GameObject player;
     public RuntimeAnimatorController playerAnimatorController;
     public AnimatorOverrideController playerTvAnimatorController;
 
@@ -228,6 +230,12 @@ public class UIManager : MonoBehaviour
         CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
     }
 
+    public void SetDoorCursor()
+    {
+        CursorManager.Instance.rend.sprite = DoorCursor;
+        CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
+    }
+
 
 
 
@@ -344,7 +352,8 @@ public class UIManager : MonoBehaviour
         {
             helmetOffIndicator.SetActive(false);
             helmetOnIndicator.SetActive(true);
-            player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
+            GameManager.Instance.hasHelmetEquipped = true;
+            //player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
         }
     }
     public void HelmetIsOff()
@@ -353,7 +362,8 @@ public class UIManager : MonoBehaviour
         {
             helmetOffIndicator.SetActive(true);
             helmetOnIndicator.SetActive(false);
-            player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
+            GameManager.Instance.hasHelmetEquipped = false;
+            //player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
         }
     }
     public IEnumerator FadeToBlackTP(GameObject player, Transform spawnPoint, bool fadeToBlack, float fadeSpeed = 1f)
