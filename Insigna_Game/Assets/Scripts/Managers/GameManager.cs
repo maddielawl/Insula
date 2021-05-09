@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         heartbeatEvent = FMODUnity.RuntimeManager.CreateInstance(heartSfx);
-        heartbeatEvent.start();
+        
 
         if (Instance == null)
             Instance = this;
@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
                     globalInterractionSecurity = false;
                     dimensionSwapMadness = false;
                     dimensionSwapNormal = true;
+                    heartbeatEvent.start();
 
                 }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
@@ -152,6 +153,7 @@ public class GameManager : MonoBehaviour
                     if (once == true)
                     {
                         indicible.SetDisAppear();
+                        heartbeatEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                     }
                     if (once == false)
                     {
