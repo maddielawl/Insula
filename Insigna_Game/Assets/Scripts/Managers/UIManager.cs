@@ -382,6 +382,7 @@ public class UIManager : MonoBehaviour
         }
 
         Debug.Log("teleport");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Sounds/Level Transition");
         player.transform.position = spawnPoint.position;
         StartCoroutine(FadeToTransparent(player, fadeSpeed));
     }
