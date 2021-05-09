@@ -6,6 +6,7 @@ public class N02T03Door : MonoBehaviour
 {
     private Interractable parent;
     public GameObject cleeMolette;
+    public GameObject IronChest;
     public SpriteRenderer placardHighlight;
     public SpriteRenderer placardOuvert;
 
@@ -13,6 +14,8 @@ public class N02T03Door : MonoBehaviour
     {
         parent = transform.parent.GetComponent<Interractable>();
         placardOuvert.enabled = false;
+        cleeMolette.SetActive(false);
+        IronChest.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,6 +24,7 @@ public class N02T03Door : MonoBehaviour
         if (parent.interractionSecurity == false)
         {
             cleeMolette.SetActive(true);
+            IronChest.SetActive(true);
             GameManager.Instance.globalInterractionSecurity = false;
             placardHighlight.enabled = false;
             placardOuvert.enabled = true;

@@ -233,6 +233,10 @@ public class BarreauItem : MonoBehaviour
         isInterractableOn = false;
         cursorOn = false;
     }
+    private void OnMouseOver()
+    {
+        UIManager.Instance.ResetCursor();
+    }
 
     private IEnumerator NearInterraction()
     {
