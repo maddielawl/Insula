@@ -6,6 +6,9 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+    FMOD.Studio.Bus volume;
+
+    public float masterVolume = 1f;
 
     void Awake()
     {
@@ -17,8 +20,16 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
         }
+
+        volume = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        volume.setVolume(masterVolume);
+        
     }
 
+    void Update()
+    {
+        volume.setVolume(masterVolume);
+    }
 
   public void Play(string name)
     {
@@ -35,5 +46,10 @@ public class AudioManager : MonoBehaviour
     public void PlayOneShot(string sound)
     {
         FMODUnity.RuntimeManager.PlayOneShot(sound);
+    }
+
+    public void changeVolume(float newMasterVolume)
+    {
+        masterVolume = newMasterVolume;
     }
 }
