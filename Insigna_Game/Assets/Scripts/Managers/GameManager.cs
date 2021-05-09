@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour
 
     public string heartSfx = "event:/SFX/UI/Heartbeat";
     public FMOD.Studio.EventInstance heartbeatEvent;
+    public string level1Music = "event:/Music/Level 1/Level 1";
+    public FMOD.Studio.EventInstance music;
 
     void Awake()
     {
         heartbeatEvent = FMODUnity.RuntimeManager.CreateInstance(heartSfx);
-        
+        music = FMODUnity.RuntimeManager.CreateInstance(level1Music);
+        music.start();
 
         if (Instance == null)
             Instance = this;
@@ -107,6 +110,8 @@ public class GameManager : MonoBehaviour
                 if (playerSanity >= 100)
                 {
                     DeactivateInGameActions();
+                    heartbeatEvent.setParameterByName("Stress", 0);
+                    music.setParameterByName("Corruption", 0);
                     MenusManager.instance.GameOver();
                 }
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
@@ -114,13 +119,16 @@ public class GameManager : MonoBehaviour
                 playerMadness = playerMadness + madnessGain;
                 if (playerMadness >= 80 && dimensionSwapMadness == true)
                 {
+                    music.setParameterByName("Corruption", 1);
+                    heartbeatEvent.start();
+
                     indicible.SetAppear();
                     madnessZone.SetActive(true);
                     sanityZone.SetActive(false);
                     globalInterractionSecurity = false;
                     dimensionSwapMadness = false;
                     dimensionSwapNormal = true;
-                    heartbeatEvent.start();
+
 
                 }
                 playerMadness = Mathf.Clamp(playerMadness, 0, 100);
@@ -152,8 +160,10 @@ public class GameManager : MonoBehaviour
                 {
                     if (once == true)
                     {
-                        indicible.SetDisAppear();
+                        music.setParameterByName("Corruption", 0);
                         heartbeatEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+                        indicible.SetDisAppear();
                     }
                     if (once == false)
                     {

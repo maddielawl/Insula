@@ -13,13 +13,11 @@ public class MadnessAppear : MonoBehaviour
 
     public string enterMadSfx = "event:/Music/Level 1/Enter corrupt";
     public string exitMadSfx = "event:/Music/Level 1/Exit corrupt";
-    public string level1Music = "event:/Music/Level 1/Level 1";
-    public FMOD.Studio.EventInstance music;
+
 
     private void Start()
     {
-        music = FMODUnity.RuntimeManager.CreateInstance(level1Music);
-        music.start();
+
 
         arrayparent = GameObject.FindGameObjectWithTag("Indicible").GetComponent<Transform>();
         GameManager.Instance.indicible = this.gameObject.GetComponent<MadnessAppear>();
@@ -46,7 +44,6 @@ public class MadnessAppear : MonoBehaviour
     public void SetAppear()
     {
         FMODUnity.RuntimeManager.PlayOneShot(enterMadSfx);
-        music.setParameterByName("Corruption", 1);
 
         for (int i = 0; i < arrayparent.childCount; i++)
         {
@@ -57,7 +54,6 @@ public class MadnessAppear : MonoBehaviour
     public void SetDisAppear()
     {
         FMODUnity.RuntimeManager.PlayOneShot(exitMadSfx);
-        music.setParameterByName("Corruption", 0);
 
         for (int i = 0; i < arrayparent.childCount; i++)
         {

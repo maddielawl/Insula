@@ -10,6 +10,7 @@ public class Lever_N01_T02 : MonoBehaviour
     public Animator Grille;
 
     public string gridSfx = "event:/SFX/Environment Sounds/Grid Open";
+    public string leverSfx = "event:/SFX/Environment Sounds/Lever";
 
     private bool InteractionOff;
 
@@ -26,6 +27,7 @@ public class Lever_N01_T02 : MonoBehaviour
         if (parent.interractionSecurity == false && InteractionOff == false)
         {
             FMODUnity.RuntimeManager.PlayOneShot(gridSfx);
+            FMODUnity.RuntimeManager.PlayOneShot(leverSfx);
 
             parent.interractionSecurity = true;
             FindObjectOfType<AudioManager>().Play("UseLever");
