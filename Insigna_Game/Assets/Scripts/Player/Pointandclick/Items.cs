@@ -184,6 +184,7 @@ public class Items : MonoBehaviour
                     StartCoroutine(NearInterraction());
                     GameManager.Instance.globalInterractionSecurity = true;
                     StartCoroutine(StoreItem());
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Sounds/Collect Object");
                     FindObjectOfType<AudioManager>().Play("TakeObject");
                     GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                     currentVfx.transform.parent = null;
