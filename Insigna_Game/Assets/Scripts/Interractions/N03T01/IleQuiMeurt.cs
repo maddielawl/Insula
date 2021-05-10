@@ -5,21 +5,19 @@ using UnityEngine;
 public class IleQuiMeurt : MonoBehaviour
 {
     public EnvrioManager em;
+    public GameObject pagepopup;
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Trigger");
-
-        if (em.inMadness == true && em.phareonoroff == true && em.dayornight == true && collision.CompareTag("Waypoint 1"))
+        if (em.inMadness == true && em.phareonoroff == true && em.dayornight == true)
         {
             Destroy(this.gameObject);
         }
     }
 
+    private void OnDestroy()
+    {
+        pagepopup.SetActive(true);
+    }
 }

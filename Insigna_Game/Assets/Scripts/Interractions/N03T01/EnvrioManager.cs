@@ -7,6 +7,7 @@ public class EnvrioManager : MonoBehaviour
 
     public bool dayornight;
     public bool phareonoroff;
-    public bool inMadness; 
+    public bool inMadness;
+    public bool electricity = false;
 
 }

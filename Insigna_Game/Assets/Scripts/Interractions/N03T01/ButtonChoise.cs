@@ -10,6 +10,8 @@ public class ButtonChoise : MonoBehaviour
 
     public ControlleurBigEchaffaud control;
 
+    public EnvrioManager em;
+
     void Start()
     {
         parent = transform.parent.GetComponent<Interractable>();
@@ -21,17 +23,20 @@ public class ButtonChoise : MonoBehaviour
         if (parent.interractionSecurity == false)
         {
             parent.interractionSecurity = true;
-            switch (choise)
+            if (em.electricity == true)
             {
-                case 0:
-                    control.GoLeft();
-                    break;
-                case 1:
-                    control.Stop();
-                    break;
-                case 2:
-                    control.GoRight();
-                    break;  
+                switch (choise)
+                {
+                    case 0:
+                        control.GoLeft();
+                        break;
+                    case 1:
+                        control.Stop();
+                        break;
+                    case 2:
+                        control.GoRight();
+                        break;
+                }
             }
         }
     }
