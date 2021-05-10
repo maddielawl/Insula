@@ -27,6 +27,9 @@ public class CursorManager : MonoBehaviour
     public float horizontalOffset;
     public float verticalOffset;
     private Vector2 cursorPos;
+
+    [HideInInspector]
+    public bool keepCursor = false;
     void Start()
     {
         UnityEngine.Cursor.visible = false;
@@ -45,6 +48,16 @@ public class CursorManager : MonoBehaviour
         {
             cursorPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x - horizontalOffset, Input.mousePosition.y - verticalOffset));
             transform.position = cursorPos;
+        }
+        KeepCursorBasic();
+    }
+
+    public void KeepCursorBasic()
+    {
+        if (keepCursor)
+        {
+            rend.sprite = cursor;
+            CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
         }
     }
 }

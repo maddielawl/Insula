@@ -7,42 +7,36 @@ public class Tutorial : MonoBehaviour
 {
     public GameObject tutorial;
     public Animator anim;
-    public Animator fondu;
 
-    private GameObject charatcer;
+    private GameObject character;
+
+    public BoxCollider2D[] interractablesCollider;
 
     private void Start()
     {
-        charatcer = GameObject.FindGameObjectWithTag("Player");
+        character = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(TutorialDisplay());
-    }
-
-    public IEnumerator TutorialDisplay()
-    {
+        character.GetComponent<PlayerInput>().enabled = false;
+        transform.GetComponent<BoxCollider2D>().enabled = false;
+        for (int i = 0; i < interractablesCollider.Length; i++)
+        {
+            interractablesCollider[i].enabled = false;
+        }
         tutorial.SetActive(true);
-        charatcer.GetComponent<PlayerInput>().enabled = false;
-
-        GameManager.Instance.DeactivateInGameActions();
-
-        yield return new WaitForSeconds(5f);
-
-        anim.SetTrigger("Away");
-        fondu.SetTrigger("Away");
-
-        yield return new WaitForSeconds(1f);
-
-        
-        GameManager.Instance.ActivateInGameActions();
-
-        yield return new WaitForSeconds(1);
-
-        charatcer.GetComponent<PlayerInput>().enabled = true;
-        Destroy(this.gameObject);
-
-        yield return 0;
+        anim.SetTrigger("Up");
+    }
+    public void SkipTuto()
+    {
+        character.GetComponent<PlayerInput>().enabled = true;
+        for (int i = 0; i < interractablesCollider.Length; i++)
+        {
+            interractablesCollider[i].enabled = true;
+        }
+        CursorManager.Instance.enabled = true;
+        anim.SetTrigger("Down");
+        Destroy(this.gameObject, 1.2f);
     }
 }

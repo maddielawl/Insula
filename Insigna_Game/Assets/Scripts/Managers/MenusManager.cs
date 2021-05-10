@@ -529,6 +529,7 @@ public class MenusManager : MonoBehaviour
     {
         if (active)
         {
+            CursorManager.Instance.keepCursor = true;
             player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<PlayerInput>().enabled = false;
             Cinematic.SetActive(true);
