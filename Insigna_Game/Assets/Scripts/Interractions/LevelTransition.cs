@@ -23,6 +23,7 @@ public class LevelTransition : MonoBehaviour
             player.GetComponent<Player>().StateMachine.CurrentState.Exit();
             MenusManager.instance.level2loaded = true;
             SceneManager.LoadScene(sceneIndex);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", sceneIndex);
         }
     }
 }
