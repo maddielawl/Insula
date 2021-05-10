@@ -259,7 +259,7 @@ public class InterractableDoor : MonoBehaviour
 
     }
 
-    /*public void OnEnable()
+    public void OnEnable()
     {
         if (playerInputs != null)
         {
@@ -275,5 +275,5 @@ public class InterractableDoor : MonoBehaviour
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
         }
-    }*/
+    }
 }

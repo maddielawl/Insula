@@ -167,6 +167,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    Debug.Log("nearlul");
                     FMODUnity.RuntimeManager.PlayOneShot(barreauSfx);
                     StartCoroutine(NearInterraction());
                     spriteHighlight.enabled = false;
@@ -213,6 +214,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
 
     private IEnumerator NearInterraction()
     {
+        Debug.Log("near");
         nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
         barreauBroken.GetComponent<Animator>().SetTrigger("Fall");

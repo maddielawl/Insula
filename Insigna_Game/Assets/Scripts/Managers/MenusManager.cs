@@ -375,13 +375,13 @@ public class MenusManager : MonoBehaviour
         asyncOp = null;
         validateLoadingText.SetActive(false);
         loadingScreen.SetActive(false);
-        ingameMainUI.SetActive(true);
         MainMenuCamera.SetActive(false);
         menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         //GameManager.Instance.ActivateInGameActions();
         inGame = true;
         level1loaded = true;
+        Invoke("ActivateInGameUI", 0.2f);
     }
     public void GameOver()
     {
@@ -536,5 +536,10 @@ public class MenusManager : MonoBehaviour
             Cinematic.GetComponent<Animator>().SetTrigger("PlayCinematic");
             active = !active;
         }
+    }
+
+    private void ActivateInGameUI()
+    {
+        ingameMainUI.SetActive(true);
     }
 }
