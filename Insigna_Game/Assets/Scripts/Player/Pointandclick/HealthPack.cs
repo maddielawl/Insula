@@ -28,6 +28,9 @@ public class HealthPack : MonoBehaviour
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     private bool interractionSecurity = true;
 
+    public Sprite highlight;
+    private Sprite normalSpr;
+
     public GameObject vfx;
 
     [Header("Phrase a dire")]
@@ -71,6 +74,7 @@ public class HealthPack : MonoBehaviour
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
         interractionSecurity = false;
+        normalSpr = transform.GetComponent<SpriteRenderer>().sprite;
     }
 
 
@@ -160,6 +164,7 @@ public class HealthPack : MonoBehaviour
                     Destroy(currentVfx, 3f);
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
+                    Destroy(this.gameObject);
                 }
             }
         }
@@ -171,6 +176,7 @@ public class HealthPack : MonoBehaviour
     {
         if (isNear == true)
         {
+            transform.GetComponent<SpriteRenderer>().sprite = highlight;
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -178,6 +184,7 @@ public class HealthPack : MonoBehaviour
         }
         if (isNear == false)
         {
+            transform.GetComponent<SpriteRenderer>().sprite = highlight;
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -187,6 +194,7 @@ public class HealthPack : MonoBehaviour
 
     private void OnMouseExit()
     {
+        transform.GetComponent<SpriteRenderer>().sprite = normalSpr;
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
@@ -197,8 +205,6 @@ public class HealthPack : MonoBehaviour
         GameManager.Instance.isNear = true;
         GameManager.Instance.playerPillsCount++;
         GameManager.Instance.globalInterractionSecurity = false;
-        Destroy(this.gameObject);
-        Debug.Log("HP Count" + GameManager.Instance.playerPillsCount);
 
         yield return 0;
     }

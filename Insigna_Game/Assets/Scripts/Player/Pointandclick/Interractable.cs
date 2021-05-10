@@ -259,7 +259,7 @@ public class Interractable : MonoBehaviour
 
     }
 
-    /*public void OnEnable()
+    public void OnEnable()
     {
         if (playerInputs != null)
         {
@@ -275,5 +275,5 @@ public class Interractable : MonoBehaviour
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
         }
-    }*/
+    }
 }

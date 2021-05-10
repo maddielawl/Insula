@@ -257,7 +257,7 @@ public class InterractableMultipleSprite : MonoBehaviour
 
     }
 
-    /*public void OnEnable()
+    public void OnEnable()
     {
         if (playerInputs != null)
         {
@@ -273,5 +273,5 @@ public class InterractableMultipleSprite : MonoBehaviour
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
         }
-    }*/
+    }
 }

@@ -27,7 +27,7 @@ public class Items : MonoBehaviour
     private bool cursorOn = false;
 
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
-    private bool interractionSecurity = true;
+    public bool interractionSecurity = false;
 
     // Store L'object que l'on as besoin et le bool de sécurité pour celui ci
     private bool itemSecurity = false;
