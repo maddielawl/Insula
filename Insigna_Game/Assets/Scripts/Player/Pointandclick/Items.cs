@@ -239,6 +239,7 @@ public class Items : MonoBehaviour
     private IEnumerator NearInterraction()
     {
         this.GetComponent<BoxCollider2D>().enabled = false;
+        objectSpriteRenderer.enabled = false;
         nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
 

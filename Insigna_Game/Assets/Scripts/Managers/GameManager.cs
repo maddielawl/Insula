@@ -56,6 +56,17 @@ public class GameManager : MonoBehaviour
     [Header("MadnessZone")]
     public GameObject madnessZone;
     public GameObject sanityZone;
+
+    public GameObject madnessZoneInterractions;
+    [HideInInspector]
+    public BoxCollider2D[] madnessInterractionsBC2D;
+    [HideInInspector]
+    public SpriteRenderer[] madnessInterractionsSprRend;
+    public GameObject sanityZoneInterractions;
+    [HideInInspector]
+    public BoxCollider2D[] sanityInterractionsBC2D;
+    [HideInInspector]
+    public SpriteRenderer[] sanityInterractionsSprRend;
     public bool dimensionSwapNormal;
     public bool dimensionSwapMadness;
 
@@ -123,8 +134,55 @@ public class GameManager : MonoBehaviour
                     heartbeatEvent.start();
 
                     indicible.SetAppear();
+
                     madnessZone.SetActive(true);
+                    for (int i = 0; i < madnessInterractionsBC2D.Length; i++)
+                    {
+                        if (madnessInterractionsBC2D[i] == null)
+                        {
+                            yield return 0;
+                        }
+                        else
+                        {
+                            madnessInterractionsBC2D[i].enabled = true;
+                        }
+                    }
+                    for (int i = 0; i < madnessInterractionsSprRend.Length; i++)
+                    {
+                        if (madnessInterractionsSprRend[i] == null)
+                        {
+                            yield return 0;
+                        }
+                        else
+                        {
+                            madnessInterractionsSprRend[i].enabled = true;
+                        }
+                    }
+
                     sanityZone.SetActive(false);
+                    for (int i = 0; i < sanityInterractionsBC2D.Length; i++)
+                    {
+                        if (sanityInterractionsBC2D[i] == null)
+                        {
+                            yield return 0;
+                        }
+                        else
+                        {
+                            sanityInterractionsBC2D[i].enabled = false;
+                        }
+                    }
+                    for (int i = 0; i < sanityInterractionsSprRend.Length; i++)
+                    {
+                        if (sanityInterractionsSprRend[i] == null)
+                        {
+                            yield return 0;
+                        }
+                        else
+                        {
+                            sanityInterractionsSprRend[i].enabled = false;
+                        }
+                    }
+
                     globalInterractionSecurity = false;
                     dimensionSwapMadness = false;
                     dimensionSwapNormal = true;
@@ -169,10 +227,56 @@ public class GameManager : MonoBehaviour
                     {
                         once = true;
                     }
+
                     if (madnessZone != null && sanityZone != null)
                     {
                         madnessZone.SetActive(false);
+                        for (int i = 0; i < madnessInterractionsBC2D.Length; i++)
+                        {
+                            if (madnessInterractionsBC2D[i] == null)
+                            {
+                                yield return 0;
+                            }
+                            else
+                            {
+                                madnessInterractionsBC2D[i].enabled = false;
+                            }
+                        }
+                        for (int i = 0; i < madnessInterractionsSprRend.Length; i++)
+                        {
+                            if (madnessInterractionsSprRend[i] == null)
+                            {
+                                yield return 0;
+                            }
+                            else
+                            {
+                                madnessInterractionsSprRend[i].enabled = false;
+                            }
+                        }
+
                         sanityZone.SetActive(true);
+                        for (int i = 0; i < sanityInterractionsBC2D.Length; i++)
+                        {
+                            if (sanityInterractionsBC2D[i] == null)
+                            {
+                                yield return 0;
+                            }
+                            else
+                            {
+                                sanityInterractionsBC2D[i].enabled = true;
+                            }
+                        }
+                        for (int i = 0; i < sanityInterractionsSprRend.Length; i++)
+                        {
+                            if (sanityInterractionsSprRend[i] == null)
+                            {
+                                yield return 0;
+                            }
+                            else
+                            {
+                                sanityInterractionsSprRend[i].enabled = true;
+                            }
+                        }
                     }
                     globalInterractionSecurity = false;
                     dimensionSwapNormal = false;

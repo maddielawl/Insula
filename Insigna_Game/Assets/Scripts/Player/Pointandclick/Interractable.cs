@@ -275,5 +275,13 @@ public class Interractable : MonoBehaviour
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
         }
+
+        if (nearInt0 != null)
+        {
+            nearInt0.SetActive(false);
+        }
+        security = false;
+        interractionSecurity = false;
+        GameManager.Instance.globalInterractionSecurity = false;
     }
 }
