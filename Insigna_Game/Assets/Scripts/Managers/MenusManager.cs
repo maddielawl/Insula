@@ -14,6 +14,7 @@ public class MenusManager : MonoBehaviour
     public GameObject cursorManger;
 
     public GameObject MainMenuCamera;
+    
 
     private GameInputs menusActions;
     private AsyncOperation asyncOp;
@@ -542,4 +543,5 @@ public class MenusManager : MonoBehaviour
     {
         ingameMainUI.SetActive(true);
     }
+    
 }
