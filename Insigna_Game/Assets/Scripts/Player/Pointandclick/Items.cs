@@ -190,7 +190,8 @@ public class Items : MonoBehaviour
                     currentVfx.transform.parent = null;
                     Destroy(currentVfx, 3f);
                     security = true;
-
+                    Destroy(gameObject.GetComponent<SpriteRenderer>());
+                    Destroy(gameObject.GetComponent<BoxCollider2D>());
                 }
             }
         }

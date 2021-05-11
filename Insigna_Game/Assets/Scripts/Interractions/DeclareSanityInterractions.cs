@@ -13,6 +13,10 @@ public class DeclareSanityInterractions : MonoBehaviour
         for (int i = 0; i < GameManager.Instance.sanityInterractionsBC2D.Length; i++)
         {
             GameManager.Instance.sanityInterractionsBC2D[i].enabled = true;
+            /*if(GameManager.Instance.sanityInterractionsBC2D[i].gameObject.name == "HelmetEquip")
+            {
+                GameManager.Instance.sanityInterractionsBC2D[i].enabled = false;
+            }*/
         }
 
         for (int i = 0; i < GameManager.Instance.sanityInterractionsSprRend.Length; i++)
