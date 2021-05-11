@@ -173,7 +173,11 @@ public class InterractableWithInventory : MonoBehaviour
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
+
                         }
                         else
                         {

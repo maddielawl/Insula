@@ -99,7 +99,10 @@ public class Interractable : MonoBehaviour
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                         }
                         else
                         {
@@ -121,7 +124,10 @@ public class Interractable : MonoBehaviour
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                         }
                         else
                         {
@@ -155,7 +161,10 @@ public class Interractable : MonoBehaviour
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                         }
                         else
                         {
@@ -275,13 +284,5 @@ public class Interractable : MonoBehaviour
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
         }
-
-        if (nearInt0 != null)
-        {
-            nearInt0.SetActive(false);
-        }
-        security = false;
-        interractionSecurity = false;
-        GameManager.Instance.globalInterractionSecurity = false;
     }
 }

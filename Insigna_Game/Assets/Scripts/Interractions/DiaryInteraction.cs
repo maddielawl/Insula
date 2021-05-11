@@ -30,6 +30,7 @@ public class DiaryInteraction : MonoBehaviour
     // Sécurise les interractions pour qu'elles ne se lancent pas au moment de l'interaction.
     public bool interractionSecurity = true;
     public SpriteRenderer spriteHighlight;
+    public SpriteRenderer objectSprite;
 
     public GameObject vfx;
 
@@ -179,7 +180,8 @@ public class DiaryInteraction : MonoBehaviour
                             GameManager.Instance.globalInterractionSecurity = true;
                             entryGO.SetActive(true);
                             transform.GetComponent<BoxCollider2D>().enabled = false;
-                            transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = false;
+                            objectSprite.enabled = false;
+                            Destroy(this.gameObject);
                         }
                     }
                 }
