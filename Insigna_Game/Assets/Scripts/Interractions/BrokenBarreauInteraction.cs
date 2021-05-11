@@ -62,11 +62,11 @@ public class BrokenBarreauInteraction : MonoBehaviour
         if (other.CompareTag("RangeNear"))
         {
             isNear = false;
-            if (cursorOn == true)
-            {
-                UIManager.Instance.SetFarCursor();
+        }
+        if (cursorOn == true)
+        {
+            UIManager.Instance.SetFarCursor();
 
-            }
         }
     }
 
@@ -167,16 +167,15 @@ public class BrokenBarreauInteraction : MonoBehaviour
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
-                    Debug.Log("nearlul");
                     FMODUnity.RuntimeManager.PlayOneShot(barreauSfx);
                     StartCoroutine(NearInterraction());
+                    GameManager.Instance.globalInterractionSecurity = true;
                     spriteHighlight.enabled = false;
                     FindObjectOfType<AudioManager>().Play("OnClickInventory");
                     GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                     currentVfx.transform.parent = null;
                     Destroy(currentVfx, 3f);
                     security = true;
-                    GameManager.Instance.globalInterractionSecurity = true;
 
                 }
             }
@@ -214,12 +213,11 @@ public class BrokenBarreauInteraction : MonoBehaviour
 
     private IEnumerator NearInterraction()
     {
-        Debug.Log("near");
+        transform.GetComponent<BoxCollider2D>().enabled = false;
         nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
         barreauBroken.GetComponent<Animator>().SetTrigger("Fall");
         Invoke("activateOtherInteraction", 1f);
-        transform.GetComponent<BoxCollider2D>().enabled = false;
 
         yield return new WaitForSeconds(5f);
 
