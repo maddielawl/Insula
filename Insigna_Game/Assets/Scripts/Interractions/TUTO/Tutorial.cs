@@ -12,6 +12,8 @@ public class Tutorial : MonoBehaviour
 
     public BoxCollider2D[] interractablesCollider;
 
+    public float timeBeforeMoving = 1f;
+
     private void Start()
     {
         character = GameObject.FindGameObjectWithTag("Player");
@@ -30,13 +32,18 @@ public class Tutorial : MonoBehaviour
     }
     public void SkipTuto()
     {
-        character.GetComponent<PlayerInput>().enabled = true;
         for (int i = 0; i < interractablesCollider.Length; i++)
         {
             interractablesCollider[i].enabled = true;
         }
         CursorManager.Instance.enabled = true;
         anim.SetTrigger("Down");
+        Invoke("WaitBeforeMoving", timeBeforeMoving);
         Destroy(this.gameObject, 1.2f);
+    }
+
+    public void WaitBeforeMoving()
+    {
+        character.GetComponent<PlayerInput>().enabled = true;
     }
 }
