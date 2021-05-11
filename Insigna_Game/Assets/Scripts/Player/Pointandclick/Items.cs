@@ -81,7 +81,7 @@ public class Items : MonoBehaviour
         observationText = farInt0.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt0.SetActive(false);
         interractionSecurity = false;
-        objectSpriteRenderer = transform.GetComponent<SpriteRenderer>();
+        //objectSpriteRenderer = transform.GetComponent<SpriteRenderer>();
         spriteNormal = objectSpriteRenderer.sprite;
     }
 
@@ -203,7 +203,6 @@ public class Items : MonoBehaviour
     {
         GameManager.Instance.globalInterractionSecurity = false;
         UIManager.Instance.GetObjectInInventory(this.gameObject);
-        this.gameObject.SetActive(false);
 
         yield return 0;
     }
@@ -239,6 +238,7 @@ public class Items : MonoBehaviour
 
     private IEnumerator NearInterraction()
     {
+        this.GetComponent<BoxCollider2D>().enabled = false;
         nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
 
