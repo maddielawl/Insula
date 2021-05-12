@@ -8560,6 +8560,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6080448070891402620, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
+      propertyPath: m_YDamping
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6080448072693719588, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
       propertyPath: m_Follow
       value: 
@@ -46470,7 +46474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.71
+      value: -6.59
       objectReference: {fileID: 0}
     - target: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
       propertyPath: m_LocalPosition.z
@@ -56913,6 +56917,7 @@ MonoBehaviour:
   farPhraseOpened: "\xC7a y est, elle a boug\xE9."
   nearPhraseOpened: "Tu as d\xE9j\xE0 ouvert cette porte Pom\u2019."
   observationText: {fileID: 0}
+  doorNearScript: {fileID: 0}
 --- !u!61 &5393716128897589947
 BoxCollider2D:
   m_ObjectHideFlags: 0
