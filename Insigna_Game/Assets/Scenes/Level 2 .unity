@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 40700491}
   m_Layer: 0
   m_Name: LEVIER_BRAS02
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,8 +565,8 @@ Transform:
   m_Children:
   - {fileID: 836804365}
   - {fileID: 1869723944}
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 13
+  m_Father: {fileID: 653681182}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &40700491
 MonoBehaviour:
@@ -1386,7 +1386,7 @@ GameObject:
   - component: {fileID: 74201451}
   m_Layer: 0
   m_Name: Props_B_Rat
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1456,7 +1456,7 @@ Transform:
   - {fileID: 983925774}
   - {fileID: 1143409686}
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 26
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &74201450
 BoxCollider2D:
@@ -1825,7 +1825,7 @@ GameObject:
   - component: {fileID: 92626195}
   m_Layer: 0
   m_Name: Grille (3)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2938,11 +2938,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161633704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.4, y: -10.96, z: -6.7}
+  m_LocalPosition: {x: 15.399998, y: -10.96, z: -6.7}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 16
+  m_Father: {fileID: 653681182}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &161633706
 SpriteRenderer:
@@ -4109,7 +4109,7 @@ GameObject:
   - component: {fileID: 212942317}
   m_Layer: 0
   m_Name: Props_Echelle
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4125,10 +4125,10 @@ Transform:
   m_LocalPosition: {x: -2.812971, y: -7.101, z: -1.8393612}
   m_LocalScale: {x: 1.207741, y: 1.207741, z: 1.207741}
   m_Children:
-  - {fileID: 1031705076}
   - {fileID: 745547744}
+  - {fileID: 1031705076}
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 20
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &212942317
 MonoBehaviour:
@@ -5132,7 +5132,7 @@ GameObject:
   - component: {fileID: 277558998}
   m_Layer: 0
   m_Name: Lever 1  (1)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5144,14 +5144,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277558993}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 7, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 20.869999, y: -9.99, z: 0}
+  m_LocalScale: {x: 0.30000004, y: 0.30000004, z: 0.29999998}
   m_Children:
   - {fileID: 394647873}
   - {fileID: 1698759475}
-  m_Father: {fileID: 1727464671}
-  m_RootOrder: 3
+  m_Father: {fileID: 1718614895}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &277558995
 BoxCollider2D:
@@ -5309,7 +5309,7 @@ GameObject:
   - component: {fileID: 281352262}
   m_Layer: 0
   m_Name: Props_Compteur_Electrique
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5440,7 +5440,7 @@ GameObject:
   - component: {fileID: 286672173}
   m_Layer: 0
   m_Name: Bloqueur
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5588,8 +5588,8 @@ Transform:
   m_LocalPosition: {x: 31.483994, y: -10.96, z: -6.7}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 19
+  m_Father: {fileID: 653681182}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &287021424
 SpriteRenderer:
@@ -7298,7 +7298,7 @@ GameObject:
   - component: {fileID: 345369807}
   m_Layer: 0
   m_Name: Props_A_Affiche
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7368,7 +7368,7 @@ Transform:
   - {fileID: 1477295363}
   - {fileID: 179021407}
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 25
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &345369806
 BoxCollider2D:
@@ -8003,7 +8003,7 @@ Transform:
   m_LocalScale: {x: -0.3809895, y: 0.38098952, z: 0.38098952}
   m_Children: []
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 22
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -11.208}
 --- !u!212 &410549822
 SpriteRenderer:
@@ -8330,7 +8330,7 @@ Transform:
   m_LocalScale: {x: 0.38098952, y: 0.38098952, z: 0.38098952}
   m_Children: []
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 23
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &427674637
 SpriteRenderer:
@@ -8898,7 +8898,7 @@ GameObject:
   - component: {fileID: 451716656}
   m_Layer: 0
   m_Name: VentToOpen
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8917,7 +8917,7 @@ Transform:
   - {fileID: 757879182}
   - {fileID: 721092053}
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 15
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &451716654
 MonoBehaviour:
@@ -10173,7 +10173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10239,7 +10239,7 @@ GameObject:
   - component: {fileID: 542291707}
   m_Layer: 0
   m_Name: Props_Corde01
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10489,7 +10489,7 @@ GameObject:
   - component: {fileID: 572006753}
   m_Layer: 0
   m_Name: LEVIER_BRAS04
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10507,8 +10507,8 @@ Transform:
   m_Children:
   - {fileID: 707331331}
   - {fileID: 1888285441}
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 15
+  m_Father: {fileID: 653681182}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &572006753
 MonoBehaviour:
@@ -10759,7 +10759,7 @@ GameObject:
   - component: {fileID: 594218045}
   m_Layer: 0
   m_Name: Molette
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11246,7 +11246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &608546951
 Transform:
   m_ObjectHideFlags: 0
@@ -11319,7 +11319,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608546950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d8b8b0b96c174a4583e1bf04479b756, type: 3}
   m_Name: 
@@ -11570,7 +11570,7 @@ GameObject:
   - component: {fileID: 611511988}
   m_Layer: 0
   m_Name: Grille (2)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12298,6 +12298,14 @@ Transform:
   - {fileID: 1923340356}
   - {fileID: 1286784307}
   - {fileID: 542291706}
+  - {fileID: 1816837740}
+  - {fileID: 40700490}
+  - {fileID: 1487710111}
+  - {fileID: 572006752}
+  - {fileID: 161633705}
+  - {fileID: 1951015378}
+  - {fileID: 1305320277}
+  - {fileID: 287021423}
   m_Father: {fileID: 890976025}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13768,7 +13776,7 @@ GameObject:
   - component: {fileID: 727327913}
   m_Layer: 0
   m_Name: Props_E_Casque
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14247,7 +14255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531018, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_RootOrder
@@ -14404,7 +14412,7 @@ Transform:
   m_Children:
   - {fileID: 270104878}
   m_Father: {fileID: 212942316}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &750431578
 PrefabInstance:
@@ -15158,7 +15166,7 @@ GameObject:
   - component: {fileID: 788083013}
   m_Layer: 0
   m_Name: Code Indicible
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15611,7 +15619,7 @@ GameObject:
   - component: {fileID: 797759197}
   m_Layer: 0
   m_Name: Props_Bras_Meca_2
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16664,7 +16672,7 @@ GameObject:
   - component: {fileID: 845277536}
   m_Layer: 0
   m_Name: Lever 1  (3)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16676,14 +16684,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845277531}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 13, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 26.869997, y: -9.99, z: 0}
+  m_LocalScale: {x: 0.30000004, y: 0.30000004, z: 0.29999998}
   m_Children:
   - {fileID: 710789816}
   - {fileID: 977568039}
-  m_Father: {fileID: 1727464671}
-  m_RootOrder: 5
+  m_Father: {fileID: 1718614895}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &845277533
 BoxCollider2D:
@@ -17799,17 +17807,8 @@ Transform:
   - {fileID: 950559051}
   - {fileID: 1591249124}
   - {fileID: 626686991}
-  - {fileID: 1816837740}
-  - {fileID: 40700490}
-  - {fileID: 1487710111}
-  - {fileID: 572006752}
-  - {fileID: 161633705}
-  - {fileID: 1951015378}
-  - {fileID: 1305320277}
-  - {fileID: 287021423}
   - {fileID: 777127601}
   - {fileID: 840574118}
-  - {fileID: 1786940739}
   m_Father: {fileID: 2089853515}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18326,7 +18325,7 @@ Transform:
   m_LocalScale: {x: -0.3809895, y: 0.38098952, z: 0.38098952}
   m_Children: []
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 24
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -11.208}
 --- !u!212 &910669961
 SpriteRenderer:
@@ -19968,7 +19967,7 @@ GameObject:
   - component: {fileID: 1010117787}
   m_Layer: 0
   m_Name: Lever 1  (2)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19980,14 +19979,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010117782}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 23.869997, y: -9.99, z: 0}
+  m_LocalScale: {x: 0.30000004, y: 0.30000004, z: 0.29999998}
   m_Children:
   - {fileID: 2133026020}
   - {fileID: 43871987}
-  m_Father: {fileID: 1727464671}
-  m_RootOrder: 4
+  m_Father: {fileID: 1718614895}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &1010117784
 BoxCollider2D:
@@ -20436,7 +20435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022577645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.57155, y: -5.616, z: 83.02834}
+  m_LocalPosition: {x: -49.57155, y: -5.616, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 847272651}
@@ -20528,7 +20527,7 @@ Transform:
   m_Children:
   - {fileID: 951114088}
   m_Father: {fileID: 212942316}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1032017461
 GameObject:
@@ -23097,7 +23096,7 @@ Transform:
   - {fileID: 195170200}
   - {fileID: 981586385}
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1181802848
 MonoBehaviour:
@@ -24437,7 +24436,7 @@ GameObject:
   - component: {fileID: 1273601877}
   m_Layer: 0
   m_Name: Marteau
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24980,7 +24979,7 @@ GameObject:
   - component: {fileID: 1286784308}
   m_Layer: 0
   m_Name: Props_Pharma
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25638,11 +25637,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305320276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.81, y: -10.96, z: -6.7}
+  m_LocalPosition: {x: 25.810001, y: -10.96, z: -6.7}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 18
+  m_Father: {fileID: 653681182}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1305320278
 SpriteRenderer:
@@ -26046,7 +26045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1327147945
 Transform:
   m_ObjectHideFlags: 0
@@ -27791,7 +27790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28837,7 +28836,7 @@ GameObject:
   - component: {fileID: 1487710112}
   m_Layer: 0
   m_Name: LEVIER_BRAS03
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28850,13 +28849,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487710110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.81, y: -10.96, z: -6.7}
+  m_LocalPosition: {x: 25.810001, y: -10.96, z: -6.7}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 700366515}
   - {fileID: 506007916}
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 14
+  m_Father: {fileID: 653681182}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1487710112
 MonoBehaviour:
@@ -29299,7 +29298,7 @@ GameObject:
   - component: {fileID: 1508680334}
   m_Layer: 8
   m_Name: Robot qui meurt
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30708,7 +30707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1616834142
 Transform:
   m_ObjectHideFlags: 0
@@ -30781,7 +30780,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616834141}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d8b8b0b96c174a4583e1bf04479b756, type: 3}
   m_Name: 
@@ -31394,7 +31393,7 @@ GameObject:
   - component: {fileID: 1659291064}
   m_Layer: 0
   m_Name: "Echelle_D\xE9bloqu\xE9e"
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31493,7 +31492,7 @@ Transform:
   m_LocalScale: {x: 2.85, y: 2.65, z: 1}
   m_Children: []
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 17
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1661813173
 MonoBehaviour:
@@ -32713,6 +32712,10 @@ Transform:
   - {fileID: 286672172}
   - {fileID: 1659291063}
   - {fileID: 1727464671}
+  - {fileID: 1795874019}
+  - {fileID: 277558994}
+  - {fileID: 1010117783}
+  - {fileID: 845277532}
   - {fileID: 451716653}
   - {fileID: 1181802847}
   - {fileID: 1661813172}
@@ -32774,7 +32777,7 @@ GameObject:
   - component: {fileID: 1727464672}
   m_Layer: 0
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32792,10 +32795,6 @@ Transform:
   m_Children:
   - {fileID: 487473131}
   - {fileID: 981954388}
-  - {fileID: 1795874019}
-  - {fileID: 277558994}
-  - {fileID: 1010117783}
-  - {fileID: 845277532}
   m_Father: {fileID: 1718614895}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32957,7 +32956,7 @@ GameObject:
   - component: {fileID: 1732795007}
   m_Layer: 0
   m_Name: Props_O2_02
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32976,7 +32975,7 @@ Transform:
   - {fileID: 1236420059}
   - {fileID: 940430517}
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 21
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1732795006
 SpriteRenderer:
@@ -33090,7 +33089,7 @@ GameObject:
   - component: {fileID: 1738640302}
   m_Layer: 0
   m_Name: Grille (1)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34026,63 +34025,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785436125}
   m_CullTransparentMesh: 1
---- !u!1 &1786940738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1786940739}
-  - component: {fileID: 1786940740}
-  m_Layer: 0
-  m_Name: Lever (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1786940739
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786940738}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.605923, y: -14.071367, z: 12.209217}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
-  m_Children: []
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1786940740
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786940738}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.9299998, y: 4.4257193}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.41, y: 7.6820583}
-  m_EdgeRadius: 0
 --- !u!1 &1790632296
 GameObject:
   m_ObjectHideFlags: 0
@@ -34331,7 +34273,7 @@ GameObject:
   - component: {fileID: 1795874023}
   m_Layer: 0
   m_Name: 'Lever 1 '
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34343,14 +34285,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795874018}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 17.869999, y: -9.99, z: 0}
+  m_LocalScale: {x: 0.30000004, y: 0.30000004, z: 0.29999998}
   m_Children:
   - {fileID: 2038629285}
   - {fileID: 1768052749}
-  m_Father: {fileID: 1727464671}
-  m_RootOrder: 2
+  m_Father: {fileID: 1718614895}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &1795874020
 BoxCollider2D:
@@ -34774,7 +34716,7 @@ GameObject:
   - component: {fileID: 1816837741}
   m_Layer: 0
   m_Name: LEVIER_BRAS01
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34787,13 +34729,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816837739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.4, y: -10.96, z: -6.7}
+  m_LocalPosition: {x: 15.399998, y: -10.96, z: -6.7}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 281158964}
   - {fileID: 1758976660}
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 12
+  m_Father: {fileID: 653681182}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1816837741
 MonoBehaviour:
@@ -35137,7 +35079,7 @@ Transform:
   m_LocalScale: {x: 2.85, y: 2.65, z: 1}
   m_Children: []
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 19
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1856023230
 MonoBehaviour:
@@ -35208,7 +35150,7 @@ Transform:
   m_LocalScale: {x: 2.85, y: 2.65, z: 1}
   m_Children: []
   m_Father: {fileID: 1718614895}
-  m_RootOrder: 18
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1869150366
 MonoBehaviour:
@@ -35718,7 +35660,7 @@ GameObject:
   - component: {fileID: 1921327322}
   m_Layer: 0
   m_Name: GrilleToFall
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35801,7 +35743,7 @@ GameObject:
   - component: {fileID: 1923340357}
   m_Layer: 0
   m_Name: Props_O2_01 (2)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36114,8 +36056,8 @@ Transform:
   m_LocalPosition: {x: 20.8, y: -10.96, z: -6.7}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 890976025}
-  m_RootOrder: 17
+  m_Father: {fileID: 653681182}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1951015379
 SpriteRenderer:
@@ -36622,7 +36564,7 @@ GameObject:
   - component: {fileID: 1976340423}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37045,7 +36987,7 @@ GameObject:
   - component: {fileID: 2008525134}
   m_Layer: 0
   m_Name: Props_D_Affiche
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37387,7 +37329,7 @@ GameObject:
   - component: {fileID: 2019386909}
   m_Layer: 0
   m_Name: Placard_Coffre
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38289,7 +38231,7 @@ GameObject:
   - component: {fileID: 2100283542}
   m_Layer: 0
   m_Name: Props_F_Conserves
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39636,11 +39578,11 @@ GameObject:
   - component: {fileID: 2142085506}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2142085505
 Transform:
   m_ObjectHideFlags: 0
@@ -39822,11 +39764,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
-      value: 37
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
-      value: 37
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -40163,7 +40105,7 @@ PrefabInstance:
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[9].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 145180600}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -40203,7 +40145,7 @@ PrefabInstance:
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[9].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 145180600}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[10].m_Target
       value: 
@@ -40291,23 +40233,23 @@ PrefabInstance:
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[31].m_Target
       value: 
-      objectReference: {fileID: 594218044}
+      objectReference: {fileID: 2019386909}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[32].m_Target
       value: 
-      objectReference: {fileID: 2019386909}
+      objectReference: {fileID: 727327913}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[33].m_Target
       value: 
-      objectReference: {fileID: 727327913}
+      objectReference: {fileID: 2100283542}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[34].m_Target
       value: 
-      objectReference: {fileID: 2100283542}
+      objectReference: {fileID: 281352262}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[35].m_Target
       value: 
-      objectReference: {fileID: 281352262}
+      objectReference: {fileID: 2121495833}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[36].m_Target
       value: 
@@ -40399,23 +40341,23 @@ PrefabInstance:
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[31].m_Target
       value: 
-      objectReference: {fileID: 594218044}
+      objectReference: {fileID: 2019386909}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[32].m_Target
       value: 
-      objectReference: {fileID: 2019386909}
+      objectReference: {fileID: 727327913}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[33].m_Target
       value: 
-      objectReference: {fileID: 727327913}
+      objectReference: {fileID: 2100283542}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[34].m_Target
       value: 
-      objectReference: {fileID: 2100283542}
+      objectReference: {fileID: 281352262}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[35].m_Target
       value: 
-      objectReference: {fileID: 281352262}
+      objectReference: {fileID: 2121495833}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[36].m_Target
       value: 
@@ -41146,7 +41088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[31].m_TargetAssemblyTypeName
-      value: Items, Assembly-CSharp
+      value: Interractable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[32].m_TargetAssemblyTypeName
@@ -41162,7 +41104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[35].m_TargetAssemblyTypeName
-      value: Interractable, Assembly-CSharp
+      value: DiaryInteraction, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[36].m_TargetAssemblyTypeName
@@ -41254,7 +41196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[31].m_TargetAssemblyTypeName
-      value: Items, Assembly-CSharp
+      value: Interractable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[32].m_TargetAssemblyTypeName
@@ -41270,7 +41212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[35].m_TargetAssemblyTypeName
-      value: Interractable, Assembly-CSharp
+      value: DiaryInteraction, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[36].m_TargetAssemblyTypeName
