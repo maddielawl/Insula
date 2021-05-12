@@ -611,7 +611,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.25, y: 5.18}
+  m_Size: {x: 4, y: 6}
   m_EdgeRadius: 0
 --- !u!212 &40700494
 SpriteRenderer:
@@ -10553,7 +10553,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.25, y: 5.18}
+  m_Size: {x: 4, y: 6}
   m_EdgeRadius: 0
 --- !u!212 &572006756
 SpriteRenderer:
@@ -11834,6 +11834,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6080448070891402620, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
+      propertyPath: m_YDamping
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6080448072693719588, guid: 46caff38ce5e7784d8e21af34539dfec, type: 3}
       propertyPath: m_Follow
       value: 
@@ -28900,7 +28904,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.25, y: 5.18}
+  m_Size: {x: 4, y: 6}
   m_EdgeRadius: 0
 --- !u!212 &1487710115
 SpriteRenderer:
@@ -32694,7 +32698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718614894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 312788780}
@@ -34780,7 +34784,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.25, y: 5.18}
+  m_Size: {x: 4, y: 6}
   m_EdgeRadius: 0
 --- !u!212 &1816837744
 SpriteRenderer:
@@ -41521,6 +41525,14 @@ PrefabInstance:
     - target: {fileID: 2517969443723062413, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941276818436470544, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941276818436470544, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -468403189
       objectReference: {fileID: 0}
     - target: {fileID: 8171585094598819296, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_Enabled

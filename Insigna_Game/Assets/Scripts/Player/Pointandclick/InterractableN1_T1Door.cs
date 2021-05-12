@@ -45,6 +45,8 @@ public class InterractableN1_T1Door : MonoBehaviour
     [HideInInspector]
     public TextMeshProUGUI observationText;
 
+    public N01T01Door doorNearScript;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -52,9 +54,14 @@ public class InterractableN1_T1Door : MonoBehaviour
         {
             isNear = true;
         }
-        if (cursorOn == true)
+        if (cursorOn == true && DoorScript.isLeverOn)
         {
             UIManager.Instance.SetDoorCursor();
+
+        }
+        if (cursorOn == true && DoorScript.isLeverOn == false)
+        {
+            UIManager.Instance.SetNearCursor();
 
         }
     }
@@ -189,7 +196,7 @@ public class InterractableN1_T1Door : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (isNear == true)
+        if (isNear == true && DoorScript.isLeverOn)
         {
             if (spriteHighlight != null)
             {
@@ -200,6 +207,21 @@ public class InterractableN1_T1Door : MonoBehaviour
                 spriteHighlight2.enabled = true;
             }
             UIManager.Instance.SetDoorCursor();
+            isInterractableOn = true;
+            cursorOn = true;
+            return;
+        }
+        if (isNear == true && DoorScript.isLeverOn == false)
+        {
+            if (spriteHighlight != null)
+            {
+                spriteHighlight.enabled = true;
+            }
+            if (spriteHighlight2 != null)
+            {
+                spriteHighlight2.enabled = true;
+            }
+            UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
             return;
