@@ -96,6 +96,8 @@ public class MenusManager : MonoBehaviour
     public bool level2loaded = false;
     public bool level1loaded = false;
 
+    private GameObject[] allInteractableColliders;
+
     private void Awake()
     {
         if (instance != null)
@@ -308,6 +310,14 @@ public class MenusManager : MonoBehaviour
                 inGameOptions.SetActive(false);
                 //GameManager.Instance.ActivateInGameActions();
                 isPaused = false;
+                allInteractableColliders = GameObject.FindGameObjectsWithTag("Interractable");
+                for (int i = 0; i < allInteractableColliders.Length; i++)
+                {
+                    if (allInteractableColliders[i].GetComponent<BoxCollider2D>() != null)
+                    {
+                        allInteractableColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                    }
+                }
                 return;
             }
             else
@@ -317,6 +327,14 @@ public class MenusManager : MonoBehaviour
                 Time.timeScale = 0;
                 //GameManager.Instance.DeactivateInGameActions();
                 isPaused = true;
+                allInteractableColliders = GameObject.FindGameObjectsWithTag("Interractable");
+                for (int i = 0; i < allInteractableColliders.Length; i++)
+                {
+                    if (allInteractableColliders[i].GetComponent<BoxCollider2D>() != null)
+                    {
+                        allInteractableColliders[i].GetComponent<BoxCollider2D>().enabled = false;
+                    }
+                }
                 return;
             }
         }
@@ -329,6 +347,14 @@ public class MenusManager : MonoBehaviour
             Time.timeScale = 1;
             ingamePauseMenu.SetActive(false);
             isPaused = false;
+            allInteractableColliders = GameObject.FindGameObjectsWithTag("Interractable");
+            for (int i = 0; i < allInteractableColliders.Length; i++)
+            {
+                if (allInteractableColliders[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    allInteractableColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                }
+            }
             return;
         }
     }
