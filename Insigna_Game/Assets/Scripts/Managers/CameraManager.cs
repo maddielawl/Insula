@@ -9,11 +9,6 @@ public class CameraManager : MonoBehaviour
     public GameObject StaticCamera;
     public GameObject FollowCamera;
 
-    [Header("Camera")]
-    public Camera UICamera;
-    public Camera MainCamera;
-    public Camera C_FollowCamera;
-
     #region Singlton:Profile
 
     public static CameraManager Instance;
@@ -48,7 +43,6 @@ public class CameraManager : MonoBehaviour
     public void setCameraPrioLow(CinemachineVirtualCamera cam)
     {
         cam.Priority = 1;
-        UICamera.orthographicSize = C_FollowCamera.orthographicSize;
     }
     public void setCameraPrioHigh(CinemachineVirtualCamera cam)
     {
