@@ -15,6 +15,7 @@ public class MenusManager : MonoBehaviour
 
     public GameObject MainMenuCamera;
 
+
     private GameInputs menusActions;
     private AsyncOperation asyncOp;
 
@@ -38,6 +39,7 @@ public class MenusManager : MonoBehaviour
     public GameObject inGameOptions;
     public GameObject Cinematic;
     public GameObject PopUp;
+    public GameObject GuideMenu;
 
     public GameObject interaction1;
     [Header("Diary Entries")]
@@ -542,4 +544,17 @@ public class MenusManager : MonoBehaviour
     {
         ingameMainUI.SetActive(true);
     }
+
+    public void OpenGuideMenu()
+    {
+        ingamePauseMenu.SetActive(false);
+        GuideMenu.SetActive(true);
+    }
+
+    public void CloseGuideMenu()
+    {
+        ingamePauseMenu.SetActive(true);
+        GuideMenu.SetActive(false);
+    }
+
 }

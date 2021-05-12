@@ -28,6 +28,8 @@ public class CursorManager : MonoBehaviour
     public float verticalOffset;
     private Vector2 cursorPos;
 
+    public Camera uiCamera;
+
     [HideInInspector]
     public bool keepCursor = false;
     void Start()
@@ -46,7 +48,7 @@ public class CursorManager : MonoBehaviour
         }
         else
         {
-            cursorPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x - horizontalOffset, Input.mousePosition.y - verticalOffset));
+            cursorPos = uiCamera.ScreenToWorldPoint(new Vector2(Input.mousePosition.x - horizontalOffset, Input.mousePosition.y - verticalOffset));
             transform.position = cursorPos;
         }
         KeepCursorBasic();
