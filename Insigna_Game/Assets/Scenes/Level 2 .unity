@@ -2669,6 +2669,8 @@ MonoBehaviour:
   floor: {fileID: 1384401215}
   baseSlotSprite: {fileID: 1443998468}
   emptySlot: {fileID: 1144870772}
+  grilleSpr: {fileID: 0}
+  grilleNormal: {fileID: 0}
 --- !u!1 &145180598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8355757278438419469, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
@@ -5383,7 +5385,7 @@ Transform:
   - {fileID: 807912623}
   - {fileID: 2137482749}
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &281352262
 MonoBehaviour:
@@ -10865,7 +10867,7 @@ Transform:
   - {fileID: 1758413881}
   - {fileID: 87192559}
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &594218044
 MonoBehaviour:
@@ -13938,7 +13940,7 @@ Transform:
   - {fileID: 838387019}
   - {fileID: 112944140}
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.335}
 --- !u!114 &727327913
 MonoBehaviour:
@@ -14705,7 +14707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8899cce32c4744db9a55e17ea4989c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSlotSprite: {fileID: 1443998468}
+  baseSlotSprite: {fileID: 1654023880}
   emptySlot: {fileID: 819459774}
   grilleOuverte: {fileID: 1738640298}
 --- !u!1 &762248054
@@ -15960,6 +15962,8 @@ MonoBehaviour:
   floor: {fileID: 1384401215}
   baseSlotSprite: {fileID: 1443998468}
   emptySlot: {fileID: 1144870772}
+  grilleSpr: {fileID: 0}
+  grilleNormal: {fileID: 0}
 --- !u!1 &808801454
 GameObject:
   m_ObjectHideFlags: 0
@@ -16645,6 +16649,8 @@ MonoBehaviour:
   floor: {fileID: 1384401215}
   baseSlotSprite: {fileID: 1443998468}
   emptySlot: {fileID: 1144870772}
+  grilleSpr: {fileID: 0}
+  grilleNormal: {fileID: 0}
 --- !u!4 &840574118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3497827287357984451, guid: f3dac7889d1ba054b9a1ca2e420a7935, type: 3}
@@ -17174,7 +17180,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2142085505}
+  - {fileID: 2019386907}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22143,7 +22151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1112336140
 MonoBehaviour:
@@ -23308,6 +23316,8 @@ MonoBehaviour:
   floor: {fileID: 1384401215}
   baseSlotSprite: {fileID: 1443998468}
   emptySlot: {fileID: 1144870772}
+  grilleSpr: {fileID: 1384401218}
+  grilleNormal: {fileID: 21300000, guid: f93bd31787982d34f8f1b74038716a54, type: 3}
 --- !u!1 &1194979314
 GameObject:
   m_ObjectHideFlags: 0
@@ -26904,7 +26914,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1384401216}
   - component: {fileID: 1384401218}
-  - component: {fileID: 1384401219}
   - component: {fileID: 1384401217}
   - component: {fileID: 1384401220}
   m_Layer: 6
@@ -26922,11 +26931,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384401215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.86, y: 2.16, z: 47.2}
+  m_LocalPosition: {x: 5.86, y: 2.16, z: 50.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1384401217
 Animator:
@@ -26998,32 +27007,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1384401219
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384401215}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.068816125}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 46.8, y: 10.72}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.1376323}
-  m_EdgeRadius: 0
 --- !u!114 &1384401220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29513,7 +29496,7 @@ Transform:
   - {fileID: 1805381392}
   - {fileID: 1258267622}
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1508680331
 CircleCollider2D:
@@ -31493,6 +31476,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
+--- !u!114 &1654023880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2903855855884607186, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
+  m_PrefabInstance: {fileID: 1654023879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819459774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659291062
 GameObject:
   m_ObjectHideFlags: 0
@@ -34783,6 +34777,8 @@ MonoBehaviour:
   floor: {fileID: 1384401215}
   baseSlotSprite: {fileID: 1443998468}
   emptySlot: {fileID: 1144870772}
+  grilleSpr: {fileID: 0}
+  grilleNormal: {fileID: 0}
 --- !u!1 &1807671130
 GameObject:
   m_ObjectHideFlags: 0
@@ -35709,7 +35705,7 @@ Transform:
   - {fileID: 1190305180}
   - {fileID: 2139887307}
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1921327322
 BoxCollider2D:
@@ -35754,11 +35750,11 @@ MonoBehaviour:
   objectSprite:
   - {fileID: 1384401218}
   spriteHighlight:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 0ab2a7c2f93733c4bb436b86f6cc61a7, type: 3}
   objectToInterractWith: Marteau
   farPhrase: "Qu\u2019est-ce que c\u2019est sur le sol ?"
-  nearPhrase: Ho ctte grille n'a pas l'air solide. Je peux surement la casser avec
-    quelque chose de lourd...
+  nearPhrase: Oh ! cette grille n'a pas l'air solide. Je peux surement la casser
+    avec quelque chose de lourd...
 --- !u!1 &1923340354
 GameObject:
   m_ObjectHideFlags: 0
@@ -36613,7 +36609,7 @@ Transform:
   - {fileID: 917874141}
   - {fileID: 81196923}
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1976340423
 MonoBehaviour:
@@ -37372,13 +37368,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019386906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8389282, y: -9.401641, z: 51.194885}
+  m_LocalPosition: {x: 96.07, y: -8.124, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 222146197}
   - {fileID: 736351398}
-  m_Father: {fileID: 2119934940}
-  m_RootOrder: 8
+  m_Father: {fileID: 866928665}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2019386908
 SpriteRenderer:
@@ -38332,7 +38328,7 @@ Transform:
   - {fileID: 143249717}
   - {fileID: 1751670128}
   m_Father: {fileID: 2119934940}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2100283542
 MonoBehaviour:
@@ -38752,14 +38748,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1710125905}
-  - {fileID: 2142085505}
   - {fileID: 1976340422}
   - {fileID: 1112336139}
   - {fileID: 1508680330}
   - {fileID: 1921327321}
   - {fileID: 1384401216}
   - {fileID: 594218043}
-  - {fileID: 2019386907}
   - {fileID: 727327912}
   - {fileID: 2100283541}
   - {fileID: 281352261}
@@ -38888,7 +38882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_LocalScale.x
@@ -39624,13 +39618,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142085504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.809, y: -9.67, z: 53.03425}
+  m_LocalPosition: {x: 96.04007, y: -8.392359, z: 1.8393631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 899334327}
   - {fileID: 406969241}
-  m_Father: {fileID: 2119934940}
-  m_RootOrder: 1
+  m_Father: {fileID: 866928665}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2142085506
 MonoBehaviour:

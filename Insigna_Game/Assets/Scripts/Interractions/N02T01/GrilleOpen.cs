@@ -48,6 +48,7 @@ public class GrilleOpen : MonoBehaviour
                 if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
+                    UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot2Active = false;
                     UIManager.Instance.object2Equipped.SetActive(false);
@@ -66,6 +67,7 @@ public class GrilleOpen : MonoBehaviour
                 if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
                 {
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
+                    UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot3Active = false;
                     UIManager.Instance.object3Equipped.SetActive(false);

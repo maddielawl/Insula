@@ -22,6 +22,7 @@ public class Mechantquimeurt : MonoBehaviour
     public void RobotDead()
     {
         SanityZone.SetActive(false);
+        Robot.SetActive(false);
         robotDcd.SetActive(true);
         robotDcd.GetComponent<Animator>().SetTrigger("Broken");
     }
