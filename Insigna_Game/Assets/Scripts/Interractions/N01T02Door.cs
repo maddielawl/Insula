@@ -42,7 +42,7 @@ public class N01T02Door : MonoBehaviour
                     transform.parent.GetComponent<InterractableWithInventory>().nearPhrase = doorOpenedNearText;
                     transform.parent.GetComponent<InterractableWithInventory>().farPhrase = doorOpenedFarText;
 
-                    transform.parent.GetComponent<PolygonCollider2D>().enabled = false;
+                    transform.parent.GetComponent<BoxCollider2D>().enabled = false;
 
                 }
             }

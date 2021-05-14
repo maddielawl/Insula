@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     [SerializeField]
     private Canvas canvas;
@@ -44,5 +44,10 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public void OnPointerExit(PointerEventData eventData)
     {
         CursorManager.Instance.rend.sprite = CursorManager.Instance.cursor;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        CursorManager.Instance.rend.sprite = CursorManager.Instance.grabCursor;
     }
 }

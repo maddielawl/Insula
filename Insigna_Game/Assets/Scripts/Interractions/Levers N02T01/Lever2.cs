@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lever2 : MonoBehaviour
 {
-    private ButtonL02 button;
+    public ButtonL02 button;
     private Interractable parent;
 
     private bool order = false;
@@ -17,7 +17,6 @@ public class Lever2 : MonoBehaviour
     void Start()
     {
         parent = transform.parent.GetComponent<Interractable>();
-        button = transform.parent.parent.GetComponent<ButtonL02>();
     }
 
     // Update is called once per frame
@@ -38,7 +37,6 @@ public class Lever2 : MonoBehaviour
                 {
                     button.lever2--;
                 }
-                Debug.Log(button.lever2);
                 return;
             }
             if (button.lever2 == 1)
@@ -57,7 +55,6 @@ public class Lever2 : MonoBehaviour
                     transform.parent.GetComponent<SpriteRenderer>().sprite = LevelLeft;
                     return;
                 }
-                Debug.Log(button.lever2);
 
             }
             if (button.lever2 == 2)
@@ -71,7 +68,6 @@ public class Lever2 : MonoBehaviour
                     button.lever2--;
                     transform.parent.GetComponent<SpriteRenderer>().sprite = LevelMiddle;
                 }
-                Debug.Log(button.lever2);
                 return;
 
             }
