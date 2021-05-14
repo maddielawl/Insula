@@ -33,6 +33,8 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot1Active = false;
+                    UIManager.Instance.isSlot1Full = false;
+                    UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     UIManager.Instance.object1Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     doorAnimator.SetTrigger("Opened");
@@ -54,6 +56,8 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot2Active = false;
+                    UIManager.Instance.isSlot2Full = false;
+                    UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     UIManager.Instance.object2Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     doorAnimator.SetTrigger("Opened");
@@ -71,6 +75,8 @@ public class N01T02Door : MonoBehaviour
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot3Active = false;
+                    UIManager.Instance.isSlot3Full = false;
+                    UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     UIManager.Instance.object3Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
                     doorAnimator.SetTrigger("Opened");

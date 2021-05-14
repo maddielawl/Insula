@@ -11,7 +11,7 @@ public class InsanityZone : MonoBehaviour
 
     public void Start()
     {
-        insanityShake = GameObject.Find("Empty Slot");
+        //insanityShake = GameObject.Find("Empty Slot");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -19,7 +19,7 @@ public class InsanityZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.Instance.isScared = true;
-            insanityShake.SetActive(true);
+            //insanityShake.SetActive(true);
             FindObjectOfType<AudioManager>().Play("InsideMadness");
             StartCoroutine(GameManager.Instance.InsideMadnessZone(sanityDamage, madnessGain));
             StopCoroutine(GameManager.Instance.SanityDecrement());
@@ -31,7 +31,7 @@ public class InsanityZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.Instance.isScared = false;
-            insanityShake.SetActive(false);
+            //insanityShake.SetActive(false);
             FindObjectOfType<AudioManager>().Stop("InsideMadness");
             StopCoroutine(GameManager.Instance.InsideMadnessZone(sanityDamage, madnessGain));
             StartCoroutine(GameManager.Instance.SanityDecrement());
