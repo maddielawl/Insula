@@ -12,6 +12,9 @@ public class Lever3 : MonoBehaviour
     public Sprite LevelLeft;
     public Sprite LevelMiddle;
     public Sprite LevelRight;
+    public SpriteRenderer LevelLeftHighlight;
+    public SpriteRenderer LevelMiddleHighlight;
+    public SpriteRenderer LevelRightHighlight;
 
 
     void Start()
@@ -32,6 +35,9 @@ public class Lever3 : MonoBehaviour
                 {
                     button.lever3++;
                     transform.parent.GetComponent<SpriteRenderer>().sprite = LevelMiddle;
+                    parent.spriteHighlight.enabled = false;
+                    parent.spriteHighlight = LevelMiddleHighlight;
+                    parent.spriteHighlight.enabled = true;
                 }
                 if (order == true)
                 {
@@ -46,6 +52,9 @@ public class Lever3 : MonoBehaviour
                     button.lever3++;
                     order = true;
                     transform.parent.GetComponent<SpriteRenderer>().sprite = LevelRight;
+                    parent.spriteHighlight.enabled = false;
+                    parent.spriteHighlight = LevelRightHighlight;
+                    parent.spriteHighlight.enabled = true;
                     return;
                 }
                 if (order == true)
@@ -53,6 +62,9 @@ public class Lever3 : MonoBehaviour
                     button.lever3--;
                     order = false;
                     transform.parent.GetComponent<SpriteRenderer>().sprite = LevelLeft;
+                    parent.spriteHighlight.enabled = false;
+                    parent.spriteHighlight = LevelLeftHighlight;
+                    parent.spriteHighlight.enabled = true;
                     return;
                 }
 
@@ -67,6 +79,9 @@ public class Lever3 : MonoBehaviour
                 {
                     button.lever3--;
                     transform.parent.GetComponent<SpriteRenderer>().sprite = LevelMiddle;
+                    parent.spriteHighlight.enabled = false;
+                    parent.spriteHighlight = LevelMiddleHighlight;
+                    parent.spriteHighlight.enabled = true;
                 }
                 return;
 

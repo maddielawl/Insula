@@ -224,9 +224,12 @@ public class Interractable : MonoBehaviour
         nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
         FindObjectOfType<AudioManager>().Play("OnClickInventory");
-        GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
-        currentVfx.transform.parent = null;
-        Destroy(currentVfx, 3f);
+        if (vfx != null)
+        {
+            GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
+            currentVfx.transform.parent = null;
+            Destroy(currentVfx, 3f);
+        }
 
         yield return new WaitForSeconds(5f);
 
