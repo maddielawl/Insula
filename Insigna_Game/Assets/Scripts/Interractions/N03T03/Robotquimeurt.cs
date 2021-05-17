@@ -9,6 +9,8 @@ public class Robotquimeurt : MonoBehaviour
     public GameObject finduniveau;
     public GameObject fin;
     public Fin fini;
+
+    public Animator a;
     void Start()
     {
         parent = this.parent.GetComponent<Interractable>();
@@ -29,6 +31,7 @@ public class Robotquimeurt : MonoBehaviour
             fini.FinDuNiveau();
             champifragilestarf.SetActive(false);
             fin.SetActive(true);
+            a.SetTrigger("Trigger");
         }
     }
 }
