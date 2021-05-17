@@ -353,7 +353,7 @@ public class UIManager : MonoBehaviour
             helmetOffIndicator.SetActive(false);
             helmetOnIndicator.SetActive(true);
             GameManager.Instance.hasHelmetEquipped = true;
-            //player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
+            player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
         }
     }
     public void HelmetIsOff()
@@ -363,7 +363,7 @@ public class UIManager : MonoBehaviour
             helmetOffIndicator.SetActive(true);
             helmetOnIndicator.SetActive(false);
             GameManager.Instance.hasHelmetEquipped = false;
-            //player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
+            player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
         }
     }
     public IEnumerator FadeToBlackTP(GameObject player, Transform spawnPoint, bool fadeToBlack, float fadeSpeed = 1f)

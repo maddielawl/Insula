@@ -28,7 +28,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.hasHelmetEquipped == false)
+        /*if (GameManager.Instance.hasHelmetEquipped == false)
         {
             UIManager.Instance.player.GetComponent<Animator>().runtimeAnimatorController = UIManager.Instance.playerAnimatorController;
         }
@@ -36,7 +36,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (GameManager.Instance.hasHelmetEquipped == true)
         {
             UIManager.Instance.player.GetComponent<Animator>().runtimeAnimatorController = UIManager.Instance.playerTvAnimatorController;
-        }
+        }*/
     }
 
     public void OnHelmetEquipped(InputAction.CallbackContext context)
