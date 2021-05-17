@@ -13,9 +13,15 @@ public class Vents : MonoBehaviour
     public RuntimeAnimatorController characterBasicAC;
     public AnimatorOverrideController characterVentAOC;
 
-
-    public void GetInside(GameObject thenear) 
+    private void Start()
     {
+        playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+    }
+
+
+    public void GetInside(GameObject thenear)
+    {
+        Debug.Log("InsideVent");
         outside.SetActive(false);
         inside.SetActive(true);
         playerAnim.runtimeAnimatorController = characterVentAOC;
@@ -23,6 +29,7 @@ public class Vents : MonoBehaviour
 
     public void GetOutside(GameObject thenear)
     {
+        Debug.Log("OutsideVent");
         inside.SetActive(false);
         outside.SetActive(true);
         playerAnim.runtimeAnimatorController = characterBasicAC;
