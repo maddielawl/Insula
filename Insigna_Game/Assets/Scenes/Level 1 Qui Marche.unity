@@ -7052,7 +7052,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 691047571
   m_SortingLayer: 2
-  m_SortingOrder: 12
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: f1b1dd85f2bb9f04faca24a5625c6531, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -15492,6 +15492,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 596552597, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: weight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670522866, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: weight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2582990585426231610, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -15550,7 +15558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531018, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_RootOrder
@@ -17827,7 +17835,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 35f8fdb22a23c0047a515152cb4cec67, type: 2}
+  - {fileID: 2100000, guid: b0898ff98f5691d46b79c242b25741ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28420,6 +28428,14 @@ PrefabInstance:
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.03529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -51857,8 +51873,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.6509434, g: 0.08904416, b: 0.08904416, a: 1}
-      maxColor: {r: 0.7022522, g: 0.17515129, b: 0.9056604, a: 1}
+      minColor: {r: 0.6509434, g: 0.08904416, b: 0.08904416, a: 0.50980395}
+      maxColor: {r: 0.7022522, g: 0.17515129, b: 0.9056604, a: 0.50980395}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -56403,7 +56419,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 35f8fdb22a23c0047a515152cb4cec67, type: 2}
+  - {fileID: 2100000, guid: b0898ff98f5691d46b79c242b25741ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
