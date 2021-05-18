@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
@@ -79,6 +81,9 @@ public class GameManager : MonoBehaviour
 
     public bool N03T02energy;
 
+    public Volume v_Neutre;
+    public Volume v_Transition;
+    public Volume v_Indicible;
 
 
     #region Madness Functions
@@ -99,9 +104,30 @@ public class GameManager : MonoBehaviour
         if(dimensionSwapMadness == false)
         {
             // Tu mets le pp folie et enlève le normal
+            //ok
+            if (once == true)
+            {
+                v_Indicible.weight = 1;
+                v_Neutre.weight = 0;
+                v_Transition.weight = 0;
+
+            }
+
         }
         else{
             // Tu mets le pp normal et enlève le folie tu relies la variable de pp transition a la barre de folie
+            //non 
+            v_Neutre.weight = 1;
+            v_Indicible.weight = 0;
+            if (isScared == true)
+            {
+                v_Transition.weight = playerMadness / 100f;
+            }
+            else 
+            {
+                v_Transition.weight = 0;
+            }
+
         }
 
         
