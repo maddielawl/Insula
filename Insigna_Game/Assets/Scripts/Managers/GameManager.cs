@@ -96,6 +96,16 @@ public class GameManager : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+        if(dimensionSwapMadness == false)
+        {
+            // Tu mets le pp folie et enlève le normal
+        }
+        else{
+            // Tu mets le pp normal et enlève le folie tu relies la variable de pp transition a la barre de folie
+        }
+
+        
+        
     }
 
 
