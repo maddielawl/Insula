@@ -305,11 +305,14 @@ public class MenusManager : MonoBehaviour
         {
             if (isPaused == true)
             {
+                player = GameObject.FindGameObjectWithTag("Player");
                 Time.timeScale = 1;
                 ingamePauseMenu.SetActive(false);
                 inGameOptions.SetActive(false);
                 //GameManager.Instance.ActivateInGameActions();
+                player.GetComponent<PlayerInput>().enabled = true;
                 isPaused = false;
+
                 allInteractableColliders = GameObject.FindGameObjectsWithTag("Interractable");
                 for (int i = 0; i < allInteractableColliders.Length; i++)
                 {
@@ -318,15 +321,19 @@ public class MenusManager : MonoBehaviour
                         allInteractableColliders[i].GetComponent<BoxCollider2D>().enabled = true;
                     }
                 }
+
                 return;
             }
             else
             {
+                player = GameObject.FindGameObjectWithTag("Player");
                 ingamePauseMenu.SetActive(true);
                 inGameOptions.SetActive(false);
                 Time.timeScale = 0;
                 //GameManager.Instance.DeactivateInGameActions();
+                player.GetComponent<PlayerInput>().enabled = false;
                 isPaused = true;
+
                 allInteractableColliders = GameObject.FindGameObjectsWithTag("Interractable");
                 for (int i = 0; i < allInteractableColliders.Length; i++)
                 {
@@ -335,6 +342,7 @@ public class MenusManager : MonoBehaviour
                         allInteractableColliders[i].GetComponent<BoxCollider2D>().enabled = false;
                     }
                 }
+
                 return;
             }
         }
@@ -344,8 +352,10 @@ public class MenusManager : MonoBehaviour
     {
         if (inGame == true)
         {
+            player = GameObject.FindGameObjectWithTag("Player");
             Time.timeScale = 1;
             ingamePauseMenu.SetActive(false);
+            player.GetComponent<PlayerInput>().enabled = true;
             isPaused = false;
             allInteractableColliders = GameObject.FindGameObjectsWithTag("Interractable");
             for (int i = 0; i < allInteractableColliders.Length; i++)
