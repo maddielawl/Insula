@@ -44,21 +44,10 @@ public class MenusManager : MonoBehaviour
     public GameObject interaction1;
     [Header("Diary Entries")]
     public GameObject diary;
-    public GameObject selectscreen;
     [Space(10)]
-    public GameObject entrytext0;
-    public GameObject entrytext1;
-    public GameObject entrytext2;
-    public GameObject entrytext3;
-    public GameObject entrytext4;
-    public GameObject entrytext5;
-    public GameObject entrytext6;
-    public GameObject entrytext7;
-    public GameObject entrytext8;
-    public GameObject entrytext9;
+    public GameObject backButton;
+    public GameObject nextButton;
     [Space(10)]
-    public GameObject entries;
-    public GameObject returntoselectbutton;
     public GameObject entry0;
     public GameObject entry1;
     public GameObject entry2;
@@ -67,8 +56,12 @@ public class MenusManager : MonoBehaviour
     public GameObject entry5;
     public GameObject entry6;
     public GameObject entry7;
-    public GameObject entry8;
-    public GameObject entry9;
+
+    [Space(10)]
+    public GameObject page0_1;
+    public GameObject page2_3;
+    public GameObject page4_5;
+    public GameObject page6_7;
 
 
 
@@ -116,6 +109,24 @@ public class MenusManager : MonoBehaviour
     }
 
 
+    private void Start()
+    {
+        page0_1.SetActive(true);
+        page2_3.SetActive(false);
+        page4_5.SetActive(false);
+        page6_7.SetActive(false);
+
+        entry0.SetActive(true);
+        entry1.SetActive(false);
+        entry2.SetActive(false);
+        entry3.SetActive(false);
+        entry4.SetActive(false);
+        entry5.SetActive(false);
+        entry6.SetActive(false);
+        entry7.SetActive(false);
+    }
+
+
     void Update()
     {
         if (asyncOp != null && !validateLoadingText.activeSelf)
@@ -146,6 +157,25 @@ public class MenusManager : MonoBehaviour
                 level2loaded = false;
             }
 
+        }
+
+        //enlever bouton "précédent" quand on ets sur la première page ou bouton "suivant" quand on est sur la dernière
+        if (page0_1.activeSelf == true)
+        {
+            backButton.SetActive(false);
+        }
+        else
+        {
+            backButton.SetActive(true);
+        }
+
+        if (page6_7.activeSelf == true)
+        {
+            nextButton.SetActive(false);
+        }
+        else
+        {
+            nextButton.SetActive(true);
         }
     }
 
@@ -458,27 +488,42 @@ public class MenusManager : MonoBehaviour
         diary.SetActive(false);
     }
 
-    public void ReturnToSelect()
+    public void BackDiaryPage()
     {
-        entry0.SetActive(false);
-        entry1.SetActive(false);
-        entry2.SetActive(false);
-        entry3.SetActive(false);
-        entry4.SetActive(false);
-        entry5.SetActive(false);
-        entry6.SetActive(false);
-        entry7.SetActive(false);
-        entry8.SetActive(false);
-        entry9.SetActive(false);
-        entries.SetActive(false);
-        selectscreen.SetActive(true);
+        if (page2_3.activeSelf == true)
+        {
+            page2_3.SetActive(false);
+            page0_1.SetActive(true);
+        }
+        if (page4_5.activeSelf == true)
+        {
+            page4_5.SetActive(false);
+            page2_3.SetActive(true);
+        }
+        if (page6_7.activeSelf == true)
+        {
+            page6_7.SetActive(false);
+            page4_5.SetActive(true);
+        }
     }
 
-    public void GetToEntry0()
+    public void NextDiaryPage()
     {
-        entries.SetActive(true);
-        entry0.SetActive(true);
-        selectscreen.SetActive(false);
+        if (page4_5.activeSelf == true)
+        {
+            page4_5.SetActive(false);
+            page6_7.SetActive(true);
+        }
+        if (page2_3.activeSelf == true)
+        {
+            page2_3.SetActive(false);
+            page4_5.SetActive(true);
+        }
+        if (page0_1.activeSelf == true)
+        {
+            page0_1.SetActive(false);
+            page2_3.SetActive(true);
+        }
     }
 
 

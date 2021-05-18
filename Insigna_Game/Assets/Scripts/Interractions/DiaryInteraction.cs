@@ -91,31 +91,25 @@ public class DiaryInteraction : MonoBehaviour
         switch (entryNumber)
         {
             case "1":
-                entryGO = MenusManager.instance.entrytext1;
+                entryGO = MenusManager.instance.entry1;
                 break;
             case "2":
-                entryGO = MenusManager.instance.entrytext2;
+                entryGO = MenusManager.instance.entry2;
                 break;
             case "3":
-                entryGO = MenusManager.instance.entrytext3;
+                entryGO = MenusManager.instance.entry3;
                 break;
             case "4":
-                entryGO = MenusManager.instance.entrytext4;
+                entryGO = MenusManager.instance.entry4;
                 break;
             case "5":
-                entryGO = MenusManager.instance.entrytext5;
+                entryGO = MenusManager.instance.entry5;
                 break;
             case "6":
-                entryGO = MenusManager.instance.entrytext6;
+                entryGO = MenusManager.instance.entry6;
                 break;
             case "7":
-                entryGO = MenusManager.instance.entrytext7;
-                break;
-            case "8":
-                entryGO = MenusManager.instance.entrytext8;
-                break;
-            case "9":
-                entryGO = MenusManager.instance.entrytext9;
+                entryGO = MenusManager.instance.entry7;
                 break;
 
         }
