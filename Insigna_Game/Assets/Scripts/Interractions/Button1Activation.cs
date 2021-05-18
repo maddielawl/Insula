@@ -9,12 +9,16 @@ public class Button1Activation : MonoBehaviour
 
     public GameObject ladder;
     public GameObject bloqueur;
+    public GameObject ladderInteraction;
     public Animator LadderAnimator;
+
+    private bool oneTime = false;
 
     private void Start()
     {
         button = transform.parent.GetComponent<ButtonL02>();
         parent = transform.parent.GetComponent<Interractable>();
+        ladderInteraction.SetActive(false);
 
     }
 
@@ -23,11 +27,13 @@ public class Button1Activation : MonoBehaviour
         if (parent.interractionSecurity == false)
         {
             parent.interractionSecurity = true;
-            if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 0 && button.lever4 == 2)
+            if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 0 && button.lever4 == 2 && oneTime == false)
             {
                 LadderAnimator.SetTrigger("Fall");
                 bloqueur.SetActive(false);
+                ladderInteraction.SetActive(true);
                 ladder.SetActive(true);
+                oneTime = true;
             }
         }
     }
