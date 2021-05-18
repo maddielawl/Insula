@@ -5,6 +5,7 @@ using UnityEngine;
 public class FogOfWar : MonoBehaviour
 {
     public BoxCollider2D[] interractablesCollider;
+    public bool doFade = false;
 
     private void Start()
     {
@@ -12,7 +13,12 @@ public class FogOfWar : MonoBehaviour
         {
             if (interractablesCollider[i] != null)
             {
+                bool interractableColliderState = interractablesCollider[i].enabled;
                 interractablesCollider[i].enabled = false;
+                if (interractablesCollider[i].transform.parent.name == "MadnessInterractions")
+                {
+                    interractablesCollider[i].enabled = interractableColliderState;
+                }
             }
         }
     }
@@ -25,10 +31,18 @@ public class FogOfWar : MonoBehaviour
             {
                 if (interractablesCollider[i] != null)
                 {
+                    bool interractableColliderState = interractablesCollider[i].enabled;
                     interractablesCollider[i].enabled = true;
+                    if (interractablesCollider[i].transform.parent.name == "MadnessInterractions")
+                    {
+                        interractablesCollider[i].enabled = interractableColliderState;
+                    }
                 }
             }
-            StartCoroutine(FadeToTransparent(this.gameObject, 1f));
+            if (doFade)
+            {
+                StartCoroutine(FadeToTransparent(this.gameObject, 1f));
+            }
         }
     }
 

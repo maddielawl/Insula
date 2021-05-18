@@ -13,6 +13,9 @@ public class GrilleOpen : MonoBehaviour
 
     public GameObject grilleOuverte;
 
+    public GameObject grilleOpenSpr;
+    public GameObject grilleOpenSprHighlight;
+
 
     void Start()
     {
@@ -29,6 +32,8 @@ public class GrilleOpen : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
+                    grilleOpenSpr.SetActive(false);
+                    grilleOpenSprHighlight.SetActive(true);
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
@@ -47,6 +52,8 @@ public class GrilleOpen : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
                 {
+                    grilleOpenSpr.SetActive(false);
+                    grilleOpenSprHighlight.SetActive(true);
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
@@ -66,6 +73,8 @@ public class GrilleOpen : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
                 {
+                    grilleOpenSpr.SetActive(false);
+                    grilleOpenSprHighlight.SetActive(true);
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
