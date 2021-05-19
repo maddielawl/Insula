@@ -474,6 +474,14 @@ public class MenusManager : MonoBehaviour
         GameManager.Instance.isScared = false;
         GameManager.Instance.playerMadness = 0;
         GameManager.Instance.playerSanity = 0;
+
+        UIManager.Instance.isSlot1Full = false;
+        UIManager.Instance.isSlot2Full = false;
+        UIManager.Instance.isSlot3Full = false;
+
+        UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
+        UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
+        UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
     }
 
     #region Journal

@@ -101,37 +101,53 @@ public class GameManager : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        if(dimensionSwapMadness == false)
+        if (dimensionSwapMadness == false)
         {
-            // Tu mets le pp folie et enlève le normal
+            // Tu mets le pp folie et enlï¿½ve le normal
             //ok
             if (once == true)
             {
-                v_Indicible.weight = 1;
-                v_Neutre.weight = 0;
-                v_Transition.weight = 0;
+                if (v_Indicible != null && v_Neutre != null && v_Transition != null)
+                {
+                    v_Indicible.weight = 1;
+                    v_Neutre.weight = 0;
+                    v_Transition.weight = 0;
+                }
 
             }
 
         }
-        else{
-            // Tu mets le pp normal et enlève le folie tu relies la variable de pp transition a la barre de folie
+        else
+        {
+            // Tu mets le pp normal et enlï¿½ve le folie tu relies la variable de pp transition a la barre de folie
             //non 
-            v_Neutre.weight = 1;
-            v_Indicible.weight = 0;
+            if (v_Neutre != null)
+            {
+                v_Neutre.weight = 1;
+            }
+            if (v_Indicible != null)
+            {
+                v_Indicible.weight = 0;
+            }
             if (isScared == true)
             {
-                v_Transition.weight = playerMadness / 100f;
+                if (v_Transition != null)
+                {
+                    v_Transition.weight = playerMadness / 100f;
+                }
             }
-            else 
+            else
             {
-                v_Transition.weight = 0;
+                if (v_Transition != null)
+                {
+                    v_Transition.weight = 0;
+                }
             }
 
         }
 
-        
-        
+
+
     }
 
 

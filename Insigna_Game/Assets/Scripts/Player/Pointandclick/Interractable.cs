@@ -108,7 +108,10 @@ public class Interractable : MonoBehaviour
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     StartCoroutine(FarInterraction());
@@ -133,7 +136,10 @@ public class Interractable : MonoBehaviour
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     StartCoroutine(FarNearInterraction());
@@ -170,7 +176,10 @@ public class Interractable : MonoBehaviour
                         {
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     StartCoroutine(NearInterraction());

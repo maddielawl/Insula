@@ -81,6 +81,8 @@ public class UIManager : MonoBehaviour
     public PlayerData playerData;
 
 
+
+
     public void Update()
     {
         if (player == null)
