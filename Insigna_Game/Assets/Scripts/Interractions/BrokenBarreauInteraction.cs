@@ -43,6 +43,8 @@ public class BrokenBarreauInteraction : MonoBehaviour
 
     private TextMeshProUGUI observationText;
 
+    public int portraitIdx = 0;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -100,17 +102,20 @@ public class BrokenBarreauInteraction : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    UIManager.Instance.DisplayPortrait(portraitIdx);
                     StartCoroutine(FarInterraction());
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
@@ -122,17 +127,20 @@ public class BrokenBarreauInteraction : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    UIManager.Instance.DisplayPortrait(portraitIdx);
                     StartCoroutine(FarNearInterraction());
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
@@ -156,12 +164,14 @@ public class BrokenBarreauInteraction : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
@@ -225,6 +235,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
     }
@@ -239,6 +250,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
@@ -254,6 +266,7 @@ public class BrokenBarreauInteraction : MonoBehaviour
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
 

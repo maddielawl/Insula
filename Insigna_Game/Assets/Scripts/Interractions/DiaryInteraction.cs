@@ -44,6 +44,8 @@ public class DiaryInteraction : MonoBehaviour
 
     private TextMeshProUGUI observationText;
 
+    public int portraitIdx = 0;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -131,6 +133,7 @@ public class DiaryInteraction : MonoBehaviour
                     {
                         if (isNear == false)
                         {
+                            UIManager.Instance.DisplayPortrait(portraitIdx);
                             StartCoroutine(FarInterraction());
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
@@ -138,6 +141,7 @@ public class DiaryInteraction : MonoBehaviour
                         }
                         if (isNear == true)
                         {
+                            UIManager.Instance.DisplayPortrait(portraitIdx);
                             StartCoroutine(FarNearInterraction());
                             security = true;
                             GameManager.Instance.globalInterractionSecurity = true;
@@ -162,6 +166,7 @@ public class DiaryInteraction : MonoBehaviour
                         if (isNear == true)
                         {
                             StartCoroutine(NearInterraction());
+                            UIManager.Instance.HidePortraits();
                             if (spriteHighlight != null)
                             {
                                 spriteHighlight.enabled = false;
@@ -243,6 +248,7 @@ public class DiaryInteraction : MonoBehaviour
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
@@ -257,6 +263,7 @@ public class DiaryInteraction : MonoBehaviour
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
 

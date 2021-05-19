@@ -80,8 +80,11 @@ public class UIManager : MonoBehaviour
 
     public PlayerData playerData;
 
-
-
+    [Header("Portraits")]
+    public GameObject pom;
+    public GameObject gentleman;
+    public GameObject celeste;
+    public GameObject oublie;
 
     public void Update()
     {
@@ -405,4 +408,50 @@ public class UIManager : MonoBehaviour
         Debug.Log("movementEnabled");
         player.GetComponent<PlayerInput>().currentActionMap.Enable();
     }
+
+    public void DisplayPortrait(int protraitIdx)
+    {
+        switch (protraitIdx)
+        {
+            default:
+                pom.SetActive(true);
+                gentleman.SetActive(false);
+                celeste.SetActive(false);
+                oublie.SetActive(false);
+                break;
+            case 0:
+                pom.SetActive(true);
+                gentleman.SetActive(false);
+                celeste.SetActive(false);
+                oublie.SetActive(false);
+                break;
+            case 1:
+                pom.SetActive(false);
+                gentleman.SetActive(true);
+                celeste.SetActive(false);
+                oublie.SetActive(false);
+                break;
+            case 2:
+                pom.SetActive(false);
+                gentleman.SetActive(false);
+                celeste.SetActive(true);
+                oublie.SetActive(false);
+                break;
+            case 3:
+                pom.SetActive(false);
+                gentleman.SetActive(false);
+                celeste.SetActive(false);
+                oublie.SetActive(true);
+                break;
+        }
+    }
+
+    public void HidePortraits()
+    {
+        pom.SetActive(false);
+        gentleman.SetActive(false);
+        celeste.SetActive(false);
+        oublie.SetActive(false);
+    }
+
 }

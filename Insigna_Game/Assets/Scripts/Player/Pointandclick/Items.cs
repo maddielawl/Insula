@@ -43,6 +43,8 @@ public class Items : MonoBehaviour
 
     private TextMeshProUGUI observationText;
 
+    public int portraitIdx = 0;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -111,17 +113,20 @@ public class Items : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    UIManager.Instance.DisplayPortrait(portraitIdx);
                     StartCoroutine(FarInterraction());
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
@@ -133,17 +138,20 @@ public class Items : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
                     }
+                    UIManager.Instance.DisplayPortrait(portraitIdx);
                     StartCoroutine(FarNearInterraction());
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
@@ -169,12 +177,14 @@ public class Items : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
@@ -204,6 +214,7 @@ public class Items : MonoBehaviour
     {
         GameManager.Instance.globalInterractionSecurity = false;
         UIManager.Instance.GetObjectInInventory(this.gameObject);
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
     }
@@ -258,6 +269,7 @@ public class Items : MonoBehaviour
     {
         GameManager.Instance.canEquipHelmet = true;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
         Destroy(this.gameObject);
 
         yield return 0;
@@ -273,6 +285,7 @@ public class Items : MonoBehaviour
         farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
@@ -288,6 +301,7 @@ public class Items : MonoBehaviour
         farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
 

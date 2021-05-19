@@ -40,6 +40,8 @@ public class Interractable : MonoBehaviour
     [HideInInspector]
     public TextMeshProUGUI observationText;
 
+    public int portraitIdx = 0;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -97,6 +99,7 @@ public class Interractable : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("NearInt") != null)
@@ -106,6 +109,7 @@ public class Interractable : MonoBehaviour
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("FarInt") != null)
@@ -114,6 +118,7 @@ public class Interractable : MonoBehaviour
                             }
                         }
                     }
+                    UIManager.Instance.DisplayPortrait(portraitIdx);
                     StartCoroutine(FarInterraction());
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
@@ -125,6 +130,7 @@ public class Interractable : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("NearInt") != null)
@@ -134,6 +140,7 @@ public class Interractable : MonoBehaviour
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("FarInt") != null)
@@ -142,6 +149,7 @@ public class Interractable : MonoBehaviour
                             }
                         }
                     }
+                    UIManager.Instance.DisplayPortrait(portraitIdx);
                     StartCoroutine(FarNearInterraction());
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
@@ -165,6 +173,7 @@ public class Interractable : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("NearInt") != null)
@@ -174,6 +183,7 @@ public class Interractable : MonoBehaviour
                         }
                         else
                         {
+                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("FarInt") != null)
@@ -246,6 +256,7 @@ public class Interractable : MonoBehaviour
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
     }
@@ -260,6 +271,7 @@ public class Interractable : MonoBehaviour
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
@@ -275,6 +287,7 @@ public class Interractable : MonoBehaviour
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
+        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
