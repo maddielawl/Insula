@@ -86,6 +86,10 @@ public class HelmetUnlock : MonoBehaviour
         {
             spriteHighlight.enabled = false;
         }
+
+        UIManager.Instance.helmetOnIndicator.SetActive(false);
+        UIManager.Instance.helmetOffIndicator.SetActive(false);
+        GameManager.Instance.canEquipHelmet = false;
     }
 
     private void Update()

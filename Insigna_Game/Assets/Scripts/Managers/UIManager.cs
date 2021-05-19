@@ -411,47 +411,53 @@ public class UIManager : MonoBehaviour
 
     public void DisplayPortrait(int protraitIdx)
     {
-        switch (protraitIdx)
+        if (pom != null && gentleman != null && celeste != null && oublie != null)
         {
-            default:
-                pom.SetActive(true);
-                gentleman.SetActive(false);
-                celeste.SetActive(false);
-                oublie.SetActive(false);
-                break;
-            case 0:
-                pom.SetActive(true);
-                gentleman.SetActive(false);
-                celeste.SetActive(false);
-                oublie.SetActive(false);
-                break;
-            case 1:
-                pom.SetActive(false);
-                gentleman.SetActive(true);
-                celeste.SetActive(false);
-                oublie.SetActive(false);
-                break;
-            case 2:
-                pom.SetActive(false);
-                gentleman.SetActive(false);
-                celeste.SetActive(true);
-                oublie.SetActive(false);
-                break;
-            case 3:
-                pom.SetActive(false);
-                gentleman.SetActive(false);
-                celeste.SetActive(false);
-                oublie.SetActive(true);
-                break;
+            switch (protraitIdx)
+            {
+                default:
+                    pom.SetActive(true);
+                    gentleman.SetActive(false);
+                    celeste.SetActive(false);
+                    oublie.SetActive(false);
+                    break;
+                case 0:
+                    pom.SetActive(true);
+                    gentleman.SetActive(false);
+                    celeste.SetActive(false);
+                    oublie.SetActive(false);
+                    break;
+                case 1:
+                    pom.SetActive(false);
+                    gentleman.SetActive(true);
+                    celeste.SetActive(false);
+                    oublie.SetActive(false);
+                    break;
+                case 2:
+                    pom.SetActive(false);
+                    gentleman.SetActive(false);
+                    celeste.SetActive(true);
+                    oublie.SetActive(false);
+                    break;
+                case 3:
+                    pom.SetActive(false);
+                    gentleman.SetActive(false);
+                    celeste.SetActive(false);
+                    oublie.SetActive(true);
+                    break;
+            }
         }
     }
 
     public void HidePortraits()
     {
-        pom.SetActive(false);
-        gentleman.SetActive(false);
-        celeste.SetActive(false);
-        oublie.SetActive(false);
+        if (pom != null && gentleman != null && celeste != null && oublie != null)
+        {
+            pom.SetActive(false);
+            gentleman.SetActive(false);
+            celeste.SetActive(false);
+            oublie.SetActive(false);
+        }
     }
 
 }
