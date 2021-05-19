@@ -760,6 +760,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &66072704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4417635470635732499, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+  m_PrefabInstance: {fileID: 740222814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &66115668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2005,7 @@ MonoBehaviour:
   farPhrase: "Le passage est bloqu\xE9. "
   nearPhrase: Je ne peux pas passer..
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &174479345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3068,7 +3074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257553479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45407104, y: 1.47, z: 3.6172934}
+  m_LocalPosition: {x: 0.45407104, y: 0.68, z: 3.6172934}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1478754533}
@@ -3588,6 +3594,7 @@ MonoBehaviour:
   farPhrase: Encore des choses en pierre.
   nearPhrase: "C\u2019est joli, je me demande qui a fait \xE7a. "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &296197051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4162,6 +4169,7 @@ MonoBehaviour:
   barreauInteraction: {fileID: 8355757278278732162}
   farPhrase: "Oui c\u2019est par la que je suis arriv\xE9. "
   nearPhrase: Je ne la voyais pas si fragile d'en haut.
+  portraitIdx: 0
 --- !u!61 &352253092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5276,6 +5284,7 @@ MonoBehaviour:
   farPhrase: "C\u2019est de la que je viens. "
   nearPhrase: 'Je ne dois pas fuir. '
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &417353232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7374,6 +7383,7 @@ MonoBehaviour:
   entryNumber: 1
   farPhrase: 'Ho, on dirait une page de mon livre. '
   nearPhrase: "Enfin la premi\xE8re page, je me demande o\xF9 sont les autres."
+  portraitIdx: 0
 --- !u!1 &552610324
 GameObject:
   m_ObjectHideFlags: 0
@@ -9715,6 +9725,7 @@ MonoBehaviour:
   farPhrase: "D\u2019autres vieux machins"
   nearPhrase: "Je pourrais trouver des choses utiles l\xE0-dedans."
   interractionIdx: 0
+  portraitIdx: 0
 --- !u!1001 &678245577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15306,6 +15317,7 @@ MonoBehaviour:
   farPhrase: "D\u2019o\xF9 vient cette musique ?"
   nearPhrase: "Arr\xEAtez de faire \xE7a... "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &727645228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15549,6 +15561,22 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 7.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2582990586000866357, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: pom
+      value: 
+      objectReference: {fileID: 2051606313}
+    - target: {fileID: 2582990586000866357, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: oublie
+      value: 
+      objectReference: {fileID: 959807123}
+    - target: {fileID: 2582990586000866357, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: celeste
+      value: 
+      objectReference: {fileID: 1044573253}
+    - target: {fileID: 2582990586000866357, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: gentleman
+      value: 
+      objectReference: {fileID: 66072704}
     - target: {fileID: 2582990586019125736, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15567,7 +15595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531018, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_RootOrder
@@ -23060,6 +23088,11 @@ Transform:
   m_Father: {fileID: 1631091897}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &959807123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8745777109700327529, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+  m_PrefabInstance: {fileID: 740222814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &966551868
 GameObject:
   m_ObjectHideFlags: 0
@@ -28000,6 +28033,7 @@ MonoBehaviour:
   nearPhrase: "Waow, tous ces objets qu\u2019il y a. Je me demande si les gens savent
     o\xF9 sont leurs affaires. "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &982091410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28349,6 +28383,7 @@ MonoBehaviour:
   farPhrase: "D\u2019o\xF9 viens cette musique ?"
   nearPhrase: "Arr\xEAtez de faire \xE7a... "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &990586646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29040,6 +29075,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1044573253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4079002518248249473, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+  m_PrefabInstance: {fileID: 740222814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1048364660
 GameObject:
   m_ObjectHideFlags: 0
@@ -30762,6 +30802,7 @@ MonoBehaviour:
   farPhrase: "Il y a de la lumi\xE8re. "
   nearPhrase: "Quelqu\u2019un les a allum\xE9 ? "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1189339498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31758,6 +31799,7 @@ MonoBehaviour:
   farPhrase: "A quoi \xE7a sert \xE7a ? "
   nearPhrase: "C\u2019est joli. "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1249875689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32879,6 +32921,7 @@ MonoBehaviour:
   farPhrase: "C\u2019est le seul passage, il doit bien \xEAtre encore l\xE0. "
   nearPhrase: "Mais o\xF9 est pass\xE9 la sortie ?! "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1286932522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33720,6 +33763,7 @@ MonoBehaviour:
   farPhrase: "Mes bras sont trop court pour l\u2019attraper. "
   nearPhrase: "\xC7a y est j\u2019y suis. "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1352802852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35533,6 +35577,7 @@ MonoBehaviour:
   farPhrase: Encore des choses en pierre.
   nearPhrase: "C\u2019est joli, je me demande qui a fait \xE7a. "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1489011143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36390,6 +36435,7 @@ MonoBehaviour:
   farPhrase: "Mais... Qu\u2019est-ce que c\u2019est..."
   nearPhrase: "Ha mes yeux ! Arr\xEAtez ! "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1520876925
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38373,6 +38419,7 @@ MonoBehaviour:
   farPhrase: Un autre bouton rouge !
   nearPhrase: "Il est cass\xE9 aussi..."
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1616891619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46786,6 +46833,7 @@ MonoBehaviour:
   farPhrase: "Ho \xE7a brille !"
   nearPhrase: "Ho non ! c\u2019est cass\xE9..."
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1833758251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46931,6 +46979,7 @@ MonoBehaviour:
   farPhrase: La grille est ouverte !
   nearPhrase: la grille est ouverte, je peux avancer
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &1839395228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47111,7 +47160,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1459423971
   m_SortingLayer: 1
-  m_SortingOrder: -5
+  m_SortingOrder: 17
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -48829,6 +48878,7 @@ MonoBehaviour:
   farPhrase: Ne fait pas demi-tour, ne fait pas demi-tour.
   nearPhrase: 'Non et non je dois continuer. '
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!1 &1955826939
 GameObject:
   m_ObjectHideFlags: 0
@@ -49964,6 +50014,11 @@ Transform:
   m_Father: {fileID: 1894805868}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2051606313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2103710579383741365, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+  m_PrefabInstance: {fileID: 740222814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2056082571
 GameObject:
   m_ObjectHideFlags: 0
@@ -50228,6 +50283,7 @@ MonoBehaviour:
   farPhrase: "Il y a des \xE9critures sur ce caillou"
   nearPhrase: "C\u2019est quelle langue \xE7a ? "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &2083674674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51642,6 +51698,7 @@ MonoBehaviour:
   farPhrase: 'Je ne peux pas faire demi-tour, mon ami compte sur moi. '
   nearPhrase: "J\u2019esp\xE8re que personne ne va me suivre. "
   observationText: {fileID: 0}
+  portraitIdx: 0
 --- !u!61 &2146135264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51728,6 +51785,7 @@ MonoBehaviour:
   farPhrase: "Cette t\xE9l\xE9 a l'air bizarre."
   nearPhrase: "La t\xE9l\xE9 est vide, quand je la met sur la t\xEAte, je me sens
     mieux..."
+  portraitIdx: 0
 --- !u!114 &801332742191383083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58977,6 +59035,7 @@ MonoBehaviour:
   vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
   farPhrase: 'Il y a quelque chose qui brille. '
   nearPhrase: "La cl\xE9 ! "
+  portraitIdx: 0
 --- !u!1 &8355757277226543186
 GameObject:
   m_ObjectHideFlags: 0
@@ -59392,6 +59451,7 @@ MonoBehaviour:
   farPhrase: "Non ! c\u2019est cass\xE9 \u2026 je dois cacher \xE7a avant de me faire
     frapper. "
   nearPhrase: "Je dois trouver une cachette pour \xE7a. "
+  portraitIdx: 0
 --- !u!212 &8355757278278732164
 SpriteRenderer:
   m_ObjectHideFlags: 0
