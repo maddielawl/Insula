@@ -588,6 +588,7 @@ MonoBehaviour:
   nearPhrase: "Il y avait \xE7a pour contr\xF4ler la machine dans l\u2019usine."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &40700492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1587,6 +1588,7 @@ MonoBehaviour:
   nearPhrase: Hm ?
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &76470263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2034,7 @@ MonoBehaviour:
   nearPhrase: Pour finir, 2 et 0.
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &92626196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4625,6 +4628,7 @@ MonoBehaviour:
   nearPhrase: ...
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &212942318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5808,6 +5812,7 @@ MonoBehaviour:
   nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &281158963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5960,6 +5965,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est aussi un Robot ?"
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &281352263
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6095,6 +6101,7 @@ MonoBehaviour:
   nearPhrase: Je suis trop petite pour monter.
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &286672174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8145,6 +8152,7 @@ MonoBehaviour:
   nearPhrase: "Ho mais c\u2019est le robot qui a remplac\xE9 C\xE9leste \xE0 l\u2019usine."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &353836099
 GameObject:
   m_ObjectHideFlags: 0
@@ -10055,6 +10063,8 @@ MonoBehaviour:
   farPhrase: "C'est un trou d'air, il y en a dans l\u2019usine, parfois les rats
     se cachent dedans."
   nearPhrase: "C\u2019est \xE9crit .. 6 et 4 .. 64 ! Mais la suite est effac\xE9e."
+  portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &451716656
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11450,6 +11460,7 @@ MonoBehaviour:
   nearPhrase: "Non c\u2019est trop lourd."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &542291708
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11732,6 +11743,7 @@ MonoBehaviour:
   nearPhrase: "Il y avait \xE7a pour contr\xF4ler la machine dans l\u2019usine."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &572006754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12768,6 +12780,7 @@ MonoBehaviour:
   nearPhrase: "Cette fois c\u2019est 1 et 4."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &611511989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15165,6 +15178,7 @@ MonoBehaviour:
   nearPhrase: "Il y a un objet color\xE9 l\xE0-bas."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &727327914
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15490,6 +15504,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1028466796, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643627033, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739990682, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 860206829956658777, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1138807535}
+    - target: {fileID: 860206829956658777, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitInterraction
+      objectReference: {fileID: 0}
     - target: {fileID: 2582990585841308420, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.08
@@ -15528,7 +15562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531018, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_RootOrder
@@ -15581,6 +15615,14 @@ PrefabInstance:
     - target: {fileID: 2582990587224233200, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -816.0901
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305153687186626593, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789280535575135523, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
@@ -16482,6 +16524,7 @@ MonoBehaviour:
   nearPhrase: "G, M et D..., \xE7a semble \xEAtre des directions..."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &788083014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16990,6 +17033,7 @@ MonoBehaviour:
   nearPhrase: "Je crois qu\u2019il marche encore."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &797759198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18053,6 +18097,7 @@ MonoBehaviour:
   nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &847272650
 GameObject:
   m_ObjectHideFlags: 0
@@ -18905,7 +18950,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877236876}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -18914,7 +18959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 247.99988, y: -429.99997}
+  m_AnchoredPosition: {x: 247.99976, y: -429.9999}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877236878
@@ -21448,6 +21493,7 @@ MonoBehaviour:
   nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &1011517110
 GameObject:
   m_ObjectHideFlags: 0
@@ -23846,6 +23892,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1138807535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1739990684, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+  m_PrefabInstance: {fileID: 740222814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603888ec25b62e047977ca4a201bb31f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1143409685
 GameObject:
   m_ObjectHideFlags: 0
@@ -26497,6 +26554,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est la valise du Docteur."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1286784309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30541,6 +30599,7 @@ MonoBehaviour:
   nearPhrase: "Il y avait \xE7a pour contr\xF4ler la machine dans l\u2019usine."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1487710113
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31091,6 +31150,7 @@ MonoBehaviour:
   nearPhrase: Maintenant tu peux te reposer.
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1508680335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33039,6 +33099,7 @@ MonoBehaviour:
   nearPhrase: Le passage est ouvert.
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1659291065
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34451,6 +34512,7 @@ MonoBehaviour:
   nearPhrase: Clique, clique.
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1727464674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34685,6 +34747,7 @@ MonoBehaviour:
     \xE0 quoi \xE7a sert."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1732795008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34791,6 +34854,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est \xE9crit .. 6 et 4 .. 64 ! Mais la suite est effac\xE9e."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &1741121260
 GameObject:
   m_ObjectHideFlags: 0
@@ -36109,6 +36173,7 @@ MonoBehaviour:
   nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &1800658375
 GameObject:
   m_ObjectHideFlags: 0
@@ -36478,6 +36543,7 @@ MonoBehaviour:
   nearPhrase: "Il y avait \xE7a pour contr\xF4ler la machine dans l\u2019usine."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1816837742
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37534,6 +37600,8 @@ MonoBehaviour:
   farPhrase: "Qu\u2019est-ce que c\u2019est sur le sol ?"
   nearPhrase: Oh ! cette grille n'a pas l'air solide. Je peux surement la casser
     avec quelque chose de lourd...
+  portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &1923340354
 GameObject:
   m_ObjectHideFlags: 0
@@ -37643,6 +37711,7 @@ MonoBehaviour:
   nearPhrase: "Attention je crois que \xE7a va tomber."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1923340358
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38559,6 +38628,7 @@ MonoBehaviour:
   nearPhrase: "S\u2019il vous plait ne me frappe pas."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1976340424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39034,6 +39104,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est \xE9trange je n\u2019ai jamais vu cette affiche avant."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &2008525135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39282,9 +39353,10 @@ GameObject:
   - component: {fileID: 2019386907}
   - component: {fileID: 2019386908}
   - component: {fileID: 2019386910}
+  - component: {fileID: 2019386911}
   - component: {fileID: 2019386909}
   m_Layer: 0
-  m_Name: Placard_Coffre
+  m_Name: CoffreFortPopUp
   m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39366,17 +39438,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2019386906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d8b8b0b96c174a4583e1bf04479b756, type: 3}
+  m_Script: {fileID: 11500000, guid: d12272ad76df5c44590739ce6cb5ec15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNear: 0
-  interractionSecurity: 1
-  spriteHighlight: {fileID: 1501541508}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
-  farPhrase: "Comment \xE7a fonctionne cette bo\xEEte ?"
-  nearPhrase: ' Encore tout plein de chiffres.'
-  observationText: {fileID: 0}
-  portraitIdx: 0
+  page: {fileID: 2121495832}
 --- !u!61 &2019386910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39403,6 +39468,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2, y: 1.23}
   m_EdgeRadius: 0
+--- !u!114 &2019386911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019386906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc3b682402a91f46acf7bb885f9f911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNear: 0
+  interractionSecurity: 1
+  spriteHighlight: {fileID: 1501541508}
+  farPhrase: Far
+  nearPhrase: Near
+  interractionIdx: 1
+  portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &2024404582
 GameObject:
   m_ObjectHideFlags: 0
@@ -40255,7 +40340,7 @@ GameObject:
   - component: {fileID: 2099177788}
   - component: {fileID: 2099177787}
   m_Layer: 0
-  m_Name: "Cl\xE9e a molette"
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40448,6 +40533,7 @@ MonoBehaviour:
   nearPhrase: "Quelqu\u2019un mange \xE7a ?"
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &2100283543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41762,6 +41848,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est ouvert ?"
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &2142085508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42377,7 +42464,7 @@ PrefabInstance:
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[31].m_Target
       value: 
-      objectReference: {fileID: 2019386909}
+      objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[32].m_Target
       value: 
@@ -42485,7 +42572,7 @@ PrefabInstance:
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[31].m_Target
       value: 
-      objectReference: {fileID: 2019386909}
+      objectReference: {fileID: 0}
     - target: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[32].m_Target
       value: 

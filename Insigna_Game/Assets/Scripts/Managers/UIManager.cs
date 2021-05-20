@@ -46,6 +46,8 @@ public class UIManager : MonoBehaviour
     public bool isSlot2Full = false;
     public bool isSlot3Full = false;
 
+    public Sprite normalInventorySpr;
+
     [Header("Objects Stored in slots")]
     public GameObject objectInSlot1;
     public GameObject objectInSlot2;
