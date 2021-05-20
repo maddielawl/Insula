@@ -40,7 +40,10 @@ public class FallingSol : MonoBehaviour
                     UIManager.Instance.isSlot1Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
+
                     GameManager.Instance.globalInterractionSecurity = false;
+                    UIManager.Instance.ResetCursor();
+
                     Destroy(transform.parent.gameObject);
                 }
             }
@@ -49,6 +52,8 @@ public class FallingSol : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
                 {
+                    grilleSpr.sprite = grilleNormal;
+
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
@@ -60,6 +65,7 @@ public class FallingSol : MonoBehaviour
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
 
                     GameManager.Instance.globalInterractionSecurity = false;
+                    UIManager.Instance.ResetCursor();
 
                     Destroy(transform.parent.gameObject);
                 }
@@ -69,6 +75,8 @@ public class FallingSol : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
                 {
+                    grilleSpr.sprite = grilleNormal;
+
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
@@ -80,6 +88,7 @@ public class FallingSol : MonoBehaviour
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
 
                     GameManager.Instance.globalInterractionSecurity = false;
+                    UIManager.Instance.ResetCursor();
 
                     Destroy(transform.parent.gameObject);
                 }
