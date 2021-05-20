@@ -41,6 +41,7 @@ public class InterractableDoor : MonoBehaviour
     public TextMeshProUGUI observationText;
 
     public int portraitIdx = 0;
+    public bool isInterractionTalkative = false;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -173,6 +174,10 @@ public class InterractableDoor : MonoBehaviour
                             GameManager.Instance.globalInterractionSecurity = false;
                             GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                         }
+                    }
+                    if (isInterractionTalkative == true)
+                    {
+                        UIManager.Instance.DisplayPortrait(portraitIdx);
                     }
                     StartCoroutine(NearInterraction());
                     FindObjectOfType<AudioManager>().Play("OnClickInventory");

@@ -41,6 +41,7 @@ public class Interractable : MonoBehaviour
     public TextMeshProUGUI observationText;
 
     public int portraitIdx = 0;
+    public bool isInterractionTalkative = false;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -191,6 +192,10 @@ public class Interractable : MonoBehaviour
                                 GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
                             }
                         }
+                    }
+                    if(isInterractionTalkative == true)
+                    {
+                        UIManager.Instance.DisplayPortrait(portraitIdx);
                     }
                     StartCoroutine(NearInterraction());
                     security = true;

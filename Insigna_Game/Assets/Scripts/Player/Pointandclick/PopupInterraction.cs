@@ -49,6 +49,7 @@ public class PopupInterraction : MonoBehaviour
     private TextMeshProUGUI observationText;
 
     public int portraitIdx = 0;
+    public bool isInterractionTalkative = false;
 
 
     private void OnTriggerEnter2D(Collider2D other)
