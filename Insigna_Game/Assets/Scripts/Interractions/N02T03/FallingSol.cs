@@ -42,9 +42,9 @@ public class FallingSol : MonoBehaviour
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
 
                     GameManager.Instance.globalInterractionSecurity = false;
-                    UIManager.Instance.ResetCursor();
 
-                    Destroy(transform.parent.gameObject);
+                    transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+                    UIManager.Instance.ResetCursor();
                 }
             }
 
@@ -65,9 +65,9 @@ public class FallingSol : MonoBehaviour
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
 
                     GameManager.Instance.globalInterractionSecurity = false;
-                    UIManager.Instance.ResetCursor();
 
-                    Destroy(transform.parent.gameObject);
+                    transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+                    UIManager.Instance.ResetCursor();
                 }
             }
 
@@ -88,9 +88,9 @@ public class FallingSol : MonoBehaviour
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
 
                     GameManager.Instance.globalInterractionSecurity = false;
+                    
+                    transform.parent.GetComponent<BoxCollider2D>().enabled = false;
                     UIManager.Instance.ResetCursor();
-
-                    Destroy(transform.parent.gameObject);
                 }
             }
         }
