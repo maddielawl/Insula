@@ -482,6 +482,36 @@ public class MenusManager : MonoBehaviour
         UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
         UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
         UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
+
+        UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
+        UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
+        UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
+
+        UIManager.Instance.inventoryButton1.sprite = UIManager.Instance.normalInventorySpr;
+        UIManager.Instance.inventoryButton2.sprite = UIManager.Instance.normalInventorySpr;
+        UIManager.Instance.inventoryButton3.sprite = UIManager.Instance.normalInventorySpr;
+
+        GameManager.Instance.playerPillsCount = 0;
+
+        GameManager.Instance.dimensionSwapMadness = true;
+
+        if (SceneManager.sceneCount > 1)
+        {
+            if (SceneManager.GetSceneAt(1).isLoaded)
+            {
+                if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(1))
+                {
+                    entry1.SetActive(false);
+                }
+            }
+
+            if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(2))
+            {
+                entry2.SetActive(false);
+                entry3.SetActive(false);
+            }
+
+        }
     }
 
     #region Journal
