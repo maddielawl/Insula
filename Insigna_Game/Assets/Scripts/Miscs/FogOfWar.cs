@@ -15,7 +15,18 @@ public class FogOfWar : MonoBehaviour
             {
                 bool interractableColliderState = interractablesCollider[i].enabled;
                 interractablesCollider[i].enabled = false;
+
                 if (interractablesCollider[i].transform.parent.name == "MadnessInterractions")
+                {
+                    interractablesCollider[i].enabled = interractableColliderState;
+                }
+
+                if (interractablesCollider[i].transform.parent.name == "SanityInterractions")
+                {
+                    interractablesCollider[i].enabled = interractableColliderState;
+                }
+
+                if (interractablesCollider[i].transform.parent.name == "Sanity")
                 {
                     interractablesCollider[i].enabled = interractableColliderState;
                 }
@@ -33,7 +44,18 @@ public class FogOfWar : MonoBehaviour
                 {
                     bool interractableColliderState = interractablesCollider[i].enabled;
                     interractablesCollider[i].enabled = true;
+
                     if (interractablesCollider[i].transform.parent.name == "MadnessInterractions")
+                    {
+                        interractablesCollider[i].enabled = interractableColliderState;
+                    }
+
+                    if (interractablesCollider[i].transform.parent.name == "SanityInterractions")
+                    {
+                        interractablesCollider[i].enabled = interractableColliderState;
+                    }
+
+                    if (interractablesCollider[i].transform.parent.name == "Sanity")
                     {
                         interractablesCollider[i].enabled = interractableColliderState;
                     }
