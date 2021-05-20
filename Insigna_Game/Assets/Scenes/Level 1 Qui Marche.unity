@@ -2006,6 +2006,7 @@ MonoBehaviour:
   nearPhrase: Je ne peux pas passer..
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &174479345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3595,6 +3596,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est joli, je me demande qui a fait \xE7a. "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &296197051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4170,6 +4172,7 @@ MonoBehaviour:
   farPhrase: "Oui c\u2019est par la que je suis arriv\xE9. "
   nearPhrase: Je ne la voyais pas si fragile d'en haut.
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &352253092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5285,6 +5288,7 @@ MonoBehaviour:
   nearPhrase: 'Je ne dois pas fuir. '
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &417353232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6874,6 +6878,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3531c7b4b14dfb34b8c392f31b022cf8, type: 3}
+    - target: {fileID: 987512844015117477, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Text
       value: Certaines interractions sont sous la forme d'un mini-jeu. Vous devrez
@@ -6953,6 +6961,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3213348963304924286, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6807046792726627708, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
@@ -9726,6 +9750,7 @@ MonoBehaviour:
   nearPhrase: "Je pourrais trouver des choses utiles l\xE0-dedans."
   interractionIdx: 0
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1001 &678245577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14710,6 +14735,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7ba8ea96992e99a48a6a8b9f8a13a6f5, type: 3}
+    - target: {fileID: 987512844015117477, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Text
       value: Certaines interractions sont sous la forme d'un mini-jeu. Vous devrez
@@ -14793,6 +14822,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3213348963304924286, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6807046792726627708, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
@@ -15318,6 +15363,7 @@ MonoBehaviour:
   nearPhrase: "Arr\xEAtez de faire \xE7a... "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &727645228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15595,7 +15641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531018, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_RootOrder
@@ -28034,6 +28080,7 @@ MonoBehaviour:
     o\xF9 sont leurs affaires. "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &982091410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28384,6 +28431,7 @@ MonoBehaviour:
   nearPhrase: "Arr\xEAtez de faire \xE7a... "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &990586646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30483,6 +30531,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 806b8b9bbcfad54489eb018bb01b8671, type: 3}
+    - target: {fileID: 987512844015117477, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Text
       value: Rentrer dans une zone de folie peut vous faire basculer dans un autre
@@ -30567,6 +30619,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3213348963304924286, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6807046792726627708, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
@@ -30803,6 +30871,7 @@ MonoBehaviour:
   nearPhrase: "Quelqu\u2019un les a allum\xE9 ? "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1189339498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31800,6 +31869,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est joli. "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1249875689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32922,6 +32992,7 @@ MonoBehaviour:
   nearPhrase: "Mais o\xF9 est pass\xE9 la sortie ?! "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1286932522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33764,6 +33835,7 @@ MonoBehaviour:
   nearPhrase: "\xC7a y est j\u2019y suis. "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1352802852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35412,6 +35484,8 @@ MonoBehaviour:
   objectToInterractWith: Key
   farPhrase: "Encore une porte ferm\xE9e, il doit aussi y avoir un moyen. "
   nearPhrase: Je dois trouver la clef dans tous ce bazar.
+  portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!4 &1478754533
 Transform:
   m_ObjectHideFlags: 0
@@ -35578,6 +35652,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est joli, je me demande qui a fait \xE7a. "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1489011143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35732,6 +35807,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 987512844015117477, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031216536911764177, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3213348962602506324, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: interractablesCollider.Array.size
       value: 7
@@ -35818,6 +35901,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3213348963304924286, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6807046792726627708, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
@@ -36484,6 +36571,7 @@ MonoBehaviour:
   nearPhrase: "Ha mes yeux ! Arr\xEAtez ! "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1520876925
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37797,6 +37885,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a95ccd9d9af4c614f8821a86c308c7e9, type: 3}
+    - target: {fileID: 987512844015117477, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3213348962315023296, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_Text
       value: Certaines interractions sont sous la forme d'un mini-jeu. Vous devrez
@@ -37880,6 +37972,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3213348963304924286, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144726398321041279, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6807046792726627708, guid: 9b23ec5b78673684d8a4e95bf6907719, type: 3}
@@ -38468,6 +38576,7 @@ MonoBehaviour:
   nearPhrase: "Il est cass\xE9 aussi..."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1616891619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46882,6 +46991,7 @@ MonoBehaviour:
   nearPhrase: "Ho non ! c\u2019est cass\xE9..."
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1833758251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47028,6 +47138,7 @@ MonoBehaviour:
   nearPhrase: la grille est ouverte, je peux avancer
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &1839395228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48927,6 +49038,7 @@ MonoBehaviour:
   nearPhrase: 'Non et non je dois continuer. '
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &1955826939
 GameObject:
   m_ObjectHideFlags: 0
@@ -50332,6 +50444,7 @@ MonoBehaviour:
   nearPhrase: "C\u2019est quelle langue \xE7a ? "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &2083674674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51747,6 +51860,7 @@ MonoBehaviour:
   nearPhrase: "J\u2019esp\xE8re que personne ne va me suivre. "
   observationText: {fileID: 0}
   portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &2146135264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57101,6 +57215,8 @@ MonoBehaviour:
   nearPhraseOpened: "Tu as d\xE9j\xE0 ouvert cette porte Pom\u2019."
   observationText: {fileID: 0}
   doorNearScript: {fileID: 1479615717}
+  portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!61 &5393716128897589947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60048,6 +60164,8 @@ MonoBehaviour:
   objectToInterractWith: Barreau
   farPhrase: "Je crois qu\u2019on ouvrait la porte avec \xE7a. "
   nearPhrase: "C\u2019est si vieux, on dirait qu\u2019il manque un morceau."
+  portraitIdx: 0
+  isInterractionTalkative: 0
 --- !u!1 &8770921156303196328
 GameObject:
   m_ObjectHideFlags: 0
