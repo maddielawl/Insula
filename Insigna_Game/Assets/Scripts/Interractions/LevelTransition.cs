@@ -19,6 +19,7 @@ public class LevelTransition : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
+            UIManager.Instance.HelmetIsOff();
             FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Sounds/Level Transition");
             player.GetComponent<Player>().StateMachine.CurrentState.Exit();
             MenusManager.instance.level2loaded = true;
