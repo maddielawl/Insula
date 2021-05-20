@@ -91,6 +91,8 @@ public class MenusManager : MonoBehaviour
 
     private GameObject[] allInteractableColliders;
 
+    public GameObject particule;
+
     private void Awake()
     {
         if (instance != null)
@@ -237,6 +239,7 @@ public class MenusManager : MonoBehaviour
         {
             // midOptionsScreen.SetActive(false);
             optionsScreen.SetActive(true);
+            particule.SetActive(false);
             OnPressEscape = OnBackFromSettings;
         }
     }
@@ -275,6 +278,7 @@ public class MenusManager : MonoBehaviour
             optionsScreen.SetActive(false);
             // midOptionsScreen.SetActive(true);
             mainMenuScreen.SetActive(true);
+            particule.SetActive(true);
             // OnPressEscape = OnBackFromMidOptions;
         }
     }
