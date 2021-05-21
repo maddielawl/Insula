@@ -72,6 +72,7 @@ public class UIManager : MonoBehaviour
     public Sprite[] pillCountSpr = new Sprite[4];
     public GameObject helmetOffIndicator;
     public GameObject helmetOnIndicator;
+    public GameObject helmetButton;
     public GameObject blackScreen;
 
     [Header("Others")]
@@ -352,6 +353,7 @@ public class UIManager : MonoBehaviour
     public void GotHelmet()
     {
         helmetOffIndicator.SetActive(true);
+        helmetButton.SetActive(true);
     }
     public void HelmetIsOn()
     {
@@ -373,6 +375,33 @@ public class UIManager : MonoBehaviour
             player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
         }
     }
+
+    public void ChangeHelmetState()
+    {
+        Debug.Log("bruh");
+        if (GameManager.Instance.canEquipHelmet == true)
+        {
+            Debug.Log("bruh1");
+            if (GameManager.Instance.isHelmetEquipped == true)
+            {
+                Debug.Log("bruh2.1");
+                GameManager.Instance.isHelmetEquipped = false;
+                UIManager.Instance.HelmetIsOff();
+                FindObjectOfType<AudioManager>().Play("HelmetOff");
+                return;
+            }
+
+            if (GameManager.Instance.isHelmetEquipped == false)
+            {
+                Debug.Log("bruh2.2");
+                GameManager.Instance.isHelmetEquipped = true;
+                UIManager.Instance.HelmetIsOn();
+                FindObjectOfType<AudioManager>().Play("HelmetOn");
+                return;
+            }
+        }
+    }
+
     public IEnumerator FadeToBlackTP(GameObject player, Transform spawnPoint, bool fadeToBlack, float fadeSpeed = 1f)
     {
         Color objectColor = UIManager.Instance.blackScreen.GetComponent<Image>().color;

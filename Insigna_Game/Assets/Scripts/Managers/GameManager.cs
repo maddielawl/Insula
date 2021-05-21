@@ -364,6 +364,16 @@ public class GameManager : MonoBehaviour
         playerPillsCount--;
     }
 
+    public void TakePills()
+    {
+        if (GameManager.Instance.isHelmetEquipped == false && GameManager.Instance.isScared == false && GameManager.Instance.playerPillsCount != 0)
+        {
+            GameManager.Instance.GetHPBack();
+            FindObjectOfType<AudioManager>().Play("Pills");
+            return;
+        }
+    }
+
     #endregion
 
     public void ActivateInGameActions()
