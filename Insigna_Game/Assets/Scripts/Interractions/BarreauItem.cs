@@ -37,6 +37,8 @@ public class BarreauItem : MonoBehaviour
     public GameObject vfx;
     public GameObject barreau;
 
+    public GameObject tutoItems;
+
     [Header("Phrase a dire")]
     public string farPhrase;
     public string nearPhrase;
@@ -84,6 +86,7 @@ public class BarreauItem : MonoBehaviour
         farInt0.SetActive(false);
         interractionSecurity = false;
         spriteHighlight.enabled = false;
+        tutoItems.SetActive(false);
     }
 
     private void Update()
@@ -191,6 +194,7 @@ public class BarreauItem : MonoBehaviour
                     StartCoroutine(NearInterraction());
                     StartCoroutine(StoreItem());
                     spriteHighlight.enabled = false;
+                    tutoItems.SetActive(true);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Sounds/Collect Object");
                     FindObjectOfType<AudioManager>().Play("TakeObject");
                     GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);

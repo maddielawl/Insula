@@ -35,6 +35,8 @@ public class HelmetUnlock : MonoBehaviour
     public GameObject ordureTV;
     public Sprite ordureWithoutTVSpr;
 
+    public GameObject tutoTV;
+
     [Header("Phrase a dire")]
     public string farPhrase;
     public string nearPhrase;
@@ -90,6 +92,8 @@ public class HelmetUnlock : MonoBehaviour
         UIManager.Instance.helmetOnIndicator.SetActive(false);
         UIManager.Instance.helmetOffIndicator.SetActive(false);
         GameManager.Instance.canEquipHelmet = false;
+
+        tutoTV.SetActive(false);
     }
 
     private void Update()
@@ -198,6 +202,7 @@ public class HelmetUnlock : MonoBehaviour
                     {
                         spriteHighlight.enabled = false;
                     }
+                    tutoTV.SetActive(true);
                     FindObjectOfType<AudioManager>().Play("TakeObject");
                     GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                     currentVfx.transform.parent = null;
