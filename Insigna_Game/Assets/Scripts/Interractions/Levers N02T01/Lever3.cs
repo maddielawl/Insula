@@ -27,6 +27,7 @@ public class Lever3 : MonoBehaviour
     {
         if (parent.interractionSecurity == false)
         {
+            GameManager.Instance.globalInterractionSecurity = true;
             parent.interractionSecurity = true;
 
             if (button.lever3 == 0)
@@ -43,6 +44,7 @@ public class Lever3 : MonoBehaviour
                 {
                     button.lever3--;
                 }
+                this.gameObject.SetActive(false);
                 return;
             }
             if (button.lever3 == 1)
@@ -55,6 +57,7 @@ public class Lever3 : MonoBehaviour
                     parent.spriteHighlight.enabled = false;
                     parent.spriteHighlight = LevelRightHighlight;
                     parent.spriteHighlight.enabled = true;
+                    this.gameObject.SetActive(false);
                     return;
                 }
                 if (order == true)
@@ -65,6 +68,7 @@ public class Lever3 : MonoBehaviour
                     parent.spriteHighlight.enabled = false;
                     parent.spriteHighlight = LevelLeftHighlight;
                     parent.spriteHighlight.enabled = true;
+                    this.gameObject.SetActive(false);
                     return;
                 }
 
@@ -83,6 +87,7 @@ public class Lever3 : MonoBehaviour
                     parent.spriteHighlight = LevelMiddleHighlight;
                     parent.spriteHighlight.enabled = true;
                 }
+                this.gameObject.SetActive(false);
                 return;
 
             }
