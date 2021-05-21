@@ -22,6 +22,10 @@ public class Buttons : MonoBehaviour
     public bool buttonOneDone;
     public bool buttonTwoDone;
 
+    public GameObject allScotch;
+    public GameObject scotchRight;
+    public GameObject scotchLeft;
+
     private InterractableWithInventory parent;
 
 
@@ -31,7 +35,18 @@ public class Buttons : MonoBehaviour
         {
             if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith))
             {
-                buttonimage1.sprite = UIManager.Instance.inventoryButton1.sprite;
+                if(buttonTwoDone == false)
+                {
+                    buttonimage1.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button1.enabled = false;
+                    scotchLeft.SetActive(true);
+                }
+                else
+                {
+                    buttonimage1.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button1.enabled = false;
+                    allScotch.SetActive(true);
+                }
                 UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                 UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
@@ -49,7 +64,18 @@ public class Buttons : MonoBehaviour
         {
             if (UIManager.Instance.objectInSlot2.name.Contains(objectToInterractWith))
             {
-                buttonimage1.sprite = UIManager.Instance.inventoryButton2.sprite;
+                if (buttonTwoDone == false)
+                {
+                    buttonimage1.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button1.enabled = false;
+                    scotchLeft.SetActive(true);
+                }
+                else
+                {
+                    buttonimage1.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button1.enabled = false;
+                    allScotch.SetActive(true);
+                }
                 UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                 UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
@@ -67,7 +93,18 @@ public class Buttons : MonoBehaviour
         {
             if (UIManager.Instance.objectInSlot3.name.Contains(objectToInterractWith))
             {
-                buttonimage1.sprite = UIManager.Instance.inventoryButton3.sprite;
+                if (buttonTwoDone == false)
+                {
+                    buttonimage1.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button1.enabled = false;
+                    scotchLeft.SetActive(true);
+                }
+                else
+                {
+                    buttonimage1.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button1.enabled = false;
+                    allScotch.SetActive(true);
+                }
                 UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                 UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
@@ -88,7 +125,18 @@ public class Buttons : MonoBehaviour
         {
             if (UIManager.Instance.objectInSlot1.name.Contains(objectToInterractWith))
             {
-                buttonimage2.sprite = UIManager.Instance.inventoryButton1.sprite;
+                if (buttonOneDone == false)
+                {
+                    buttonimage2.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button2.enabled = false;
+                    scotchRight.SetActive(true);
+                }
+                else
+                {
+                    buttonimage2.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button2.enabled = false;
+                    allScotch.SetActive(true);
+                }
                 UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                 UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
@@ -106,7 +154,18 @@ public class Buttons : MonoBehaviour
         {
             if (UIManager.Instance.objectInSlot2.name.Contains(objectToInterractWith))
             {
-                buttonimage2.sprite = UIManager.Instance.inventoryButton2.sprite;
+                if (buttonOneDone == false)
+                {
+                    buttonimage2.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button2.enabled = false;
+                    scotchRight.SetActive(true);
+                }
+                else
+                {
+                    buttonimage2.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button2.enabled = false;
+                    allScotch.SetActive(true);
+                }
                 UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                 UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
@@ -124,7 +183,18 @@ public class Buttons : MonoBehaviour
         {
             if (UIManager.Instance.objectInSlot3.name.Contains(objectToInterractWith))
             {
-                buttonimage2.sprite = UIManager.Instance.inventoryButton3.sprite;
+                if (buttonOneDone == false)
+                {
+                    buttonimage2.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button2.enabled = false;
+                    scotchRight.SetActive(true);
+                }
+                else
+                {
+                    buttonimage2.sprite = emptySlot.GetComponent<Image>().sprite;
+                    button2.enabled = false;
+                    allScotch.SetActive(true);
+                }
                 UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                 UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
                 UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
