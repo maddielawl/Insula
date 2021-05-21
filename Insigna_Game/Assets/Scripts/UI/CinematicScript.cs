@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CinematicScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CinematicScript : MonoBehaviour
     public void EndCinematic()
     {
         CursorManager.Instance.keepCursor = false;
+        CursorManager.Instance.GetComponent<Image>().enabled = true;
         MenusManager.instance.player.SetActive(true);
         MenusManager.instance.player.GetComponent<PlayerInput>().enabled = true;
         MenusManager.instance.Cinematic.SetActive(false);
