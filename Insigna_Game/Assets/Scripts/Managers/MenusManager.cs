@@ -307,7 +307,8 @@ public class MenusManager : MonoBehaviour
     {
         loadingText.SetActive(false);
         validateLoadingText.SetActive(true);
-        menusActions.MainMenuActions.ValidateLoadScene.started += HideLoadingScreen;
+        // menusActions.MainMenuActions.ValidateLoadScene.started += HideLoadingScreen;
+        HideLoadingScreen();
     }
 
     public void PauseMenu()
@@ -441,14 +442,14 @@ public class MenusManager : MonoBehaviour
         ingamePauseMenu.SetActive(true);
     }
 
-    public void HideLoadingScreen(InputAction.CallbackContext context)
+    public void HideLoadingScreen()
     {
         asyncOp.allowSceneActivation = true;
         asyncOp = null;
         validateLoadingText.SetActive(false);
         loadingScreen.SetActive(false);
         MainMenuCamera.SetActive(false);
-        menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
+        // menusActions.MainMenuActions.ValidateLoadScene.started -= HideLoadingScreen;
         DeactivateMainMenuActions();
         //GameManager.Instance.ActivateInGameActions();
         inGame = true;
