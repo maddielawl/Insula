@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     public int playerMadnessDecrement = 2;
     public PlayerInputs playerInput;
 
+    public RuntimeAnimatorController currentPlayerAnimation;
+
     [Space(5)]
     [Header("Helmet")]
     public bool isHelmetEquipped = false;
@@ -97,6 +99,11 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        if (player != null)
+        {
+            currentPlayerAnimation = player.GetComponent<Animator>().runtimeAnimatorController;
+        }
+
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");

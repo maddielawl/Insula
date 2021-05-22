@@ -14,7 +14,10 @@ public class N02T03OnDestroy : MonoBehaviour
 
     private void OnDestroy()
     {
-        page.SetActive(true);
+        if (page != null)
+        {
+            page.SetActive(true);
+        }
     }
 
     private void SetActive()

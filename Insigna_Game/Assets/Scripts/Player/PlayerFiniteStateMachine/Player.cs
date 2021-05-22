@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Anim = GetComponent<Animator>();
+        Anim.runtimeAnimatorController = GameManager.Instance.currentPlayerAnimation;
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
         MovementCollider = GetComponent<BoxCollider2D>();

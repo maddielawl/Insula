@@ -378,13 +378,10 @@ public class UIManager : MonoBehaviour
 
     public void ChangeHelmetState()
     {
-        Debug.Log("bruh");
         if (GameManager.Instance.canEquipHelmet == true)
         {
-            Debug.Log("bruh1");
             if (GameManager.Instance.isHelmetEquipped == true)
             {
-                Debug.Log("bruh2.1");
                 GameManager.Instance.isHelmetEquipped = false;
                 UIManager.Instance.HelmetIsOff();
                 FindObjectOfType<AudioManager>().Play("HelmetOff");
@@ -393,7 +390,6 @@ public class UIManager : MonoBehaviour
 
             if (GameManager.Instance.isHelmetEquipped == false)
             {
-                Debug.Log("bruh2.2");
                 GameManager.Instance.isHelmetEquipped = true;
                 UIManager.Instance.HelmetIsOn();
                 FindObjectOfType<AudioManager>().Play("HelmetOn");
