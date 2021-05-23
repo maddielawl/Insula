@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lever1 : MonoBehaviour
 {
-
+    public string leverSfx = "event:/SFX/Environment Sounds/Lever";
     public ButtonL02 button;
     private Interractable parent;
 
@@ -29,6 +29,7 @@ public class Lever1 : MonoBehaviour
     {
         if (parent.interractionSecurity == false)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(leverSfx);
             GameManager.Instance.globalInterractionSecurity = true;
             parent.interractionSecurity = true;
 

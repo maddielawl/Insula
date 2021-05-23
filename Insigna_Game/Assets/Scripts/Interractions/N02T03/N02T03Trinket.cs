@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class N02T03Trinket : MonoBehaviour
 {
-
+    public string cadenasSfx = "event:/SFX/UI/Cadenas code";
     private N02T03PopUpMaster parent;
     private Text textButton;
     private Image imageButton;
@@ -45,7 +45,7 @@ public class N02T03Trinket : MonoBehaviour
 
     public void UpButton()
     {
-
+        FMODUnity.RuntimeManager.PlayOneShot(cadenasSfx);
         if (number == maxNumber)
         {
             number = 0;
@@ -158,7 +158,8 @@ public class N02T03Trinket : MonoBehaviour
 
     public void DownButton()
     {
-            if (number == 0)
+        FMODUnity.RuntimeManager.PlayOneShot(cadenasSfx);
+        if (number == 0)
             {
                 number = maxNumber;
                 if (parent.selector == true)

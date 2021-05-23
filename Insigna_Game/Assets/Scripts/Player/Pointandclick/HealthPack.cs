@@ -7,7 +7,7 @@ using TMPro;
 
 public class HealthPack : MonoBehaviour
 {
-
+    public string pillsSfx = "event:/SFX/UI/Pills";
 
     // Déclaration du joueur et du playerinput pour gérer l'interraction depuis les inputs du joueur.
     private PlayerInput playerInputs;
@@ -213,6 +213,7 @@ public class HealthPack : MonoBehaviour
 
     private IEnumerator AddPackInInventory()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(pillsSfx);
         GameManager.Instance.isNear = true;
         GameManager.Instance.playerPillsCount++;
         GameManager.Instance.globalInterractionSecurity = false;

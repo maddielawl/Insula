@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
 {
     public Image baseSlotSprite;
     public GameObject emptySlot;
-
+    public string keySfx = "event:/SFX/Environment Sounds/Key open";
 
     private InterractableWithInventory parent;
 
@@ -31,6 +31,7 @@ public class Door : MonoBehaviour
                     UIManager.Instance.isSlot1Active = false;
                     UIManager.Instance.object1Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    FMODUnity.RuntimeManager.PlayOneShot(keySfx);
                     Destroy(transform.parent.gameObject);
                 }
             }
@@ -44,6 +45,7 @@ public class Door : MonoBehaviour
                     UIManager.Instance.isSlot2Active = false;
                     UIManager.Instance.object2Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    FMODUnity.RuntimeManager.PlayOneShot(keySfx);
                     Destroy(transform.parent.gameObject);
                 }
             }
@@ -57,6 +59,7 @@ public class Door : MonoBehaviour
                     UIManager.Instance.isSlot3Active = false;
                     UIManager.Instance.object3Equipped.SetActive(false);
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    FMODUnity.RuntimeManager.PlayOneShot(keySfx);
                     Destroy(transform.parent.gameObject);
                 }
             }

@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class N01T02Door : MonoBehaviour
 {
+
+    public string keySfx = "event:/SFX/Environment Sounds/Key open";
+    public string doorSfx = "event:/SFX/Environment Sounds/Grid open";
+
     public Image baseSlotSprite;
     public GameObject emptySlot;
     public GameObject door;
@@ -29,6 +33,9 @@ public class N01T02Door : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
+                    FMODUnity.RuntimeManager.PlayOneShot(keySfx);
+                   
+
                     UIManager.Instance.inventoryButton1.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.inventoryButton1.GetComponent<Image>().enabled = false;
                     UIManager.Instance.objectInSlot1 = GameObject.Find("Empty Slot");
@@ -45,7 +52,7 @@ public class N01T02Door : MonoBehaviour
                     transform.parent.GetComponent<InterractableWithInventory>().farPhrase = doorOpenedFarText;
 
                     transform.parent.GetComponent<BoxCollider2D>().enabled = false;
-
+                    FMODUnity.RuntimeManager.PlayOneShot(doorSfx);
                 }
             }
 
@@ -53,6 +60,8 @@ public class N01T02Door : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
                 {
+                    FMODUnity.RuntimeManager.PlayOneShot(keySfx);
+                    
                     UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot2Active = false;
@@ -65,6 +74,7 @@ public class N01T02Door : MonoBehaviour
                     GameManager.Instance.globalInterractionSecurity = false;
 
                     transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+                    FMODUnity.RuntimeManager.PlayOneShot(doorSfx);
                 }
             }
 
@@ -72,6 +82,8 @@ public class N01T02Door : MonoBehaviour
             {
                 if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
                 {
+                    FMODUnity.RuntimeManager.PlayOneShot(keySfx);
+                    
                     UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
                     UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
                     UIManager.Instance.isSlot3Active = false;
@@ -83,6 +95,7 @@ public class N01T02Door : MonoBehaviour
                     door.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
                     transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+                    FMODUnity.RuntimeManager.PlayOneShot(doorSfx);
                 }
             }
 
