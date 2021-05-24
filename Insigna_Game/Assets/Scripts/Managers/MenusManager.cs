@@ -472,14 +472,41 @@ public class MenusManager : MonoBehaviour
     {
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         Time.timeScale = 1;
-        if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(1))
+
+        #region LevelLoadOnDeath
+
+        if (SceneManager.sceneCount > 1)
         {
-            SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+            if (SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex(1).name) == SceneManager.GetSceneByBuildIndex(1))
+            {
+                SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(1).name);
+            }
+            else
+            {
+                return;
+            }
         }
-        else
+
+        if (SceneManager.sceneCount < 2)
         {
-            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+            if (SceneManager.GetSceneAt(0) == SceneManager.GetSceneByBuildIndex(2))
+            {
+                SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(2).name);
+            }
+
+            if (SceneManager.GetSceneAt(0) == SceneManager.GetSceneByBuildIndex(3))
+            {
+                SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(3).name);
+            }
+
+            if (SceneManager.GetSceneAt(0) == SceneManager.GetSceneByBuildIndex(4))
+            {
+                SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(4).name);
+            }
         }
+
+        #endregion
+
         ingameMainUI.SetActive(true);
         ingameGameOverUI.SetActive(false);
         GameManager.Instance.isScared = false;
