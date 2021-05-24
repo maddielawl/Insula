@@ -481,10 +481,6 @@ public class MenusManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(1).name);
             }
-            else
-            {
-                return;
-            }
         }
 
         if (SceneManager.sceneCount < 2)
@@ -542,13 +538,15 @@ public class MenusManager : MonoBehaviour
                     entry1.SetActive(false);
                 }
             }
+        }
 
-            if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(2))
+        if (SceneManager.sceneCount < 2)
+        {
+            if (SceneManager.GetSceneAt(0) == SceneManager.GetSceneByBuildIndex(2))
             {
                 entry2.SetActive(false);
                 entry3.SetActive(false);
             }
-
         }
     }
 
