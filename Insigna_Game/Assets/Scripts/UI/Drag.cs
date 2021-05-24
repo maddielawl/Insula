@@ -22,6 +22,7 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Player Sounds/Collect Object");
         canvasGroup.blocksRaycasts = false;
     }
 

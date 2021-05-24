@@ -164,6 +164,7 @@ public class DiaryInteraction : MonoBehaviour
                     {
                         if (isNear == true)
                         {
+                            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/Page");
                             StartCoroutine(NearInterraction());
                             UIManager.Instance.HidePortraits();
                             if (spriteHighlight != null)
