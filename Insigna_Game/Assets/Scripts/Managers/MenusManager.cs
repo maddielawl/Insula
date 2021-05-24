@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class MenusManager : MonoBehaviour
 {
+    FMOD.Studio.Bus masterBus;
+
     [HideInInspector]
     public GameObject player;
     public GameObject cursorManger;
@@ -108,6 +110,7 @@ public class MenusManager : MonoBehaviour
         transform.gameObject.SetActive(true);
 
         UnloadAllScenesExcept("MainMenu 20032021");
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
     }
 
 
@@ -406,6 +409,7 @@ public class MenusManager : MonoBehaviour
 
     public void QuitToMenu()
     {
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         inGame = false;
         Time.timeScale = 1;
         menuBackground.SetActive(true);
@@ -458,6 +462,7 @@ public class MenusManager : MonoBehaviour
     }
     public void GameOver()
     {
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         Time.timeScale = 0;
         ingameGameOverUI.SetActive(true);
         ingameMainUI.SetActive(false);
@@ -465,6 +470,7 @@ public class MenusManager : MonoBehaviour
 
     public void Restart()
     {
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         Time.timeScale = 1;
         if (SceneManager.GetSceneAt(1) == SceneManager.GetSceneByBuildIndex(1))
         {
@@ -655,6 +661,7 @@ public class MenusManager : MonoBehaviour
     {
         if (active)
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 0);
             CursorManager.Instance.keepCursor = true;
             CursorManager.Instance.GetComponent<Image>().enabled = false;
             player = GameObject.FindGameObjectWithTag("Player");

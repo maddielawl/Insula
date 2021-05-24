@@ -9,6 +9,8 @@ public class CinematicScript : MonoBehaviour
     private GameObject Tutorial;
     public void EndCinematic()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 1);
+
         CursorManager.Instance.keepCursor = false;
         CursorManager.Instance.GetComponent<Image>().enabled = true;
         MenusManager.instance.player.SetActive(true);
