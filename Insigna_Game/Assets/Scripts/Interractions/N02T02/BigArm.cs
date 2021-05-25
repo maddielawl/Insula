@@ -30,86 +30,56 @@ public class BigArm : MonoBehaviour
 
             if (moveTowards1 == true)
             {
-                normalisedw1 = new Vector2(waypoint1.position.x, 0);
-
+                normalisedw1 = new Vector2(waypoint1.position.x, waypoint1.position.y);
+                Vector2 transformPos2D = new Vector2(transform.position.x, transform.position.y);
                 transform.position = Vector2.MoveTowards(transform.position, normalisedw1, speed * Time.deltaTime);
-                return;
-            }
-            if (moveTowards2 == true)
-            {
-                normalisedw2 = new Vector2(waypoint2.position.x, 0);
-
-                transform.position = Vector2.MoveTowards(transform.position, normalisedw2, speed * Time.deltaTime);
-                return;
-            }
-            if (moveTowards3 == true)
-            {
-                normalisedw3 = new Vector2(waypoint3.position.x, 0);
-
-                transform.position = Vector2.MoveTowards(transform.position, normalisedw3, speed * Time.deltaTime);
-                return;
-            }
-            if (moveTowards4 == true)
-            {
-                normalisedw4 = new Vector2(waypoint4.position.x, 0);
-
-                transform.position = Vector2.MoveTowards(transform.position, normalisedw4, speed * Time.deltaTime);
-                return;
-            }
-
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Waypoint 1"))
-        {
-            if (isMoving == true)
-            {
-
-                if (moveTowards1 == true)
+                if (transformPos2D == normalisedw1)
                 {
                     isMoving = false;
                     moveTowards1 = false;
                 }
+                //return;
             }
-        }
-        if (collision.CompareTag("Waypoint 2"))
-        {
-            if (isMoving == true)
+            if (moveTowards2 == true)
             {
+                normalisedw2 = new Vector2(waypoint2.position.x, waypoint1.position.y);
+                Vector2 transformPos2D = new Vector2(transform.position.x, transform.position.y);
 
-                if (moveTowards2 == true)
+                transform.position = Vector2.MoveTowards(transform.position, normalisedw2, speed * Time.deltaTime);
+                if (transformPos2D == normalisedw2)
                 {
                     isMoving = false;
                     moveTowards2 = false;
                 }
+                //return;
             }
-        }
-        if (collision.CompareTag("Waypoint 3"))
-        {
-            if (isMoving == true)
+            if (moveTowards3 == true)
             {
+                normalisedw3 = new Vector2(waypoint3.position.x, waypoint1.position.y);
+                Vector2 transformPos2D = new Vector2(transform.position.x, transform.position.y);
 
-                if (moveTowards3 == true)
+                transform.position = Vector2.MoveTowards(transform.position, normalisedw3, speed * Time.deltaTime);
+                if (transformPos2D == normalisedw3)
                 {
                     isMoving = false;
                     moveTowards3 = false;
                 }
+                //return;
             }
-        }
-        if (collision.CompareTag("Waypoint 4"))
-        {
-            if (isMoving == true)
+            if (moveTowards4 == true)
             {
+                normalisedw4 = new Vector2(waypoint4.position.x, waypoint1.position.y);
+                Vector2 transformPos2D = new Vector2(transform.position.x, transform.position.y);
 
-                if (moveTowards4 == true)
+                transform.position = Vector2.MoveTowards(transform.position, normalisedw4, speed * Time.deltaTime);
+                if (transformPos2D == normalisedw4)
                 {
                     isMoving = false;
                     moveTowards4 = false;
                 }
+                //return;
             }
-        }
 
+        }
     }
 }
