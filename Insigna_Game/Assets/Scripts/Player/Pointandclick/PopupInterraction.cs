@@ -125,7 +125,10 @@ public class PopupInterraction : MonoBehaviour
                             UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     UIManager.Instance.DisplayPortrait(portraitIdx);
@@ -153,7 +156,10 @@ public class PopupInterraction : MonoBehaviour
                             UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     UIManager.Instance.DisplayPortrait(portraitIdx);
