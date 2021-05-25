@@ -23,6 +23,7 @@ public class N02T03Door : MonoBehaviour
     {
         if (parent.interractionSecurity == false)
         {
+            parent.interractionSecurity = true;
             cleeMolette.SetActive(true);
             IronChest.SetActive(true);
             GameManager.Instance.globalInterractionSecurity = false;
