@@ -26,7 +26,6 @@ public class Vents : MonoBehaviour
 
     public void GetInside(GameObject thenear)
     {
-        Debug.Log("InsideVent");
         outside.SetActive(false);
         inside.SetActive(true);
         playerAnim.runtimeAnimatorController = characterVentAOC;
@@ -48,13 +47,26 @@ public class Vents : MonoBehaviour
                     allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = false;
                 }
 
-                if(allBoxColliders[i].name == "HealthPack 2")
+                if (allBoxColliders[i].name == "HealthPack 2")
                 {
                     allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
                 }
+                if (allBoxColliders[i].name == "Grille (1)")
+                {
+                    allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                }
+                if (allBoxColliders[i].name == "Grille (2)")
+                {
+                    allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                }
+                if (allBoxColliders[i].name == "Grille (3)")
+                {
+                    allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                }
+
             }
         }
-        
+
 
     }
 
@@ -67,12 +79,24 @@ public class Vents : MonoBehaviour
 
         for (int i = 0; i < allBoxColliders.Length; i++)
         {
-            allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+            if (allBoxColliders[i] != null)
+            {
+                if (allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                }
+            }
         }
 
         for (int i = 0; i < allBoxCollier2DDisabled.Length; i++)
         {
-            allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>().enabled = false;
+            if (allBoxCollier2DDisabled[i] != null)
+            {
+                if (allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>().enabled = false;
+                }
+            }
         }
         length = 0;
     }
