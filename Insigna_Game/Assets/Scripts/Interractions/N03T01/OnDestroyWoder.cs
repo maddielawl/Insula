@@ -6,6 +6,8 @@ public class OnDestroyWoder : MonoBehaviour
 {
     public GameObject woder;
     public GameObject foliewoder;
+    public GameObject ladder1;
+    public GameObject ladder2;
 
     private void Start()
     {
@@ -16,6 +18,8 @@ public class OnDestroyWoder : MonoBehaviour
     {
         woder.SetActive(false);
         foliewoder.SetActive(false);
+        ladder1.SetActive(false);
+        ladder2.SetActive(true);
     }
 
     private void SetActive()
