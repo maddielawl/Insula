@@ -8,7 +8,7 @@ public class N02T03Trinket : MonoBehaviour
     public string cadenasSfx = "event:/SFX/UI/Cadenas code";
     private N02T03PopUpMaster parent;
     private Text textButton;
-    private Image imageButton;
+    public Image imageButton;
 
     public int number = 0;
 
