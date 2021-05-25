@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1205791360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8282315710703316389, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-  m_PrefabInstance: {fileID: 1430244100}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1430244100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,50 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1526847146465124787, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1526847146465124787, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1526847146465124787, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2048047456}
-    - target: {fileID: 1526847146465124787, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1526847146465124787, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TakePills
-      objectReference: {fileID: 0}
-    - target: {fileID: 1526847146465124787, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1526847146465124787, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2582990586000866357, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: helmetButton
-      value: 
-      objectReference: {fileID: 1205791360}
-    - target: {fileID: 2582990586019125736, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2582990586342309365, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2582990586730491014, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_Name
       value: ObjectsToKeepBetweenScenes
@@ -227,21 +178,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4607443523295665547, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-      propertyPath: currentPlayerAnimation
-      value: 
-      objectReference: {fileID: 9100000, guid: d982511bc51a2c54eb94483324d06e99, type: 2}
-    m_RemovedComponents:
-    - {fileID: 696960136, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
---- !u!114 &2048047456 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4607443523295665547, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
-  m_PrefabInstance: {fileID: 1430244100}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d71348b89875f428db6d3153b57d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

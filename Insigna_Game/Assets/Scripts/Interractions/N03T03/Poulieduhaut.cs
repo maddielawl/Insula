@@ -41,7 +41,8 @@ public class Poulieduhaut : MonoBehaviour
     if (UIManager.Instance.objectInSlot2.name.Contains(parent.objectToInterractWith))
     {
         UIManager.Instance.inventoryButton2.sprite = baseSlotSprite.sprite;
-        UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
+                UIManager.Instance.inventoryButton2.GetComponent<Image>().enabled = false;
+                UIManager.Instance.objectInSlot2 = GameObject.Find("Empty Slot");
         UIManager.Instance.isSlot2Active = false;
         UIManager.Instance.isSlot2Full = false;
         UIManager.Instance.oneSlotAtTheTimeSecurity = false;
@@ -56,7 +57,8 @@ if (UIManager.Instance.isSlot3Active == true)
     if (UIManager.Instance.objectInSlot3.name.Contains(parent.objectToInterractWith))
     {
         UIManager.Instance.inventoryButton3.sprite = baseSlotSprite.sprite;
-        UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
+                UIManager.Instance.inventoryButton3.GetComponent<Image>().enabled = false;
+                UIManager.Instance.objectInSlot3 = GameObject.Find("Empty Slot");
         UIManager.Instance.isSlot3Active = false;
         UIManager.Instance.isSlot3Full = false;
         UIManager.Instance.oneSlotAtTheTimeSecurity = false;
