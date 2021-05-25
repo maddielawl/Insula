@@ -5,6 +5,7 @@ using UnityEngine;
 public class OnDestroyWoder : MonoBehaviour
 {
     public GameObject woder;
+    public GameObject foliewoder;
 
     private void Start()
     {
@@ -14,6 +15,7 @@ public class OnDestroyWoder : MonoBehaviour
     private void OnDestroy()
     {
         woder.SetActive(false);
+        foliewoder.SetActive(false);
     }
 
     private void SetActive()

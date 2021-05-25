@@ -28,20 +28,32 @@ public class ButtonBigArm : MonoBehaviour
             switch (positionSouhaitee)
             {
                 case 1:
-                    arm.isMoving = true;
-                    arm.moveTowards1 = true;
+                    if (arm.isMoving == false)
+                    {
+                        arm.isMoving = true;
+                        arm.moveTowards1 = true;
+                    }
                     break;
                 case 2:
-                    arm.isMoving = true;
-                    arm.moveTowards2 = true;
+                    if (arm.isMoving == false)
+                    {
+                        arm.isMoving = true;
+                        arm.moveTowards2 = true;
+                    }
                     break;
                 case 3:
-                    arm.isMoving = true;
-                    arm.moveTowards3 = true;
+                    if (arm.isMoving == false)
+                    {
+                        arm.isMoving = true;
+                        arm.moveTowards3 = true;
+                    }
                     break;
                 case 4:
-                    arm.isMoving = true;
-                    arm.moveTowards4 = true;
+                    if (arm.isMoving == false)
+                    {
+                        arm.isMoving = true;
+                        arm.moveTowards4 = true;
+                    }
                     break;
             }
 
