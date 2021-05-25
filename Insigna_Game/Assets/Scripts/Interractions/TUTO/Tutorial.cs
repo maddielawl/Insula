@@ -13,10 +13,20 @@ public class Tutorial : MonoBehaviour
     public BoxCollider2D[] interractablesCollider;
 
     public float timeBeforeMoving = 1f;
+    public GameObject tutorialMove;
+    public GameObject postProcess;
 
     private void Start()
     {
         character = GameObject.FindGameObjectWithTag("Player");
+        if (tutorialMove != null)
+        {
+            tutorialMove.SetActive(false);
+        }
+        if (postProcess != null)
+        {
+            postProcess.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +38,10 @@ public class Tutorial : MonoBehaviour
             interractablesCollider[i].enabled = false;
         }
         tutorial.SetActive(true);
+        if (postProcess != null)
+        {
+            postProcess.SetActive(true);
+        }
         anim.SetTrigger("Up");
     }
     public void SkipTuto()
@@ -36,6 +50,12 @@ public class Tutorial : MonoBehaviour
         {
             interractablesCollider[i].enabled = true;
         }
+
+        if (tutorialMove != null)
+        {
+            tutorialMove.SetActive(true);
+        }
+
         CursorManager.Instance.enabled = true;
         anim.SetTrigger("Down");
         Invoke("WaitBeforeMoving", timeBeforeMoving);
