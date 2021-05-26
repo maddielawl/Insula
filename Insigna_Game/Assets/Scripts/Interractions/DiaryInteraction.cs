@@ -48,6 +48,9 @@ public class DiaryInteraction : MonoBehaviour
 
     private TextMeshProUGUI[] interactionsTexts;
 
+    private Animator JournalAnimator;
+    private bool repliage = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("RangeNear"))
@@ -119,6 +122,14 @@ public class DiaryInteraction : MonoBehaviour
         entry = "Entry (" + entryNumber + ")";
         int index = int.Parse(entryNumber) + 2;
         entryNumber = index.ToString();
+    }
+
+    private void Update()
+    {
+        if (JournalAnimator != null && repliage)
+        {
+            Invoke("RepliageJournal", 1.5f);
+        }
     }
 
 
@@ -202,7 +213,7 @@ public class DiaryInteraction : MonoBehaviour
                             entryGO.SetActive(true);
                             transform.GetComponent<BoxCollider2D>().enabled = false;
                             objectSprite.enabled = false;
-                            Destroy(this.gameObject);
+                            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                         }
                     }
                 }
@@ -249,6 +260,13 @@ public class DiaryInteraction : MonoBehaviour
     private IEnumerator NearInterraction()
     {
         nearInt0.SetActive(true);
+
+        JournalAnimator = GameObject.Find("Journal").GetComponent<Animator>();
+        if (JournalAnimator != null)
+        {
+            JournalAnimator.SetTrigger("Depliage");
+            repliage = true;
+        }
 
         yield return new WaitForSeconds(2.5f);
 
@@ -307,6 +325,12 @@ public class DiaryInteraction : MonoBehaviour
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
         }
+    }
+
+    public void RepliageJournal()
+    {
+        JournalAnimator.SetTrigger("Repliage");
+        repliage = false;
     }
 }
 
