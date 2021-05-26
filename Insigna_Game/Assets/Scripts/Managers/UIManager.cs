@@ -89,6 +89,7 @@ public class UIManager : MonoBehaviour
     public GameObject celeste;
     public GameObject oublie;
 
+
     public void Update()
     {
         if (player == null)

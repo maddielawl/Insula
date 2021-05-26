@@ -43,6 +43,8 @@ public class Interractable : MonoBehaviour
     public int portraitIdx = 0;
     public bool isInterractionTalkative = false;
 
+    private TextMeshProUGUI[] interactionsTexts;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -94,6 +96,16 @@ public class Interractable : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
+                
+                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                for (int i = 0; i < interactionsTexts.Length; i++)
+                {
+                    if (interactionsTexts[i] != null)
+                    {
+                        interactionsTexts[i].text = null;
+                    }
+                }
+
                 if (isNear == false)
                 {
                     if (GameManager.Instance.globalInterractionSecurity == true)
@@ -119,6 +131,7 @@ public class Interractable : MonoBehaviour
                             }
                         }
                     }
+                    Debug.Log("lulz");
                     UIManager.Instance.DisplayPortrait(portraitIdx);
                     StartCoroutine(FarInterraction());
                     security = true;
@@ -168,6 +181,16 @@ public class Interractable : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
+
+                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                for (int i = 0; i < interactionsTexts.Length; i++)
+                {
+                    if (interactionsTexts[i] != null)
+                    {
+                        interactionsTexts[i].text = null;
+                    }
+                }
+
                 if (isNear == true)
                 {
                     if (GameManager.Instance.globalInterractionSecurity == true)
@@ -193,7 +216,7 @@ public class Interractable : MonoBehaviour
                             }
                         }
                     }
-                    if(isInterractionTalkative == true)
+                    if (isInterractionTalkative == true)
                     {
                         UIManager.Instance.DisplayPortrait(portraitIdx);
                     }
@@ -261,7 +284,7 @@ public class Interractable : MonoBehaviour
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
+
 
         yield return 0;
     }
@@ -276,7 +299,7 @@ public class Interractable : MonoBehaviour
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
+
 
         yield return 0;
 
@@ -292,7 +315,7 @@ public class Interractable : MonoBehaviour
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
+
 
         yield return 0;
 

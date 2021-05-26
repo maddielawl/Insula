@@ -46,6 +46,8 @@ public class DiaryInteraction : MonoBehaviour
 
     public int portraitIdx = 0;
 
+    private TextMeshProUGUI[] interactionsTexts;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("RangeNear"))
@@ -130,6 +132,16 @@ public class DiaryInteraction : MonoBehaviour
                 {
                     if (cursorOn == true && gameObject.activeSelf == true)
                     {
+
+                        interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                        for (int i = 0; i < interactionsTexts.Length; i++)
+                        {
+                            if (interactionsTexts[i] != null)
+                            {
+                                interactionsTexts[i].text = null;
+                            }
+                        }
+
                         if (isNear == false)
                         {
                             UIManager.Instance.DisplayPortrait(portraitIdx);
@@ -162,6 +174,16 @@ public class DiaryInteraction : MonoBehaviour
                 {
                     if (cursorOn == true && gameObject.activeSelf == true)
                     {
+
+                        interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                        for (int i = 0; i < interactionsTexts.Length; i++)
+                        {
+                            if (interactionsTexts[i] != null)
+                            {
+                                interactionsTexts[i].text = null;
+                            }
+                        }
+
                         if (isNear == true)
                         {
                             FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/Page");

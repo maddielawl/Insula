@@ -45,6 +45,8 @@ public class Items : MonoBehaviour
 
     public int portraitIdx = 0;
 
+    private TextMeshProUGUI[] interactionsTexts;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -107,6 +109,16 @@ public class Items : MonoBehaviour
 
             if (cursorOn == true && gameObject.activeSelf == true)
             {
+
+                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                for (int i = 0; i < interactionsTexts.Length; i++)
+                {
+                    if (interactionsTexts[i] != null)
+                    {
+                        interactionsTexts[i].text = null;
+                    }
+                }
+
                 if (isNear == false)
                 {
                     if (GameManager.Instance.globalInterractionSecurity == true)
@@ -170,6 +182,15 @@ public class Items : MonoBehaviour
 
             if (cursorOn == true && gameObject.activeSelf == true)
             {
+
+                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                for (int i = 0; i < interactionsTexts.Length; i++)
+                {
+                    if (interactionsTexts[i] != null)
+                    {
+                        interactionsTexts[i].text = null;
+                    }
+                }
 
                 if (isNear == true)
                 {
