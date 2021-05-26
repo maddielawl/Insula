@@ -12,6 +12,7 @@ public class GodModeManager : MonoBehaviour
 
     public GameObject ingameMainUI;
     public GameObject ingameGameOverUI;
+    public GameObject godmodetext;
 
     public bool cheatsenabled = false;
 
@@ -22,6 +23,7 @@ public class GodModeManager : MonoBehaviour
             if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.I) && Input.GetKey(KeyCode.C))
             {
                 cheatsenabled = true;
+                DisplayText();
                 Debug.Log("Cheats Enabled");
             }
         }
@@ -121,6 +123,16 @@ public class GodModeManager : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", sceneIndex);
 
+    }
+
+    void DisplayText()
+    {
+        godmodetext.SetActive(true);
+        Invoke("HideText", 2f);
+    }
+    void HideText()
+    {
+        godmodetext.SetActive(false);
     }
     
 }
