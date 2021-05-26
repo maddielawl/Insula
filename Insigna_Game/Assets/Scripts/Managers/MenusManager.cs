@@ -10,6 +10,10 @@ using UnityEngine.UI;
 public class MenusManager : MonoBehaviour
 {
     FMOD.Studio.Bus masterBus;
+    public string level1Music = "event:/Music/Level 1/Level 1";
+    public FMOD.Studio.EventInstance music;
+    public string neonAmb = "event:/SFX/Environment Sounds/Neon Ambience";
+    public FMOD.Studio.EventInstance neonAmbEvent;
 
     [HideInInspector]
     public GameObject player;
@@ -110,7 +114,11 @@ public class MenusManager : MonoBehaviour
         transform.gameObject.SetActive(true);
 
         UnloadAllScenesExcept("MainMenu 20032021");
+
         masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        music = FMODUnity.RuntimeManager.CreateInstance(level1Music);
+        neonAmbEvent = FMODUnity.RuntimeManager.CreateInstance(neonAmb);
+        neonAmbEvent.start();
     }
 
 
@@ -232,7 +240,7 @@ public class MenusManager : MonoBehaviour
             asyncOp.allowSceneActivation = false;
             inGame = true;
             menusActions.MainMenuActions.Pause.started += PauseGame;
-
+            music.start();
         }
     }
 
@@ -470,7 +478,7 @@ public class MenusManager : MonoBehaviour
 
     public void Restart()
     {
-        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        music.start();
         Time.timeScale = 1;
 
         #region LevelLoadOnDeath

@@ -16,18 +16,11 @@ public class GameManager : MonoBehaviour
 
     public string heartSfx = "event:/SFX/UI/Heartbeat";
     public FMOD.Studio.EventInstance heartbeatEvent;
-    public string level1Music = "event:/Music/Level 1/Level 1";
-    public FMOD.Studio.EventInstance music;
-    public string neonAmb = "event:/SFX/Environment Sounds/Neon Ambience";
-    public FMOD.Studio.EventInstance neonAmbEvent;
+    
 
     void Awake()
     {
         heartbeatEvent = FMODUnity.RuntimeManager.CreateInstance(heartSfx);
-        music = FMODUnity.RuntimeManager.CreateInstance(level1Music);
-        music.start();
-        neonAmbEvent = FMODUnity.RuntimeManager.CreateInstance(neonAmb);
-        neonAmbEvent.start();
 
         if (Instance == null)
             Instance = this;
@@ -185,7 +178,7 @@ public class GameManager : MonoBehaviour
                 {
                     DeactivateInGameActions();
                     heartbeatEvent.setParameterByName("Stress", 0);
-                    music.setParameterByName("Corruption", 0);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 0);
                     MenusManager.instance.GameOver();
                 }
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
@@ -193,7 +186,7 @@ public class GameManager : MonoBehaviour
                 playerMadness = playerMadness + madnessGain;
                 if (playerMadness >= 80 && dimensionSwapMadness == true)
                 {
-                    music.setParameterByName("Corruption", 1);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 1);
                     heartbeatEvent.start();
 
                     indicible.SetAppear();
@@ -281,7 +274,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (once == true)
                     {
-                        music.setParameterByName("Corruption", 0);
+                        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 0);
                         heartbeatEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
                         indicible.SetDisAppear();
@@ -400,7 +393,7 @@ public class GameManager : MonoBehaviour
 
     public void ForceMadness()
     {
-        music.setParameterByName("Corruption", 1);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 1);
         heartbeatEvent.start();
 
         indicible.SetAppear();

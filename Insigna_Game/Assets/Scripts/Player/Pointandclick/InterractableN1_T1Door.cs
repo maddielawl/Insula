@@ -200,7 +200,6 @@ public class InterractableN1_T1Door : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
-                            //FMODUnity.RuntimeManager.PlayOneShot(lockedSfx);
                             UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
@@ -219,6 +218,7 @@ public class InterractableN1_T1Door : MonoBehaviour
                         UIManager.Instance.DisplayPortrait(portraitIdx);
                     }
                     StartCoroutine(NearInterraction());
+                    //FMODUnity.RuntimeManager.PlayOneShot(lockedSfx);
                     FindObjectOfType<AudioManager>().Play("OnClickInventory");
                     GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                     currentVfx.transform.parent = null;

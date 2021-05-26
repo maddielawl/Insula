@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BigArm : MonoBehaviour
 {
+    public string armSfx = "event:/SFX/Environment Sounds/Big Arm";
+    public FMOD.Studio.EventInstance bigArmEvent;
+
     public float speed;
 
     public Transform waypoint1;
@@ -23,11 +26,15 @@ public class BigArm : MonoBehaviour
     public bool moveTowards3 = false;
     public bool moveTowards4 = false;
 
+    private void Awake()
+    {
+        bigArmEvent = FMODUnity.RuntimeManager.CreateInstance(armSfx);
+    }
     private void Update()
     {
         if (isMoving == true)
         {
-
+            bigArmEvent.start();
             if (moveTowards1 == true)
             {
                 normalisedw1 = new Vector2(waypoint1.position.x, waypoint1.position.y);
@@ -37,6 +44,7 @@ public class BigArm : MonoBehaviour
                 {
                     isMoving = false;
                     moveTowards1 = false;
+                    bigArmEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 }
                 //return;
             }
