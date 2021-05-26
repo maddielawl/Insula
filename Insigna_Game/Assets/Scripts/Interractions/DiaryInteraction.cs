@@ -223,6 +223,7 @@ public class DiaryInteraction : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/Cursor Over");
         if (isNear == true)
         {
             if (spriteHighlight != null)

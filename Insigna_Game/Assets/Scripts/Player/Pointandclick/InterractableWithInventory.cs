@@ -240,6 +240,7 @@ public class InterractableWithInventory : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/Cursor Over");
         if (isNear == true)
         {
             for (int i = 0; i < objectSprite.Length; i++)

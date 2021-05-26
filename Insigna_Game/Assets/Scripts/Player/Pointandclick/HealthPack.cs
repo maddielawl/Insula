@@ -225,6 +225,7 @@ public class HealthPack : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/Cursor Over");
         if (isNear == true)
         {
             transform.GetComponent<SpriteRenderer>().sprite = highlight;
