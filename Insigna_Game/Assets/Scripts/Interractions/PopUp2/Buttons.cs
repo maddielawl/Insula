@@ -213,10 +213,15 @@ public class Buttons : MonoBehaviour
     {
         if(buttonOneDone == true && buttonTwoDone == true)
         {
-            GameManager.Instance.N03T02energy = true;
-            transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
-            Destroy(GameObject.Find(transform.parent.GetComponent<QuitPopUp>().popUpName));
+            Invoke("QuitInterraction", 1f);
         }
+    }
+
+    public void QuitInterraction()
+    {
+        GameManager.Instance.N03T02energy = true;
+        transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
+        Destroy(GameObject.Find(transform.parent.GetComponent<QuitPopUp>().popUpName));
     }
 
 }

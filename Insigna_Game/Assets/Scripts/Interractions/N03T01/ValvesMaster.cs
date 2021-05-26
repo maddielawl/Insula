@@ -13,8 +13,14 @@ public class ValvesMaster : MonoBehaviour
     {
         if(valves1.valveposition == 1 && valves2.valveposition == 7 && valves3.valveposition == 8 && valves4.valveposition == 4)
         {
-            transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
-            Destroy(GameObject.Find(transform.parent.GetComponent<QuitPopUp>().popUpName));
+            Invoke("QuitInterraction", 1f);
         }
     }
+
+    public void QuitInterraction()
+    {
+        transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
+        Destroy(GameObject.Find(transform.parent.GetComponent<QuitPopUp>().popUpName));
+    }
+
 }
