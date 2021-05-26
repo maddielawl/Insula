@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     public int healAmmount = 30;
     public int playerMadnessDecrement = 2;
     public PlayerInputs playerInput;
+    public bool playerInVent;
 
     public RuntimeAnimatorController currentPlayerAnimation;
 

@@ -22,10 +22,18 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        concreteWalkEvent = FMODUnity.RuntimeManager.CreateInstance(concreteWalkSfx);
-        clothMoveEvent = FMODUnity.RuntimeManager.CreateInstance(clothSfx);
-        concreteWalkEvent.start();
-        clothMoveEvent.start();
+        if (GameManager.Instance.playerInVent == false)
+        {
+            concreteWalkEvent = FMODUnity.RuntimeManager.CreateInstance(concreteWalkSfx);
+            clothMoveEvent = FMODUnity.RuntimeManager.CreateInstance(clothSfx);
+            concreteWalkEvent.start();
+            clothMoveEvent.start();
+        }
+
+        if (GameManager.Instance.playerInVent == true)
+        {
+
+        }
 
         if (CursorManager.Instance.cursorState == false)
         {
@@ -36,8 +44,18 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Exit()
     {
         base.Exit();
-        concreteWalkEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        clothMoveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        if (GameManager.Instance.playerInVent == false)
+        {
+            concreteWalkEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            clothMoveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+
+        if (GameManager.Instance.playerInVent == true)
+        {
+            
+        }
+
         if (CursorManager.Instance.cursorState == false)
         {
             CursorManager.Instance.rend.enabled = true;
