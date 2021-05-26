@@ -7,10 +7,6 @@ public class N02T03OnDestroy : MonoBehaviour
 
     public GameObject page;
 
-    private void Start()
-    {
-        Invoke("SetActive", 0.01f);
-    }
 
     private void OnDestroy()
     {

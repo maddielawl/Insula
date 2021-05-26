@@ -131,7 +131,6 @@ public class Interractable : MonoBehaviour
                             }
                         }
                     }
-                    Debug.Log("lulz");
                     UIManager.Instance.DisplayPortrait(portraitIdx);
                     StartCoroutine(FarInterraction());
                     security = true;
