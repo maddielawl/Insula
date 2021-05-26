@@ -23,6 +23,7 @@ public class N02T03Door : MonoBehaviour
     {
         if (parent.interractionSecurity == false)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Locker open");
             parent.interractionSecurity = true;
             cleeMolette.SetActive(true);
             IronChest.SetActive(true);
