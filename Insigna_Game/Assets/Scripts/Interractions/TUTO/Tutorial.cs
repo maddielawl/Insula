@@ -13,15 +13,15 @@ public class Tutorial : MonoBehaviour
     public BoxCollider2D[] interractablesCollider;
 
     public float timeBeforeMoving = 1f;
-    public GameObject tutorialMove;
+    public GameObject nextTutorial;
     public GameObject postProcess;
 
     private void Start()
     {
         character = GameObject.FindGameObjectWithTag("Player");
-        if (tutorialMove != null)
+        if (nextTutorial != null)
         {
-            tutorialMove.SetActive(false);
+            nextTutorial.SetActive(false);
         }
         if (postProcess != null)
         {
@@ -51,9 +51,9 @@ public class Tutorial : MonoBehaviour
             interractablesCollider[i].enabled = true;
         }
 
-        if (tutorialMove != null)
+        if (nextTutorial != null)
         {
-            tutorialMove.SetActive(true);
+            nextTutorial.SetActive(true);
         }
 
         CursorManager.Instance.enabled = true;
