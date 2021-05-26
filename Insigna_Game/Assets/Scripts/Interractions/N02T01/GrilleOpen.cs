@@ -30,6 +30,7 @@ public class GrilleOpen : MonoBehaviour
             parent.interractionSecurity = true;
             if (UIManager.Instance.isSlot1Active == true)
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Open vent");
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
                     grilleOpenSpr.SetActive(false);
