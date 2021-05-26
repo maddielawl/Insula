@@ -23,6 +23,8 @@ public class GodModeManager : MonoBehaviour
             if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.I) && Input.GetKey(KeyCode.C))
             {
                 cheatsenabled = true;
+                UIManager.Instance.GotHelmet();
+                GameManager.Instance.canEquipHelmet = true;
                 DisplayText();
                 Debug.Log("Cheats Enabled");
             }
@@ -71,6 +73,7 @@ public class GodModeManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Keypad9))
             {
                 GameManager.Instance.playerMadness = 100;
+                GameManager.Instance.ForceMadness();
             }
             if (Input.GetKeyDown(KeyCode.Keypad5))
             {

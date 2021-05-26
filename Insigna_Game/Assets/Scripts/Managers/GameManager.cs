@@ -394,4 +394,64 @@ public class GameManager : MonoBehaviour
         //playerInput.Gameplay.Disable();
     }
 
+    public void ForceMadness()
+    {
+        music.setParameterByName("Corruption", 1);
+        heartbeatEvent.start();
+
+        indicible.SetAppear();
+
+        madnessZone.SetActive(true);
+        for (int i = 0; i < madnessInterractionsBC2D.Length; i++)
+        {
+            if (madnessInterractionsBC2D[i] == null)
+            {
+                return;
+            }
+            else
+            {
+                madnessInterractionsBC2D[i].enabled = true;
+            }
+        }
+        for (int i = 0; i < madnessInterractionsSprRend.Length; i++)
+        {
+            if (madnessInterractionsSprRend[i] == null)
+            {
+                return;
+            }
+            else
+            {
+                madnessInterractionsSprRend[i].enabled = true;
+            }
+        }
+
+        sanityZone.SetActive(false);
+        for (int i = 0; i < sanityInterractionsBC2D.Length; i++)
+        {
+            if (sanityInterractionsBC2D[i] == null)
+            {
+                return;
+            }
+            else
+            {
+                sanityInterractionsBC2D[i].enabled = false;
+            }
+        }
+        for (int i = 0; i < sanityInterractionsSprRend.Length; i++)
+        {
+            if (sanityInterractionsSprRend[i] == null)
+            {
+                return;
+            }
+            else
+            {
+                sanityInterractionsSprRend[i].enabled = false;
+            }
+        }
+
+        globalInterractionSecurity = false;
+        dimensionSwapMadness = false;
+        dimensionSwapNormal = true;
+    }
+
 }
