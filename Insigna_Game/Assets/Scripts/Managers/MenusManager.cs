@@ -458,7 +458,7 @@ public class MenusManager : MonoBehaviour
         //GameManager.Instance.ActivateInGameActions();
         inGame = true;
         level1loaded = true;
-        Invoke("ActivateInGameUI", 0.2f);
+        Invoke("ActivateInGameUI", 0.4f);
     }
     public void GameOver()
     {
