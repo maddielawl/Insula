@@ -18,12 +18,16 @@ public class GameManager : MonoBehaviour
     public FMOD.Studio.EventInstance heartbeatEvent;
     public string level1Music = "event:/Music/Level 1/Level 1";
     public FMOD.Studio.EventInstance music;
+    public string neonAmb = "event:/SFX/Environment Sounds/Neon Ambience";
+    public FMOD.Studio.EventInstance neonAmbEvent;
 
     void Awake()
     {
         heartbeatEvent = FMODUnity.RuntimeManager.CreateInstance(heartSfx);
         music = FMODUnity.RuntimeManager.CreateInstance(level1Music);
         music.start();
+        neonAmbEvent = FMODUnity.RuntimeManager.CreateInstance(neonAmb);
+        neonAmbEvent.start();
 
         if (Instance == null)
             Instance = this;
