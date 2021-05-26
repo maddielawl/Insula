@@ -26,6 +26,7 @@ public class Vents : MonoBehaviour
 
     public void GetInside(GameObject thenear)
     {
+        GameManager.Instance.playerInVent = true;
         outside.SetActive(false);
         inside.SetActive(true);
         playerAnim.runtimeAnimatorController = characterVentAOC;
@@ -72,7 +73,7 @@ public class Vents : MonoBehaviour
 
     public void GetOutside(GameObject thenear)
     {
-        Debug.Log("OutsideVent");
+        GameManager.Instance.playerInVent = false;
         inside.SetActive(false);
         outside.SetActive(true);
         playerAnim.runtimeAnimatorController = characterBasicAC;
