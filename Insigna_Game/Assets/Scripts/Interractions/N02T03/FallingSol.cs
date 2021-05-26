@@ -25,6 +25,7 @@ public class FallingSol : MonoBehaviour
         if (parent.interractionSecurity == false)
         {
             parent.interractionSecurity = true;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Grid fall");
             if (UIManager.Instance.isSlot1Active == true)
             {
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
