@@ -7,7 +7,7 @@ using TMPro;
 
 public class InterractableDoor : MonoBehaviour
 {
-
+    public string lockedSfx = "event:/SFX/Environment Sounds/Door Locked";
 
     // Déclaration du joueur et du playerinput pour gérer l'interraction depuis les inputs du joueur.
     private PlayerInput playerInputs;
@@ -168,7 +168,7 @@ public class InterractableDoor : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
-
+                
                 interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
@@ -184,6 +184,7 @@ public class InterractableDoor : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
+                            //FMODUnity.RuntimeManager.PlayOneShot(lockedSfx);
                             UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;

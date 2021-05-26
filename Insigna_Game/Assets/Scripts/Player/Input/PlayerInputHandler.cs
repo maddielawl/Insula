@@ -68,7 +68,7 @@ public class PlayerInputHandler : MonoBehaviour
             if (GameManager.Instance.isHelmetEquipped == false && GameManager.Instance.isScared == false && GameManager.Instance.playerPillsCount != 0)
             {
                 GameManager.Instance.GetHPBack();
-                FindObjectOfType<AudioManager>().Play("Pills");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/Pills");
                 GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                 currentVfx.transform.parent = null;
                 Destroy(currentVfx, 3f);

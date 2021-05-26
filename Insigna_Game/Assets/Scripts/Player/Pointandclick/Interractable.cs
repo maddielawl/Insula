@@ -7,7 +7,7 @@ using TMPro;
 
 public class Interractable : MonoBehaviour
 {
-
+    public string sfxToPlay;
 
     // Déclaration du joueur et du playerinput pour gérer l'interraction depuis les inputs du joueur.
     private PlayerInput playerInputs;
@@ -192,6 +192,10 @@ public class Interractable : MonoBehaviour
 
                 if (isNear == true)
                 {
+                    if(sfxToPlay != null)
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot(sfxToPlay);
+                    }
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)

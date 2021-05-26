@@ -29,6 +29,7 @@ public class Button1Activation : MonoBehaviour
             parent.interractionSecurity = true;
             if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 0 && button.lever4 == 2 && oneTime == false)
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Ladder fall");
                 LadderAnimator.SetTrigger("Fall");
                 bloqueur.SetActive(false);
                 ladderInteraction.SetActive(true);
