@@ -96,6 +96,7 @@ public class HelmetUnlock : MonoBehaviour
         GameManager.Instance.canEquipHelmet = false;
 
         tutoTV.SetActive(false);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     private void Update()
