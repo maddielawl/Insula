@@ -96,7 +96,7 @@ public class Interractable : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
-                
+
                 interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
@@ -192,7 +192,7 @@ public class Interractable : MonoBehaviour
 
                 if (isNear == true)
                 {
-                    if(sfxToPlay != null)
+                    if (sfxToPlay != null)
                     {
                         FMODUnity.RuntimeManager.PlayOneShot(sfxToPlay);
                     }
@@ -284,6 +284,7 @@ public class Interractable : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
+        UIManager.Instance.HidePortraits();
         nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
@@ -300,6 +301,7 @@ public class Interractable : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
+        UIManager.Instance.HidePortraits();
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
@@ -316,6 +318,7 @@ public class Interractable : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
+        UIManager.Instance.HidePortraits();
         farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
