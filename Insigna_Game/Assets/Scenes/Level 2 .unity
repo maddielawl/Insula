@@ -681,7 +681,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1951015379}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Je me demande ce que les gens faisaient ici.
   nearPhrase: "Il y avait \xE7a pour contr\xF4ler la machine dans l\u2019usine."
   observationText: {fileID: 0}
@@ -1682,7 +1682,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 762248056}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Beurk !
   nearPhrase: Hm ?
   observationText: {fileID: 0}
@@ -2129,7 +2129,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1032017463}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Encore un trou d\u2019a\xE9ration par-l\xE0."
   nearPhrase: Pour finir, 2 et 0.
   observationText: {fileID: 0}
@@ -3104,7 +3104,7 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 3483071745451836189}
   objectSprite: {fileID: 1972013644}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   entryNumber: 3
   farPhrase: Tiens, on dirait une page de mon carnet.
   nearPhrase: "Encore une page. Je ne crois pas qu\u2019elle vienne de mon livre
@@ -4643,7 +4643,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 795191708}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Ouf \xE7a va, l'\xE9chelle est encore l\xE0."
   nearPhrase: ...
   observationText: {fileID: 0}
@@ -5830,7 +5830,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 353836101}
-  vfx: {fileID: 0}
+  vfx: {fileID: 819459774}
   farPhrase: "\xC7a fait beaucoup de leviers"
   nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
@@ -5984,7 +5984,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1486472631}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Je me demande \xE0 quoi servait cette bo\xEEte."
   nearPhrase: "C\u2019est aussi un Robot ?"
   observationText: {fileID: 0}
@@ -6120,7 +6120,7 @@ MonoBehaviour:
   - {fileID: 829549782}
   - {fileID: 1785395037}
   - {fileID: 959666223}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Il doit y avoir un moyen de la faire descendre.
   nearPhrase: Je suis trop petite pour monter.
   observationText: {fileID: 0}
@@ -6447,6 +6447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90577f47a6b9b5541b2e33c70d2e05e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armSfx: event:/SFX/Environment Sounds/Big Arm
   speed: 4
   waypoint1: {fileID: 589874129}
   waypoint2: {fileID: 950559051}
@@ -8244,7 +8245,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Il y a le m\xEAme dessin sur le mur devant la maison."
   nearPhrase: "Ho mais c\u2019est le robot qui a remplac\xE9 C\xE9leste \xE0 l\u2019usine."
   observationText: {fileID: 0}
@@ -8947,6 +8948,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5393716127655927636, guid: 625aab3e16e455047a0969d1968fd985, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
     - target: {fileID: 5393716127655927638, guid: 625aab3e16e455047a0969d1968fd985, type: 3}
       propertyPath: m_SortingLayer
       value: 5
@@ -11727,7 +11732,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1295613143}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Peut-\xEAtre que \xE7a pourrait m\u2019aider."
   nearPhrase: "Non c\u2019est trop lourd."
   observationText: {fileID: 0}
@@ -12083,7 +12088,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 287021424}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Je me demande ce que les gens faisaient ici.
   nearPhrase: "Il y avait \xE7a pour contr\xF4ler la machine dans l\u2019usine."
   observationText: {fileID: 0}
@@ -12358,7 +12363,7 @@ MonoBehaviour:
   interractionSecurity: 0
   spriteHighlight: {fileID: 21300000, guid: 1c85891a2fe0d494cb87a7620d345368, type: 3}
   objectSpriteRenderer: {fileID: 594218046}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Il y a un objet dans le placard !
   nearPhrase: Tiens c'est un tournevis
   portraitIdx: 0
@@ -13121,7 +13126,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 397115122}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Il y a une sortie ici.
   nearPhrase: "Cette fois c\u2019est 1 et 4."
   observationText: {fileID: 0}
@@ -15665,7 +15670,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1430755595}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: 'Un autre joli casque. '
   nearPhrase: "Il y a un objet color\xE9 l\xE0-bas."
   observationText: {fileID: 0}
@@ -16984,7 +16989,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  vfx: {fileID: 1144870772}
+  vfx: {fileID: 819459774}
   farPhrase: "Quelqu'un a dessin\xE9 l\xE0-haut."
   nearPhrase: "G, M et D..., \xE7a semble \xEAtre des directions..."
   observationText: {fileID: 0}
@@ -17493,7 +17498,7 @@ MonoBehaviour:
   - {fileID: 1175352909}
   - {fileID: 1629920457}
   - {fileID: 1283824835}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "J\u2019ai vu quelque chose bouger l\xE0-haut."
   nearPhrase: "Je crois qu\u2019il marche encore."
   observationText: {fileID: 0}
@@ -18630,7 +18635,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 2024404584}
-  vfx: {fileID: 0}
+  vfx: {fileID: 819459774}
   farPhrase: "\xC7a fait beaucoup de leviers"
   nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
@@ -18940,6 +18945,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5393716127655927636, guid: 625aab3e16e455047a0969d1968fd985, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
     - target: {fileID: 5393716127655927638, guid: 625aab3e16e455047a0969d1968fd985, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -22559,7 +22568,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 60921231}
-  vfx: {fileID: 0}
+  vfx: {fileID: 819459774}
   farPhrase: "\xC7a fait beaucoup de leviers"
   nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
@@ -26992,7 +27001,7 @@ MonoBehaviour:
   interractionSecurity: 0
   spriteHighlight: {fileID: 21300000, guid: 4d0722a07921a68428d01b5cbb48eb11, type: 3}
   objectSpriteRenderer: {fileID: 1273601879}
-  vfx: {fileID: 1144870772}
+  vfx: {fileID: 819459774}
   farPhrase: Il y a a un marteau au loin
   nearPhrase: "Ce marteau pourrait me servir \xE0 casser quelque chose..."
   portraitIdx: 0
@@ -27610,7 +27619,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1231643867}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Qu\u2019est-ce qu\u2019il y a dans cette bo\xEEte ?"
   nearPhrase: "C\u2019est la valise du Docteur."
   observationText: {fileID: 0}
@@ -31785,7 +31794,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1305320278}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Je me demande ce que les gens faisaient ici.
   nearPhrase: "Il y avait \xE7a pour contr\xF4ler la machine dans l\u2019usine."
   observationText: {fileID: 0}
@@ -32336,7 +32345,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Je suis vraiment d\xE9sol\xE9, j\u2019esp\xE8re que je ne t\u2019ai
     pas fait mal."
   nearPhrase: Maintenant tu peux te reposer.
@@ -34429,7 +34438,7 @@ MonoBehaviour:
   - {fileID: 829549782}
   - {fileID: 1785395037}
   - {fileID: 959666223}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Je dois pouvoir monter.
   nearPhrase: Le passage est ouvert.
   observationText: {fileID: 0}
@@ -35888,7 +35897,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 76470264}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Un bouton pour l'\xE9chelle ?"
   nearPhrase: Clique, clique.
   observationText: {fileID: 0}
@@ -36122,7 +36131,7 @@ MonoBehaviour:
   spriteHighlight:
   - {fileID: 427674637}
   - {fileID: 910669961}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "C\u2019est \xE9trange on dirait des grosses bouteilles."
   nearPhrase: "J\u2019en ai d\xE9j\xE0 vue \xE0 l\u2019usine, mais je ne sais pas
     \xE0 quoi \xE7a sert."
@@ -36231,7 +36240,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 219013894}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Il y a un passage .. C\u2019est si sombre."
   nearPhrase: "C\u2019est \xE9crit .. 6 et 4 .. 64 ! Mais la suite est effac\xE9e."
   observationText: {fileID: 0}
@@ -37551,7 +37560,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 175061029}
-  vfx: {fileID: 0}
+  vfx: {fileID: 819459774}
   farPhrase: "\xC7a fait beaucoup de leviers"
   nearPhrase: Je crois qu'ils ont 3 positions possibles
   observationText: {fileID: 0}
@@ -37922,7 +37931,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 161633706}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Je me demande ce que les gens faisaient ici.
   nearPhrase: "Il y avait \xE7a pour contr\xF4ler la machine dans l\u2019usine."
   observationText: {fileID: 0}
@@ -39088,7 +39097,7 @@ MonoBehaviour:
   - {fileID: 637235229}
   - {fileID: 54320910}
   - {fileID: 1491001871}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: Encore des bouteilles ?
   nearPhrase: "Attention je crois que \xE7a va tomber."
   observationText: {fileID: 0}
@@ -40023,7 +40032,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Je ne crois pas qu\u2019il accepte de me laisser passer."
   nearPhrase: "S\u2019il vous plait ne me frappe pas."
   observationText: {fileID: 0}
@@ -40533,7 +40542,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Cette affiche a l\u2019air tr\xE8s vieille."
   nearPhrase: "C\u2019est \xE9trange je n\u2019ai jamais vu cette affiche avant."
   observationText: {fileID: 0}
@@ -42092,7 +42101,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 2041861073}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Ho \xE7a sent mauvais."
   nearPhrase: "Quelqu\u2019un mange \xE7a ?"
   observationText: {fileID: 0}
@@ -42880,7 +42889,7 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   objectSprite: {fileID: 2121495834}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   entryNumber: 3
   farPhrase: Tiens, on dirait une page de mon carnet.
   nearPhrase: "Encore une page. Je ne crois pas qu\u2019elle vienne de mon livre
@@ -43563,7 +43572,7 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 551999546}
-  vfx: {fileID: 4485255019395137437, guid: 0701a27b4067364439d4cbc61517de85, type: 3}
+  vfx: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
   farPhrase: "Ils devaient ranger des affaires l\xE0-dedans."
   nearPhrase: "C\u2019est ouvert ?"
   observationText: {fileID: 0}
