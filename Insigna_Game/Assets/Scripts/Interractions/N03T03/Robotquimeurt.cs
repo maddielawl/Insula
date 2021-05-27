@@ -6,6 +6,7 @@ public class Robotquimeurt : MonoBehaviour
 {
     public Interractable parent;
     public GameObject champifragilestarf;
+    public GameObject lerobot;
     public Animator a;
     void Start()
     {
@@ -20,6 +21,7 @@ public class Robotquimeurt : MonoBehaviour
             parent.interractionSecurity = true;
             champifragilestarf.SetActive(false);
             a.SetTrigger("Trigger");
+            lerobot.SetActive(false);
         }
     }
 }
