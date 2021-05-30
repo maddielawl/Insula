@@ -92,7 +92,7 @@ public class InterractableDoor : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
@@ -164,7 +164,7 @@ public class InterractableDoor : MonoBehaviour
 
     public void OnUse(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {

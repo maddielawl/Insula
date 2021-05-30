@@ -135,7 +135,7 @@ public class DiaryInteraction : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             if (!GameManager.Instance.globalInterractionSecurity)
             {
@@ -177,7 +177,7 @@ public class DiaryInteraction : MonoBehaviour
 
     public void OnUse(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             if (!GameManager.Instance.globalInterractionSecurity)
             {

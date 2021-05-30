@@ -106,7 +106,7 @@ public class BarreauItem : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
@@ -178,7 +178,7 @@ public class BarreauItem : MonoBehaviour
 
     public void OnUse(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
 
             if (cursorOn == true && gameObject.activeSelf == true)

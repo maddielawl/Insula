@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public string heartSfx = "event:/SFX/UI/Heartbeat";
     public FMOD.Studio.EventInstance heartbeatEvent;
-    
+
 
     void Awake()
     {
@@ -53,6 +53,13 @@ public class GameManager : MonoBehaviour
     [Space(5)]
     [Header("Status Check")]
     public bool isScared;
+    [HideInInspector] public bool hasInteracted = false;
+
+    [HideInInspector] public Coroutine hidePortaitandOther;
+    /*[HideInInspector]*/ public GameObject near_Text;
+    [HideInInspector] public Coroutine near_TextCoroutine;
+    /*[HideInInspector]*/ public GameObject far_Text;
+    [HideInInspector] public Coroutine far_TextCoroutine;
 
     [Space(5)]
     [Header("MadnessZone")]
@@ -93,6 +100,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine("SanityDecrement");
         playerPillsCount = 0;
         dimensionSwapNormal = true;
+        hasInteracted = false;
     }
 
     public void Update()
@@ -450,6 +458,29 @@ public class GameManager : MonoBehaviour
         globalInterractionSecurity = false;
         dimensionSwapMadness = false;
         dimensionSwapNormal = true;
+    }
+
+    public IEnumerator HidePortraitAndOthers()
+    {
+        yield return new WaitForSeconds(5f);
+        hasInteracted = false;
+        UIManager.Instance.HidePortraits();
+    }
+
+    public IEnumerator nearText()
+    {
+        near_Text.SetActive(true);
+        yield return new WaitForSeconds(5f);
+
+        near_Text.SetActive(false);
+    }
+
+    public IEnumerator farText()
+    {
+        far_Text.SetActive(true);
+        yield return new WaitForSeconds(5f);
+
+        far_Text.SetActive(false);
     }
 
 }
