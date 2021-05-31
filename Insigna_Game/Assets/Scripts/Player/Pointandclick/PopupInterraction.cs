@@ -109,6 +109,33 @@ public class PopupInterraction : MonoBehaviour
             if (cursorOn == true && gameObject.activeSelf == true)
             {
 
+                GameManager.Instance.far_Text = farInt1;
+                if (GameManager.Instance.hasInteracted)
+                {
+                    GameManager.Instance.StopHidePortaitFonction();
+                    GameManager.Instance.StopFarTextFonction();
+                    GameManager.Instance.StopNearTextFonction();
+
+                    if (GameManager.Instance.far_Text != null)
+                    {
+                        GameManager.Instance.far_Text.SetActive(false);
+                    }
+                    if (GameManager.Instance.near_Text != null)
+                    {
+                        GameManager.Instance.near_Text.SetActive(false);
+                    }
+
+                    UIManager.Instance.HidePortraits();
+                    GameManager.Instance.hasInteracted = false;
+                }
+
+                if (GameManager.Instance.hasInteracted == false)
+                {
+                    GameManager.Instance.hasInteracted = true;
+                    GameManager.Instance.StartHidePortaitFonction();
+                    GameManager.Instance.StartFarTextFonction();
+                }
+
                 interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
@@ -128,13 +155,11 @@ public class PopupInterraction : MonoBehaviour
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("NearInt") != null)
                             {
-                                UIManager.Instance.HidePortraits();
                                 GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                             }
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("FarInt") != null)
@@ -159,13 +184,11 @@ public class PopupInterraction : MonoBehaviour
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("NearInt") != null)
                             {
-                                UIManager.Instance.HidePortraits();
                                 GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                             }
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("FarInt") != null)
@@ -212,19 +235,19 @@ public class PopupInterraction : MonoBehaviour
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("NearInt") != null)
                             {
-                                UIManager.Instance.HidePortraits();
                                 GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
                             }
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
-                    UIManager.Instance.HidePortraits();
                     StartCoroutine(NearInterraction());
                     if (spriteHighlight != null)
                     {
@@ -297,30 +320,24 @@ public class PopupInterraction : MonoBehaviour
     }
     private IEnumerator FarInterraction()
     {
-        farInt1.SetActive(true);
         observationText.text = farPhrase;
 
         yield return new WaitForSeconds(5f);
 
-        farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
     }
     private IEnumerator FarNearInterraction()
     {
-        farInt1.SetActive(true);
         observationText.text = nearPhrase;
 
         yield return new WaitForSeconds(5f);
 
-        farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
 

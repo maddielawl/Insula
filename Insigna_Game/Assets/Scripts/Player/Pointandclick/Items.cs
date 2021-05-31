@@ -44,6 +44,7 @@ public class Items : MonoBehaviour
     private TextMeshProUGUI observationText;
 
     public int portraitIdx = 0;
+    public bool isInterractionTalkative = false;
 
     private TextMeshProUGUI[] interactionsTexts;
 
@@ -110,6 +111,33 @@ public class Items : MonoBehaviour
             if (cursorOn == true && gameObject.activeSelf == true)
             {
 
+                GameManager.Instance.far_Text = farInt0;
+                if (GameManager.Instance.hasInteracted)
+                {
+                    GameManager.Instance.StopHidePortaitFonction();
+                    GameManager.Instance.StopFarTextFonction();
+                    GameManager.Instance.StopNearTextFonction();
+
+                    if (GameManager.Instance.far_Text != null)
+                    {
+                        GameManager.Instance.far_Text.SetActive(false);
+                    }
+                    if (GameManager.Instance.near_Text != null)
+                    {
+                        GameManager.Instance.near_Text.SetActive(false);
+                    }
+
+                    UIManager.Instance.HidePortraits();
+                    GameManager.Instance.hasInteracted = false;
+                }
+
+                if (GameManager.Instance.hasInteracted == false)
+                {
+                    GameManager.Instance.hasInteracted = true;
+                    GameManager.Instance.StartHidePortaitFonction();
+                    GameManager.Instance.StartFarTextFonction();
+                }
+
                 interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
@@ -125,17 +153,21 @@ public class Items : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     UIManager.Instance.DisplayPortrait(portraitIdx);
@@ -150,17 +182,21 @@ public class Items : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     UIManager.Instance.DisplayPortrait(portraitIdx);
@@ -183,14 +219,41 @@ public class Items : MonoBehaviour
             if (cursorOn == true && gameObject.activeSelf == true)
             {
 
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                GameManager.Instance.near_Text = nearInt0;
+                if (GameManager.Instance.hasInteracted)
+                {
+                    GameManager.Instance.StopHidePortaitFonction();
+                    GameManager.Instance.StopFarTextFonction();
+                    GameManager.Instance.StopNearTextFonction();
+
+                    if (GameManager.Instance.far_Text != null)
+                    {
+                        GameManager.Instance.far_Text.SetActive(false);
+                    }
+                    if (GameManager.Instance.near_Text != null)
+                    {
+                        GameManager.Instance.near_Text.SetActive(false);
+                    }
+
+                    UIManager.Instance.HidePortraits();
+                    GameManager.Instance.hasInteracted = false;
+                }
+
+                if (GameManager.Instance.hasInteracted == false)
+                {
+                    GameManager.Instance.hasInteracted = true;
+                    GameManager.Instance.StartHidePortaitFonction();
+                    GameManager.Instance.StartNearTextFonction();
+                }
+
+                /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
                     if (interactionsTexts[i] != null)
                     {
                         interactionsTexts[i].text = null;
                     }
-                }
+                }*/
 
                 if (isNear == true)
                 {
@@ -198,18 +261,26 @@ public class Items : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
+                    }
+                    if (isInterractionTalkative == true)
+                    {
+                        UIManager.Instance.DisplayPortrait(portraitIdx);
                     }
                     objectSpriteRenderer.sprite = spriteNormal;
                     StartCoroutine(NearInterraction());
@@ -235,7 +306,6 @@ public class Items : MonoBehaviour
     {
         GameManager.Instance.globalInterractionSecurity = false;
         UIManager.Instance.GetObjectInInventory(this.gameObject);
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
     }
@@ -274,12 +344,10 @@ public class Items : MonoBehaviour
     {
         this.GetComponent<BoxCollider2D>().enabled = false;
         objectSpriteRenderer.enabled = false;
-        nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
 
         yield return new WaitForSeconds(5f);
 
-        nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
@@ -291,39 +359,32 @@ public class Items : MonoBehaviour
     {
         GameManager.Instance.canEquipHelmet = true;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
         Destroy(this.gameObject);
 
         yield return 0;
     }
     private IEnumerator FarInterraction()
     {
-        farInt0.SetActive(true);
         observationText.text = farPhrase;
         GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(5f);
 
-        farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
     }
     private IEnumerator FarNearInterraction()
     {
-        farInt0.SetActive(true);
         observationText.text = nearPhrase;
         GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(5f);
 
-        farInt0.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
 

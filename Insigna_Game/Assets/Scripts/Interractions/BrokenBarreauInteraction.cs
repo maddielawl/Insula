@@ -100,14 +100,41 @@ public class BrokenBarreauInteraction : MonoBehaviour
             if (cursorOn == true && gameObject.activeSelf == true)
             {
 
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                GameManager.Instance.far_Text = farInt1;
+                if (GameManager.Instance.hasInteracted)
+                {
+                    GameManager.Instance.StopHidePortaitFonction();
+                    GameManager.Instance.StopFarTextFonction();
+                    GameManager.Instance.StopNearTextFonction();
+
+                    if (GameManager.Instance.far_Text != null)
+                    {
+                        GameManager.Instance.far_Text.SetActive(false);
+                    }
+                    if (GameManager.Instance.near_Text != null)
+                    {
+                        GameManager.Instance.near_Text.SetActive(false);
+                    }
+
+                    UIManager.Instance.HidePortraits();
+                    GameManager.Instance.hasInteracted = false;
+                }
+
+                if (GameManager.Instance.hasInteracted == false)
+                {
+                    GameManager.Instance.hasInteracted = true;
+                    GameManager.Instance.StartHidePortaitFonction();
+                    GameManager.Instance.StartFarTextFonction();
+                }
+
+                /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
                     if (interactionsTexts[i] != null)
                     {
                         interactionsTexts[i].text = null;
                     }
-                }
+                }*/
 
                 if (isNear == false)
                 {
@@ -115,17 +142,21 @@ public class BrokenBarreauInteraction : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
-                            UIManager.Instance.HidePortraits();
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     UIManager.Instance.DisplayPortrait(portraitIdx);
@@ -140,17 +171,21 @@ public class BrokenBarreauInteraction : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
                     }
                     UIManager.Instance.DisplayPortrait(portraitIdx);
@@ -172,14 +207,41 @@ public class BrokenBarreauInteraction : MonoBehaviour
             if (cursorOn == true && gameObject.activeSelf == true)
             {
 
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                GameManager.Instance.near_Text = nearInt0;
+                if (GameManager.Instance.hasInteracted)
+                {
+                    GameManager.Instance.StopHidePortaitFonction();
+                    GameManager.Instance.StopFarTextFonction();
+                    GameManager.Instance.StopNearTextFonction();
+
+                    if (GameManager.Instance.far_Text != null)
+                    {
+                        GameManager.Instance.far_Text.SetActive(false);
+                    }
+                    if (GameManager.Instance.near_Text != null)
+                    {
+                        GameManager.Instance.near_Text.SetActive(false);
+                    }
+
+                    UIManager.Instance.HidePortraits();
+                    GameManager.Instance.hasInteracted = false;
+                }
+
+                if (GameManager.Instance.hasInteracted == false)
+                {
+                    GameManager.Instance.hasInteracted = true;
+                    GameManager.Instance.StartHidePortaitFonction();
+                    GameManager.Instance.StartNearTextFonction();
+                }
+
+                /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
                     if (interactionsTexts[i] != null)
                     {
                         interactionsTexts[i].text = null;
                     }
-                }
+                }*/
 
                 if (isNear == true)
                 {
@@ -187,18 +249,26 @@ public class BrokenBarreauInteraction : MonoBehaviour
                     {
                         if (GameManager.Instance.isNear == true)
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            }
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            }
                         }
+                    }
+                    if (isInterractionTalkative == true)
+                    {
+                        UIManager.Instance.DisplayPortrait(portraitIdx);
                     }
                     FMODUnity.RuntimeManager.PlayOneShot(barreauSfx);
                     StartCoroutine(NearInterraction());
@@ -248,49 +318,40 @@ public class BrokenBarreauInteraction : MonoBehaviour
     private IEnumerator NearInterraction()
     {
         transform.GetComponent<BoxCollider2D>().enabled = false;
-        nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
         barreauBroken.GetComponent<Animator>().SetTrigger("Fall");
         Invoke("activateOtherInteraction", 1f);
 
         yield return new WaitForSeconds(5f);
 
-        nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
     }
     private IEnumerator FarInterraction()
     {
-        farInt1.SetActive(true);
         observationText.text = farPhrase;
         GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(5f);
 
-        farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
     }
     private IEnumerator FarNearInterraction()
     {
-        farInt1.SetActive(true);
         observationText.text = nearPhrase;
         GameManager.Instance.isNear = false;
 
         yield return new WaitForSeconds(5f);
 
-        farInt1.SetActive(false);
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
 
