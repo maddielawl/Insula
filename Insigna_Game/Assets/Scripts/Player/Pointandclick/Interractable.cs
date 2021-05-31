@@ -45,8 +45,6 @@ public class Interractable : MonoBehaviour
 
     private TextMeshProUGUI[] interactionsTexts;
 
-    private Coroutine hidePortaitandOther;
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -98,20 +96,13 @@ public class Interractable : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
-                /*GameManager.Instance.far_Text = farInt1;
+
+                GameManager.Instance.far_Text = farInt1;
                 if (GameManager.Instance.hasInteracted)
                 {
-                    StopCoroutine(GameManager.Instance.hidePortaitandOther);
-                    if (GameManager.Instance.far_TextCoroutine != null)
-                    {
-                        StopCoroutine(GameManager.Instance.far_TextCoroutine);
-                        GameManager.Instance.far_TextCoroutine = null;
-                    }
-                    if (GameManager.Instance.near_TextCoroutine != null)
-                    {
-                        StopCoroutine(GameManager.Instance.near_TextCoroutine);
-                        GameManager.Instance.near_TextCoroutine = null;
-                    }
+                    GameManager.Instance.StopHidePortaitFonction();
+                    GameManager.Instance.StopFarTextFonction();
+                    GameManager.Instance.StopNearTextFonction();
                     
                     if (GameManager.Instance.far_Text != null)
                     {
@@ -121,7 +112,7 @@ public class Interractable : MonoBehaviour
                     {
                         GameManager.Instance.near_Text.SetActive(false);
                     }
-                    
+
                     UIManager.Instance.HidePortraits();
                     GameManager.Instance.hasInteracted = false;
                 }
@@ -129,9 +120,9 @@ public class Interractable : MonoBehaviour
                 if (GameManager.Instance.hasInteracted == false)
                 {
                     GameManager.Instance.hasInteracted = true;
-                    GameManager.Instance.hidePortaitandOther = StartCoroutine(GameManager.Instance.HidePortraitAndOthers());
-                    GameManager.Instance.far_TextCoroutine = StartCoroutine(GameManager.Instance.farText());
-                }*/
+                    GameManager.Instance.StartHidePortaitFonction();
+                    GameManager.Instance.StartFarTextFonction();
+                }
 
                 interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
@@ -212,19 +203,14 @@ public class Interractable : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
+                
                 GameManager.Instance.near_Text = nearInt0;
                 if (GameManager.Instance.hasInteracted)
                 {
-                    StopCoroutine(GameManager.Instance.hidePortaitandOther);
-                    if (GameManager.Instance.far_TextCoroutine != null)
-                    {
-                        StopCoroutine(GameManager.Instance.far_TextCoroutine);
-                    }
-                    if (GameManager.Instance.near_TextCoroutine != null)
-                    {
-                        StopCoroutine(GameManager.Instance.near_TextCoroutine);
-                    }
-                    UIManager.Instance.HidePortraits();
+                    GameManager.Instance.StopHidePortaitFonction();
+                    GameManager.Instance.StopFarTextFonction();
+                    GameManager.Instance.StopNearTextFonction();
+                    
                     if (GameManager.Instance.far_Text != null)
                     {
                         GameManager.Instance.far_Text.SetActive(false);
@@ -233,23 +219,26 @@ public class Interractable : MonoBehaviour
                     {
                         GameManager.Instance.near_Text.SetActive(false);
                     }
+
+                    UIManager.Instance.HidePortraits();
                     GameManager.Instance.hasInteracted = false;
                 }
+
                 if (GameManager.Instance.hasInteracted == false)
                 {
                     GameManager.Instance.hasInteracted = true;
-                    GameManager.Instance.hidePortaitandOther = StartCoroutine(GameManager.Instance.HidePortraitAndOthers());
-                    GameManager.Instance.near_TextCoroutine = StartCoroutine(GameManager.Instance.nearText());
+                    GameManager.Instance.StartHidePortaitFonction();
+                    GameManager.Instance.StartNearTextFonction();
                 }
 
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
                     if (interactionsTexts[i] != null)
                     {
                         interactionsTexts[i].text = null;
                     }
-                }
+                }*/
 
                 if (isNear == true)
                 {
@@ -341,7 +330,7 @@ public class Interractable : MonoBehaviour
         }
 
         yield return new WaitForSeconds(5f);
-        
+
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
