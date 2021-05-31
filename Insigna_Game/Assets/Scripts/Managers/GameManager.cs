@@ -55,11 +55,13 @@ public class GameManager : MonoBehaviour
     public bool isScared;
     [HideInInspector] public bool hasInteracted = false;
 
-    [HideInInspector] public Coroutine hidePortaitandOther;
-    /*[HideInInspector]*/ public GameObject near_Text;
+    [HideInInspector] public Coroutine hidePortaitCoroutine;
+    /*[HideInInspector]*/
+    public GameObject near_Text;
     [HideInInspector] public Coroutine near_TextCoroutine;
-    /*[HideInInspector]*/ public GameObject far_Text;
+    [HideInInspector] public GameObject far_Text;
     [HideInInspector] public Coroutine far_TextCoroutine;
+
 
     [Space(5)]
     [Header("MadnessZone")]
@@ -471,7 +473,6 @@ public class GameManager : MonoBehaviour
     {
         near_Text.SetActive(true);
         yield return new WaitForSeconds(5f);
-
         near_Text.SetActive(false);
     }
 
@@ -481,6 +482,45 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         far_Text.SetActive(false);
+    }
+
+    public void StartHidePortaitFonction()
+    {
+        hidePortaitCoroutine = StartCoroutine(HidePortraitAndOthers());
+    }
+
+    public void StopHidePortaitFonction()
+    {
+        if (hidePortaitCoroutine != null)
+        {
+            StopCoroutine(hidePortaitCoroutine);
+        }
+    }
+
+    public void StartNearTextFonction()
+    {
+        near_TextCoroutine = StartCoroutine(nearText());
+    }
+
+    public void StopNearTextFonction()
+    {
+        if (near_TextCoroutine != null)
+        {
+            StopCoroutine(near_TextCoroutine);
+        }
+    }
+
+    public void StartFarTextFonction()
+    {
+        far_TextCoroutine = StartCoroutine(farText());
+    }
+
+    public void StopFarTextFonction()
+    {
+        if (far_TextCoroutine != null)
+        {
+            StopCoroutine(far_TextCoroutine);
+        }
     }
 
 }
