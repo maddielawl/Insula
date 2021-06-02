@@ -222,22 +222,49 @@ public class HelmetUnlock : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
                     if (interactionsTexts[i] != null)
                     {
                         interactionsTexts[i].text = null;
                     }
-                }
+                }*/
 
                 if (isNear == true)
                 {
+
+                    GameManager.Instance.near_Text = nearInt0;
+                    if (GameManager.Instance.hasInteracted)
+                    {
+                        GameManager.Instance.StopHidePortaitFonction();
+                        GameManager.Instance.StopFarTextFonction();
+                        GameManager.Instance.StopNearTextFonction();
+
+                        if (GameManager.Instance.far_Text != null)
+                        {
+                            GameManager.Instance.far_Text.SetActive(false);
+                        }
+                        if (GameManager.Instance.near_Text != null)
+                        {
+                            GameManager.Instance.near_Text.SetActive(false);
+                        }
+
+                        UIManager.Instance.HidePortraits();
+                        GameManager.Instance.hasInteracted = false;
+                    }
+
+                    if (GameManager.Instance.hasInteracted == false)
+                    {
+                        GameManager.Instance.hasInteracted = true;
+                        GameManager.Instance.StartHidePortaitFonction();
+                        GameManager.Instance.StartNearTextFonction();
+                    }
+
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("NearInt") != null)
@@ -247,7 +274,6 @@ public class HelmetUnlock : MonoBehaviour
                         }
                         else
                         {
-                            UIManager.Instance.HidePortraits();
                             security = false;
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("FarInt") != null)
@@ -256,6 +282,7 @@ public class HelmetUnlock : MonoBehaviour
                             }
                         }
                     }
+                    UIManager.Instance.HidePortraits();
                     StartCoroutine(NearInterraction());
                     StartCoroutine(AddPackInInventory());
                     if (spriteHighlight != null)
@@ -325,7 +352,6 @@ public class HelmetUnlock : MonoBehaviour
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
 
         yield return 0;
     }
@@ -335,7 +361,6 @@ public class HelmetUnlock : MonoBehaviour
         GameManager.Instance.canEquipHelmet = true;
         UIManager.Instance.GotHelmet();
         GameManager.Instance.globalInterractionSecurity = false;
-        UIManager.Instance.HidePortraits();
         Destroy(this.gameObject);
 
 

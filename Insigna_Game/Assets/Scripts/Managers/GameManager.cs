@@ -121,12 +121,18 @@ public class GameManager : MonoBehaviour
                 {
                     timerdeux = 0;
                     playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                    playerSanity = playerSanity++;
+                    playerSanity = playerSanity + 3;
                     playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                if (playerSanity >= 100)
+                {
+                    DeactivateInGameActions();
+                    heartbeatEvent.setParameterByName("Stress", 0);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 0);
+                    MenusManager.instance.GameOver();
                 }
-         //   }
+            }
         }
-        if(isHelmetEquipped == false)
+        if (isHelmetEquipped == false)
         {
             timer = 0;
         }
@@ -193,7 +199,7 @@ public class GameManager : MonoBehaviour
 
 
     public IEnumerator InsideMadnessZone(int sanityDmg, int madnessGain)
-    {        
+    {
 
         if (isScared == true)
         {
@@ -498,7 +504,11 @@ public class GameManager : MonoBehaviour
     {
         near_Text.SetActive(true);
         yield return new WaitForSeconds(5f);
-        near_Text.SetActive(false);
+
+        if (near_Text != null)
+        {
+            near_Text.SetActive(false);
+        }
     }
 
     public IEnumerator farText()
@@ -506,7 +516,10 @@ public class GameManager : MonoBehaviour
         far_Text.SetActive(true);
         yield return new WaitForSeconds(5f);
 
-        far_Text.SetActive(false);
+        if (far_Text != null)
+        {
+            far_Text.SetActive(false);
+        }
     }
 
     public void StartHidePortaitFonction()

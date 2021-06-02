@@ -3010,7 +3010,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233581593}
   m_LocalRotation: {x: 0.6395481, y: 0.30162594, z: 0.30162594, w: 0.6395481}
-  m_LocalPosition: {x: -1.24, y: 5.02, z: 59.21425}
+  m_LocalPosition: {x: -1.2, y: 5.11, z: 59.21425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1893406741}
@@ -3091,7 +3091,7 @@ ParticleSystem:
   m_GameObject: {fileID: 233581593}
   serializedVersion: 7
   lengthInSec: 10
-  simulationSpeed: 1
+  simulationSpeed: 0.4
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -3165,8 +3165,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 20
-      minScalar: 19.47
+      scalar: 16
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3655,8 +3655,8 @@ ParticleSystem:
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 0.007
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3710,14 +3710,14 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 14
+    angle: 40.054955
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.34
+    radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0.05417443, y: 0, z: 0.1897996}
-    m_Rotation: {x: 0.0000011763929, y: 302.61545, z: -0.000012383617}
-    m_Scale: {x: 0.99999714, y: 0.6582267, z: 0.99999213}
+    m_Position: {x: -0.117881805, y: -0.000014305115, z: 0.50342757}
+    m_Rotation: {x: -0.00041798849, y: 292.23907, z: -0.0027625847}
+    m_Scale: {x: 0.9999777, y: 0.6582267, z: 0.999938}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -3796,7 +3796,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.76
+      value: 1.4080977
       mode: 0
       spread: 0
       speed:
@@ -3853,7 +3853,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 180
+      value: 191.1
       mode: 0
       spread: 0
       speed:
@@ -3915,7 +3915,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 4.76
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5966,13 +5966,13 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.090736866
         - serializedVersion: 3
-          time: 0.9953003
-          value: 1
-          inSlope: 3.1981463
-          outSlope: 3.1981463
+          time: 0.9977112
+          value: 0.81081104
+          inSlope: 3.987768
+          outSlope: 3.987768
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.20038138
+          inWeight: 0.115481585
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -6107,7 +6107,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    remapEnabled: 0
+    remapEnabled: 1
     positionAmount:
       serializedVersion: 2
       minMaxState: 0
@@ -8007,8 +8007,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1893406741}
     m_Modifications:
     - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 4.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -12578,7 +12586,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.649
   m_Color: {r: 0.21568629, g: 0.04705883, b: 0.04705883, a: 1}
-  m_Intensity: 2.12
+  m_Intensity: 2
   m_LightVolumeOpacity: 0.077
   m_ApplyToSortingLayers: 938c302937c52a12e59b0b0d95098390
   m_LightCookieSprite: {fileID: 0}
@@ -15517,7 +15525,7 @@ ParticleSystem:
   m_GameObject: {fileID: 682010143}
   serializedVersion: 7
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 0.5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -20561,22 +20569,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Particules_Fum\xE9e"
       objectReference: {fileID: 0}
-    - target: {fileID: 3959907444918113395, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 4.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -21247,15 +21239,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990585841308420, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2500002
+      value: 67.62
       objectReference: {fileID: 0}
     - target: {fileID: 2582990585841308420, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.55
+      value: -10.26177
       objectReference: {fileID: 0}
     - target: {fileID: 2582990585841308420, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.160639
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2582990585841308421, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: field of view
@@ -21271,7 +21263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990585841308421, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: orthographic size
-      value: 7.2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586000866357, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: pom
@@ -21307,7 +21299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531016, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586896531018, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_RootOrder
@@ -21319,7 +21311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582990587224233200, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -816.0901
+      value: -816.09015
       objectReference: {fileID: 0}
     - target: {fileID: 4607443523295665547, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: playerInput
@@ -23996,7 +23988,7 @@ ParticleSystem:
   m_GameObject: {fileID: 955991560}
   serializedVersion: 7
   lengthInSec: 10
-  simulationSpeed: 1
+  simulationSpeed: 0.5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -24071,7 +24063,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 20
-      minScalar: 19.47
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -24560,8 +24552,8 @@ ParticleSystem:
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 0.006
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -24615,13 +24607,13 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 14
+    angle: 26.069109
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0.05415058, y: 0, z: 0.18982697}
-    m_Rotation: {x: 0, y: 288.24902, z: 0}
+    m_Rotation: {x: 0, y: 291.37897, z: 0}
     m_Scale: {x: 1, y: 0.6582267, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -24701,7 +24693,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 2.5
+      value: 1.9732102
       mode: 0
       spread: 0
       speed:
@@ -24820,7 +24812,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 4.76
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -28910,7 +28902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973509136}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 8.34, y: 0.59999996, z: 6.1800003}
+  m_LocalPosition: {x: 10.15, y: 0.59999996, z: 6.1800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1658280991}
@@ -28997,7 +28989,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -29065,7 +29057,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -29550,7 +29542,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 30
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -33744,7 +33736,7 @@ MonoBehaviour:
     o\xF9 sont leurs affaires. "
   observationText: {fileID: 0}
   portraitIdx: 0
-  isInterractionTalkative: 0
+  isInterractionTalkative: 1
 --- !u!61 &982091410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46772,7 +46764,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.649
   m_Color: {r: 0.21568629, g: 0.04705883, b: 0.04705883, a: 1}
-  m_Intensity: 2.12
+  m_Intensity: 2
   m_LightVolumeOpacity: 0.077
   m_ApplyToSortingLayers: 938c302937c52a12e59b0b0d
   m_LightCookieSprite: {fileID: 0}
@@ -47648,7 +47640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808030215}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 15.88, y: 0.62999994, z: 6.1800003}
+  m_LocalPosition: {x: 14.66, y: 0.62999994, z: 6.1800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1658280991}
@@ -47803,7 +47795,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -48288,7 +48280,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 30
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -58063,8 +58055,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.633
-  m_Color: {r: 0.6698113, g: 0.33806515, b: 0.34125504, a: 1}
-  m_Intensity: 1.87
+  m_Color: {r: 0.6603774, g: 0.15886435, b: 0.16476442, a: 1}
+  m_Intensity: 1.8
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 37c52a12bd8c65c1
   m_LightCookieSprite: {fileID: 0}
@@ -58371,17 +58363,93 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Particules_Fum\xE9e"
       objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: lengthInSec
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: ShapeModule.alignToDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.23584908
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.23584908
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.23584908
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startRotation.minScalar
+      value: -0.94771373
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.randomizeRotationDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.32
+      value: 43.9
       objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.03
+      value: -13.94
       objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58811,6 +58879,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 491583309}
     m_Modifications:
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.23529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.23529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328372915006220629, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.23529412
+      objectReference: {fileID: 0}
     - target: {fileID: 6328372915006220630, guid: 22f6d16a6c8067f4485c0625f62a0a81, type: 3}
       propertyPath: m_Name
       value: "Particules_MiniFum\xE9e"
@@ -60802,7 +60898,7 @@ MonoBehaviour:
   farPhrase: 'Il y a quelque chose qui brille. '
   nearPhrase: "La cl\xE9 ! "
   portraitIdx: 0
-  isInterractionTalkative: 0
+  isInterractionTalkative: 1
 --- !u!1 &8355757277226543186
 GameObject:
   m_ObjectHideFlags: 0
@@ -61655,7 +61751,7 @@ MonoBehaviour:
   leverAnimator: {fileID: 1607636383}
   GrilleAnimator: {fileID: 1260984165}
   doorInteractScript: {fileID: 0}
-  leverAxtivatedText: "Hm ! \xC7a fera l\u2019affaire. "
+  leverAxtivatedText: 
   leverText: {fileID: 8770921156866761132}
 --- !u!4 &8770921156085438702
 Transform:

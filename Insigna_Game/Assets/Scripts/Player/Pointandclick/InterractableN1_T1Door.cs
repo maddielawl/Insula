@@ -219,34 +219,6 @@ public class InterractableN1_T1Door : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
-
-                GameManager.Instance.near_Text = nearInt0;
-                if (GameManager.Instance.hasInteracted)
-                {
-                    GameManager.Instance.StopHidePortaitFonction();
-                    GameManager.Instance.StopFarTextFonction();
-                    GameManager.Instance.StopNearTextFonction();
-
-                    if (GameManager.Instance.far_Text != null)
-                    {
-                        GameManager.Instance.far_Text.SetActive(false);
-                    }
-                    if (GameManager.Instance.near_Text != null)
-                    {
-                        GameManager.Instance.near_Text.SetActive(false);
-                    }
-
-                    UIManager.Instance.HidePortraits();
-                    GameManager.Instance.hasInteracted = false;
-                }
-
-                if (GameManager.Instance.hasInteracted == false)
-                {
-                    GameManager.Instance.hasInteracted = true;
-                    GameManager.Instance.StartHidePortaitFonction();
-                    GameManager.Instance.StartNearTextFonction();
-                }
-
                 /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
@@ -258,6 +230,34 @@ public class InterractableN1_T1Door : MonoBehaviour
 
                 if (isNear == true)
                 {
+
+                    GameManager.Instance.near_Text = nearInt0;
+                    if (GameManager.Instance.hasInteracted)
+                    {
+                        GameManager.Instance.StopHidePortaitFonction();
+                        GameManager.Instance.StopFarTextFonction();
+                        GameManager.Instance.StopNearTextFonction();
+
+                        if (GameManager.Instance.far_Text != null)
+                        {
+                            GameManager.Instance.far_Text.SetActive(false);
+                        }
+                        if (GameManager.Instance.near_Text != null)
+                        {
+                            GameManager.Instance.near_Text.SetActive(false);
+                        }
+
+                        UIManager.Instance.HidePortraits();
+                        GameManager.Instance.hasInteracted = false;
+                    }
+
+                    if (GameManager.Instance.hasInteracted == false)
+                    {
+                        GameManager.Instance.hasInteracted = true;
+                        GameManager.Instance.StartHidePortaitFonction();
+                        GameManager.Instance.StartNearTextFonction();
+                    }
+
                     if (GameManager.Instance.globalInterractionSecurity == true)
                     {
                         if (GameManager.Instance.isNear == true)
