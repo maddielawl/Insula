@@ -9,5 +9,6 @@ public class EnvrioManager : MonoBehaviour
     public bool phareonoroff;
     public bool inMadness;
     public bool electricity = false;
+    public bool onisland = false;
 
 }
