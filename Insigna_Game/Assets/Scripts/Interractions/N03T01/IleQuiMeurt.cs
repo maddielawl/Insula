@@ -10,7 +10,7 @@ public class IleQuiMeurt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (em.inMadness == true && em.phareonoroff == true && em.dayornight == true)
+        if (em.inMadness == true && em.phareonoroff == true && em.dayornight == true && em.onisland == true)
         {
             Destroy(this.gameObject);
         }
