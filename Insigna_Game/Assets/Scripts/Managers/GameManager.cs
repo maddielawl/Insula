@@ -114,17 +114,17 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
             // Debug.Log(timer);
-            if(timer >= 10f)
-            {
+            /*if(timer >= 0f)
+            {*/
                 timerdeux += Time.deltaTime;
                 if (timerdeux >= 2f)
                 {
                     timerdeux = 0;
                     playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                    playerSanity = playerSanity + 5;
+                    playerSanity = playerSanity++;
                     playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 }
-            }
+         //   }
         }
         if(isHelmetEquipped == false)
         {
