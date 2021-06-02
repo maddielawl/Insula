@@ -121,9 +121,16 @@ public class GameManager : MonoBehaviour
                 {
                     timerdeux = 0;
                     playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                    playerSanity = playerSanity++;
+                    playerSanity = playerSanity + 3;
                     playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                if (playerSanity >= 100)
+                {
+                    DeactivateInGameActions();
+                    heartbeatEvent.setParameterByName("Stress", 0);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 0);
+                    MenusManager.instance.GameOver();
                 }
+            }
          //   }
         }
         if(isHelmetEquipped == false)
