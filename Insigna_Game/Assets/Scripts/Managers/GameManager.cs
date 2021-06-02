@@ -94,6 +94,9 @@ public class GameManager : MonoBehaviour
     public Volume v_Transition;
     public Volume v_Indicible;
 
+    public float timer = 0f;
+    public float timerdeux = 0f;
+
 
     #region Madness Functions
 
@@ -107,6 +110,27 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        if (isHelmetEquipped == true)
+        {
+            timer += Time.deltaTime;
+            // Debug.Log(timer);
+            if(timer >= 10f)
+            {
+                timerdeux += Time.deltaTime;
+                if (timerdeux >= 2f)
+                {
+                    timerdeux = 0;
+                    playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                    playerSanity = playerSanity + 5;
+                    playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                }
+            }
+        }
+        if(isHelmetEquipped == false)
+        {
+            timer = 0;
+        }
+
         if (player != null)
         {
             currentPlayerAnimation = player.GetComponent<Animator>().runtimeAnimatorController;
@@ -169,17 +193,18 @@ public class GameManager : MonoBehaviour
 
 
     public IEnumerator InsideMadnessZone(int sanityDmg, int madnessGain)
-    {
+    {        
+
         if (isScared == true)
         {
             heartbeatEvent.setParameterByName("Stress", playerSanity);
 
-            if (isHelmetEquipped == true)
+            /*if (isHelmetEquipped == true)
             {
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
                 playerSanity++;
                 playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-            }
+            }*/
 
             if (isHelmetEquipped == false)
             {
