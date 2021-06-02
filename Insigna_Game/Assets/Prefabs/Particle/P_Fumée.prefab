@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3959907444918113404}
   - component: {fileID: 3959907444918113395}
   m_Layer: 0
-  m_Name: "Particules_Fum\xE9e"
+  m_Name: "P_Fum\xE9e"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ ParticleSystem:
   m_GameObject: {fileID: 3959907444918113394}
   serializedVersion: 7
   lengthInSec: 9
-  simulationSpeed: 1
+  simulationSpeed: 0.3
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.6509434, g: 0.08904416, b: 0.08904416, a: 1}
-      maxColor: {r: 0.7022522, g: 0.17515129, b: 0.9056604, a: 1}
+      minColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
+      maxColor: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
