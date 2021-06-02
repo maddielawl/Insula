@@ -116,17 +116,17 @@ public class GameManager : MonoBehaviour
             // Debug.Log(timer);
             /*if(timer >= 0f)
             {*/
-                timerdeux += Time.deltaTime;
-                if (timerdeux >= 2f)
-                {
-                    timerdeux = 0;
-                    playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                    playerSanity = playerSanity++;
-                    playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                }
-         //   }
+            timerdeux += Time.deltaTime;
+            if (timerdeux >= 2f)
+            {
+                timerdeux = 0;
+                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+                playerSanity = playerSanity++;
+                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
+            }
+            //   }
         }
-        if(isHelmetEquipped == false)
+        if (isHelmetEquipped == false)
         {
             timer = 0;
         }
@@ -193,7 +193,7 @@ public class GameManager : MonoBehaviour
 
 
     public IEnumerator InsideMadnessZone(int sanityDmg, int madnessGain)
-    {        
+    {
 
         if (isScared == true)
         {
@@ -498,7 +498,11 @@ public class GameManager : MonoBehaviour
     {
         near_Text.SetActive(true);
         yield return new WaitForSeconds(5f);
-        near_Text.SetActive(false);
+
+        if (near_Text != null)
+        {
+            near_Text.SetActive(false);
+        }
     }
 
     public IEnumerator farText()
@@ -506,7 +510,10 @@ public class GameManager : MonoBehaviour
         far_Text.SetActive(true);
         yield return new WaitForSeconds(5f);
 
-        far_Text.SetActive(false);
+        if (far_Text != null)
+        {
+            far_Text.SetActive(false);
+        }
     }
 
     public void StartHidePortaitFonction()
