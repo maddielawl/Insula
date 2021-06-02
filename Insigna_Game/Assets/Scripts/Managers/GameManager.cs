@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
             // Debug.Log(timer);
             /*if(timer >= 0f)
             {*/
-<<<<<<< HEAD
                 timerdeux += Time.deltaTime;
                 if (timerdeux >= 2f)
                 {
@@ -132,18 +131,6 @@ public class GameManager : MonoBehaviour
                     MenusManager.instance.GameOver();
                 }
             }
-         //   }
-=======
-            timerdeux += Time.deltaTime;
-            if (timerdeux >= 2f)
-            {
-                timerdeux = 0;
-                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-                playerSanity = playerSanity++;
-                playerSanity = Mathf.Clamp(playerSanity, 0, 100);
-            }
-            //   }
->>>>>>> main
         }
         if (isHelmetEquipped == false)
         {
