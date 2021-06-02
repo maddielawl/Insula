@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class UIManager : MonoBehaviour
 {
@@ -89,6 +90,7 @@ public class UIManager : MonoBehaviour
     public GameObject celeste;
     public GameObject oublie;
 
+    public Volume v_Tv;
 
     public void Update()
     {
@@ -362,6 +364,7 @@ public class UIManager : MonoBehaviour
         {
             helmetOffIndicator.SetActive(false);
             helmetOnIndicator.SetActive(true);
+            v_Tv.weight = 1;
             GameManager.Instance.hasHelmetEquipped = true;
             player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
         }
@@ -372,6 +375,7 @@ public class UIManager : MonoBehaviour
         {
             helmetOffIndicator.SetActive(true);
             helmetOnIndicator.SetActive(false);
+            v_Tv.weight = 0;
             GameManager.Instance.hasHelmetEquipped = false;
             player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
         }
