@@ -17,6 +17,8 @@ public class Lever4 : MonoBehaviour
     public SpriteRenderer LevelMiddleHighlight;
     public SpriteRenderer LevelRightHighlight;
 
+    public GameObject isgood;
+
 
     void Start()
     {
@@ -31,6 +33,14 @@ public class Lever4 : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(leverSfx);
             GameManager.Instance.globalInterractionSecurity = true;
             parent.interractionSecurity = true;
+
+            if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 0 && button.lever4 == 2)
+            {
+                UIManager.Instance.DisplayPortrait(0);
+                isgood.SetActive(true);
+                Invoke("HideIsGood", 5f);
+                return;
+            }
 
             if (button.lever4 == 0)
             {
@@ -96,5 +106,9 @@ public class Lever4 : MonoBehaviour
         }
 
 
+    }
+    public void HideIsGood()
+    {
+        UIManager.Instance.HidePortraits();
     }
 }

@@ -18,6 +18,8 @@ public class Lever1 : MonoBehaviour
     public SpriteRenderer LevelMiddleHighlight;
     public SpriteRenderer LevelRightHighlight;
 
+    public GameObject isgood;
+
 
     void Start()
     {
@@ -33,7 +35,15 @@ public class Lever1 : MonoBehaviour
             GameManager.Instance.globalInterractionSecurity = true;
             parent.interractionSecurity = true;
 
-            if (button.lever1 == 0)
+            if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 0 && button.lever4 == 2)
+            {
+                UIManager.Instance.DisplayPortrait(0);
+                isgood.SetActive(true);
+                Invoke("HideIsGood", 5f);
+                return;
+            }
+
+                if (button.lever1 == 0)
             {
                 if (order == false)
                 {
@@ -97,6 +107,11 @@ public class Lever1 : MonoBehaviour
         }
 
 
+    }
+
+    public void HideIsGood()
+    {
+        UIManager.Instance.HidePortraits();
     }
 
 }
