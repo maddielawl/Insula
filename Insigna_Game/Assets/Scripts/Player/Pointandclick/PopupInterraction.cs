@@ -53,6 +53,10 @@ public class PopupInterraction : MonoBehaviour
 
     private TextMeshProUGUI[] interactionsTexts;
 
+    private GameObject[] allBoxColliders;
+    private BoxCollider2D[] allBoxCollier2DDisabled = new BoxCollider2D[100];
+    private int allDisBoxColLength = 0;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -261,6 +265,24 @@ public class PopupInterraction : MonoBehaviour
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
 
+                    /*allBoxColliders = GameObject.FindGameObjectsWithTag("Interractable");
+                    for (int i = 0; i < allBoxColliders.Length; i++)
+                    {
+                        if (allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
+                        {
+                            if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled == false)
+                            {
+                                allBoxCollier2DDisabled[allDisBoxColLength] = allBoxColliders[i].GetComponent<BoxCollider2D>();
+                                allDisBoxColLength += 1;
+                            }
+                        }
+
+                        if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled)
+                        {
+                            allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = false;
+                        }
+                    }*/
+
                 }
             }
         }
@@ -359,6 +381,57 @@ public class PopupInterraction : MonoBehaviour
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
         }
+
+        /*for (int i = 0; i < allBoxColliders.Length; i++)
+        {
+            if (allBoxColliders[i] != null)
+            {
+                if (allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                }
+            }
+        }
+
+        for (int i = 0; i < allBoxCollier2DDisabled.Length; i++)
+        {
+            if (allBoxCollier2DDisabled[i] != null)
+            {
+                if (allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>().enabled = false;
+                }
+            }
+        }
+
+        allDisBoxColLength = 0;*/
+    }
+
+    public void DeactivateAllInteractables()
+    {
+        /*for (int i = 0; i < allBoxColliders.Length; i++)
+        {
+            if (allBoxColliders[i] != null)
+            {
+                if (allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                }
+            }
+        }
+
+        for (int i = 0; i < allBoxCollier2DDisabled.Length; i++)
+        {
+            if (allBoxCollier2DDisabled[i] != null)
+            {
+                if (allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>().enabled = false;
+                }
+            }
+        }
+
+        allDisBoxColLength = 0;*/
     }
 }
 

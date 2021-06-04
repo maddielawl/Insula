@@ -10,6 +10,7 @@ public class QuitPopUp : MonoBehaviour
     public void QuitInterraction()
     {
         GameObject.Find(popUpName).transform.GetComponent<PopupInterraction>().QuitInterraction();
+        GameObject.Find(popUpName).transform.GetComponent<PopupInterraction>().DeactivateAllInteractables();
     }
 
     public void Deactivate()
