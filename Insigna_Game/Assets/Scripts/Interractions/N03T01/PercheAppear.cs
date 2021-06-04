@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PercheAppear : MonoBehaviour
 {
 
     public Interractable parent;
     public GameObject perche;
+    public bool percheonce = false;
+    public EnvrioManager em;
+    public TextMeshProUGUI interractiontext;
+
+    public string PercheText;
+    public string CodeText;
+    public string BaseText;
 
     void Start()
     {
@@ -19,9 +27,35 @@ public class PercheAppear : MonoBehaviour
         if(parent.interractionSecurity == false)
         {
             parent.interractionSecurity = true;
-            perche.transform.parent = null;
+            if (percheonce == false)
+            {
+                perche.transform.parent = null;
+                percheonce = true;
+                interractiontext.text = PercheText;
+                UIManager.Instance.DisplayPortrait(1);
+                Invoke("HideIsGood", 5f);
+                return;
+            }
+            if(em.woderoff == true)
+            {
+                interractiontext.text = CodeText;
+                UIManager.Instance.DisplayPortrait(1);
+                Invoke("HideIsGood", 5f);
+            }
+            else
+            {
+                interractiontext.text = BaseText;
+                UIManager.Instance.DisplayPortrait(1);
+                Invoke("HideIsGood", 5f);
+            }
 
             // perche.transform.GetComponent<Items>().objectSpriteRenderer = perche.transform.GetComponent<SpriteRenderer>();
         }
     }
+
+    public void HideIsGood()
+    {
+        UIManager.Instance.HidePortraits();
+    }
+
 }

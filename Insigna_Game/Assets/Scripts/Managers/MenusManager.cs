@@ -68,6 +68,8 @@ public class MenusManager : MonoBehaviour
     public GameObject entry6;
     public GameObject entry7;
 
+    [SerializeField] private bool diaryOpened;
+
     [Space(10)]
     public GameObject page0_1;
     public GameObject page2_3;
@@ -352,74 +354,80 @@ public class MenusManager : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext context)
     {
-        if (inGame == true)
+        if (context.performed)
         {
-            if (isPaused == true)
+            if (inGame == true)
             {
-                player = GameObject.FindGameObjectWithTag("Player");
-                Time.timeScale = 1;
-                ingamePauseMenu.SetActive(false);
-                inGameOptions.SetActive(false);
-                //GameManager.Instance.ActivateInGameActions();
-                player.GetComponent<PlayerInput>().enabled = true;
-                isPaused = false;
-
-                for (int i = 0; i < allBoxColliders.Length; i++)
+                if (isPaused == true)
                 {
-                    if (allBoxColliders[i] != null)
+                    player = GameObject.FindGameObjectWithTag("Player");
+                    Time.timeScale = 1;
+                    ingamePauseMenu.SetActive(false);
+                    inGameOptions.SetActive(false);
+                    GuideMenu.SetActive(false);
+                    player.GetComponent<PlayerInput>().enabled = true;
+                    isPaused = false;
+
+                    if (diaryOpened)
+                    {
+                        Time.timeScale = 0;
+                    }
+
+                    for (int i = 0; i < allBoxColliders.Length; i++)
+                    {
+                        if (allBoxColliders[i] != null)
+                        {
+                            if (allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
+                            {
+                                allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < allBoxCollier2DDisabled.Length; i++)
+                    {
+                        if (allBoxCollier2DDisabled[i] != null)
+                        {
+                            if (allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>() != null)
+                            {
+                                allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>().enabled = false;
+                            }
+                        }
+                    }
+
+                    allDisBoxColLength = 0;
+                    return;
+                }
+                else
+                {
+                    player = GameObject.FindGameObjectWithTag("Player");
+                    ingamePauseMenu.SetActive(true);
+                    inGameOptions.SetActive(false);
+                    Time.timeScale = 0;
+                    //GameManager.Instance.DeactivateInGameActions();
+                    player.GetComponent<PlayerInput>().enabled = false;
+                    isPaused = true;
+
+                    allBoxColliders = GameObject.FindGameObjectsWithTag("Interractable");
+                    for (int i = 0; i < allBoxColliders.Length; i++)
                     {
                         if (allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
                         {
-                            allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = true;
+                            if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled == false)
+                            {
+                                allBoxCollier2DDisabled[allDisBoxColLength] = allBoxColliders[i].GetComponent<BoxCollider2D>();
+                                allDisBoxColLength += 1;
+                            }
                         }
-                    }
-                }
 
-                for (int i = 0; i < allBoxCollier2DDisabled.Length; i++)
-                {
-                    if (allBoxCollier2DDisabled[i] != null)
-                    {
-                        if (allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>() != null)
+                        if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled)
                         {
-                            allBoxCollier2DDisabled[i].GetComponent<BoxCollider2D>().enabled = false;
+                            allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = false;
                         }
+
                     }
+                    return;
                 }
-
-                allDisBoxColLength = 0;
-
-                return;
-            }
-            else
-            {
-                player = GameObject.FindGameObjectWithTag("Player");
-                ingamePauseMenu.SetActive(true);
-                inGameOptions.SetActive(false);
-                Time.timeScale = 0;
-                //GameManager.Instance.DeactivateInGameActions();
-                player.GetComponent<PlayerInput>().enabled = false;
-                isPaused = true;
-
-                allBoxColliders = GameObject.FindGameObjectsWithTag("Interractable");
-                for (int i = 0; i < allBoxColliders.Length; i++)
-                {
-                    if (allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
-                    {
-                        if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled == false)
-                        {
-                            allBoxCollier2DDisabled[allDisBoxColLength] = allBoxColliders[i].GetComponent<BoxCollider2D>();
-                            allDisBoxColLength += 1;
-                        }
-                    }
-
-                    if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled)
-                    {
-                        allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = false;
-                    }
-
-                }
-
-                return;
             }
         }
     }
@@ -434,6 +442,12 @@ public class MenusManager : MonoBehaviour
             player.GetComponent<PlayerInput>().enabled = true;
             isPaused = false;
             allInteractableColliders = GameObject.FindGameObjectsWithTag("Interractable");
+
+            if (diaryOpened)
+            {
+                Time.timeScale = 0;
+            }
+
             for (int i = 0; i < allInteractableColliders.Length; i++)
             {
                 if (allInteractableColliders[i].GetComponent<BoxCollider2D>() != null)
@@ -592,8 +606,10 @@ public class MenusManager : MonoBehaviour
 
     public void Diary()
     {
+        diaryOpened = true;
         diary.SetActive(true);
         player.GetComponent<PlayerInput>().enabled = false;
+        Time.timeScale = 0;
 
         allBoxColliders = GameObject.FindGameObjectsWithTag("Interractable");
         for (int i = 0; i < allBoxColliders.Length; i++)
@@ -617,8 +633,10 @@ public class MenusManager : MonoBehaviour
 
     public void HideDiary()
     {
+        diaryOpened = false;
         diary.SetActive(false);
         player.GetComponent<PlayerInput>().enabled = true;
+        Time.timeScale = 1;
 
         for (int i = 0; i < allBoxColliders.Length; i++)
         {

@@ -10,5 +10,6 @@ public class EnvrioManager : MonoBehaviour
     public bool inMadness;
     public bool electricity = false;
     public bool onisland = false;
+    public bool woderoff = false;
 
 }
