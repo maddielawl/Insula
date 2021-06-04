@@ -116,6 +116,10 @@ public class MenusManager : MonoBehaviour
         {
             instance = this;
         }
+        SaveScript.Instance.LoadData();
+        isFullScreen = SaveManager.Instance.FullscreenBool;
+        Screen.SetResolution(SaveManager.Instance.XResolution, SaveManager.Instance.YResolution, isFullScreen);
+        mainMenuAudioSource.volume = SaveManager.Instance.VolumeFloat;
         menusActions = new GameInputs();
         mainMenuAudioSource = GetComponent<AudioSource>();
         transform.gameObject.SetActive(true);
@@ -710,12 +714,16 @@ public class MenusManager : MonoBehaviour
     {
         // musicVolumeSlider.value = SaveManager.Instance.myGameSettings.musicVolume;
         mainMenuAudioSource.volume = musicVolumeSlider.value;
+        SaveManager.Instance.VolumeFloat = musicVolumeSlider.value;
+        SaveScript.Instance.SaveData();
     }
 
     //Called by Music slider
     public void UpdateAudioVolume(float sliderValue)
     {
         mainMenuAudioSource.volume = sliderValue;
+        SaveManager.Instance.VolumeFloat = musicVolumeSlider.value;
+        SaveScript.Instance.SaveData();
         // SaveManager.Instance.myGameSettings.musicVolume = mainMenuAudioSource.volume;
         // SaveManager.Instance.SaveMenuSettings();
     }
@@ -726,12 +734,21 @@ public class MenusManager : MonoBehaviour
         {
             case 0:
                 Screen.SetResolution(1920, 1080, isFullScreen);
+                SaveManager.Instance.XResolution = 1920;
+                SaveManager.Instance.YResolution = 1080;
+                SaveScript.Instance.SaveData();
                 break;
             case 1:
                 Screen.SetResolution(1600, 900, isFullScreen);
+                SaveManager.Instance.XResolution = 1600;
+                SaveManager.Instance.YResolution = 900;
+                SaveScript.Instance.SaveData();
                 break;
             case 2:
                 Screen.SetResolution(1280, 800, isFullScreen);
+                SaveManager.Instance.XResolution = 1280;
+                SaveManager.Instance.YResolution = 800;
+                SaveScript.Instance.SaveData();
                 break;
         }
     }
@@ -744,6 +761,8 @@ public class MenusManager : MonoBehaviour
 
             isFullScreen = false;
             Screen.fullScreen = false;
+            SaveManager.Instance.FullscreenBool = false;
+            SaveScript.Instance.SaveData();
         }
 
         if (fullScreen == true)
@@ -752,6 +771,8 @@ public class MenusManager : MonoBehaviour
 
             isFullScreen = true;
             Screen.fullScreen = true;
+            SaveManager.Instance.FullscreenBool = true;
+            SaveScript.Instance.SaveData();
         }
     }
 
@@ -760,10 +781,14 @@ public class MenusManager : MonoBehaviour
         if (cursorStateToggle.isOn == true)
         {
             CursorManager.Instance.cursorState = true;
+            SaveManager.Instance.CursorState = true;
+            SaveScript.Instance.SaveData();
         }
         if (cursorStateToggle.isOn == false)
         {
             CursorManager.Instance.cursorState = false;
+            SaveManager.Instance.CursorState = false;
+            SaveScript.Instance.SaveData();
         }
     }
 

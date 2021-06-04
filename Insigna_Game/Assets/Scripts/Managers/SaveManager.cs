@@ -16,4 +16,15 @@ public class SaveManager : MonoBehaviour
             Destroy (gameObject);
     }
     #endregion
+
+
+    public int LevelIdx;
+    public float VolumeFloat;
+    public bool FullscreenBool;
+    public bool CursorState;
+    public int XResolution;
+    public int YResolution;
+
+
+
 }
