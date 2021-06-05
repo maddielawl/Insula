@@ -32,6 +32,8 @@ public class MenusManager : MonoBehaviour
     private BoxCollider2D[] allBoxCollier2DDisabled = new BoxCollider2D[100];
     private int allDisBoxColLength = 0;
 
+    [HideInInspector] public bool inTuto;
+
 
 
     [Header("MAIN UI SECTIONS")]
@@ -403,40 +405,43 @@ public class MenusManager : MonoBehaviour
                 }
                 else
                 {
-                    player = GameObject.FindGameObjectWithTag("Player");
-                    ingamePauseMenu.SetActive(true);
-                    inGameOptions.SetActive(false);
-                    Time.timeScale = 0;
-                    //GameManager.Instance.DeactivateInGameActions();
-                    player.GetComponent<PlayerInput>().enabled = false;
-                    isPaused = true;
-
-                    if (diaryOpened)
+                    if (inTuto == false)
                     {
+                        player = GameObject.FindGameObjectWithTag("Player");
+                        ingamePauseMenu.SetActive(true);
+                        inGameOptions.SetActive(false);
                         Time.timeScale = 0;
-                    }
-                    else
-                    {
-                        allBoxColliders = GameObject.FindGameObjectsWithTag("Interractable");
-                        for (int i = 0; i < allBoxColliders.Length; i++)
+                        //GameManager.Instance.DeactivateInGameActions();
+                        player.GetComponent<PlayerInput>().enabled = false;
+                        isPaused = true;
+
+                        if (diaryOpened)
                         {
-                            if (allBoxColliders[i] != null && allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
+                            Time.timeScale = 0;
+                        }
+                        else
+                        {
+                            allBoxColliders = GameObject.FindGameObjectsWithTag("Interractable");
+                            for (int i = 0; i < allBoxColliders.Length; i++)
                             {
-                                if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled == false)
+                                if (allBoxColliders[i] != null && allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
                                 {
-                                    allBoxCollier2DDisabled[allDisBoxColLength] = allBoxColliders[i].GetComponent<BoxCollider2D>();
-                                    allDisBoxColLength += 1;
-                                }
+                                    if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled == false)
+                                    {
+                                        allBoxCollier2DDisabled[allDisBoxColLength] = allBoxColliders[i].GetComponent<BoxCollider2D>();
+                                        allDisBoxColLength += 1;
+                                    }
 
-                                if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled)
-                                {
-                                    allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = false;
-                                }
+                                    if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled)
+                                    {
+                                        allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = false;
+                                    }
 
+                                }
                             }
                         }
+                        return;
                     }
-                    return;
                 }
             }
         }

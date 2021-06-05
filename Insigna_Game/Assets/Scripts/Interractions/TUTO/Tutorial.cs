@@ -31,6 +31,7 @@ public class Tutorial : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        MenusManager.instance.inTuto = true;
         character.GetComponent<PlayerInput>().enabled = false;
         transform.GetComponent<BoxCollider2D>().enabled = false;
         for (int i = 0; i < interractablesCollider.Length; i++)
@@ -65,5 +66,6 @@ public class Tutorial : MonoBehaviour
     public void WaitBeforeMoving()
     {
         character.GetComponent<PlayerInput>().enabled = true;
+        MenusManager.instance.inTuto = false;
     }
 }
