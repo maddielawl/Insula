@@ -10,15 +10,16 @@ public class Lever1 : MonoBehaviour
 
     private bool order = false;
 
-    public Sprite LevelLeft;
-    public Sprite LevelMiddle;
-    public Sprite LevelRight;
+    public Sprite LeverUp;
+    public Sprite LeverMiddle;
+    public Sprite LeverDown;
 
     public SpriteRenderer LevelLeftHighlight;
     public SpriteRenderer LevelMiddleHighlight;
     public SpriteRenderer LevelRightHighlight;
-
-    public GameObject isgood;
+    public GameObject feuxUp;
+    public GameObject feuxMiddle;
+    public GameObject feuxDown;
 
 
     void Start()
@@ -35,23 +36,18 @@ public class Lever1 : MonoBehaviour
             GameManager.Instance.globalInterractionSecurity = true;
             parent.interractionSecurity = true;
 
-            if (button.lever1 == 2 && button.lever2 == 1 && button.lever3 == 0 && button.lever4 == 2)
-            {
-                UIManager.Instance.DisplayPortrait(0);
-                isgood.SetActive(true);
-                Invoke("HideIsGood", 5f);
-                return;
-            }
 
-                if (button.lever1 == 0)
+            if (button.lever1 == 0)
             {
                 if (order == false)
                 {
                     button.lever1++;
-                    transform.parent.GetComponent<SpriteRenderer>().sprite = LevelMiddle;
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = LeverMiddle;
                     parent.spriteHighlight.enabled = false;
                     parent.spriteHighlight = LevelMiddleHighlight;
                     parent.spriteHighlight.enabled = true;
+                    feuxUp.SetActive(false);
+                    feuxMiddle.SetActive(true);
                 }
                 if (order == true)
                 {
@@ -66,10 +62,12 @@ public class Lever1 : MonoBehaviour
                 {
                     button.lever1++;
                     order = true;
-                    transform.parent.GetComponent<SpriteRenderer>().sprite = LevelRight;
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = LeverDown;
                     parent.spriteHighlight.enabled = false;
                     parent.spriteHighlight = LevelRightHighlight;
                     parent.spriteHighlight.enabled = true;
+                    feuxMiddle.SetActive(false);
+                    feuxDown.SetActive(true);
                     this.gameObject.SetActive(false);
                     return;
                 }
@@ -77,10 +75,12 @@ public class Lever1 : MonoBehaviour
                 {
                     button.lever1--;
                     order = false;
-                    transform.parent.GetComponent<SpriteRenderer>().sprite = LevelLeft;
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = LeverUp;
                     parent.spriteHighlight.enabled = false;
                     parent.spriteHighlight = LevelLeftHighlight;
                     parent.spriteHighlight.enabled = true;
+                    feuxMiddle.SetActive(false);
+                    feuxUp.SetActive(true);
                     this.gameObject.SetActive(false);
                     return;
                 }
@@ -95,24 +95,18 @@ public class Lever1 : MonoBehaviour
                 if (order == true)
                 {
                     button.lever1--;
-                    transform.parent.GetComponent<SpriteRenderer>().sprite = LevelMiddle;
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = LeverMiddle;
                     parent.spriteHighlight.enabled = false;
                     parent.spriteHighlight = LevelMiddleHighlight;
                     parent.spriteHighlight.enabled = true;
+                    feuxDown.SetActive(false);
+                    feuxMiddle.SetActive(true);
                 }
                 this.gameObject.SetActive(false);
                 return;
 
             }
         }
-
-
     }
-
-    public void HideIsGood()
-    {
-        UIManager.Instance.HidePortraits();
-    }
-
 }
 

@@ -11,6 +11,15 @@ public class Button1Activation : MonoBehaviour
     public GameObject bloqueur;
     public GameObject ladderInteraction;
     public Animator LadderAnimator;
+    public GameObject ladderButtonOff;
+    public GameObject ladderButtonOn;
+    [Space(10)]
+
+    public BoxCollider2D buttonBC;
+    public BoxCollider2D lever1BC;
+    public BoxCollider2D lever2BC;
+    public BoxCollider2D lever3BC;
+    public BoxCollider2D lever4BC;
 
     private bool oneTime = false;
 
@@ -19,7 +28,8 @@ public class Button1Activation : MonoBehaviour
         button = transform.parent.GetComponent<ButtonL02>();
         parent = transform.parent.GetComponent<Interractable>();
         ladderInteraction.SetActive(false);
-
+        ladderButtonOff.SetActive(true);
+        ladderButtonOn.SetActive(false);
     }
 
     void Update()
@@ -34,6 +44,13 @@ public class Button1Activation : MonoBehaviour
                 bloqueur.SetActive(false);
                 ladderInteraction.SetActive(true);
                 ladder.SetActive(true);
+                ladderButtonOff.SetActive(false);
+                ladderButtonOn.SetActive(true);
+                buttonBC.enabled = false;
+                lever1BC.enabled = false;
+                lever2BC.enabled = false;
+                lever3BC.enabled = false;
+                lever4BC.enabled = false;
                 oneTime = true;
             }
         }

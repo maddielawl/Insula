@@ -329,7 +329,7 @@ public class Interractable : MonoBehaviour
             Destroy(currentVfx, 3f);
         }
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
 
         security = false;
         interractionSecurity = false;
@@ -343,7 +343,7 @@ public class Interractable : MonoBehaviour
         observationText.text = farPhrase;
         GameManager.Instance.isNear = false;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
 
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
@@ -357,7 +357,7 @@ public class Interractable : MonoBehaviour
         observationText.text = nearPhrase;
         GameManager.Instance.isNear = false;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
 
         security = false;
         GameManager.Instance.globalInterractionSecurity = false;
