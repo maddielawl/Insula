@@ -77,8 +77,11 @@ public class Interractable : MonoBehaviour
         playerInputs = player.GetComponent<PlayerInput>();
         playerInputs.actions.FindAction("Look").started += OnLook;
         playerInputs.actions.FindAction("Use").started += OnUse;
-        nearInt0 = transform.GetChild(0).gameObject;
-        nearInt0.SetActive(false);
+        if (transform.GetChild(0).gameObject.tag == "NearInt")
+        {
+            nearInt0 = transform.GetChild(0).gameObject;
+            nearInt0.SetActive(false);
+        }
         farInt1 = transform.GetChild(1).gameObject;
         observationText = farInt1.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         farInt1.SetActive(false);
@@ -214,8 +217,10 @@ public class Interractable : MonoBehaviour
 
                 if (isNear == true)
                 {
-                    
-                    GameManager.Instance.near_Text = nearInt0;
+                    if (nearInt0 != null)
+                    {
+                        GameManager.Instance.near_Text = nearInt0;
+                    }
                     if (GameManager.Instance.hasInteracted)
                     {
                         GameManager.Instance.StopHidePortaitFonction();
