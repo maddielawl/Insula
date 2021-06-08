@@ -360,25 +360,19 @@ public class UIManager : MonoBehaviour
     }
     public void HelmetIsOn()
     {
-        if (playerData.ladderTaken == false && playerData.isInVent == false)
-        {
-            helmetOffIndicator.SetActive(false);
-            helmetOnIndicator.SetActive(true);
-            v_Tv.weight = 1;
-            GameManager.Instance.hasHelmetEquipped = true;
-            player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
-        }
+        helmetOffIndicator.SetActive(false);
+        helmetOnIndicator.SetActive(true);
+        v_Tv.weight = 1;
+        GameManager.Instance.hasHelmetEquipped = true;
+        player.GetComponent<Animator>().runtimeAnimatorController = playerTvAnimatorController;
     }
     public void HelmetIsOff()
     {
-        if (playerData.ladderTaken == false && playerData.isInVent == false)
-        {
-            helmetOffIndicator.SetActive(true);
-            helmetOnIndicator.SetActive(false);
-            v_Tv.weight = 0;
-            GameManager.Instance.hasHelmetEquipped = false;
-            player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
-        }
+        helmetOffIndicator.SetActive(true);
+        helmetOnIndicator.SetActive(false);
+        v_Tv.weight = 0;
+        GameManager.Instance.hasHelmetEquipped = false;
+        player.GetComponent<Animator>().runtimeAnimatorController = playerAnimatorController;
     }
 
     public void ChangeHelmetState()
@@ -393,7 +387,7 @@ public class UIManager : MonoBehaviour
                 return;
             }
 
-            if (GameManager.Instance.isHelmetEquipped == false)
+            if (GameManager.Instance.isHelmetEquipped == false && playerData.ladderTaken == false && playerData.isInVent == false)
             {
                 GameManager.Instance.isHelmetEquipped = true;
                 UIManager.Instance.HelmetIsOn();
