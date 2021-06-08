@@ -11,10 +11,11 @@ public class PlayerData : ScriptableObject
     [Header("Check Variables")]
     public float groundCheckRadius = 0.3f;
     public LayerMask whatIsGround;
-    //échelle
+    //ï¿½chelle
     public GameObject ladderGO;
     public bool takeLadderCooldown = true;
     public bool ladderTaken = false;
     public bool BottomLadderTrigger = false;
     public bool TopLadderTrigger = false;
+    public bool isInVent = false;
 }

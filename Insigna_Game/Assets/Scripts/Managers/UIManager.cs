@@ -360,7 +360,7 @@ public class UIManager : MonoBehaviour
     }
     public void HelmetIsOn()
     {
-        if (playerData.ladderTaken == false)
+        if (playerData.ladderTaken == false && playerData.isInVent == false)
         {
             helmetOffIndicator.SetActive(false);
             helmetOnIndicator.SetActive(true);
@@ -371,7 +371,7 @@ public class UIManager : MonoBehaviour
     }
     public void HelmetIsOff()
     {
-        if (playerData.ladderTaken == false)
+        if (playerData.ladderTaken == false && playerData.isInVent == false)
         {
             helmetOffIndicator.SetActive(true);
             helmetOnIndicator.SetActive(false);

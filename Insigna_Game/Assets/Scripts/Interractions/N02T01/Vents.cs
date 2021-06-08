@@ -10,6 +10,7 @@ public class Vents : MonoBehaviour
     public bool isInside = false;
 
     public Animator playerAnim;
+    public PlayerData player;
     public RuntimeAnimatorController characterBasicAC;
     public AnimatorOverrideController characterVentAOC;
 
@@ -30,7 +31,7 @@ public class Vents : MonoBehaviour
         outside.SetActive(false);
         inside.SetActive(true);
         playerAnim.runtimeAnimatorController = characterVentAOC;
-
+        player.isInVent = true;
         allBoxColliders = GameObject.FindGameObjectsWithTag("Interractable");
         for (int i = 0; i < allBoxColliders.Length; i++)
         {
@@ -77,7 +78,7 @@ public class Vents : MonoBehaviour
         inside.SetActive(false);
         outside.SetActive(true);
         playerAnim.runtimeAnimatorController = characterBasicAC;
-
+        player.isInVent = true;
         for (int i = 0; i < allBoxColliders.Length; i++)
         {
             if (allBoxColliders[i] != null)
