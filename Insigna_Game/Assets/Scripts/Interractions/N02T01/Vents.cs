@@ -27,6 +27,7 @@ public class Vents : MonoBehaviour
 
     public void GetInside(GameObject thenear)
     {
+        UIManager.Instance.HelmetIsOff();
         GameManager.Instance.playerInVent = true;
         outside.SetActive(false);
         inside.SetActive(true);
