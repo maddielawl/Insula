@@ -611,6 +611,8 @@ public class MenusManager : MonoBehaviour
 
         GameManager.Instance.dimensionSwapMadness = true;
 
+        UIManager.Instance.HelmetIsOff();
+
         if (SceneManager.sceneCount > 1)
         {
             if (SceneManager.GetSceneAt(1).isLoaded)
