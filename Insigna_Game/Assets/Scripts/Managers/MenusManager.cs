@@ -548,6 +548,25 @@ public class MenusManager : MonoBehaviour
         Time.timeScale = 0;
         ingameGameOverUI.SetActive(true);
         ingameMainUI.SetActive(false);
+
+        allBoxColliders = GameObject.FindGameObjectsWithTag("Interractable");
+        for (int i = 0; i < allBoxColliders.Length; i++)
+        {
+            if (allBoxColliders[i] != null && allBoxColliders[i].GetComponent<BoxCollider2D>() != null)
+            {
+                if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled == false)
+                {
+                    allBoxCollier2DDisabled[allDisBoxColLength] = allBoxColliders[i].GetComponent<BoxCollider2D>();
+                    allDisBoxColLength += 1;
+                }
+
+                if (allBoxColliders[i].GetComponent<BoxCollider2D>().enabled)
+                {
+                    allBoxColliders[i].GetComponent<BoxCollider2D>().enabled = false;
+                }
+
+            }
+        }
     }
 
     public void Restart()
