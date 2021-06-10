@@ -89,10 +89,17 @@ public class HealthPack : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
-
-                GameManager.Instance.far_Text = farInt0;
                 if (GameManager.Instance.hasInteracted)
                 {
+                    /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                    for (int i = 0; i < interactionsTexts.Length; i++)
+                    {
+                        if (interactionsTexts[i] != null)
+                        {
+                            interactionsTexts[i].text = null;
+                        }
+                    }*/
+
                     GameManager.Instance.StopHidePortaitFonction();
                     GameManager.Instance.StopFarTextFonction();
                     GameManager.Instance.StopNearTextFonction();
@@ -112,19 +119,12 @@ public class HealthPack : MonoBehaviour
 
                 if (GameManager.Instance.hasInteracted == false)
                 {
+                    GameManager.Instance.far_Text = farInt0;
                     GameManager.Instance.hasInteracted = true;
                     GameManager.Instance.StartHidePortaitFonction();
                     GameManager.Instance.StartFarTextFonction();
                 }
 
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
-                for (int i = 0; i < interactionsTexts.Length; i++)
-                {
-                    if (interactionsTexts[i] != null)
-                    {
-                        interactionsTexts[i].text = null;
-                    }
-                }
 
                 if (isNear == false)
                 {
@@ -196,14 +196,14 @@ public class HealthPack : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
                     if (interactionsTexts[i] != null)
                     {
                         interactionsTexts[i].text = null;
                     }
-                }
+                }*/
 
                 if (isNear == true)
                 {

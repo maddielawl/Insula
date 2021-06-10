@@ -112,10 +112,17 @@ public class PopupInterraction : MonoBehaviour
         {
             if (cursorOn == true && gameObject.activeSelf == true)
             {
-
-                GameManager.Instance.far_Text = farInt1;
                 if (GameManager.Instance.hasInteracted)
                 {
+                    /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                    for (int i = 0; i < interactionsTexts.Length; i++)
+                    {
+                        if (interactionsTexts[i] != null)
+                        {
+                            interactionsTexts[i].text = null;
+                        }
+                    }*/
+
                     GameManager.Instance.StopHidePortaitFonction();
                     GameManager.Instance.StopFarTextFonction();
                     GameManager.Instance.StopNearTextFonction();
@@ -135,18 +142,10 @@ public class PopupInterraction : MonoBehaviour
 
                 if (GameManager.Instance.hasInteracted == false)
                 {
+                    GameManager.Instance.far_Text = farInt1;
                     GameManager.Instance.hasInteracted = true;
                     GameManager.Instance.StartHidePortaitFonction();
                     GameManager.Instance.StartFarTextFonction();
-                }
-
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
-                for (int i = 0; i < interactionsTexts.Length; i++)
-                {
-                    if (interactionsTexts[i] != null)
-                    {
-                        interactionsTexts[i].text = null;
-                    }
                 }
 
                 if (isNear == false)
@@ -220,14 +219,14 @@ public class PopupInterraction : MonoBehaviour
             if (cursorOn == true && gameObject.activeSelf == true)
             {
 
-                interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
+                /*interactionsTexts = FindObjectsOfType<TextMeshProUGUI>();
                 for (int i = 0; i < interactionsTexts.Length; i++)
                 {
                     if (interactionsTexts[i] != null)
                     {
                         interactionsTexts[i].text = null;
                     }
-                }
+                }*/
 
                 if (isNear == true)
                 {
@@ -253,6 +252,7 @@ public class PopupInterraction : MonoBehaviour
                         }
                     }
                     StartCoroutine(NearInterraction());
+                    UIManager.Instance.HidePortraits();
                     if (spriteHighlight != null)
                     {
                         spriteHighlight.enabled = false;
