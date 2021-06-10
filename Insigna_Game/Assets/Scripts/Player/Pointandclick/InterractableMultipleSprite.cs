@@ -327,10 +327,12 @@ public class InterractableMultipleSprite : MonoBehaviour
 
     private IEnumerator NearInterraction()
     {
+        nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
 
         yield return new WaitForSeconds(5f);
 
+        nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;

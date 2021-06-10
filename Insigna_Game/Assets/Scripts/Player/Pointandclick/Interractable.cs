@@ -331,6 +331,7 @@ public class Interractable : MonoBehaviour
 
     private IEnumerator NearInterraction()
     {
+        nearInt0.SetActive(true);
         GameManager.Instance.isNear = true;
         FindObjectOfType<AudioManager>().Play("OnClickInventory");
         if (vfx != null)
@@ -342,6 +343,7 @@ public class Interractable : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        nearInt0.SetActive(false);
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;

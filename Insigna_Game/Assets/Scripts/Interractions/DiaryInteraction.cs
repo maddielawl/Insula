@@ -377,7 +377,6 @@ public class DiaryInteraction : MonoBehaviour
 
     private IEnumerator NearInterraction()
     {
-
         JournalAnimator = GameObject.Find("Journal").GetComponent<Animator>();
         if (JournalAnimator != null)
         {
@@ -386,7 +385,7 @@ public class DiaryInteraction : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2.5f);
-
+        
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
