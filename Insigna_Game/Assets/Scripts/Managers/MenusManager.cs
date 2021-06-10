@@ -540,7 +540,7 @@ public class MenusManager : MonoBehaviour
         //GameManager.Instance.ActivateInGameActions();
         inGame = true;
         level1loaded = true;
-        Invoke("ActivateInGameUI", 0.4f);
+        //Invoke("ActivateInGameUI", 0.4f);
     }
     public void GameOver()
     {
@@ -853,6 +853,7 @@ public class MenusManager : MonoBehaviour
     {
         if (active)
         {
+            ingameMainUI.SetActive(true);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 0);
             CursorManager.Instance.keepCursor = true;
             CursorManager.Instance.GetComponent<Image>().enabled = false;
