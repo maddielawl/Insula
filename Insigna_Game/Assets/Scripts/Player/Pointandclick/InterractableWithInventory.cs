@@ -296,6 +296,7 @@ public class InterractableWithInventory : MonoBehaviour
                         UIManager.Instance.HidePortraits();
                     }
                     StartCoroutine(NearInterraction());
+                    StartCoroutine(ResetInterractionNear());
                     FindObjectOfType<AudioManager>().Play("OnClickInventory");
                     // GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
                     // currentVfx.transform.parent = null;
@@ -375,10 +376,16 @@ public class InterractableWithInventory : MonoBehaviour
 
         nearInt0.SetActive(false);
         security = false;
-        interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
 
         yield return 0;
+    }
+
+    private IEnumerator ResetInterractionNear()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        interractionSecurity = false;
     }
     private IEnumerator FarInterraction()
     {
