@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
     public Sprite farCursor;
     public Sprite interractionCursor;
     public Sprite DoorCursor;
+    public Sprite popUpCursor;
 
     [Header("Inventory Buttons")]
     public Image inventoryButton1;
@@ -245,6 +246,12 @@ public class UIManager : MonoBehaviour
     {
         CursorManager.Instance.rend.sprite = DoorCursor;
         CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
+    }
+
+    public void SetPopUpCursor()
+    {
+        CursorManager.Instance.rend.sprite = popUpCursor;
+        CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
     }
 
 

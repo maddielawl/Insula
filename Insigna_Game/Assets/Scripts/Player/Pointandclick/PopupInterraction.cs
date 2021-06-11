@@ -66,7 +66,7 @@ public class PopupInterraction : MonoBehaviour
         }
         if (cursorOn == true)
         {
-            UIManager.Instance.SetNearCursor();
+            UIManager.Instance.SetPopUpCursor();
 
         }
     }
@@ -300,7 +300,7 @@ public class PopupInterraction : MonoBehaviour
             {
                 spriteHighlight.enabled = true;
             }
-            UIManager.Instance.SetNearCursor();
+            UIManager.Instance.SetPopUpCursor();
             isInterractableOn = true;
             cursorOn = true;
             return;
