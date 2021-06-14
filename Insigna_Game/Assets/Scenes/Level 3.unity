@@ -3469,8 +3469,8 @@ MonoBehaviour:
   spriteHighlight: {fileID: 21300000, guid: 5df4e689f7b7cf74599d9103c421dfb5, type: 3}
   objectSpriteRenderer: {fileID: 277404732}
   vfx: {fileID: 1894909547}
-  farPhrase: "Quelque chose est pos\xE9 au sol."
-  nearPhrase: "C'est du ruban adh\xE9sif."
+  farPhrase: "Quelque chose est pos\xE9 au sol. **"
+  nearPhrase: "C'est du ruban adh\xE9sif. **"
   portraitIdx: 0
   isInterractionTalkative: 0
 --- !u!212 &277404732
@@ -5497,8 +5497,8 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1093891330}
-  farPhrase: "C'est un grand centre de contr\xF4le"
-  nearPhrase: Je peux taper un code dessus !
+  farPhrase: "C'est un grand centre de contr\xF4le **"
+  nearPhrase: Je peux taper un code dessus ! **
   interractionIdx: 4
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -6753,8 +6753,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
-  farPhrase: Il as pas l'air bien en point.
-  nearPhrase: Bz bz
+  farPhrase: Il as pas l'air bien en point. **
+  nearPhrase: Bz bz **
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -7478,8 +7478,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
-  farPhrase: Fais ton geuh
-  nearPhrase: Fais ton Victor
+  farPhrase: Fais ton greuh **
+  nearPhrase: Fais ton Victor **
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -8507,8 +8507,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
-  farPhrase: "Quelque chose semble li\xE9 a un echaffaudage"
-  nearPhrase: Un robot tire.
+  farPhrase: "Quelque chose semble li\xE9 a un echaffaudage **"
+  nearPhrase: Un robot tire. **
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -8967,8 +8967,8 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  farPhrase: C'est quoi ce truc dans l'eau ?
-  nearPhrase: C'est un coffre-fort !!!!
+  farPhrase: C'est quoi ce truc dans l'eau ? **
+  nearPhrase: C'est un coffre-fort !!!! **
   interractionIdx: 7
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -10331,8 +10331,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 1032765651}
   vfx: {fileID: 1894909547}
-  farPhrase: c'est une chaine ?
-  nearPhrase: ah ouais
+  farPhrase: c'est une chaine ? **
+  nearPhrase: ah ouais **
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -10414,8 +10414,8 @@ MonoBehaviour:
   objectSprite: []
   spriteHighlight: []
   objectToInterractWith: Poulie
-  farPhrase: On dirait une poire.
-  nearPhrase: C'est une poulie !!
+  farPhrase: On dirait une poire **
+  nearPhrase: C'est une poulie !! **
   portraitIdx: 0
   isInterractionTalkative: 0
 --- !u!212 &836667020
@@ -11001,8 +11001,8 @@ MonoBehaviour:
   objectSprite: []
   spriteHighlight: []
   objectToInterractWith: Corde
-  farPhrase: On dirait une poire.
-  nearPhrase: C'est une poulie !!
+  farPhrase: On dirait une poire. **
+  nearPhrase: C'est une poulie !! **
   portraitIdx: 0
   isInterractionTalkative: 0
 --- !u!212 &861631622
@@ -12181,8 +12181,8 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   objectSpriteRenderer: {fileID: 951717913}
   vfx: {fileID: 1894909547}
-  farPhrase: Poule
-  nearPhrase: Ie
+  farPhrase: Poule **
+  nearPhrase: Ie **
   portraitIdx: 0
   isInterractionTalkative: 0
 --- !u!212 &951717913
@@ -13686,9 +13686,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1060080115}
   - component: {fileID: 1060080119}
-  - component: {fileID: 1060080118}
-  - component: {fileID: 1060080117}
-  - component: {fileID: 1060080116}
   m_Layer: 0
   m_Name: Coffre_ouvert
   m_TagString: Untagged
@@ -13710,65 +13707,6 @@ Transform:
   m_Father: {fileID: 70538528}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1060080116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060080114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa4937c7bc8feb45a225084c8c71d55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  part2: {fileID: 951717909}
---- !u!114 &1060080117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060080114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dc3b682402a91f46acf7bb885f9f911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isNear: 0
-  interractionSecurity: 1
-  spriteHighlight: {fileID: 0}
-  farPhrase: C'est quoi ce truc dans l'eau ?
-  nearPhrase: C'est un coffre-fort !!!!
-  interractionIdx: 7
-  portraitIdx: 0
-  isInterractionTalkative: 0
---- !u!61 &1060080118
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060080114}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.664, y: 7.576}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.39, y: 6.15}
-  m_EdgeRadius: 0
 --- !u!212 &1060080119
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15299,8 +15237,8 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
   farPhrase: "Il y a un robot l\xE0 bas et il a l'air diff\xE9rent des autres que
-    j'ai pu rencontrer."
-  nearPhrase: Il n'est pas agressif !!
+    j'ai pu rencontrer. **"
+  nearPhrase: Il n'est pas agressif !! **
   observationText: {fileID: 0}
   portraitIdx: 1
   isInterractionTalkative: 0
@@ -15916,8 +15854,8 @@ MonoBehaviour:
   spriteHighlight: {fileID: 21300000, guid: 8c64a5b04a280a44aa4026dd18f8d69b, type: 3}
   objectSpriteRenderer: {fileID: 1216143598}
   vfx: {fileID: 1894909547}
-  farPhrase: "Quelque chose est pos\xE9 au sol."
-  nearPhrase: "C'est du ruban adh\xE9sif."
+  farPhrase: "Quelque chose est pos\xE9 au sol. **"
+  nearPhrase: "C'est du ruban adh\xE9sif. **"
   portraitIdx: 0
   isInterractionTalkative: 0
 --- !u!212 &1216143598
@@ -16554,8 +16492,9 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
-  farPhrase: "On dirait un panneau de contr\xF4le"
-  nearPhrase: "Ce bouton a l'air de faire d\xE9placer le monte-charge \xE0 gauche."
+  farPhrase: "On dirait un panneau de contr\xF4le **"
+  nearPhrase: "Ce bouton a l'air de faire d\xE9placer le monte-charge \xE0 gauche.
+    **"
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -16855,6 +16794,7 @@ GameObject:
   - component: {fileID: 1275867142}
   - component: {fileID: 1275867144}
   - component: {fileID: 1275867143}
+  - component: {fileID: 1275867145}
   m_Layer: 0
   m_Name: Props_Vetements
   m_TagString: Interractable
@@ -16894,8 +16834,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 470288207}
   vfx: {fileID: 1894909547}
-  farPhrase: des vetements
-  nearPhrase: des sapes
+  farPhrase: des vetements **
+  nearPhrase: des sapes **
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -16950,6 +16890,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1275867145
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275867141}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.98, y: 4.75}
+    newSize: {x: 7.98, y: 4.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.98, y: 1.7}
+  m_EdgeRadius: 0
 --- !u!4 &1297158095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3570676693507586282, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
@@ -17228,8 +17194,8 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 1093891330}
-  farPhrase: "C'est un grand centre de contr\xF4le"
-  nearPhrase: Je peux taper un code dessus !
+  farPhrase: "C'est un grand centre de contr\xF4le **"
+  nearPhrase: Je peux taper un code dessus ! **
   interractionIdx: 3
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -18088,8 +18054,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
-  farPhrase: "On dirait un levier. Je peux peut-\xEAtre l'utiliser !"
-  nearPhrase: "\xC7a fait tourner la lumi\xE8re du phare !"
+  farPhrase: "On dirait un levier. Je peux peut-\xEAtre l'utiliser ! **"
+  nearPhrase: "\xC7a fait tourner la lumi\xE8re du phare ! **"
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -18537,8 +18503,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
-  farPhrase: "Il y as un robot la bas, il as l'air diff\xE9rent."
-  nearPhrase: Il n'est pas agressif
+  farPhrase: "Il y as un robot la bas, il as l'air diff\xE9rent. **"
+  nearPhrase: Il n'est pas agressif **
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -18685,8 +18651,8 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  farPhrase: On dirait une armoire.
-  nearPhrase: "C'est un compteur \xE9l\xE9ctrique !"
+  farPhrase: On dirait une armoire. **
+  nearPhrase: "C'est un compteur \xE9l\xE9ctrique ! **"
   interractionIdx: 2
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -19335,8 +19301,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 1530791262}
   vfx: {fileID: 1894909547}
-  farPhrase: la chaine parait tendue
-  nearPhrase: elle l'est
+  farPhrase: la chaine parait tendue **
+  nearPhrase: elle l'est **
   observationText: {fileID: 0}
   portraitIdx: 2
   isInterractionTalkative: 0
@@ -19440,8 +19406,8 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  farPhrase: Gros Victor
-  nearPhrase: Victor Victor
+  farPhrase: Gros Victor **
+  nearPhrase: Victor Victor **
   interractionIdx: 5
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -19600,8 +19566,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
-  farPhrase: "On dirait un panneau de contr\xF4le"
-  nearPhrase: "Ce bouton a l'air d'arr\xEAter le monte-charge"
+  farPhrase: "On dirait un panneau de contr\xF4le **"
+  nearPhrase: "Ce bouton a l'air d'arr\xEAter le monte-charge **"
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -20800,8 +20766,8 @@ MonoBehaviour:
   objectSprite: []
   spriteHighlight: []
   objectToInterractWith: Perche
-  farPhrase: Ce champi est super grand !!
-  nearPhrase: Il a l'air fragile...
+  farPhrase: Ce champi est super grand !! **
+  nearPhrase: Il a l'air fragile... **
   portraitIdx: 0
   isInterractionTalkative: 0
 --- !u!61 &1648624334
@@ -20908,8 +20874,9 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
-  farPhrase: "On dirait un panneau de contr\xF4le"
-  nearPhrase: "Ce bouton a l'air de faire d\xE9placer le monte-charge \xE0 droite."
+  farPhrase: "On dirait un panneau de contr\xF4le **"
+  nearPhrase: "Ce bouton a l'air de faire d\xE9placer le monte-charge \xE0 droite.
+    **"
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -21332,8 +21299,8 @@ MonoBehaviour:
   isNear: 0
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
-  farPhrase: "Le placard a l'air ferm\xE9..."
-  nearPhrase: Je dois trouver un moyen d'ouvrir ce placard...
+  farPhrase: "Le placard a l'air ferm\xE9... **"
+  nearPhrase: Je dois trouver un moyen d'ouvrir ce placard... **
   interractionIdx: 6
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -22669,8 +22636,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 988559225}
   vfx: {fileID: 1894909547}
-  farPhrase: "On dirait un levier. Je peux peut-\xEAtre l'utiliser !"
-  nearPhrase: "\xC7a allume la lumi\xE8re !!"
+  farPhrase: "On dirait un levier. Je peux peut-\xEAtre l'utiliser ! **"
+  nearPhrase: "\xC7a allume la lumi\xE8re !! **"
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -22810,8 +22777,8 @@ MonoBehaviour:
   spriteHighlight: {fileID: 0}
   objectSpriteRenderer: {fileID: 1788018689}
   vfx: {fileID: 1894909547}
-  farPhrase: Corde
-  nearPhrase: Corde UwU
+  farPhrase: Corde **
+  nearPhrase: Corde UwU **
   portraitIdx: 0
   isInterractionTalkative: 0
 --- !u!61 &1788018688
@@ -23836,8 +23803,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 1894909547}
-  farPhrase: "On dirait une \xEEle..."
-  nearPhrase: "C'est bien une \xEEle !!"
+  farPhrase: "On dirait une \xEEle... **"
+  nearPhrase: "C'est bien une \xEEle !! **"
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
@@ -25113,8 +25080,8 @@ MonoBehaviour:
   interractionSecurity: 1
   spriteHighlight: {fileID: 0}
   vfx: {fileID: 0}
-  farPhrase: "Quelque chose semble li\xE9 a un echaffaudage"
-  nearPhrase: Un robot tire.
+  farPhrase: "Quelque chose semble li\xE9 a un echaffaudage **"
+  nearPhrase: Un robot tire. **
   observationText: {fileID: 0}
   portraitIdx: 0
   isInterractionTalkative: 0
