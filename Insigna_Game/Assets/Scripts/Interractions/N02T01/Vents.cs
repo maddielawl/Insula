@@ -11,6 +11,7 @@ public class Vents : MonoBehaviour
 
     public Animator playerAnim;
     public PlayerData player;
+    private GameObject playerGO;
     public RuntimeAnimatorController characterBasicAC;
     public AnimatorOverrideController characterVentAOC;
 
@@ -22,11 +23,13 @@ public class Vents : MonoBehaviour
     private void Start()
     {
         playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        playerGO = GameObject.FindGameObjectWithTag("Player");
     }
 
 
     public void GetInside(GameObject thenear)
     {
+        playerGO.transform.GetChild(1).GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         UIManager.Instance.HelmetIsOff();
         GameManager.Instance.playerInVent = true;
         outside.SetActive(false);
@@ -75,6 +78,7 @@ public class Vents : MonoBehaviour
 
     public void GetOutside(GameObject thenear)
     {
+        playerGO.transform.GetChild(1).GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1f);
         GameManager.Instance.playerInVent = false;
         inside.SetActive(false);
         outside.SetActive(true);
