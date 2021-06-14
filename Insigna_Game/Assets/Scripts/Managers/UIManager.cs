@@ -93,6 +93,8 @@ public class UIManager : MonoBehaviour
 
     public Volume v_Tv;
 
+    public GameObject IndicibleWarning;
+
     public void Update()
     {
         if (player == null)
@@ -491,6 +493,23 @@ public class UIManager : MonoBehaviour
             celeste.SetActive(false);
             oublie.SetActive(false);
         }
+    }
+
+    public void DisplayWarning() 
+    {
+        LeanTween.value(IndicibleWarning, SetSpriteAlpha, 0f, 1f, 1f);
+        Invoke("HideWarning", 5f);
+    }
+
+    public void HideWarning()
+    {
+        LeanTween.value(IndicibleWarning, SetSpriteAlpha, 1f, 0f, 1f);
+    }
+
+    public void SetSpriteAlpha(float val)
+    {
+            IndicibleWarning.GetComponent<Image>().color = new Color(1f, 1f, 1f, val);
+        
     }
 
 }

@@ -97,6 +97,9 @@ public class GameManager : MonoBehaviour
     public float timer = 0f;
     public float timerdeux = 0f;
 
+    public bool WarningBool;
+    public float warningtime;
+
 
     #region Madness Functions
 
@@ -110,6 +113,17 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+
+        if(canEquipHelmet == true && WarningBool == false)
+        {
+            warningtime += Time.deltaTime;
+        }
+        if(warningtime >= 120f)
+        {
+            UIManager.Instance.DisplayWarning();
+            warningtime = 0f;
+        }
+
         if (isHelmetEquipped == true)
         {
             timer += Time.deltaTime;
@@ -228,6 +242,8 @@ public class GameManager : MonoBehaviour
                 playerMadness = playerMadness + madnessGain;
                 if (playerMadness >= 80 && dimensionSwapMadness == true)
                 {
+                    WarningBool = true;
+                    warningtime = 0f;
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 1);
                     heartbeatEvent.start();
 
@@ -316,6 +332,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (once == true)
                     {
+                        WarningBool = false;
                         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 0);
                         heartbeatEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
