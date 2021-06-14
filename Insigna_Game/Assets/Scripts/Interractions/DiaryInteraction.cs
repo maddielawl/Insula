@@ -333,6 +333,8 @@ public class DiaryInteraction : MonoBehaviour
                     transform.GetComponent<BoxCollider2D>().enabled = false;
                     objectSprite.enabled = false;
                     this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+                    MenusManager.instance.Diary();
                 }
             }
         }
