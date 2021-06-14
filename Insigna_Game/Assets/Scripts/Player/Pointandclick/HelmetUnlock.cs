@@ -288,13 +288,13 @@ public class HelmetUnlock : MonoBehaviour
                             }
                         }
                     }
-                    UIManager.Instance.HidePortraits();
-                    StartCoroutine(NearInterraction());
-                    StartCoroutine(AddPackInInventory());
                     if (spriteHighlight != null)
                     {
                         spriteHighlight.enabled = false;
                     }
+                    UIManager.Instance.HidePortraits();
+                    StartCoroutine(NearInterraction());
+                    StartCoroutine(AddPackInInventory());
                     tutoTV.SetActive(true);
                     FindObjectOfType<AudioManager>().Play("TakeObject");
                     GameObject currentVfx = Instantiate(vfx, transform.position, transform.rotation);
@@ -303,6 +303,7 @@ public class HelmetUnlock : MonoBehaviour
                     security = true;
                     GameManager.Instance.globalInterractionSecurity = true;
                     ordureTV.GetComponent<SpriteRenderer>().sprite = ordureWithoutTVSpr;
+
 
                 }
             }
@@ -316,10 +317,6 @@ public class HelmetUnlock : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/Cursor Over");
         if (isNear == true)
         {
-            if (spriteHighlight != null)
-            {
-                spriteHighlight.enabled = true;
-            }
             UIManager.Instance.SetNearCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -327,10 +324,6 @@ public class HelmetUnlock : MonoBehaviour
         }
         if (isNear == false)
         {
-            if (spriteHighlight != null)
-            {
-                spriteHighlight.enabled = true;
-            }
             UIManager.Instance.SetFarCursor();
             isInterractableOn = true;
             cursorOn = true;
@@ -340,10 +333,6 @@ public class HelmetUnlock : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (spriteHighlight != null)
-        {
-            spriteHighlight.enabled = false;
-        }
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
         cursorOn = false;
@@ -414,6 +403,14 @@ public class HelmetUnlock : MonoBehaviour
         {
             playerInputs.actions.FindAction("Look").started -= OnLook;
             playerInputs.actions.FindAction("Use").started -= OnUse;
+        }
+    }
+
+    public void ActivateHighlight()
+    {
+        if (spriteHighlight != null)
+        {
+            spriteHighlight.enabled = true;
         }
     }
 }

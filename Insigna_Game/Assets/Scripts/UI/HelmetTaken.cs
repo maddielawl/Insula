@@ -28,6 +28,7 @@ public class HelmetTaken : MonoBehaviour
         helmetInteraction.SetActive(true);
         transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
         helmetInteraction.GetComponent<BoxCollider2D>().enabled = true;
+        helmetInteraction.GetComponent<HelmetUnlock>().ActivateHighlight();
         transform.parent.GetComponent<QuitPopUp>().Deactivate();
     }
 }
