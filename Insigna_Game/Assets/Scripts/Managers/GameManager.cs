@@ -218,6 +218,8 @@ public class GameManager : MonoBehaviour
         if (isScared == true)
         {
             heartbeatEvent.setParameterByName("Stress", playerSanity);
+            
+            UIManager.Instance.madnessFill.transform.parent.GetComponent<Animator>().SetBool("Filling", true);
 
             /*if (isHelmetEquipped == true)
             {
@@ -322,6 +324,8 @@ public class GameManager : MonoBehaviour
         if (isScared == false)
         {
             heartbeatEvent.setParameterByName("Stress", playerSanity);
+
+            UIManager.Instance.madnessFill.transform.parent.GetComponent<Animator>().SetBool("Filling", false);
 
             if (isHelmetEquipped == false)
             {

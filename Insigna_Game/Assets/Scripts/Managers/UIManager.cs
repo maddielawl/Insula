@@ -107,7 +107,10 @@ public class UIManager : MonoBehaviour
         }*/
 
         //slider Madness li� � la value dans le GameManager
-        madnessFill.fillAmount = GameManager.Instance.playerMadness / 100;
+        Vector3 madnessFillEmpty = new Vector3(-1035, madnessFill.rectTransform.anchoredPosition.y, madnessFill.transform.position.z);
+        Vector3 madnessFillFull = new Vector3(-743, madnessFill.rectTransform.anchoredPosition.y, madnessFill.transform.position.z);
+        madnessFill.rectTransform.anchoredPosition = Vector3.Lerp(madnessFillEmpty, madnessFillFull, GameManager.Instance.playerMadness / 100);
+
         //slider Sanity li� � la value dans le GameManager
         #region Sanity healthbar
         if (GameManager.Instance.playerSanity >= 100)
@@ -495,7 +498,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void DisplayWarning() 
+    public void DisplayWarning()
     {
         LeanTween.value(IndicibleWarning, SetSpriteAlpha, 0f, 1f, 1f);
         Invoke("HideWarning", 5f);
@@ -508,8 +511,8 @@ public class UIManager : MonoBehaviour
 
     public void SetSpriteAlpha(float val)
     {
-            IndicibleWarning.GetComponent<Image>().color = new Color(1f, 1f, 1f, val);
-        
+        IndicibleWarning.GetComponent<Image>().color = new Color(1f, 1f, 1f, val);
+
     }
 
 }
