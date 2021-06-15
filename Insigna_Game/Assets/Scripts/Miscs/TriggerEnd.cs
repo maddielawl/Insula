@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TriggerEnd : MonoBehaviour
 {
-    public CinemachineVirtualCamera oldCam;
+    /*public CinemachineVirtualCamera oldCam;
     public CinemachineVirtualCamera newCam;
 
 
@@ -17,5 +17,5 @@ public class TriggerEnd : MonoBehaviour
             CameraManager.Instance.setCameraPrioLow(oldCam);
         }
         Debug.Log("stop movement");
-    }
+    }*/
 }
