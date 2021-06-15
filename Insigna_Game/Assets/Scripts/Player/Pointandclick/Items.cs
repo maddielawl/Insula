@@ -48,6 +48,8 @@ public class Items : MonoBehaviour
 
     private TextMeshProUGUI[] interactionsTexts;
 
+    public string objectname = "None";
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -321,6 +323,7 @@ public class Items : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        CursorManager.Instance.DisplayObjectText(objectname);
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/Cursor Over");
         if (isNear == true)
         {
@@ -343,6 +346,7 @@ public class Items : MonoBehaviour
 
     private void OnMouseExit()
     {
+        CursorManager.Instance.HideObjectText();
         objectSpriteRenderer.sprite = spriteNormal;
         UIManager.Instance.ResetCursor();
         isInterractableOn = false;
