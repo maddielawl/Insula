@@ -113,20 +113,12 @@ public class UIManager : MonoBehaviour
 
         //slider Sanity li� � la value dans le GameManager
         #region Sanity healthbar
-        if (GameManager.Instance.playerSanity >= 100)
-        {
-            foreach (GameObject sanityBars in sanityBars)
-            {
-                sanityBars.SetActive(true);
-            }
-        }
         if (GameManager.Instance.playerSanity < 100 && GameManager.Instance.playerSanity > 86.8)
         {
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(true);
             }
-            sanityBars[7].SetActive(false);
         }
         if (GameManager.Instance.playerSanity <= 86.8 && GameManager.Instance.playerSanity > 74.4)
         {
