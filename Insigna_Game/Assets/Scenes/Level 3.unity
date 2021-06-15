@@ -1114,6 +1114,10 @@ PrefabInstance:
       value: "P_Fum\xE9e"
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.57
       objectReference: {fileID: 0}
@@ -1123,11 +1127,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.54
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 6.59
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_RootOrder
@@ -3575,6 +3587,7 @@ MonoBehaviour:
   nearPhrase: "C'est du ruban adh\xE9sif. **"
   portraitIdx: 0
   isInterractionTalkative: 0
+  objectname: None
 --- !u!212 &277404732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12457,6 +12470,7 @@ MonoBehaviour:
   nearPhrase: Ie **
   portraitIdx: 0
   isInterractionTalkative: 0
+  objectname: None
 --- !u!212 &951717913
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13036,6 +13050,7 @@ MonoBehaviour:
   nearPhrase: C'est un petit bout de bois
   portraitIdx: 0
   isInterractionTalkative: 0
+  objectname: None
 --- !u!212 &980562454
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13528,6 +13543,10 @@ PrefabInstance:
       value: "P_Fum\xE9e"
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.57
       objectReference: {fileID: 0}
@@ -13537,11 +13556,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.54
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 6.59
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_RootOrder
@@ -16168,6 +16195,7 @@ MonoBehaviour:
   nearPhrase: "C'est du ruban adh\xE9sif. **"
   portraitIdx: 0
   isInterractionTalkative: 0
+  objectname: None
 --- !u!212 &1216143598
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17817,31 +17845,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: simulationSpeed
-      value: 0.26
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.87
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.52
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 6.283185
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.0003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startRotation.minScalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.24
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.14
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 3959907445688094364, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22780,12 +22832,20 @@ PrefabInstance:
       value: 304792887
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 6.5
+      value: 5.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -22804,8 +22864,12 @@ PrefabInstance:
       value: 0.509434
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: EmissionModule.rateOverTime.minScalar
-      value: 6.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3959907444918113404, guid: e92c2a8501eaf8b4fb56196e546d5e3a, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -23108,6 +23172,7 @@ MonoBehaviour:
   nearPhrase: Corde UwU **
   portraitIdx: 0
   isInterractionTalkative: 0
+  objectname: None
 --- !u!61 &1788018688
 BoxCollider2D:
   m_ObjectHideFlags: 0
