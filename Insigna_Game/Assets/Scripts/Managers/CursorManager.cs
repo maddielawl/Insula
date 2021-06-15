@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CursorManager : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class CursorManager : MonoBehaviour
     private Vector2 cursorPos;
 
     public Camera uiCamera;
+
+    public TextMeshProUGUI objectText;
 
     [HideInInspector]
     public bool keepCursor = false;
@@ -62,4 +65,16 @@ public class CursorManager : MonoBehaviour
             CursorManager.Instance.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
         }
     }
+
+    public void DisplayObjectText(string text)
+    {
+        objectText.gameObject.SetActive(true);
+        objectText.text = text;
+    }
+
+    public void HideObjectText()
+    {
+        objectText.gameObject.SetActive(false);
+    }
+
 }
