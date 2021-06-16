@@ -2443,7 +2443,7 @@ GameObject:
   - component: {fileID: 166302647}
   m_Layer: 0
   m_Name: Fin
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3543,7 +3543,7 @@ GameObject:
   - component: {fileID: 277404733}
   m_Layer: 0
   m_Name: Scotch
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5641,7 +5641,7 @@ GameObject:
   - component: {fileID: 421285030}
   m_Layer: 0
   m_Name: Partie2Panneau
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6984,7 +6984,7 @@ GameObject:
   - component: {fileID: 552340905}
   m_Layer: 0
   m_Name: RobotMiGentil Qui Tombe (1)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7257,6 +7257,140 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d90b17b84efea148ad01baf7d6d199c, type: 3}
+--- !u!1 &572436011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 572436012}
+  - component: {fileID: 572436014}
+  - component: {fileID: 572436013}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &572436012
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572436011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1971292707}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 199, y: -424}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &572436013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572436011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 122.53
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -348.75366, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &572436014
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572436011}
+  m_CullTransparentMesh: 1
 --- !u!1 &580456946
 GameObject:
   m_ObjectHideFlags: 0
@@ -7709,7 +7843,7 @@ GameObject:
   - component: {fileID: 631239634}
   m_Layer: 0
   m_Name: Champi Trop Dingo :DD
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8736,7 +8870,7 @@ GameObject:
   - component: {fileID: 690773112}
   m_Layer: 0
   m_Name: RobotMoinsGentil (1)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9201,7 +9335,7 @@ GameObject:
   - component: {fileID: 709167781}
   m_Layer: 0
   m_Name: Coffre
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10511,7 +10645,7 @@ GameObject:
   - component: {fileID: 836480381}
   m_Layer: 0
   m_Name: Chaines_Norm
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10619,7 +10753,7 @@ GameObject:
   - component: {fileID: 836667018}
   m_Layer: 0
   m_Name: Poulie du haut
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10963,7 +11097,7 @@ GameObject:
   - component: {fileID: 855719982}
   m_Layer: 0
   m_Name: Poulie du bas
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11206,7 +11340,7 @@ GameObject:
   - component: {fileID: 861631620}
   m_Layer: 0
   m_Name: Poulie du haut haut
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12400,7 +12534,7 @@ GameObject:
   - component: {fileID: 951717912}
   m_Layer: 0
   m_Name: Poulie
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12554,7 +12688,7 @@ RectTransform:
   m_Children:
   - {fileID: 515154092}
   m_Father: {fileID: 1275867142}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15450,7 +15584,7 @@ GameObject:
   - component: {fileID: 1152925477}
   m_Layer: 0
   m_Name: RobotMiGentil
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16151,7 +16285,7 @@ GameObject:
   - component: {fileID: 1216143599}
   m_Layer: 0
   m_Name: Scotch
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16766,7 +16900,7 @@ GameObject:
   - component: {fileID: 1241221255}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17151,6 +17285,7 @@ Transform:
   m_LocalPosition: {x: 115.0315, y: 0.72968805, z: 56.0467}
   m_LocalScale: {x: 0.69521, y: 0.69521, z: 0.69521}
   m_Children:
+  - {fileID: 1702717895}
   - {fileID: 955361583}
   m_Father: {fileID: 798084926}
   m_RootOrder: 7
@@ -17273,7 +17408,7 @@ GameObject:
   - component: {fileID: 1311574870}
   m_Layer: 0
   m_Name: PagePerche
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17407,7 +17542,7 @@ GameObject:
   - component: {fileID: 1312550384}
   m_Layer: 0
   m_Name: Partie1Panneau
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18325,7 +18460,7 @@ GameObject:
   - component: {fileID: 1469503728}
   m_Layer: 0
   m_Name: Switch
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18843,7 +18978,7 @@ GameObject:
   - component: {fileID: 1495166535}
   m_Layer: 0
   m_Name: RobotMiGentil Qui Tombe
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18978,7 +19113,7 @@ GameObject:
   - component: {fileID: 1502240241}
   m_Layer: 0
   m_Name: Compteur
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19574,7 +19709,7 @@ GameObject:
   - component: {fileID: 1551468630}
   m_Layer: 0
   m_Name: Chaines_Tendues
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19720,7 +19855,7 @@ GameObject:
   - component: {fileID: 1553170740}
   m_Layer: 0
   m_Name: PagePopUp
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19752,7 +19887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4717791c3ea3e2947b3478f5197af261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  part2: {fileID: 873240803}
+  part2: {fileID: 8110314221719648604, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
 --- !u!114 &1553170741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19864,7 +19999,7 @@ GameObject:
   - component: {fileID: 1556467961}
   m_Layer: 0
   m_Name: Stop
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21039,7 +21174,7 @@ GameObject:
   - component: {fileID: 1648624333}
   m_Layer: 0
   m_Name: Champifaible
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21173,7 +21308,7 @@ GameObject:
   - component: {fileID: 1650699843}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21548,7 +21683,7 @@ GameObject:
   - component: {fileID: 1689691367}
   m_Layer: 0
   m_Name: ValvesPopUp
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21865,6 +22000,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1702717894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1702717895}
+  m_Layer: 0
+  m_Name: Near
+  m_TagString: NearInt
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1702717895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702717894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -60.148716, y: 4.7543087, z: -5.203168}
+  m_LocalScale: {x: 0.47946665, y: 0.47946665, z: 1.4384143}
+  m_Children:
+  - {fileID: 1971292707}
+  m_Father: {fileID: 1275867142}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1705829920
 GameObject:
   m_ObjectHideFlags: 0
@@ -22936,7 +23102,7 @@ GameObject:
   - component: {fileID: 1780555699}
   m_Layer: 0
   m_Name: Switch
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23128,7 +23294,7 @@ GameObject:
   - component: {fileID: 1788018687}
   m_Layer: 0
   m_Name: Corde
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24156,7 +24322,7 @@ GameObject:
   - component: {fileID: 1887888723}
   m_Layer: 0
   m_Name: Ile de gauche
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24507,7 +24673,7 @@ GameObject:
   - component: {fileID: 1894805867}
   m_Layer: 0
   m_Name: Sanity
-  m_TagString: Untagged
+  m_TagString: SanityZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24954,6 +25120,106 @@ Transform:
   m_Father: {fileID: 1780555697}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1971292706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971292707}
+  - component: {fileID: 1971292710}
+  - component: {fileID: 1971292709}
+  - component: {fileID: 1971292708}
+  m_Layer: 0
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1971292707
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971292706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 572436012}
+  m_Father: {fileID: 1702717895}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1971292708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971292706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1971292709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971292706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1971292710
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971292706}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1973319618
 GameObject:
   m_ObjectHideFlags: 0
@@ -25432,7 +25698,7 @@ GameObject:
   - component: {fileID: 1993686971}
   m_Layer: 0
   m_Name: RobotMoinsGentil
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
