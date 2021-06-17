@@ -5,19 +5,15 @@ using UnityEngine;
 public class IleQuiMeurt : MonoBehaviour
 {
     public EnvrioManager em;
-    public GameObject pagepopup;
+    public Animator grosRobotWithAnim;
+
 
     // Update is called once per frame
     void Update()
     {
         if (em.inMadness == true && em.phareonoroff == true && em.dayornight == true && em.onisland == true)
         {
-            Destroy(this.gameObject);
+            grosRobotWithAnim.SetTrigger("Water");
         }
-    }
-
-    private void OnDestroy()
-    {
-        pagepopup.SetActive(true);
     }
 }
