@@ -8,6 +8,7 @@ public class Robotquimeurt : MonoBehaviour
     public GameObject champifragilestarf;
     public GameObject lerobot;
     public Animator a;
+    public GameObject animrobo;
     void Start()
     {
         parent = this.parent.GetComponent<Interractable>();
@@ -22,6 +23,7 @@ public class Robotquimeurt : MonoBehaviour
             champifragilestarf.SetActive(false);
             a.SetTrigger("Trigger");
             lerobot.SetActive(false);
+            animrobo.SetActive(true);
         }
     }
 }
