@@ -127,6 +127,8 @@ public class UIManager : MonoBehaviour
             {
                 sanityBars.SetActive(true);
             }
+            /*sanityBars[7].GetComponent<Animator>().SetBool("Blinking", true);
+            sanityBars[6].GetComponent<Animator>().SetBool("Blinking", false);*/
         }
         if (GameManager.Instance.playerSanity <= 86.8 && GameManager.Instance.playerSanity > 74.4)
         {
@@ -135,6 +137,9 @@ public class UIManager : MonoBehaviour
                 sanityBars.SetActive(true);
             }
             sanityBars[7].SetActive(false);
+            /*sanityBars[6].GetComponent<Animator>().SetBool("Blinking", true);
+            sanityBars[5].GetComponent<Animator>().SetBool("Blinking", false);
+            sanityBars[7].GetComponent<Animator>().SetBool("Blinking", false);*/
         }
         if (GameManager.Instance.playerSanity <= 74.4 && GameManager.Instance.playerSanity > 62)
         {
@@ -144,6 +149,9 @@ public class UIManager : MonoBehaviour
             }
             sanityBars[7].SetActive(false);
             sanityBars[6].SetActive(false);
+            /*sanityBars[5].GetComponent<Animator>().SetBool("Blinking", true);
+            sanityBars[4].GetComponent<Animator>().SetBool("Blinking", false);
+            sanityBars[6].GetComponent<Animator>().SetBool("Blinking", false);*/
         }
         if (GameManager.Instance.playerSanity <= 62 && GameManager.Instance.playerSanity > 49.6)
         {
@@ -154,6 +162,9 @@ public class UIManager : MonoBehaviour
             sanityBars[7].SetActive(false);
             sanityBars[6].SetActive(false);
             sanityBars[5].SetActive(false);
+           /* sanityBars[4].GetComponent<Animator>().SetBool("Blinking", true);
+            sanityBars[3].GetComponent<Animator>().SetBool("Blinking", false);
+            sanityBars[5].GetComponent<Animator>().SetBool("Blinking", false);*/
         }
         if (GameManager.Instance.playerSanity <= 49.6 && GameManager.Instance.playerSanity > 37.2)
         {
@@ -165,6 +176,9 @@ public class UIManager : MonoBehaviour
             sanityBars[1].SetActive(true);
             sanityBars[2].SetActive(true);
             sanityBars[3].SetActive(true);
+            /*sanityBars[3].GetComponent<Animator>().SetBool("Blinking", true);
+            sanityBars[2].GetComponent<Animator>().SetBool("Blinking", false);
+            sanityBars[4].GetComponent<Animator>().SetBool("Blinking", false);*/
         }
         if (GameManager.Instance.playerSanity <= 37.2 && GameManager.Instance.playerSanity > 24.8)
         {
@@ -175,6 +189,9 @@ public class UIManager : MonoBehaviour
             sanityBars[0].SetActive(true);
             sanityBars[1].SetActive(true);
             sanityBars[2].SetActive(true);
+            /*sanityBars[2].GetComponent<Animator>().SetBool("Blinking", true);
+            sanityBars[1].GetComponent<Animator>().SetBool("Blinking", false);
+            sanityBars[3].GetComponent<Animator>().SetBool("Blinking", false);*/
         }
         if (GameManager.Instance.playerSanity <= 24.8 && GameManager.Instance.playerSanity > 12.4)
         {
@@ -184,6 +201,9 @@ public class UIManager : MonoBehaviour
             }
             sanityBars[0].SetActive(true);
             sanityBars[1].SetActive(true);
+            /*sanityBars[1].GetComponent<Animator>().SetBool("Blinking", true);
+            sanityBars[0].GetComponent<Animator>().SetBool("Blinking", false);
+            sanityBars[2].GetComponent<Animator>().SetBool("Blinking", false);*/
         }
         if (GameManager.Instance.playerSanity <= 12.4 && GameManager.Instance.playerSanity > 0)
         {
@@ -192,6 +212,9 @@ public class UIManager : MonoBehaviour
                 sanityBars.SetActive(false);
             }
             sanityBars[0].SetActive(true);
+            Debug.Log("bruh");
+            /*sanityBars[0].GetComponent<Animator>().SetBool("Blinking", true);
+            sanityBars[1].GetComponent<Animator>().SetBool("Blinking", false);*/
         }
         if (GameManager.Instance.playerSanity <= 0)
         {
@@ -199,6 +222,7 @@ public class UIManager : MonoBehaviour
             {
                 sanityBars.SetActive(false);
             }
+            //sanityBars[0].GetComponent<Animator>().SetBool("Blinking", false);
         }
         #endregion
         //nombre de pills li� � la value dans le GameManager
