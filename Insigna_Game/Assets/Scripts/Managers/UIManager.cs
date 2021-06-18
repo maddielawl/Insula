@@ -339,7 +339,10 @@ public class UIManager : MonoBehaviour
                 GameManager.Instance.globalInterractionSecurity = false;
                 if (GameObject.FindGameObjectWithTag("NearInt") != null)
                 {
-                    GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("NearInt").Length; i++)
+                    {
+                        GameObject.FindGameObjectsWithTag("NearInt")[i].SetActive(false);
+                    }
                 }
             }
             else
@@ -348,7 +351,11 @@ public class UIManager : MonoBehaviour
                 GameManager.Instance.globalInterractionSecurity = false;
                 if (GameObject.FindGameObjectWithTag("FarInt") != null)
                 {
-                    GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("FarInt").Length; i++)
+                    {
+                        GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
+                    }
+                    
                 }
             }
         }
@@ -359,28 +366,7 @@ public class UIManager : MonoBehaviour
                 oneSlotAtTheTimeSecurity = true;
                 isSlot1Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
-                if (GameManager.Instance.globalInterractionSecurity == true)
-                {
-                    Debug.Log("1");
-                    if (GameManager.Instance.isNear == true)
-                    {
-                        Debug.Log("2");
-                        GameManager.Instance.globalInterractionSecurity = false;
-                        if (GameObject.FindGameObjectWithTag("NearInt") != null)
-                        {
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log("2 mais différent");
-                        GameManager.Instance.globalInterractionSecurity = false;
-                        if (GameObject.FindGameObjectWithTag("FarInt") != null)
-                        {
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
-                        }
-                    }
-                }
+                GameManager.Instance.globalInterractionSecurity = true;
                 textdurappel.SetActive(true);
                 rappeltext.GetComponent<TextMeshProUGUI>().text = descriptionString1;
                 DisplayPortrait(0);
@@ -411,7 +397,10 @@ public class UIManager : MonoBehaviour
                 GameManager.Instance.globalInterractionSecurity = false;
                 if (GameObject.FindGameObjectWithTag("NearInt") != null)
                 {
-                    GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("NearInt").Length; i++)
+                    {
+                        GameObject.FindGameObjectsWithTag("NearInt")[i].SetActive(false);
+                    }
                 }
             }
             else
@@ -420,7 +409,11 @@ public class UIManager : MonoBehaviour
                 GameManager.Instance.globalInterractionSecurity = false;
                 if (GameObject.FindGameObjectWithTag("FarInt") != null)
                 {
-                    GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("FarInt").Length; i++)
+                    {
+                        GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
+                    }
+
                 }
             }
         }
@@ -431,26 +424,7 @@ public class UIManager : MonoBehaviour
                 oneSlotAtTheTimeSecurity = true;
                 isSlot2Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
-                if (GameManager.Instance.globalInterractionSecurity == true)
-                {
-                    if (GameManager.Instance.isNear == true)
-                    {
-
-                        GameManager.Instance.globalInterractionSecurity = false;
-                        if (GameObject.FindGameObjectWithTag("NearInt") != null)
-                        {
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
-                        }
-                    }
-                    else
-                    {
-                        GameManager.Instance.globalInterractionSecurity = false;
-                        if (GameObject.FindGameObjectWithTag("FarInt") != null)
-                        {
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
-                        }
-                    }
-                }
+                GameManager.Instance.globalInterractionSecurity = true;
                 textdurappel.SetActive(true);
                 rappeltext.GetComponent<TextMeshProUGUI>().text = descriptionString2;
                 DisplayPortrait(0);
@@ -481,7 +455,10 @@ public class UIManager : MonoBehaviour
                 GameManager.Instance.globalInterractionSecurity = false;
                 if (GameObject.FindGameObjectWithTag("NearInt") != null)
                 {
-                    GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("NearInt").Length; i++)
+                    {
+                        GameObject.FindGameObjectsWithTag("NearInt")[i].SetActive(false);
+                    }
                 }
             }
             else
@@ -490,7 +467,11 @@ public class UIManager : MonoBehaviour
                 GameManager.Instance.globalInterractionSecurity = false;
                 if (GameObject.FindGameObjectWithTag("FarInt") != null)
                 {
-                    GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("FarInt").Length; i++)
+                    {
+                        GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
+                    }
+
                 }
             }
         }
@@ -501,26 +482,7 @@ public class UIManager : MonoBehaviour
                 oneSlotAtTheTimeSecurity = true;
                 isSlot3Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
-                if (GameManager.Instance.globalInterractionSecurity == true)
-                {
-                    if (GameManager.Instance.isNear == true)
-                    {
-
-                        GameManager.Instance.globalInterractionSecurity = false;
-                        if (GameObject.FindGameObjectWithTag("NearInt") != null)
-                        {
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
-                        }
-                    }
-                    else
-                    {
-                        GameManager.Instance.globalInterractionSecurity = false;
-                        if (GameObject.FindGameObjectWithTag("FarInt") != null)
-                        {
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
-                        }
-                    }
-                }
+                GameManager.Instance.globalInterractionSecurity = true;
                 textdurappel.SetActive(true);
                 rappeltext.GetComponent<TextMeshProUGUI>().text = descriptionString3;
                 DisplayPortrait(0);
@@ -695,5 +657,6 @@ public class UIManager : MonoBehaviour
     {
         textdurappel.SetActive(false);
         HidePortraits();
+        GameManager.Instance.globalInterractionSecurity = false;
     }
 }

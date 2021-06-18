@@ -187,7 +187,10 @@ public class DiaryInteraction : MonoBehaviour
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("NearInt") != null)
                             {
-                                GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                                for (int i = 0; i <= GameObject.FindGameObjectsWithTag("NearInt").Length; i++)
+                                {
+                                    GameObject.FindGameObjectsWithTag("NearInt")[i].SetActive(false);
+                                }
                             }
                         }
                         else
@@ -196,7 +199,10 @@ public class DiaryInteraction : MonoBehaviour
                             GameManager.Instance.globalInterractionSecurity = false;
                             if (GameObject.FindGameObjectWithTag("FarInt") != null)
                             {
-                                GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                                for (int i = 0; i <= GameObject.FindGameObjectsWithTag("FarInt").Length; i++)
+                                {
+                                    GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
+                                }
                             }
                         }
                         UIManager.Instance.DisplayPortrait(portraitIdx);
@@ -215,7 +221,10 @@ public class DiaryInteraction : MonoBehaviour
                                 GameManager.Instance.globalInterractionSecurity = false;
                                 if (GameObject.FindGameObjectWithTag("NearInt") != null)
                                 {
-                                    GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("NearInt").Length; i++)
+                                    {
+                                        GameObject.FindGameObjectsWithTag("NearInt")[i].SetActive(false);
+                                    }
                                 }
                             }
                             else
@@ -224,7 +233,10 @@ public class DiaryInteraction : MonoBehaviour
                                 GameManager.Instance.globalInterractionSecurity = false;
                                 if (GameObject.FindGameObjectWithTag("FarInt") != null)
                                 {
-                                    GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("FarInt").Length; i++)
+                                    {
+                                        GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
+                                    }
                                 }
                             }
                         }
@@ -297,7 +309,10 @@ public class DiaryInteraction : MonoBehaviour
                         GameManager.Instance.globalInterractionSecurity = false;
                         if (GameObject.FindGameObjectWithTag("NearInt") != null)
                         {
-                            GameObject.FindGameObjectWithTag("NearInt").SetActive(false);
+                            for (int i = 0; i <= GameObject.FindGameObjectsWithTag("NearInt").Length; i++)
+                            {
+                                GameObject.FindGameObjectsWithTag("NearInt")[i].SetActive(false);
+                            }
                         }
                     }
                     else
@@ -306,7 +321,10 @@ public class DiaryInteraction : MonoBehaviour
                         GameManager.Instance.globalInterractionSecurity = false;
                         if (GameObject.FindGameObjectWithTag("FarInt") != null)
                         {
-                            GameObject.FindGameObjectWithTag("FarInt").SetActive(false);
+                            for (int i = 0; i <= GameObject.FindGameObjectsWithTag("FarInt").Length; i++)
+                            {
+                                GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
+                            }
                         }
                     }
                     if (isInterractionTalkative == true)
