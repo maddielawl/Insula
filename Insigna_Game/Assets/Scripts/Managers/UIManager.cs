@@ -95,6 +95,14 @@ public class UIManager : MonoBehaviour
 
     public GameObject IndicibleWarning;
 
+    public string descriptionString1;
+    public string descriptionString2;
+    public string descriptionString3;
+
+    public GameObject rappeltext;
+
+    public bool vincenttufaitchier = false;
+
     public void Update()
     {
         if (player == null)
@@ -260,6 +268,15 @@ public class UIManager : MonoBehaviour
         {
             inventoryButton1.sprite = usable.GetComponent<SpriteRenderer>().sprite;
             inventoryButton1.GetComponent<Image>().enabled = true;
+            if (vincenttufaitchier == true)
+            {
+                descriptionString1 = usable.GetComponent<Items>().objectrappel;
+            }
+            else
+            {
+                descriptionString1 = usable.GetComponent<BarreauItem>().objectrappel;
+                vincenttufaitchier = true;
+            }
             objectInSlot1 = usable;
             isSlot1Full = true;
             return;
@@ -269,6 +286,7 @@ public class UIManager : MonoBehaviour
         {
             inventoryButton2.sprite = usable.GetComponent<SpriteRenderer>().sprite;
             inventoryButton2.GetComponent<Image>().enabled = true;
+            descriptionString2 = usable.GetComponent<Items>().objectrappel;
             objectInSlot2 = usable;
             isSlot2Full = true;
             return;
@@ -278,6 +296,7 @@ public class UIManager : MonoBehaviour
         {
             inventoryButton3.sprite = usable.GetComponent<SpriteRenderer>().sprite;
             inventoryButton3.GetComponent<Image>().enabled = true;
+            descriptionString3 = usable.GetComponent<Items>().objectrappel;
             objectInSlot3 = usable;
             isSlot3Full = true;
             return;
@@ -293,6 +312,10 @@ public class UIManager : MonoBehaviour
                 oneSlotAtTheTimeSecurity = true;
                 isSlot1Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                rappeltext.SetActive(true);
+                rappeltext.GetComponent<TextMeshProUGUI>().text = descriptionString1;
+                DisplayPortrait(0);
+                Invoke("HideDescriptionText", 3f);
                 object1Equipped.SetActive(true);
                 return;
             }
@@ -317,6 +340,10 @@ public class UIManager : MonoBehaviour
                 oneSlotAtTheTimeSecurity = true;
                 isSlot2Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                rappeltext.SetActive(true);
+                rappeltext.GetComponent<TextMeshProUGUI>().text = descriptionString2;
+                DisplayPortrait(0);
+                Invoke("HideDescriptionText", 3f);
                 object2Equipped.SetActive(true);
                 return;
             }
@@ -341,6 +368,10 @@ public class UIManager : MonoBehaviour
                 oneSlotAtTheTimeSecurity = true;
                 isSlot3Active = true;
                 FindObjectOfType<AudioManager>().Play("OnClickInventory");
+                rappeltext.SetActive(true);
+                rappeltext.GetComponent<TextMeshProUGUI>().text = descriptionString3;
+                DisplayPortrait(0);
+                Invoke("HideDescriptionText", 3f);
                 object3Equipped.SetActive(true);
                 return;
             }
@@ -507,4 +538,9 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void HideDescriptionText()
+    {
+        rappeltext.SetActive(false);
+        HidePortraits();
+    }
 }

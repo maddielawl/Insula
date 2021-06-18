@@ -50,6 +50,8 @@ public class Items : MonoBehaviour
 
     public string objectname = "None";
 
+    public string objectrappel = "Inserez une description";
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -315,8 +317,9 @@ public class Items : MonoBehaviour
 
     private IEnumerator StoreItem()
     {
-        GameManager.Instance.globalInterractionSecurity = false;
         UIManager.Instance.GetObjectInInventory(this.gameObject);
+        GameManager.Instance.globalInterractionSecurity = false;
+        
 
         yield return 0;
     }
