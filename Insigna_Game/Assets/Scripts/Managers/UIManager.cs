@@ -104,6 +104,8 @@ public class UIManager : MonoBehaviour
 
     public bool vincenttufaitchier = false;
 
+    private bool[] doOnce = new bool[9];
+
     public void Update()
     {
         if (player == null)
@@ -122,40 +124,70 @@ public class UIManager : MonoBehaviour
 
         //slider Sanity li� � la value dans le GameManager
         #region Sanity healthbar
-        if (GameManager.Instance.playerSanity < 100 && GameManager.Instance.playerSanity > 86.8)
+        if (GameManager.Instance.playerSanity < 100 && GameManager.Instance.playerSanity > 86.8 && doOnce[8] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(true);
             }
-            /*sanityBars[7].GetComponent<Animator>().SetBool("Blinking", true);
-            sanityBars[6].GetComponent<Animator>().SetBool("Blinking", false);*/
+            sanityBars[7].GetComponent<Animator>().SetBool("Blinking", true);
+            doOnce[8] = true;
         }
-        if (GameManager.Instance.playerSanity <= 86.8 && GameManager.Instance.playerSanity > 74.4)
+        if (GameManager.Instance.playerSanity <= 86.8 && GameManager.Instance.playerSanity > 74.4 && doOnce[7] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(true);
             }
             sanityBars[7].SetActive(false);
-            /*sanityBars[6].GetComponent<Animator>().SetBool("Blinking", true);
-            sanityBars[5].GetComponent<Animator>().SetBool("Blinking", false);
-            sanityBars[7].GetComponent<Animator>().SetBool("Blinking", false);*/
+            sanityBars[6].GetComponent<Animator>().SetBool("Blinking", true);
+            doOnce[7] = true;
         }
-        if (GameManager.Instance.playerSanity <= 74.4 && GameManager.Instance.playerSanity > 62)
+        if (GameManager.Instance.playerSanity <= 74.4 && GameManager.Instance.playerSanity > 62 && doOnce[6] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(true);
             }
             sanityBars[7].SetActive(false);
             sanityBars[6].SetActive(false);
-            /*sanityBars[5].GetComponent<Animator>().SetBool("Blinking", true);
-            sanityBars[4].GetComponent<Animator>().SetBool("Blinking", false);
-            sanityBars[6].GetComponent<Animator>().SetBool("Blinking", false);*/
+            sanityBars[5].GetComponent<Animator>().SetBool("Blinking", true);
+            doOnce[6] = true;
         }
-        if (GameManager.Instance.playerSanity <= 62 && GameManager.Instance.playerSanity > 49.6)
+        if (GameManager.Instance.playerSanity <= 62 && GameManager.Instance.playerSanity > 49.6 && doOnce[5] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(true);
@@ -163,12 +195,19 @@ public class UIManager : MonoBehaviour
             sanityBars[7].SetActive(false);
             sanityBars[6].SetActive(false);
             sanityBars[5].SetActive(false);
-           /* sanityBars[4].GetComponent<Animator>().SetBool("Blinking", true);
-            sanityBars[3].GetComponent<Animator>().SetBool("Blinking", false);
-            sanityBars[5].GetComponent<Animator>().SetBool("Blinking", false);*/
+            sanityBars[4].GetComponent<Animator>().SetBool("Blinking", true);
+            doOnce[5] = true;
         }
-        if (GameManager.Instance.playerSanity <= 49.6 && GameManager.Instance.playerSanity > 37.2)
+        if (GameManager.Instance.playerSanity <= 49.6 && GameManager.Instance.playerSanity > 37.2 && doOnce[4] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(false);
@@ -177,12 +216,19 @@ public class UIManager : MonoBehaviour
             sanityBars[1].SetActive(true);
             sanityBars[2].SetActive(true);
             sanityBars[3].SetActive(true);
-            /*sanityBars[3].GetComponent<Animator>().SetBool("Blinking", true);
-            sanityBars[2].GetComponent<Animator>().SetBool("Blinking", false);
-            sanityBars[4].GetComponent<Animator>().SetBool("Blinking", false);*/
+            sanityBars[3].GetComponent<Animator>().SetBool("Blinking", true);
+            doOnce[4] = true;
         }
-        if (GameManager.Instance.playerSanity <= 37.2 && GameManager.Instance.playerSanity > 24.8)
+        if (GameManager.Instance.playerSanity <= 37.2 && GameManager.Instance.playerSanity > 24.8 && doOnce[3] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(false);
@@ -190,40 +236,61 @@ public class UIManager : MonoBehaviour
             sanityBars[0].SetActive(true);
             sanityBars[1].SetActive(true);
             sanityBars[2].SetActive(true);
-            /*sanityBars[2].GetComponent<Animator>().SetBool("Blinking", true);
-            sanityBars[1].GetComponent<Animator>().SetBool("Blinking", false);
-            sanityBars[3].GetComponent<Animator>().SetBool("Blinking", false);*/
+            sanityBars[2].GetComponent<Animator>().SetBool("Blinking", true);
+            doOnce[3] = true;
         }
-        if (GameManager.Instance.playerSanity <= 24.8 && GameManager.Instance.playerSanity > 12.4)
+        if (GameManager.Instance.playerSanity <= 24.8 && GameManager.Instance.playerSanity > 12.4 && doOnce[2] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(false);
             }
             sanityBars[0].SetActive(true);
             sanityBars[1].SetActive(true);
-            /*sanityBars[1].GetComponent<Animator>().SetBool("Blinking", true);
-            sanityBars[0].GetComponent<Animator>().SetBool("Blinking", false);
-            sanityBars[2].GetComponent<Animator>().SetBool("Blinking", false);*/
+            sanityBars[1].GetComponent<Animator>().SetBool("Blinking", true);
+            doOnce[2] = true;
         }
-        if (GameManager.Instance.playerSanity <= 12.4 && GameManager.Instance.playerSanity > 0)
+        if (GameManager.Instance.playerSanity <= 12.4 && GameManager.Instance.playerSanity > 0 && doOnce[1] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(false);
             }
             sanityBars[0].SetActive(true);
-            Debug.Log("bruh");
-            /*sanityBars[0].GetComponent<Animator>().SetBool("Blinking", true);
-            sanityBars[1].GetComponent<Animator>().SetBool("Blinking", false);*/
+            sanityBars[0].GetComponent<Animator>().SetBool("Blinking", true);
+            doOnce[1] = true;
         }
-        if (GameManager.Instance.playerSanity <= 0)
+        if (GameManager.Instance.playerSanity <= 0 && doOnce[0] == false)
         {
+            for (int i = 0; i < doOnce.Length; i++)
+            {
+                doOnce[i] = false;
+            }
+            foreach (GameObject sanityBars in sanityBars)
+            {
+                sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+            }
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.SetActive(false);
             }
-            //sanityBars[0].GetComponent<Animator>().SetBool("Blinking", false);
+            doOnce[0] = true;
         }
         #endregion
         //nombre de pills li� � la value dans le GameManager
@@ -355,7 +422,7 @@ public class UIManager : MonoBehaviour
                     {
                         GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
                     }
-                    
+
                 }
             }
         }
