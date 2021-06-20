@@ -20,10 +20,22 @@ public class OnDestroyWoder : MonoBehaviour
     {
         em.woderoff = true;
         woder.SetActive(false);
-        foliewoder.SetActive(false);
-        foliemontechargewoder.SetActive(false);
-        ladder1.SetActive(false);
-        ladder2.SetActive(true);       
+        if (foliewoder != null)
+        {
+            foliewoder.SetActive(false);
+        }
+        if (foliemontechargewoder != null)
+        {
+            foliemontechargewoder.SetActive(false);
+        }
+        if (ladder1 != null)
+        {
+            ladder1.SetActive(false);
+        }
+        if (ladder2 != null)
+        {
+            ladder2.SetActive(true);
+        }
     }
 
     private void SetActive()
