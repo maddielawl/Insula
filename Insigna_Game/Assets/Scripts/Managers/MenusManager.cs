@@ -650,6 +650,13 @@ public class MenusManager : MonoBehaviour
                 entry2.SetActive(false);
                 entry3.SetActive(false);
             }
+
+            if (SceneManager.GetSceneAt(0) == SceneManager.GetSceneByBuildIndex(2))
+            {
+                entry4.SetActive(false);
+                entry5.SetActive(false);
+                entry6.SetActive(false);
+            }
         }
     }
 
