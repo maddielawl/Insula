@@ -133,6 +133,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -150,6 +151,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -168,6 +170,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -187,6 +190,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -207,6 +211,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -228,6 +233,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -248,6 +254,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -267,6 +274,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
@@ -285,6 +293,7 @@ public class UIManager : MonoBehaviour
             foreach (GameObject sanityBars in sanityBars)
             {
                 sanityBars.GetComponent<Animator>().SetBool("Blinking", false);
+                sanityBars.GetComponent<Image>().enabled = true;
             }
             foreach (GameObject sanityBars in sanityBars)
             {
