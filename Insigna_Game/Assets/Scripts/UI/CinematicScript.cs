@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CinematicScript : MonoBehaviour
 {
     private GameObject Tutorial;
+    public MenusManager menus;
+
     public void EndCinematic()
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 1);
@@ -20,6 +22,15 @@ public class CinematicScript : MonoBehaviour
         {
             Tutorial = GameObject.Find("Tutorial");
             Tutorial.GetComponent<BoxCollider2D>().enabled = true;
+        }
+        menus.AddPauseGame();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EndCinematic();
         }
     }
 }
