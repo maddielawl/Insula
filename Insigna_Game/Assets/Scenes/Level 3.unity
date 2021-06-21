@@ -3683,7 +3683,8 @@ MonoBehaviour:
   nearPhrase: "C'est du ruban adh\xE9sif. **"
   portraitIdx: 0
   isInterractionTalkative: 0
-  objectname: None
+  objectname: Scotch
+  objectrappel: "C'est un scotch, parfait pour faire des r\xE9parations de fortune."
 --- !u!212 &277404732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3752,7 +3753,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.31, y: 3.88}
+    oldSize: {x: 6.8, y: 4.08}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11945,6 +11946,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2582990585841308420, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 2582990585841308421, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: near clip plane
       value: 0.1
@@ -13066,7 +13071,9 @@ MonoBehaviour:
   nearPhrase: Ie **
   portraitIdx: 0
   isInterractionTalkative: 0
-  objectname: None
+  objectname: Poulie
+  objectrappel: "C'est une poulie, il me semble avoir vu un emplacement proche du
+    robot pour \xE7a !"
 --- !u!212 &951717913
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13648,7 +13655,9 @@ MonoBehaviour:
   nearPhrase: C'est un petit bout de bois
   portraitIdx: 0
   isInterractionTalkative: 0
-  objectname: None
+  objectname: Perche
+  objectrappel: "Le robot m'as donn\xE9 cette perche, je peut m'en servir pour r\xE9cuperer
+    des objets que je peut pas atteindre."
 --- !u!212 &980562454
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16793,7 +16802,8 @@ MonoBehaviour:
   nearPhrase: "C'est du ruban adh\xE9sif. **"
   portraitIdx: 0
   isInterractionTalkative: 0
-  objectname: None
+  objectname: Scotch
+  objectrappel: "C'est un scotch, parfait pour faire des r\xE9parations de fortune."
 --- !u!212 &1216143598
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16862,7 +16872,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.9, y: 3.51}
+    oldSize: {x: 7.5, y: 4.71}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -24051,7 +24061,8 @@ MonoBehaviour:
   nearPhrase: Corde UwU **
   portraitIdx: 0
   isInterractionTalkative: 0
-  objectname: None
+  objectname: Chaine
+  objectrappel: "Cette chaine est tomb\xE9e du champignon, elle \xE9tait mal attach\xE9e."
 --- !u!61 &1788018688
 BoxCollider2D:
   m_ObjectHideFlags: 0
