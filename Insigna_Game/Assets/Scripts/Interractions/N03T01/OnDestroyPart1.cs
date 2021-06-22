@@ -14,7 +14,10 @@ public class OnDestroyPart1 : MonoBehaviour
 
     private void OnDestroy()
     {
-        part2.SetActive(true);
+        if (part2 != null)
+        {
+            part2.SetActive(true);
+        }
     }
 
     private void SetActive()
