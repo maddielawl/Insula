@@ -108,7 +108,8 @@ public class Interractable : MonoBehaviour
                         {
                             interactionsTexts[i].text = null;
                         }
-                    }*/
+                    }
+                    */
 
                     GameManager.Instance.StopHidePortaitFonction();
                     GameManager.Instance.StopFarTextFonction();

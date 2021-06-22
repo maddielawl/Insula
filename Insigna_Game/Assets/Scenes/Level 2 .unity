@@ -11828,8 +11828,9 @@ MonoBehaviour:
   nearPhrase: Tiens c'est un tournevis
   portraitIdx: 0
   isInterractionTalkative: 1
-  objectname: None
-  objectrappel: Inserez une description
+  objectname: Tournevils
+  objectrappel: "Juste ce qu'il faut pour visser ou d\xE9visser quelque chose au
+    mur."
 --- !u!61 &594218045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15461,6 +15462,10 @@ PrefabInstance:
     - target: {fileID: 2582990585841308422, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_CustomBlends
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582990586000866357, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
+      propertyPath: vincenttufaitchier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582990586019125736, guid: 4c2ad3f4a500fc1479f3bb43143b10de, type: 3}
       propertyPath: m_IsActive
@@ -28327,8 +28332,8 @@ MonoBehaviour:
   nearPhrase: "Ce marteau pourrait me servir \xE0 casser quelque chose..."
   portraitIdx: 0
   isInterractionTalkative: 1
-  objectname: None
-  objectrappel: Inserez une description
+  objectname: Marteau
+  objectrappel: "C'est un outil tr\xE8s lourd, attention de ne rien casser avec."
 --- !u!212 &1273601879
 SpriteRenderer:
   m_ObjectHideFlags: 0
