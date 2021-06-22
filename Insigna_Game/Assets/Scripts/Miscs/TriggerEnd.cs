@@ -18,6 +18,8 @@ public class TriggerEnd : MonoBehaviour
     public GameObject endCinematic;
 
     public GameObject choix;
+
+    public GameObject blackScreen;
     private GameObject journal;
 
 
@@ -80,7 +82,7 @@ public class TriggerEnd : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         UIManager.Instance.HidePortraits();
-        UIManager.Instance.DisplayPortrait(2);
+        UIManager.Instance.DisplayPortrait(3);
         cinematicTexts[5].SetActive(false);
         cinematicTexts[6].SetActive(true);
 
@@ -94,7 +96,7 @@ public class TriggerEnd : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         UIManager.Instance.HidePortraits();
-        UIManager.Instance.DisplayPortrait(2);
+        UIManager.Instance.DisplayPortrait(3);
         cinematicTexts[7].SetActive(false);
         cinematicTexts[8].SetActive(true);
 
@@ -108,7 +110,7 @@ public class TriggerEnd : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         UIManager.Instance.HidePortraits();
-        UIManager.Instance.DisplayPortrait(2);
+        UIManager.Instance.DisplayPortrait(3);
         cinematicTexts[9].SetActive(false);
         cinematicTexts[10].SetActive(true);
 
@@ -122,13 +124,24 @@ public class TriggerEnd : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         UIManager.Instance.HidePortraits();
-        UIManager.Instance.DisplayPortrait(2);
+        UIManager.Instance.DisplayPortrait(3);
         cinematicTexts[11].SetActive(false);
         cinematicTexts[12].SetActive(true);
 
         yield return new WaitForSeconds(6f);
 
-        UIManager.Instance.HidePortraits();
         choix.SetActive(true);
+    }
+
+    IEnumerator BlackScreen()
+    {
+        blackScreen.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        MenusManager.instance.QuitToMenu();
+    }
+
+    public void ReturnToMenu()
+    {
+        StartCoroutine(BlackScreen());
     }
 }
