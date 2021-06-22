@@ -11,6 +11,10 @@ public class CinematicScript : MonoBehaviour
 
     public void EndCinematic()
     {
+        for (int i = 0; i < MenusManager.instance.allColliderInterractable.Length; i++)
+        {
+            MenusManager.instance.allColliderInterractable[i].GetComponent<BoxCollider2D>().enabled = false;
+        }
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 1);
 
         CursorManager.Instance.keepCursor = false;
