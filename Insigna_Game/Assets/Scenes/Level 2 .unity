@@ -30708,6 +30708,7 @@ GameObject:
   - component: {fileID: 1384401218}
   - component: {fileID: 1384401217}
   - component: {fileID: 1384401220}
+  - component: {fileID: 1384401219}
   m_Layer: 6
   m_Name: FallingFloor
   m_TagString: Collider 1
@@ -30799,6 +30800,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1384401219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384401215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Robots/Water robot dead
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 7.0209885
+  OverrideMaxDistance: 18.989737
 --- !u!114 &1384401220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42154,6 +42178,7 @@ GameObject:
   - component: {fileID: 1976340424}
   - component: {fileID: 1976340426}
   - component: {fileID: 1976340423}
+  - component: {fileID: 1976340428}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Interractable
@@ -42321,6 +42346,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.710468, y: 6.439798}
   m_EdgeRadius: 0
+--- !u!114 &1976340428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976340421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Robots/Water robot dead
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10.302265
+  OverrideMaxDistance: 23.607132
 --- !u!1 &1990746546
 GameObject:
   m_ObjectHideFlags: 0

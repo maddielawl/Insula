@@ -21,6 +21,7 @@ public class Mechantquimeurt : MonoBehaviour
 
     public void RobotDead()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("Water robot dead");
         SanityZone.SetActive(false);
         Robot.SetActive(false);
         robotDcd.SetActive(true);

@@ -30,7 +30,7 @@ public class GrilleOpen : MonoBehaviour
             parent.interractionSecurity = true;
             if (UIManager.Instance.isSlot1Active == true)
             {
-                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Open vent");
+                
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
                 {
                     grilleOpenSpr.SetActive(false);
@@ -43,6 +43,7 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.isSlot1Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Open vent");
                     grilleOuverte.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
                     Destroy(transform.parent.gameObject);
@@ -63,6 +64,7 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.isSlot2Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Open vent");
                     grilleOuverte.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
 
@@ -84,6 +86,7 @@ public class GrilleOpen : MonoBehaviour
                     UIManager.Instance.isSlot3Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     FindObjectOfType<AudioManager>().Play("UseKey");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Open vent");
                     grilleOuverte.SetActive(true);
                     GameManager.Instance.globalInterractionSecurity = false;
 

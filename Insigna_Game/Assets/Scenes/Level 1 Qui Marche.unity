@@ -44508,6 +44508,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1295229233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2517969443723062413, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+  m_PrefabInstance: {fileID: 8171585094615420234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1295229234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295229233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &1310047922
 GameObject:
   m_ObjectHideFlags: 0
@@ -46881,6 +46900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471901079}
   - component: {fileID: 1471901080}
+  - component: {fileID: 1471901081}
   m_Layer: 0
   m_Name: L01_T02_Robot
   m_TagString: Untagged
@@ -46953,6 +46973,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1471901081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471901078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Robots/Robot music box
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1472340483
 GameObject:
   m_ObjectHideFlags: 0
@@ -61530,6 +61573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973070928}
   - component: {fileID: 1973070929}
+  - component: {fileID: 1973070930}
   m_Layer: 0
   m_Name: L01_T03_Robot_Folie
   m_TagString: Untagged
@@ -61545,7 +61589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973070927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 106.547, y: -9.873726, z: 12.534973}
+  m_LocalPosition: {x: 106.48, y: -9.87, z: 12.534973}
   m_LocalScale: {x: 1.089396, y: 1.089396, z: 1.089396}
   m_Children: []
   m_Father: {fileID: 1246901882}
@@ -61602,6 +61646,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1973070930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973070927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Robots/Robot circus
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 7.8116302
+  OverrideMaxDistance: 22.897415
 --- !u!1 &1973658451
 GameObject:
   m_ObjectHideFlags: 0
@@ -67178,6 +67245,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3580327271184428273, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
+      propertyPath: attenuationObject
+      value: 
+      objectReference: {fileID: 8355757277226543186}
     - target: {fileID: 7941276818436470544, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -67254,7 +67325,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3580327271184428273, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
 --- !u!4 &8171585094615420235 stripped
 Transform:
@@ -67271,7 +67343,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2517969443723062411, guid: ce647ece9f70e474e87ad97c31da0827, type: 3}
   m_PrefabInstance: {fileID: 8171585094615420234}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1295229233}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}

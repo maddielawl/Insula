@@ -32,7 +32,7 @@ public class PlayerMoveState : PlayerGroundedState
 
         if (GameManager.Instance.playerInVent == true)
         {
-
+            
         }
 
         if (CursorManager.Instance.cursorState == false)
