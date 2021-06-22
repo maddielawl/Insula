@@ -74,6 +74,8 @@ public class N02T03PopUpMaster : MonoBehaviour
             nombre2.number == trinket2 && nombre3.number == trinket3 &&
             nombre4.number == trinket4 && nombre5.number == trinket5)
         {
+            GameObject.Find("Diary Coffre").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("Diary Coffre").GetComponent<BoxCollider2D>().enabled = true;
             Invoke("QuitInterraction", 1f);
         }
     }
