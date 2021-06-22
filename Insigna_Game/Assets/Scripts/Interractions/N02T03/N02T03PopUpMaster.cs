@@ -81,6 +81,6 @@ public class N02T03PopUpMaster : MonoBehaviour
     public void QuitInterraction()
     {
         transform.parent.GetComponent<QuitPopUp>().QuitInterraction();
-        Destroy(GameObject.Find(transform.parent.GetComponent<QuitPopUp>().popUpName));
+        transform.parent.GetComponent<QuitPopUp>().Deactivate();
     }
 }
