@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GrilleT01 : MonoBehaviour
 {
-    private Interractable parent;
+    private InterractableVents parent;
 
     public Vents vents;
 
     void Start()
     {
-        parent = transform.parent.GetComponent<Interractable>();
+        parent = transform.parent.GetComponent<InterractableVents>();
     }
 
     // Update is called once per frame
