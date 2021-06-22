@@ -35,7 +35,6 @@ public class TriggerEnd : MonoBehaviour
             CameraManager.Instance.setCameraPrioHigh(newCam);
             CameraManager.Instance.setCameraPrioLow(oldCam);
 
-            endCinematic.GetComponent<Animator>().SetTrigger("End");
 
             StartCoroutine(AfterEndAnim());
         }
@@ -43,7 +42,7 @@ public class TriggerEnd : MonoBehaviour
 
     IEnumerator AfterEndAnim()
     {
-        yield return new WaitForSeconds(14f);
+        yield return new WaitForSeconds(2f);
 
         UIManager.Instance.DisplayPortrait(0);
         cinematicTexts[0].SetActive(true);
@@ -64,6 +63,7 @@ public class TriggerEnd : MonoBehaviour
 
         cinematicTexts[2].SetActive(false);
         cinematicTexts[3].SetActive(true);
+        endCinematic.GetComponent<Animator>().SetTrigger("End");
 
         yield return new WaitForSeconds(6f);
 
@@ -72,7 +72,7 @@ public class TriggerEnd : MonoBehaviour
         cinematicTexts[3].SetActive(false);
         cinematicTexts[4].SetActive(true);
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
 
         UIManager.Instance.HidePortraits();
         UIManager.Instance.DisplayPortrait(0);
@@ -86,7 +86,7 @@ public class TriggerEnd : MonoBehaviour
         cinematicTexts[5].SetActive(false);
         cinematicTexts[6].SetActive(true);
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
 
         UIManager.Instance.HidePortraits();
         UIManager.Instance.DisplayPortrait(0);
@@ -100,7 +100,7 @@ public class TriggerEnd : MonoBehaviour
         cinematicTexts[7].SetActive(false);
         cinematicTexts[8].SetActive(true);
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
 
         UIManager.Instance.HidePortraits();
         UIManager.Instance.DisplayPortrait(0);
@@ -121,7 +121,7 @@ public class TriggerEnd : MonoBehaviour
         cinematicTexts[10].SetActive(false);
         cinematicTexts[11].SetActive(true);
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
 
         UIManager.Instance.HidePortraits();
         UIManager.Instance.DisplayPortrait(3);
