@@ -34,6 +34,8 @@ public class MenusManager : MonoBehaviour
 
     bool vincent = false;
 
+    public GameObject[] allColliderInterractable;
+
     [HideInInspector] public bool inTuto;
 
 
@@ -875,6 +877,11 @@ public class MenusManager : MonoBehaviour
             player.GetComponent<PlayerInput>().enabled = false;
             Cinematic.SetActive(true);
             Cinematic.GetComponent<Animator>().SetTrigger("PlayCinematic");
+            allColliderInterractable = GameObject.FindGameObjectsWithTag("Interractable");
+            for (int i = 0; i < allColliderInterractable.Length; i++)
+            {
+                allColliderInterractable[i].GetComponent<BoxCollider2D>().enabled = false;
+            }
             active = !active;
         }
     }
