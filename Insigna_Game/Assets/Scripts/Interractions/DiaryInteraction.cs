@@ -205,47 +205,47 @@ public class DiaryInteraction : MonoBehaviour
                                 }
                             }
                         }
-                        UIManager.Instance.DisplayPortrait(portraitIdx);
-                        StartCoroutine(FarInterraction());
-                        security = true;
-                        GameManager.Instance.globalInterractionSecurity = true;
-                        return;
                     }
-                    if (isNear == true)
+                    UIManager.Instance.DisplayPortrait(portraitIdx);
+                    StartCoroutine(FarInterraction());
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
+                }
+                if (isNear == true)
+                {
+                    if (GameManager.Instance.globalInterractionSecurity == true)
                     {
-                        if (GameManager.Instance.globalInterractionSecurity == true)
+                        if (GameManager.Instance.isNear == true)
                         {
-                            if (GameManager.Instance.isNear == true)
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            if (GameObject.FindGameObjectWithTag("NearInt") != null)
                             {
-                                security = false;
-                                GameManager.Instance.globalInterractionSecurity = false;
-                                if (GameObject.FindGameObjectWithTag("NearInt") != null)
+                                for (int i = 0; i <= GameObject.FindGameObjectsWithTag("NearInt").Length; i++)
                                 {
-                                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("NearInt").Length; i++)
-                                    {
-                                        GameObject.FindGameObjectsWithTag("NearInt")[i].SetActive(false);
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                security = false;
-                                GameManager.Instance.globalInterractionSecurity = false;
-                                if (GameObject.FindGameObjectWithTag("FarInt") != null)
-                                {
-                                    for (int i = 0; i <= GameObject.FindGameObjectsWithTag("FarInt").Length; i++)
-                                    {
-                                        GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
-                                    }
+                                    GameObject.FindGameObjectsWithTag("NearInt")[i].SetActive(false);
                                 }
                             }
                         }
-                        UIManager.Instance.DisplayPortrait(portraitIdx);
-                        StartCoroutine(FarNearInterraction());
-                        security = true;
-                        GameManager.Instance.globalInterractionSecurity = true;
-                        return;
+                        else
+                        {
+                            security = false;
+                            GameManager.Instance.globalInterractionSecurity = false;
+                            if (GameObject.FindGameObjectWithTag("FarInt") != null)
+                            {
+                                for (int i = 0; i <= GameObject.FindGameObjectsWithTag("FarInt").Length; i++)
+                                {
+                                    GameObject.FindGameObjectsWithTag("FarInt")[i].SetActive(false);
+                                }
+                            }
+                        }
                     }
+                    UIManager.Instance.DisplayPortrait(portraitIdx);
+                    StartCoroutine(FarNearInterraction());
+                    security = true;
+                    GameManager.Instance.globalInterractionSecurity = true;
+                    return;
                 }
 
 
@@ -405,7 +405,7 @@ public class DiaryInteraction : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2.5f);
-        
+
         security = false;
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
