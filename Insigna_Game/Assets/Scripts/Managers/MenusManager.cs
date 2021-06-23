@@ -886,7 +886,10 @@ public class MenusManager : MonoBehaviour
             allColliderInterractable = GameObject.FindGameObjectsWithTag("Interractable");
             for (int i = 0; i < allColliderInterractable.Length; i++)
             {
-                allColliderInterractable[i].GetComponent<BoxCollider2D>().enabled = false;
+                if (allColliderInterractable[i].name == "BarreauBrake" || allColliderInterractable[i].name == "Lever" || allColliderInterractable[i].name == "Door" || allColliderInterractable[i].name == "ButtonInteract" || allColliderInterractable[i].name == "ButtonInteract (1)" || allColliderInterractable[i].name == "ExitInteract")
+                {
+                    allColliderInterractable[i].GetComponent<BoxCollider2D>().enabled = false;
+                }
             }
             active = !active;
         }

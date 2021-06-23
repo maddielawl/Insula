@@ -13,7 +13,10 @@ public class CinematicScript : MonoBehaviour
     {
         for (int i = 0; i < MenusManager.instance.allColliderInterractable.Length; i++)
         {
-            MenusManager.instance.allColliderInterractable[i].GetComponent<BoxCollider2D>().enabled = false;
+            if (MenusManager.instance.allColliderInterractable[i].name == "BarreauBrake" || MenusManager.instance.allColliderInterractable[i].name == "Lever" || MenusManager.instance.allColliderInterractable[i].name == "Door" || MenusManager.instance.allColliderInterractable[i].name == "ButtonInteract" || MenusManager.instance.allColliderInterractable[i].name == "ButtonInteract (1)" || MenusManager.instance.allColliderInterractable[i].name == "ExitInteract")
+            {
+                MenusManager.instance.allColliderInterractable[i].GetComponent<BoxCollider2D>().enabled = true;
+            }
         }
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 1);
 
