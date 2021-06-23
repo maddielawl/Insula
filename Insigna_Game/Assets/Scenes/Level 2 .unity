@@ -18399,7 +18399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857827380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -114.89331, y: 5.2726808, z: 15.98116}
+  m_LocalPosition: {x: -114.93, y: 5.23, z: 15.98116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1327147945}
@@ -30707,7 +30707,6 @@ GameObject:
   - component: {fileID: 1384401218}
   - component: {fileID: 1384401217}
   - component: {fileID: 1384401220}
-  - component: {fileID: 1384401219}
   m_Layer: 6
   m_Name: FallingFloor
   m_TagString: Collider 1
@@ -30799,29 +30798,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1384401219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384401215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Robots/Water robot dead
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 7.0209885
-  OverrideMaxDistance: 18.989737
 --- !u!114 &1384401220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35793,11 +35769,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1233028943719073361, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 1233028943719073361, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: 8.47
       objectReference: {fileID: 0}
     - target: {fileID: 1233028943719073361, guid: 2753f9287c7288c4fa5f45fc86fdf378, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -40322,7 +40298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877375490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.732239, y: -5.8572273, z: 15.98116}
+  m_LocalPosition: {x: -15.732239, y: -5.94, z: 15.98116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1327147945}
@@ -42367,8 +42343,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 10.302265
-  OverrideMaxDistance: 23.607132
+  OverrideMinDistance: 10.566809
+  OverrideMaxDistance: 29.808662
 --- !u!1 &1990746546
 GameObject:
   m_ObjectHideFlags: 0

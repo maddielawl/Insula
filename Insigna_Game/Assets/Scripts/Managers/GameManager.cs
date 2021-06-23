@@ -247,6 +247,7 @@ public class GameManager : MonoBehaviour
                     WarningBool = true;
                     warningtime = 0f;
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 1);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Trigger Corrupt", 1);
                     heartbeatEvent.start();
 
                     indicible.SetAppear();
@@ -457,6 +458,7 @@ public class GameManager : MonoBehaviour
     public void ForceMadness()
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Corruption", 1);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Trigger Corrupt", 1);
         heartbeatEvent.start();
 
         indicible.SetAppear();

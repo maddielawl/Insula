@@ -347,11 +347,12 @@ public class MenusManager : MonoBehaviour
         if (inGame == true)
         {
             if (isPaused == true)
-            {
+            { 
                 Time.timeScale = 1;
                 ingamePauseMenu.SetActive(false);
                 inGameOptions.SetActive(false);
                 isPaused = false;
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
                 return;
             }
             else
@@ -360,6 +361,7 @@ public class MenusManager : MonoBehaviour
                 inGameOptions.SetActive(false);
                 Time.timeScale = 0;
                 isPaused = true;
+                Debug.Log("Pause");
                 return;
             }
         }
@@ -376,6 +378,7 @@ public class MenusManager : MonoBehaviour
                 {
                     if (isPaused == true)
                     {
+                        Debug.Log("plus Pause");
                         player = GameObject.FindGameObjectWithTag("Player");
                         Time.timeScale = 1;
                         ingamePauseMenu.SetActive(false);
@@ -384,6 +387,7 @@ public class MenusManager : MonoBehaviour
                         //diary.SetActive(false);
                         player.GetComponent<PlayerInput>().enabled = true;
                         isPaused = false;
+                        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
 
                         if (diaryOpened)
                         {
@@ -422,6 +426,7 @@ public class MenusManager : MonoBehaviour
                             //GameManager.Instance.DeactivateInGameActions();
                             player.GetComponent<PlayerInput>().enabled = false;
                             isPaused = true;
+                            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
 
                             if (diaryOpened)
                             {
@@ -465,6 +470,7 @@ public class MenusManager : MonoBehaviour
             ingamePauseMenu.SetActive(false);
             player.GetComponent<PlayerInput>().enabled = true;
             isPaused = false;
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
 
             if (diaryOpened)
             {
