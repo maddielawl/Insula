@@ -33,6 +33,8 @@ public class N02T03PopUpMaster : MonoBehaviour
     public int trinket4;
     public int trinket5;
 
+    public bool boole = false;
+
     private void Awake()
     {
         nombre0 = code0.GetComponent<N02T03Trinket>();
@@ -74,8 +76,11 @@ public class N02T03PopUpMaster : MonoBehaviour
             nombre2.number == trinket2 && nombre3.number == trinket3 &&
             nombre4.number == trinket4 && nombre5.number == trinket5)
         {
-            GameObject.Find("Diary Coffre").GetComponent<SpriteRenderer>().enabled = true;
-            GameObject.Find("Diary Coffre").GetComponent<BoxCollider2D>().enabled = true;
+            if (boole == true)
+            {
+                GameObject.Find("Diary Coffre").GetComponent<SpriteRenderer>().enabled = true;
+                GameObject.Find("Diary Coffre").GetComponent<BoxCollider2D>().enabled = true;
+            }
             Invoke("QuitInterraction", 1f);
         }
     }

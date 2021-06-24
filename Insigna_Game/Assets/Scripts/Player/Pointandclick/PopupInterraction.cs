@@ -358,6 +358,8 @@ public class PopupInterraction : MonoBehaviour
         interractionSecurity = false;
         GameManager.Instance.globalInterractionSecurity = false;
         playerInputs.currentActionMap.Enable();
+        
+        // Destroy(this.gameObject);
     }
     private IEnumerator FarInterraction()
     {
