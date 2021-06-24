@@ -8,7 +8,7 @@ public class N02T03OnDestroy : MonoBehaviour
     public GameObject page;
 
 
-    /*private void OnDestroy()
+    private void OnDestroy()
     {
         if (page != null)
         {
@@ -18,7 +18,7 @@ public class N02T03OnDestroy : MonoBehaviour
 
     private void SetActive()
     {
-        //this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
         this.gameObject.GetComponent<PopupInterraction>().QuitInterraction();
-    }*/
+    }
 }
