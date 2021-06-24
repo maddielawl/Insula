@@ -14,6 +14,8 @@ public class MenusManager : MonoBehaviour
     public FMOD.Studio.EventInstance music;
     public string neonAmb = "event:/SFX/Environment Sounds/Neon Ambience";
     public FMOD.Studio.EventInstance neonAmbEvent;
+    public string gameOverMusic = "event:/Music/Level 1/Game Over";
+    public FMOD.Studio.EventInstance gameOverEvent;
 
     [HideInInspector]
     public GameObject player;
@@ -33,6 +35,8 @@ public class MenusManager : MonoBehaviour
     private int allDisBoxColLength = 0;
 
     bool vincent = false;
+
+    public GameObject[] allColliderInterractable;
 
     [HideInInspector] public bool inTuto;
 
@@ -137,6 +141,7 @@ public class MenusManager : MonoBehaviour
         music = FMODUnity.RuntimeManager.CreateInstance(level1Music);
         neonAmbEvent = FMODUnity.RuntimeManager.CreateInstance(neonAmb);
         neonAmbEvent.start();
+        gameOverEvent = FMODUnity.RuntimeManager.CreateInstance(gameOverMusic);
     }
 
 
@@ -345,11 +350,12 @@ public class MenusManager : MonoBehaviour
         if (inGame == true)
         {
             if (isPaused == true)
-            {
+            { 
                 Time.timeScale = 1;
                 ingamePauseMenu.SetActive(false);
                 inGameOptions.SetActive(false);
                 isPaused = false;
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
                 return;
             }
             else
@@ -358,6 +364,7 @@ public class MenusManager : MonoBehaviour
                 inGameOptions.SetActive(false);
                 Time.timeScale = 0;
                 isPaused = true;
+                Debug.Log("Pause");
                 return;
             }
         }
@@ -374,6 +381,7 @@ public class MenusManager : MonoBehaviour
                 {
                     if (isPaused == true)
                     {
+                        Debug.Log("plus Pause");
                         player = GameObject.FindGameObjectWithTag("Player");
                         Time.timeScale = 1;
                         ingamePauseMenu.SetActive(false);
@@ -382,6 +390,7 @@ public class MenusManager : MonoBehaviour
                         //diary.SetActive(false);
                         player.GetComponent<PlayerInput>().enabled = true;
                         isPaused = false;
+                        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
 
                         if (diaryOpened)
                         {
@@ -420,6 +429,7 @@ public class MenusManager : MonoBehaviour
                             //GameManager.Instance.DeactivateInGameActions();
                             player.GetComponent<PlayerInput>().enabled = false;
                             isPaused = true;
+                            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
 
                             if (diaryOpened)
                             {
@@ -463,6 +473,7 @@ public class MenusManager : MonoBehaviour
             ingamePauseMenu.SetActive(false);
             player.GetComponent<PlayerInput>().enabled = true;
             isPaused = false;
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
 
             if (diaryOpened)
             {
@@ -552,6 +563,7 @@ public class MenusManager : MonoBehaviour
     public void GameOver()
     {
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        gameOverEvent.start();
         Time.timeScale = 0;
         ingameGameOverUI.SetActive(true);
         ingameMainUI.SetActive(false);
@@ -578,6 +590,7 @@ public class MenusManager : MonoBehaviour
 
     public void Restart()
     {
+        gameOverEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         music.start();
         Time.timeScale = 1;
 
@@ -875,6 +888,14 @@ public class MenusManager : MonoBehaviour
             player.GetComponent<PlayerInput>().enabled = false;
             Cinematic.SetActive(true);
             Cinematic.GetComponent<Animator>().SetTrigger("PlayCinematic");
+            allColliderInterractable = GameObject.FindGameObjectsWithTag("Interractable");
+            for (int i = 0; i < allColliderInterractable.Length; i++)
+            {
+                if (allColliderInterractable[i].name == "BarreauBrake" || allColliderInterractable[i].name == "Lever" || allColliderInterractable[i].name == "Door" || allColliderInterractable[i].name == "ButtonInteract" || allColliderInterractable[i].name == "ButtonInteract (1)" || allColliderInterractable[i].name == "ExitInteract")
+                {
+                    allColliderInterractable[i].GetComponent<BoxCollider2D>().enabled = false;
+                }
+            }
             active = !active;
         }
     }

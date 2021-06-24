@@ -21,6 +21,7 @@ public class Mechantquimeurt : MonoBehaviour
 
     public void RobotDead()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isRobotDead", 1);
         SanityZone.SetActive(false);
         Robot.SetActive(false);
         robotDcd.SetActive(true);

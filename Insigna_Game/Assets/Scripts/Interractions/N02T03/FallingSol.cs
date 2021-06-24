@@ -25,7 +25,6 @@ public class FallingSol : MonoBehaviour
         if (parent.interractionSecurity == false)
         {
             parent.interractionSecurity = true;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Grid fall");
             if (UIManager.Instance.isSlot1Active == true)
             {
                 if (UIManager.Instance.objectInSlot1.name.Contains(parent.objectToInterractWith))
@@ -41,7 +40,7 @@ public class FallingSol : MonoBehaviour
                     UIManager.Instance.isSlot1Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
-
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Grid fall");
                     GameManager.Instance.globalInterractionSecurity = false;
 
                     transform.parent.GetComponent<BoxCollider2D>().enabled = false;
@@ -64,7 +63,7 @@ public class FallingSol : MonoBehaviour
                     UIManager.Instance.isSlot2Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
-
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Grid fall");
                     GameManager.Instance.globalInterractionSecurity = false;
 
                     transform.parent.GetComponent<BoxCollider2D>().enabled = false;
@@ -87,7 +86,7 @@ public class FallingSol : MonoBehaviour
                     UIManager.Instance.isSlot3Full = false;
                     UIManager.Instance.oneSlotAtTheTimeSecurity = false;
                     floor.GetComponent<Animator>().SetTrigger("FallingFloor");
-
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Environment Sounds/Grid fall");
                     GameManager.Instance.globalInterractionSecurity = false;
                     
                     transform.parent.GetComponent<BoxCollider2D>().enabled = false;

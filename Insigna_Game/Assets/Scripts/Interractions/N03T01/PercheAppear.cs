@@ -29,6 +29,7 @@ public class PercheAppear : MonoBehaviour
             parent.interractionSecurity = true;
             if (percheonce == false)
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Robots/Majordome 1");
                 perche.transform.parent = null;
                 percheonce = true;
                 interractiontext.text = PercheText;
