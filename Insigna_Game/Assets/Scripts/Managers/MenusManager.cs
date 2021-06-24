@@ -14,6 +14,8 @@ public class MenusManager : MonoBehaviour
     public FMOD.Studio.EventInstance music;
     public string neonAmb = "event:/SFX/Environment Sounds/Neon Ambience";
     public FMOD.Studio.EventInstance neonAmbEvent;
+    public string gameOverMusic = "event:/Music/Level 1/Game Over";
+    public FMOD.Studio.EventInstance gameOverEvent;
 
     [HideInInspector]
     public GameObject player;
@@ -139,6 +141,7 @@ public class MenusManager : MonoBehaviour
         music = FMODUnity.RuntimeManager.CreateInstance(level1Music);
         neonAmbEvent = FMODUnity.RuntimeManager.CreateInstance(neonAmb);
         neonAmbEvent.start();
+        gameOverEvent = FMODUnity.RuntimeManager.CreateInstance(gameOverMusic);
     }
 
 
@@ -560,6 +563,7 @@ public class MenusManager : MonoBehaviour
     public void GameOver()
     {
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        gameOverEvent.start();
         Time.timeScale = 0;
         ingameGameOverUI.SetActive(true);
         ingameMainUI.SetActive(false);
@@ -586,6 +590,7 @@ public class MenusManager : MonoBehaviour
 
     public void Restart()
     {
+        gameOverEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         music.start();
         Time.timeScale = 1;
 

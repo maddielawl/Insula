@@ -29,6 +29,7 @@ public class Vents : MonoBehaviour
 
     public void GetInside(GameObject thenear)
     {
+        Debug.Log("vent");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Terrain", 2);
         playerGO.transform.GetChild(1).GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         UIManager.Instance.HelmetIsOff();
@@ -79,6 +80,7 @@ public class Vents : MonoBehaviour
 
     public void GetOutside(GameObject thenear)
     {
+        Debug.Log("plus vent");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Terrain", 0);
         playerGO.transform.GetChild(1).GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1f);
         GameManager.Instance.playerInVent = false;

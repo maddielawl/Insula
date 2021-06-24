@@ -35,7 +35,7 @@ public class TriggerEnd : MonoBehaviour
             CameraManager.Instance.setCameraPrioHigh(newCam);
             CameraManager.Instance.setCameraPrioLow(oldCam);
 
-
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 5);
             StartCoroutine(AfterEndAnim());
         }
     }
