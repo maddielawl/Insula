@@ -8388,6 +8388,7 @@ MonoBehaviour:
   - {fileID: 212942318}
   - {fileID: 286672174}
   - {fileID: 1659291065}
+  - {fileID: 1286784309}
   doFade: 0
 --- !u!212 &410540145
 SpriteRenderer:
@@ -26027,7 +26028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1160561986
 Transform:
   m_ObjectHideFlags: 0
@@ -31594,6 +31595,7 @@ MonoBehaviour:
   - {fileID: 1921327322}
   - {fileID: 727327914}
   - {fileID: 281352263}
+  - {fileID: 3734029}
   doFade: 1
 --- !u!212 &1452664550
 SpriteRenderer:
@@ -41744,7 +41746,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970041522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -45173,6 +45175,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355757278438419457, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_SortingLayerID
       value: -1050309443
       objectReference: {fileID: 0}
@@ -45238,7 +45244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 48.03425
+      value: 50.75
       objectReference: {fileID: 0}
     - target: {fileID: 8355757278438419462, guid: e52d67ea8eb4e844c97d42b84e29ce1a, type: 3}
       propertyPath: m_LocalRotation.w

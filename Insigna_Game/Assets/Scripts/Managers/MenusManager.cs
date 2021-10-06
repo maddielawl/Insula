@@ -291,12 +291,12 @@ public class MenusManager : MonoBehaviour
 
     public void OnValidateCredits()
     {
-        if (inGame == false)
-        {
+        /*if (inGame == false)
+        {*/
             midOptionsScreen.SetActive(false);
             creditsScreen.SetActive(true);
             OnPressEscape = OnBackFromCredits;
-        }
+        //}
     }
 
     public void OnValidateExitYes()

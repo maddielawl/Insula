@@ -22,6 +22,8 @@ public class TriggerEnd : MonoBehaviour
     public GameObject blackScreen;
     private GameObject journal;
 
+    FMOD.Studio.EventInstance concreteWalkEvent;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,7 +37,7 @@ public class TriggerEnd : MonoBehaviour
             CameraManager.Instance.setCameraPrioHigh(newCam);
             CameraManager.Instance.setCameraPrioLow(oldCam);
 
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 5);
+            //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Level", 5);
             StartCoroutine(AfterEndAnim());
         }
     }
@@ -135,8 +137,12 @@ public class TriggerEnd : MonoBehaviour
 
     IEnumerator BlackScreen()
     {
+        cinematicTexts[12].SetActive(false);
         blackScreen.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
+        choix.SetActive(false);
+        MenusManager.instance.OnValidateCredits();
+        yield return new WaitForSeconds(32f);
         MenusManager.instance.QuitToMenu();
     }
 
